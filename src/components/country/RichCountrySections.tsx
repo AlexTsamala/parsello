@@ -5,17 +5,74 @@ import { Section, SectionHeading } from "@/components/ui/Section";
 import { business } from "@/content/business";
 import type { Country } from "@/content/countries";
 
+type NarrativeBlock = NonNullable<Country["content"]>["narrative"];
+
+/**
+ * A prose block. Any external fact stated here carries its source, so a reader
+ * can tell a researched claim from a Parcello one.
+ */
+function Narrative({
+  blocks,
+  tone,
+}: {
+  blocks: NonNullable<NarrativeBlock>;
+  tone: "white" | "surface";
+}) {
+  return (
+    <>
+      {blocks.map((block) => (
+        <Section key={block.heading} tone={tone}>
+          <div className="max-w-3xl">
+            <h2 className="text-2xl font-bold md:text-3xl">{block.heading}</h2>
+            {block.body.map((paragraph) => (
+              <p key={paragraph} className="mt-4 text-muted">
+                {paragraph}
+              </p>
+            ))}
+
+            {block.sources?.length ? (
+              <p className="mt-6 text-xs text-muted">
+                წყაროები:{" "}
+                {block.sources.map((source, index) => (
+                  <span key={source.url}>
+                    {index > 0 ? ", " : ""}
+                    <a
+                      href={source.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline underline-offset-4 transition-colors hover:text-brand"
+                    >
+                      {source.label}
+                    </a>
+                  </span>
+                ))}
+              </p>
+            ) : null}
+          </div>
+        </Section>
+      ))}
+    </>
+  );
+}
+
 /**
  * Renders a country page from business-written copy (`country.content`).
- * Everything here is a Parcello claim — the researched rules render separately
- * through <CountryFacts /> so the two never blend (CLAUDE.md §1 rule 10).
+ * Parcello claims render in site voice; researched rules render separately
+ * through <CountryFacts />, and any external fact stated inside a narrative
+ * block carries its source (CLAUDE.md §1 rule 10).
  */
 export function RichCountrySections({ country }: { country: Country }) {
   const content = country.content;
   if (!content) return null;
 
+  const afterIntro = content.narrative?.filter((b) => b.placement === "afterIntro") ?? [];
+  const beforePricing =
+    content.narrative?.filter((b) => b.placement === "beforePricing") ?? [];
+
   return (
     <>
+      {afterIntro.length ? <Narrative blocks={afterIntro} tone="surface" /> : null}
+
       <Section>
         <div className="max-w-3xl">
           <h2 className="text-2xl font-bold md:text-3xl">{content.why.heading}</h2>
@@ -111,7 +168,9 @@ export function RichCountrySections({ country }: { country: Country }) {
         </div>
       </Section>
 
-      <Section tone="surface">
+      {beforePricing.length ? <Narrative blocks={beforePricing} tone="surface" /> : null}
+
+      <Section tone={beforePricing.length ? "white" : "surface"}>
         <div className="grid gap-8 md:grid-cols-2 md:items-center">
           <SectionHeading title={content.pricing.heading} description={content.pricing.body} />
 
