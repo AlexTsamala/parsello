@@ -5,7 +5,8 @@
       "Bash(git config *)",
       "Bash(git --version)",
       "Bash(git add *)",
-      "Bash(git commit -q -m 'Add CLAUDE.md with project rules and .gitignore *)"
+      "Bash(git commit -q -m 'Add CLAUDE.md with project rules and .gitignore *)",
+      "Bash(git commit -q -m 'Record no-public-pricing rule, primary phone number, and open business questions *)"
     ]
   }
 }

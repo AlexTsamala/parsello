@@ -19,13 +19,14 @@ The full product brief lives in `plan.md` (git-ignored, local only). Read it whe
 These are the boundaries. If following an instruction would violate one, stop and ask.
 
 1. **Never invent business information.** No prices, delivery times, weight limits, prohibited items, guarantees, addresses, phone numbers, emails, social links, company registration details, or legal text unless the user gave them.
-2. **Unknown data goes in one place.** All business facts live in `src/content/business.ts`. Missing values are explicit `TODO` placeholders there — never hardcoded guesses scattered across components.
-3. **Never make a promise the business hasn't confirmed.** No "fast delivery", "guaranteed 5 days", "cheapest prices", "insured". If it isn't verified, omit the claim entirely rather than softening it.
-4. **Structured data must match visible content.** Never put a fact in JSON-LD that isn't rendered on the page.
-5. **No placeholder text ships.** Anything unresolved must be obviously marked (`TODO:`) and listed in `docs/OPEN-QUESTIONS.md`, not quietly filled in with plausible-sounding filler.
-6. **Don't add scope.** No auth, user accounts, tracking system, dashboard, payments, database, CMS, or admin panel. Version 1 is static marketing pages.
-7. **Don't redesign the brand.** Logo, colors, and identity are fixed (see §4).
-8. **Never commit `plan.md`** or any file containing unpublished business data.
+2. **Never publish a price, price range, or per-kg rate anywhere on the site.** Pricing varies by destination and changes often. Every pricing context — the `/prices` page, the homepage pricing section, country pages, blog posts, FAQ, structured data — routes the customer to contact instead. This is a deliberate business decision, not missing data: do not "helpfully" add example prices, starting-from figures, or a price calculator.
+3. **Unknown data goes in one place.** All business facts live in `src/content/business.ts`. Missing values are explicit `TODO` placeholders there — never hardcoded guesses scattered across components.
+4. **Never make a promise the business hasn't confirmed.** No "fast delivery", "guaranteed 5 days", "cheapest prices", "insured". If it isn't verified, omit the claim entirely rather than softening it.
+5. **Structured data must match visible content.** Never put a fact in JSON-LD that isn't rendered on the page. In particular: no `Offer`, `price`, or `priceRange` anywhere.
+6. **No placeholder text ships.** Anything unresolved must be obviously marked (`TODO:`) and listed in `docs/OPEN-QUESTIONS.md`, not quietly filled in with plausible-sounding filler.
+7. **Don't add scope.** No auth, user accounts, tracking system, dashboard, payments, database, CMS, or admin panel. Version 1 is static marketing pages.
+8. **Don't redesign the brand.** Logo, colors, and identity are fixed (see §4).
+9. **Never commit `plan.md`** or any file containing unpublished business data.
 
 ## 2. When to stop and ask
 
@@ -117,15 +118,36 @@ Do this:
 // src/content/business.ts
 export const business = {
   name: "Parcello Georgia",
-  phone: null, // TODO: awaiting business
+  phone: { display: "551 23 15 19", tel: "+995551231519" },
   deliveryDays: null, // TODO: awaiting business — do not render a range
+  pricing: "on-request", // never a number; see hard rule #2
 } as const;
 ```
 
 Not this:
 
 ```tsx
-<p>ამანათი ევროპაში მიდის 5-7 დღეში</p> // invented — never
+<p>ამანათი ევროპაში მიდის 5-7 დღეში</p>       // invented delivery time
+<p>ფასი იწყება 5 ლარიდან</p>                   // invented price
 ```
 
 If a section can't be written without a missing fact, build the section shell and leave a `TODO` — don't fabricate content to fill it.
+
+## 10. Confirmed business facts
+
+The only verified facts so far. Everything else is an open question (`docs/OPEN-QUESTIONS.md`).
+
+| Fact | Value |
+|---|---|
+| Business name | Parcello Georgia |
+| Phone | `551 23 15 19` → `tel:+995551231519` |
+| Pricing model | Quoted on request only — never published |
+| Destinations | Poland, Germany, France, Hungary, Italy, Bulgaria |
+
+The phone number is the **primary contact** — it belongs in the footer, the contact page, every pricing context, and the mobile sticky CTA. Always render it as a `tel:` link so mobile users can tap to call.
+
+**Pricing copy** (single source, reused everywhere pricing is mentioned):
+
+> ფასის გამოსათვლელად მოგვწერეთ ჩვენს Facebook გვერდზე ან დაგვიკავშირდით ნომერზე 551 23 15 19
+
+Store this string once in `src/content/business.ts` and import it. Do not rewrite or paraphrase it per page.
