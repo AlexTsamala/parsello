@@ -145,6 +145,9 @@ The only verified facts so far. Everything else is an open question (`docs/OPEN-
 | Pricing model | Quoted on request only — never published |
 | Destinations | Poland, Germany, France, Hungary, Italy, Bulgaria |
 | Parcel handover | **Both** courier pickup and drop-off are offered (specific cities/addresses still TBC) |
+| Delivery time | 16–21 days (per-destination breakdown not yet confirmed) |
+| Facebook | `https://www.facebook.com/parcellogeorgia` |
+| Instagram | `https://www.instagram.com/parcellogeorgia` |
 
 The phone number is the **primary contact** — it belongs in the footer, the contact page, every pricing context, and the mobile sticky CTA. Always render it as a `tel:` link so mobile users can tap to call.
 
