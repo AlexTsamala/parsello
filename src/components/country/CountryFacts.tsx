@@ -1,10 +1,14 @@
 import type { ResearchedFact } from "@/content/shipping-rules";
 
 /**
- * Renders the RESEARCHED layer only — official import rules, each with its
- * source. Framed visibly as external information so a reader can tell a customs
- * rule from a Parcello claim (CLAUDE.md §1 rule 10). Never render a Parcello
- * claim through this component.
+ * Renders the RESEARCHED layer only — official import rules. Framed visibly as
+ * external information so a reader can tell a customs rule from a Parcello
+ * claim (CLAUDE.md §1 rule 10). Never render a Parcello claim through this
+ * component.
+ *
+ * `fact.source` is deliberately NOT rendered — the business asked for citation
+ * links off the page. The data stays so every fact remains traceable; see
+ * docs/RESEARCH-SOURCES.md.
  */
 export function CountryFacts({
   facts,
@@ -23,7 +27,7 @@ export function CountryFacts({
       </h2>
       <p className="mt-3 max-w-2xl text-muted">
         ქვემოთ მოცემულია ევროკავშირის ოფიციალური წესები, რომლებიც ამანათის მიღებაზე
-        მოქმედებს. ეს Parcello-ს პირობები არ არის — თითოეულ პუნქტს ახლავს პირველწყარო.
+        მოქმედებს. ეს Parcello-ს პირობები არ არის.
       </p>
 
       <ul className="mt-8 grid gap-4 md:grid-cols-2">
@@ -34,14 +38,6 @@ export function CountryFacts({
           >
             <h3 className="font-semibold">{fact.title}</h3>
             <p className="mt-2 text-sm text-muted">{fact.body}</p>
-            <a
-              href={fact.source.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-4 inline-block text-xs text-muted underline underline-offset-4 transition-colors hover:text-brand"
-            >
-              წყარო: {fact.source.label}
-            </a>
           </li>
         ))}
       </ul>

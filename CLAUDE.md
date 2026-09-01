@@ -28,6 +28,7 @@ These are the boundaries. If following an instruction would violate one, stop an
 8. **Don't redesign the brand.** Logo, colors, and identity are fixed (see §4).
 9. **Never commit `plan.md`** or any file containing unpublished business data.
 10. **Keep researched facts separate from Parcello claims.** General destination-country information (customs basics, common practices, postal norms) may be researched and published, but it lives in its own typed field with a source, and must never be phrased as something Parcello does, offers, or guarantees. A researched fact describes the world; a Parcello claim describes the business — only the user supplies the second kind.
+11. **Every researched fact still records its source, even though sources are not shown.** The business asked for citation links off the page (decided 2026-09-01), so `source` / `sources` fields are stored but not rendered. Recording the source is not optional — it is how a claim stays checkable and re-verifiable later. Never add a researched fact without one, and never delete the fields to tidy up. Verification stays mandatory: check a fact before publishing it, exactly as if the citation were visible.
 
 ## 2. When to stop and ask
 

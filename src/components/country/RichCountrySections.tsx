@@ -30,24 +30,10 @@ function Narrative({
               </p>
             ))}
 
-            {block.sources?.length ? (
-              <p className="mt-6 text-xs text-muted">
-                წყაროები:{" "}
-                {block.sources.map((source, index) => (
-                  <span key={source.url}>
-                    {index > 0 ? ", " : ""}
-                    <a
-                      href={source.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="underline underline-offset-4 transition-colors hover:text-brand"
-                    >
-                      {source.label}
-                    </a>
-                  </span>
-                ))}
-              </p>
-            ) : null}
+            {/* Source citations are recorded in `block.sources` but not
+                rendered — the business asked for them off the page. The data
+                stays so every fact remains traceable; see
+                docs/RESEARCH-SOURCES.md. */}
           </div>
         </Section>
       ))}
