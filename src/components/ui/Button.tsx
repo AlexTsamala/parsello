@@ -31,6 +31,8 @@ type ButtonProps = {
   type?: "button" | "submit";
   disabled?: boolean;
   "aria-label"?: string;
+  /** Only usable from a Client Component. */
+  onClick?: () => void;
 };
 
 /**
@@ -46,6 +48,7 @@ export function Button({
   type = "button",
   disabled,
   "aria-label": ariaLabel,
+  onClick,
 }: ButtonProps) {
   const cls = [base, variants[variant], sizes[size], className]
     .filter(Boolean)
@@ -55,21 +58,27 @@ export function Button({
     // tel:/mailto:/external links must not go through the router.
     if (/^(https?:|tel:|mailto:)/.test(href)) {
       return (
-        <a href={href} className={cls} aria-label={ariaLabel}>
+        <a href={href} className={cls} aria-label={ariaLabel} onClick={onClick}>
           {children}
         </a>
       );
     }
 
     return (
-      <Link href={href} className={cls} aria-label={ariaLabel}>
+      <Link href={href} className={cls} aria-label={ariaLabel} onClick={onClick}>
         {children}
       </Link>
     );
   }
 
   return (
-    <button type={type} className={cls} disabled={disabled} aria-label={ariaLabel}>
+    <button
+      type={type}
+      className={cls}
+      disabled={disabled}
+      aria-label={ariaLabel}
+      onClick={onClick}
+    >
       {children}
     </button>
   );
