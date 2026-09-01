@@ -38,7 +38,7 @@ Until answered:
 
 | # | Question | Blocks |
 |---|---|---|
-| 7 | Delivery time given as 16–21 days — is that the same for **all six** destinations, or does it vary? Calendar days or working days? | FAQ, country pages |
+| 7 | Delivery time given as 2–3 weeks — does it hold across all of Europe, or vary by destination? Calendar or working days? | FAQ, country pages |
 | 8 | Maximum parcel weight / size limits | FAQ, how-it-works |
 | 9 | Prohibited items (real list, not a generic one) | FAQ, blog article on what can be sent |
 | 10 | Delivery to recipient's door, or to a pickup point in Europe? | Country pages, FAQ |

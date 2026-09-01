@@ -143,7 +143,7 @@ The only verified facts so far. Everything else is an open question (`docs/OPEN-
 | Business name | Parcello Georgia |
 | Phone | `551 23 15 19` → `tel:+995551231519` |
 | Pricing model | Quoted on request only — never published |
-| Destinations | Poland, Germany, France, Hungary, Italy, Bulgaria |
+| Coverage | **All of Europe.** Poland, Germany, France, Hungary, Italy and Bulgaria are *priority* destinations and SEO targets — not the limit of the service. Never write copy implying only those six are served. |
 | Parcel handover | **Both** courier pickup and drop-off are offered (specific cities/addresses still TBC) |
 | Delivery time | 16–21 days (per-destination breakdown not yet confirmed) |
 | Facebook | `https://www.facebook.com/parcellogeorgia` |

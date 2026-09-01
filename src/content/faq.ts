@@ -27,7 +27,7 @@ export const faqs: FaqItem[] = [
   },
   {
     question: "რომელ ქვეყნებში აგზავნით ამანათებს?",
-    answer: `ამჟამად ვაგზავნით ექვსი მიმართულებით: ${destinations}.`,
+    answer: `${business.coverage.scope} ძირითადი მიმართულებებია: ${destinations}. თუ თქვენი ქვეყანა სიაში არ არის, დაგვიკავშირდით — გაგზავნას შევათანხმებთ.`,
     featured: true,
   },
   {

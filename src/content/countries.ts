@@ -1,8 +1,13 @@
 import type { ResearchedFact } from "./shipping-rules";
 
 /**
- * Destination countries. Country pages are generated from this config — do not
- * hand-write six near-identical page components (CLAUDE.md §6).
+ * PRIORITY destination countries — the six the business focuses on and the six
+ * SEO landing pages we build. Parcello ships across Europe, so this list is NOT
+ * the limit of the service: never write copy implying only these are served.
+ * Site-wide coverage wording lives in `business.coverage`.
+ *
+ * Country pages are generated from this config — do not hand-write six
+ * near-identical page components (CLAUDE.md §6).
  *
  * TWO LAYERS, DELIBERATELY SEPARATE (CLAUDE.md §1 rule 10):
  *

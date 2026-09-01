@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { Section, SectionHeading } from "@/components/ui/Section";
+import { business } from "@/content/business";
 import { countries } from "@/content/countries";
 
 /**
@@ -12,7 +13,7 @@ export function CountriesSection() {
     <Section id="countries">
       <SectionHeading
         title="სად ვაგზავნით ამანათებს?"
-        description="აირჩიეთ მიმართულება და გაეცანით დეტალურ ინფორმაციას."
+        description={`${business.coverage.scope} ${business.coverage.priorityNote}`}
       />
 
       <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

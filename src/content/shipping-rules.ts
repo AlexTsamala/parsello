@@ -24,7 +24,7 @@ export type ResearchedFact = {
 
 const VERIFIED = "2026-09-01";
 
-/** Applies to all six destinations — rendered on country pages and the FAQ. */
+/** EU-wide, so it applies to every destination — country pages and the FAQ. */
 export const euImportRules: ResearchedFact[] = [
   {
     id: "customs-clearance",

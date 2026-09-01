@@ -64,6 +64,17 @@ export const business = {
   /** TODO: awaiting business — no weight limit has been stated. */
   weightLimit: null as string | null,
 
+  /**
+   * Parcello ships across Europe. The six countries in `countries.ts` are
+   * PRIORITY destinations and SEO targets — not the limit of the service.
+   * Never write copy implying only those six are served.
+   */
+  coverage: {
+    scope: "ვაგზავნით ევროპის მასშტაბით.",
+    priorityNote:
+      "ქვემოთ ჩამოთვლილია ჩვენი ძირითადი მიმართულებები. თუ თქვენი ქვეყანა სიაში არ არის, დაგვიკავშირდით — გაგზავნას შევათანხმებთ.",
+  },
+
   /** Confirmed restrictions. Only what the business has actually stated. */
   restrictions: {
     /** Not sent at all. */
