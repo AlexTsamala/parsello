@@ -10,8 +10,8 @@ Answered items move to `CLAUDE.md` §10 and into `src/content/business.ts`.
 |---|---|---|
 | 1 | Facebook page URL | Pricing copy, footer, contact page |
 | 2 | Instagram URL (if used) | Footer, contact page |
-| 3 | How does a parcel physically reach you — courier pickup, drop-off point, or both? If pickup, which cities? | How-it-works section, trust section, FAQ |
-| 4 | Drop-off address / office location (if any) | Contact page, LocalBusiness structured data |
+| 3 | Pickup is confirmed — **which cities/regions** does courier pickup actually cover? | How-it-works, trust section, FAQ |
+| 4 | Drop-off address(es) / office location | Contact page, LocalBusiness structured data |
 | 5 | Domain name | Canonical URLs, sitemap, Open Graph |
 | 6 | Logo files + real Parcello photography (courier, van, handover) | Design system, hero, all pages |
 
@@ -26,9 +26,11 @@ Answered items move to `CLAUDE.md` §10 and into `src/content/business.ts`.
 | 11 | When and how does the customer pay? | FAQ, order flow |
 | 12 | Email address | Contact page |
 | 13 | Working hours | Contact page, LocalBusiness schema |
-| 14 | Anything genuinely country-specific per destination (routes, timing, common uses) | Country pages — needed so the six pages aren't near-duplicates |
+| 14 | Parcello-specific detail per destination (routes, typical timing, what customers usually send there) | Country pages — the researched layer alone can't carry them |
 
 ## Resolved
 
 - **Pricing** — never published. Customers are routed to Facebook or phone. See `CLAUDE.md` §10.
 - **Primary phone** — `551 23 15 19`.
+- **Parcel handover** — both courier pickup and drop-off are offered. Coverage details still open (#3, #4).
+- **Country-page content** — general destination facts are researched and published with sources, kept structurally separate from Parcello claims. See `CLAUDE.md` §1 rule 10 and `docs/RESEARCH-SOURCES.md`.

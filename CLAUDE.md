@@ -27,6 +27,7 @@ These are the boundaries. If following an instruction would violate one, stop an
 7. **Don't add scope.** No auth, user accounts, tracking system, dashboard, payments, database, CMS, or admin panel. Version 1 is static marketing pages.
 8. **Don't redesign the brand.** Logo, colors, and identity are fixed (see §4).
 9. **Never commit `plan.md`** or any file containing unpublished business data.
+10. **Keep researched facts separate from Parcello claims.** General destination-country information (customs basics, common practices, postal norms) may be researched and published, but it lives in its own typed field with a source, and must never be phrased as something Parcello does, offers, or guarantees. A researched fact describes the world; a Parcello claim describes the business — only the user supplies the second kind.
 
 ## 2. When to stop and ask
 
@@ -143,6 +144,7 @@ The only verified facts so far. Everything else is an open question (`docs/OPEN-
 | Phone | `551 23 15 19` → `tel:+995551231519` |
 | Pricing model | Quoted on request only — never published |
 | Destinations | Poland, Germany, France, Hungary, Italy, Bulgaria |
+| Parcel handover | **Both** courier pickup and drop-off are offered (specific cities/addresses still TBC) |
 
 The phone number is the **primary contact** — it belongs in the footer, the contact page, every pricing context, and the mobile sticky CTA. Always render it as a `tel:` link so mobile users can tap to call.
 
