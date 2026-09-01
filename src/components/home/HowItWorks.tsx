@@ -1,25 +1,6 @@
 import { Button } from "@/components/ui/Button";
 import { Section, SectionHeading } from "@/components/ui/Section";
-import { business } from "@/content/business";
-
-const steps = [
-  {
-    title: "შეუკვეთე მომსახურება",
-    body: "დაგვიკავშირდით ტელეფონით ან მოგვწერეთ Facebook-ზე და შეათანხმეთ დეტალები.",
-  },
-  {
-    title: "მოამზადე ამანათი",
-    body: "შეფუთეთ ნივთები ისე, რომ ტრანსპორტირებისას დაცული იყოს.",
-  },
-  {
-    title: "ჩვენ ვიღებთ ამანათს",
-    body: "ამანათს კურიერს გადააბარებთ ან თავად ჩააბარებთ.",
-  },
-  {
-    title: "ამანათი მიემგზავრება ევროპაში",
-    body: `ამანათი ევროპის მიმართულებით იგზავნება და ადრესატთან ჩადის გაგზავნიდან ${business.deliveryTime}-ის ვადაში.`,
-  },
-];
+import { howItWorksSteps } from "@/content/how-it-works";
 
 export function HowItWorks() {
   return (
@@ -30,7 +11,7 @@ export function HowItWorks() {
       />
 
       <ol className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-        {steps.map((step, index) => (
+        {howItWorksSteps.map((step, index) => (
           <li key={step.title} className="rounded-xl border border-line bg-white p-6">
             <span
               className="inline-flex size-9 items-center justify-center rounded-lg bg-brand-soft text-base font-bold text-brand"

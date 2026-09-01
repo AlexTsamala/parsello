@@ -1,0 +1,201 @@
+import Link from "next/link";
+import { notFound } from "next/navigation";
+
+import { CountryFacts } from "@/components/country/CountryFacts";
+import { FaqSection } from "@/components/home/FaqSection";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { Button } from "@/components/ui/Button";
+import { Section, SectionHeading } from "@/components/ui/Section";
+import { business } from "@/content/business";
+import { countries, getCountry, relatedCountries } from "@/content/countries";
+import { featuredFaqs } from "@/content/faq";
+import { howItWorksSteps } from "@/content/how-it-works";
+import { euImportRules } from "@/content/shipping-rules";
+import { buildMetadata } from "@/lib/seo";
+
+/**
+ * Facts withheld pending a business answer.
+ *
+ * `animal-products` states the EU prohibition on dairy. Parcello's own list of
+ * what customers send includes cheese, so publishing both would put a Parcello
+ * claim and an official rule in direct contradiction on the same site. Held
+ * back until docs/OPEN-QUESTIONS.md #15 is resolved — then delete this and the
+ * filter below. Do not "fix" it by editing either statement.
+ */
+const WITHHELD_FACT_IDS = new Set(["animal-products"]);
+
+export function generateStaticParams() {
+  return countries.map((country) => ({ slug: country.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const country = getCountry(slug);
+  if (!country) return {};
+
+  return buildMetadata({
+    title: country.seoTitle,
+    description: country.seoDescription,
+    path: `/countries/${country.slug}`,
+  });
+}
+
+export default async function CountryPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const country = getCountry(slug);
+  if (!country) notFound();
+
+  const related = relatedCountries(country.slug);
+  const facts = [...country.facts, ...euImportRules].filter(
+    (fact) => !WITHHELD_FACT_IDS.has(fact.id),
+  );
+
+  return (
+    <main id="main">
+      <section className="border-b border-line bg-surface">
+        <div className="container-page py-10 md:py-16">
+          <Breadcrumbs
+            items={[
+              { href: "/", label: "მთავარი" },
+              { href: "/countries", label: "მიმართულებები" },
+              { label: country.nameKa },
+            ]}
+          />
+
+          <h1 className="mt-6 max-w-3xl text-3xl font-bold md:text-5xl">
+            <span aria-hidden="true" className="me-2">
+              {country.flag}
+            </span>
+            {country.h1}
+          </h1>
+
+          <p className="mt-5 max-w-2xl text-base text-muted md:text-lg">{country.intro}</p>
+
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Button href="/contact" size="lg">
+              ამანათის გაგზავნა
+            </Button>
+            <Button href={`tel:${business.phone.tel}`} size="lg" variant="secondary">
+              {business.phone.display}
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <Section>
+        <SectionHeading
+          title={`როგორ ვაგზავნით ამანათს ${country.nameKaIn}`}
+          description="პროცესი ყველა მიმართულებისთვის ერთნაირად მარტივია."
+        />
+
+        <ol className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {howItWorksSteps.map((step, index) => (
+            <li key={step.title} className="rounded-xl border border-line bg-white p-6">
+              <span
+                className="inline-flex size-9 items-center justify-center rounded-lg bg-brand-soft text-base font-bold text-brand"
+                aria-hidden="true"
+              >
+                {index + 1}
+              </span>
+              <h3 className="mt-4 text-lg font-semibold">{step.title}</h3>
+              <p className="mt-2 text-sm text-muted">{step.body}</p>
+            </li>
+          ))}
+        </ol>
+
+        <p className="mt-8 text-sm text-muted">
+          იხილეთ დეტალურად:{" "}
+          <Link href="/how-it-works" className="text-charcoal underline underline-offset-4 hover:text-brand">
+            როგორ მუშაობს Parcello
+          </Link>
+        </p>
+      </Section>
+
+      <Section tone="surface">
+        <div className="grid gap-8 md:grid-cols-2 md:items-center">
+          <SectionHeading
+            title={`${country.nameKaIn} ამანათის გაგზავნის ფასი`}
+            description={business.pricing.dependsOn}
+          />
+
+          <div className="rounded-2xl border border-line bg-white p-7">
+            <p>{business.pricing.copy}</p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Button href={`tel:${business.phone.tel}`} size="lg">
+                {business.phone.display}
+              </Button>
+              {business.facebookUrl ? (
+                <Button href={business.facebookUrl} size="lg" variant="secondary">
+                  Facebook-ზე მოწერა
+                </Button>
+              ) : null}
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      <Section>
+        <CountryFacts facts={facts} countryName={country.nameKa} />
+      </Section>
+
+      <FaqSection items={featuredFaqs} />
+
+      <Section tone="surface">
+        <SectionHeading
+          title="სხვა მიმართულებები"
+          description={business.coverage.priorityNote}
+        />
+
+        <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {related.map((item) => (
+            <li key={item.slug}>
+              <Link
+                href={`/countries/${item.slug}`}
+                className="group flex h-full items-center gap-4 rounded-xl border border-line bg-white p-5 transition-colors hover:border-brand"
+              >
+                <span className="text-3xl" aria-hidden="true">
+                  {item.flag}
+                </span>
+                <span className="font-semibold group-hover:text-brand">
+                  {item.nameKaIn} ამანათის გაგზავნა
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </Section>
+
+      <section className="bg-charcoal text-white">
+        <div className="container-page py-16 text-center md:py-20">
+          <h2 className="text-2xl font-bold md:text-4xl">
+            გსურთ ამანათის გაგზავნა {country.nameKaIn}?
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-white/70">
+            დაიწყეთ შეკვეთა Parcello-სთან — დაგვირეკეთ ან მოგვწერეთ Facebook-ზე.
+          </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <Button href="/contact" size="lg">
+              ამანათის გაგზავნა
+            </Button>
+            <Button
+              href={`tel:${business.phone.tel}`}
+              size="lg"
+              variant="secondary"
+              className="border-white/25 bg-transparent text-white hover:border-white hover:bg-white/10"
+            >
+              {business.phone.display}
+            </Button>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
