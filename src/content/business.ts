@@ -18,20 +18,19 @@ export const business = {
     tel: "+995551231519",
   },
 
-  /** TODO: awaiting business — pricing copy links here, so it blocks several pages. */
-  facebookUrl: null as string | null,
+  facebookUrl: "https://www.facebook.com/parcellogeorgia",
 
-  /** TODO: awaiting business. */
-  instagramUrl: null as string | null,
+  /* Tracking params stripped — the fbclid was a share-link artifact, not part of the profile URL. */
+  instagramUrl: "https://www.instagram.com/parcellogeorgia",
 
   /** TODO: awaiting business. */
   email: null as string | null,
 
   /** TODO: awaiting business — needed for the contact page and LocalBusiness schema. */
-  address: null as string | null,
+  address: "III კვარტალი II-ა კორპუსი, გრიგოლ რობაქიძის 4, თბილისი, ",
 
   /** TODO: awaiting business. */
-  workingHours: null as string | null,
+  workingHours: "8 AM – 10 PM",
 
   /**
    * Confirmed: both courier pickup and drop-off are available.
@@ -52,8 +51,12 @@ export const business = {
     copy: "ფასის გამოსათვლელად მოგვწერეთ ჩვენს Facebook გვერდზე ან დაგვიკავშირდით ნომერზე 551 23 15 19",
   },
 
-  /** TODO: awaiting business — do not render any delivery estimate until set. */
-  deliveryDays: null as string | null,
+  /**
+   * Supplied by the business: 16–21 days.
+   * Stored as a string — `16 - 21` was being evaluated as arithmetic (= -5).
+   * TODO: confirm whether this range is the same for all six destinations.
+   */
+  deliveryDays: "16–21",
 
   /** TODO: awaiting business — do not render limits until set. */
   weightLimit: null as string | null,
