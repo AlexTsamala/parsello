@@ -8,17 +8,18 @@ import type { ResearchedFact } from "@/content/shipping-rules";
  */
 export function CountryFacts({
   facts,
-  countryName,
+  countryNameIn,
 }: {
   facts: ResearchedFact[];
-  countryName: string;
+  /** Already inflected, e.g. "პოლონეთში" — never build this by appending "ში". */
+  countryNameIn: string;
 }) {
   if (facts.length === 0) return null;
 
   return (
     <div>
       <h2 className="text-2xl font-bold md:text-3xl">
-        რა უნდა იცოდეთ {countryName}ში გაგზავნამდე
+        რა უნდა იცოდეთ {countryNameIn} გაგზავნამდე
       </h2>
       <p className="mt-3 max-w-2xl text-muted">
         ქვემოთ მოცემულია ევროკავშირის ოფიციალური წესები, რომლებიც ამანათის მიღებაზე

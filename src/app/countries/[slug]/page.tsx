@@ -2,6 +2,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { CountryFacts } from "@/components/country/CountryFacts";
+import {
+  RichCountryCta,
+  RichCountrySections,
+} from "@/components/country/RichCountrySections";
 import { FaqSection } from "@/components/home/FaqSection";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Button } from "@/components/ui/Button";
@@ -58,6 +62,10 @@ export default async function CountryPage({
     (fact) => !WITHHELD_FACT_IDS.has(fact.id),
   );
 
+  const content = country.content;
+  const introParagraphs = content ? content.intro : [country.intro];
+  const faqItems = content?.faqs.length ? content.faqs : featuredFaqs;
+
   return (
     <main id="main">
       <section className="border-b border-line bg-surface">
@@ -71,13 +79,17 @@ export default async function CountryPage({
           />
 
           <h1 className="mt-6 max-w-3xl text-3xl font-bold md:text-5xl">
-            <span aria-hidden="true" className="me-2">
-              {country.flag}
-            </span>
             {country.h1}
+            <span aria-hidden="true" className="ms-3 whitespace-nowrap">
+              🇬🇪 → {country.flag}
+            </span>
           </h1>
 
-          <p className="mt-5 max-w-2xl text-base text-muted md:text-lg">{country.intro}</p>
+          {introParagraphs.map((paragraph) => (
+            <p key={paragraph} className="mt-5 max-w-2xl text-base text-muted md:text-lg">
+              {paragraph}
+            </p>
+          ))}
 
           <div className="mt-8 flex flex-wrap gap-3">
             <Button href="/contact" size="lg">
@@ -90,63 +102,72 @@ export default async function CountryPage({
         </div>
       </section>
 
-      <Section>
-        <SectionHeading
-          title={`როგორ ვაგზავნით ამანათს ${country.nameKaIn}`}
-          description="პროცესი ყველა მიმართულებისთვის ერთნაირად მარტივია."
-        />
+      {content ? (
+        <RichCountrySections country={country} />
+      ) : (
+        <>
+          <Section>
+            <SectionHeading
+              title={`როგორ ვაგზავნით ამანათს ${country.nameKaIn}`}
+              description="პროცესი ყველა მიმართულებისთვის ერთნაირად მარტივია."
+            />
 
-        <ol className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {howItWorksSteps.map((step, index) => (
-            <li key={step.title} className="rounded-xl border border-line bg-white p-6">
-              <span
-                className="inline-flex size-9 items-center justify-center rounded-lg bg-brand-soft text-base font-bold text-brand"
-                aria-hidden="true"
+            <ol className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              {howItWorksSteps.map((step, index) => (
+                <li key={step.title} className="rounded-xl border border-line bg-white p-6">
+                  <span
+                    className="inline-flex size-9 items-center justify-center rounded-lg bg-brand-soft text-base font-bold text-brand"
+                    aria-hidden="true"
+                  >
+                    {index + 1}
+                  </span>
+                  <h3 className="mt-4 text-lg font-semibold">{step.title}</h3>
+                  <p className="mt-2 text-sm text-muted">{step.body}</p>
+                </li>
+              ))}
+            </ol>
+
+            <p className="mt-8 text-sm text-muted">
+              იხილეთ დეტალურად:{" "}
+              <Link
+                href="/how-it-works"
+                className="text-charcoal underline underline-offset-4 hover:text-brand"
               >
-                {index + 1}
-              </span>
-              <h3 className="mt-4 text-lg font-semibold">{step.title}</h3>
-              <p className="mt-2 text-sm text-muted">{step.body}</p>
-            </li>
-          ))}
-        </ol>
+                როგორ მუშაობს Parcello
+              </Link>
+            </p>
+          </Section>
 
-        <p className="mt-8 text-sm text-muted">
-          იხილეთ დეტალურად:{" "}
-          <Link href="/how-it-works" className="text-charcoal underline underline-offset-4 hover:text-brand">
-            როგორ მუშაობს Parcello
-          </Link>
-        </p>
-      </Section>
+          <Section tone="surface">
+            <div className="grid gap-8 md:grid-cols-2 md:items-center">
+              <SectionHeading
+                title={`${country.nameKaIn} ამანათის გაგზავნის ფასი`}
+                description={business.pricing.dependsOn}
+              />
 
-      <Section tone="surface">
-        <div className="grid gap-8 md:grid-cols-2 md:items-center">
-          <SectionHeading
-            title={`${country.nameKaIn} ამანათის გაგზავნის ფასი`}
-            description={business.pricing.dependsOn}
-          />
-
-          <div className="rounded-2xl border border-line bg-white p-7">
-            <p>{business.pricing.copy}</p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <Button href={`tel:${business.phone.tel}`} size="lg">
-                {business.phone.display}
-              </Button>
-              {business.facebookUrl ? (
-                <Button href={business.facebookUrl} size="lg" variant="secondary">
-                  Facebook-ზე მოწერა
-                </Button>
-              ) : null}
+              <div className="rounded-2xl border border-line bg-white p-7">
+                <p>{business.pricing.copy}</p>
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <Button href={`tel:${business.phone.tel}`} size="lg">
+                    {business.phone.display}
+                  </Button>
+                  {business.facebookUrl ? (
+                    <Button href={business.facebookUrl} size="lg" variant="secondary">
+                      Facebook-ზე მოწერა
+                    </Button>
+                  ) : null}
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      </Section>
+          </Section>
+        </>
+      )}
 
       <Section>
-        <CountryFacts facts={facts} countryName={country.nameKa} />
+        <CountryFacts facts={facts} countryNameIn={country.nameKaIn} />
       </Section>
 
-      <FaqSection items={featuredFaqs} />
+      <FaqSection items={faqItems} />
 
       <Section tone="surface">
         <SectionHeading
@@ -173,29 +194,33 @@ export default async function CountryPage({
         </ul>
       </Section>
 
-      <section className="bg-charcoal text-white">
-        <div className="container-page py-16 text-center md:py-20">
-          <h2 className="text-2xl font-bold md:text-4xl">
-            გსურთ ამანათის გაგზავნა {country.nameKaIn}?
-          </h2>
-          <p className="mx-auto mt-4 max-w-xl text-white/70">
-            დაიწყეთ შეკვეთა Parcello-სთან — დაგვირეკეთ ან მოგვწერეთ Facebook-ზე.
-          </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Button href="/contact" size="lg">
-              ამანათის გაგზავნა
-            </Button>
-            <Button
-              href={`tel:${business.phone.tel}`}
-              size="lg"
-              variant="secondary"
-              className="border-white/25 bg-transparent text-white hover:border-white hover:bg-white/10"
-            >
-              {business.phone.display}
-            </Button>
+      {content ? (
+        <RichCountryCta country={country} />
+      ) : (
+        <section className="bg-charcoal text-white">
+          <div className="container-page py-16 text-center md:py-20">
+            <h2 className="text-2xl font-bold md:text-4xl">
+              გსურთ ამანათის გაგზავნა {country.nameKaIn}?
+            </h2>
+            <p className="mx-auto mt-4 max-w-xl text-white/70">
+              დაიწყეთ შეკვეთა Parcello-სთან — დაგვირეკეთ ან მოგვწერეთ Facebook-ზე.
+            </p>
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
+              <Button href="/contact" size="lg">
+                ამანათის გაგზავნა
+              </Button>
+              <Button
+                href={`tel:${business.phone.tel}`}
+                size="lg"
+                variant="secondary"
+                className="border-white/25 bg-transparent text-white hover:border-white hover:bg-white/10"
+              >
+                {business.phone.display}
+              </Button>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
     </main>
   );
 }

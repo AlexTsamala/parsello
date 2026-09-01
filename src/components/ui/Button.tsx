@@ -57,8 +57,17 @@ export function Button({
   if (href) {
     // tel:/mailto:/external links must not go through the router.
     if (/^(https?:|tel:|mailto:)/.test(href)) {
+      // Off-site links open in a new tab so visitors don't lose the page.
+      const isHttp = /^https?:/.test(href);
+
       return (
-        <a href={href} className={cls} aria-label={ariaLabel} onClick={onClick}>
+        <a
+          href={href}
+          className={cls}
+          aria-label={ariaLabel}
+          onClick={onClick}
+          {...(isHttp ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+        >
           {children}
         </a>
       );
