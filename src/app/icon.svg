@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260" width="260" height="260">
+<title>Parcello cube mark</title><desc>Orange isometric parcel cube icon.</desc>
+<g fill="#F47C20" stroke="#151515" stroke-width="7.2" stroke-linejoin="round">
+      <path d="M 130.0,48.2 L 202.0,89.8 L 130.0,131.4 L 58.0,89.8 Z"/>
+      <path d="M 58.0,89.8 L 130.0,131.4 L 130.0,201.8 L 58.0,169.8 Z"/>
+      <path d="M 130.0,131.4 L 202.0,89.8 L 202.0,169.8 L 130.0,201.8 Z"/>
+    </g>
+</svg>

@@ -1,8 +1,15 @@
 import type { Metadata } from "next";
 
 import { business, siteUrl } from "@/content/business";
+import { publicImageExists } from "@/lib/assets";
 
-const DEFAULT_OG_IMAGE = "/og-default.jpg"; // TODO: add real branded OG image
+/**
+ * TODO: add a real branded 1200x630 image at public/images/og-default.jpg.
+ * Until it exists we emit no og:image at all — a tag pointing at a missing
+ * file renders as a broken preview when the link is shared.
+ */
+const OG_IMAGE_FILE = "og-default.jpg";
+const ogImage = publicImageExists(OG_IMAGE_FILE) ? `/images/${OG_IMAGE_FILE}` : null;
 
 type PageMetadataInput = {
   /** Page title without the brand suffix — the template adds it. */
@@ -47,13 +54,15 @@ export function buildMetadata({
       locale: "ka_GE",
       type,
       ...(publishedTime ? { publishedTime } : {}),
-      images: [{ url: DEFAULT_OG_IMAGE, width: 1200, height: 630, alt: business.name }],
+      ...(ogImage
+        ? { images: [{ url: ogImage, width: 1200, height: 630, alt: business.name }] }
+        : {}),
     },
     twitter: {
-      card: "summary_large_image",
+      card: ogImage ? "summary_large_image" : "summary",
       title: fullTitle,
       description,
-      images: [DEFAULT_OG_IMAGE],
+      ...(ogImage ? { images: [ogImage] } : {}),
     },
   };
 }
