@@ -13,7 +13,7 @@ export function PricingSection() {
       <div className="grid gap-8 md:grid-cols-2 md:items-center">
         <SectionHeading
           title="ამანათის გაგზავნის ფასი"
-          description="ფასი დამოკიდებულია მიმართულებაზე და ხშირად იცვლება, ამიტომ თითოეული შეკვეთისთვის ინდივიდუალურად ითვლება."
+          description={business.pricing.dependsOn}
         />
 
         <div className="rounded-2xl border border-line bg-white p-7">

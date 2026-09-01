@@ -48,18 +48,39 @@ export const business = {
    */
   pricing: {
     model: "on-request",
-    copy: "ფასის გამოსათვლელად მოგვწერეთ ჩვენს Facebook გვერდზე ან დაგვიკავშირდით ნომერზე 551 23 15 19",
+    /** What the price actually depends on — confirmed by the business. */
+    dependsOn:
+      "ღირებულება დამოკიდებულია იმაზე, თუ რომელ ქვეყანაში აგზავნით ამანათს და რა არის მისი წონა.",
+    copy: "მოგვწერეთ ქვეყანა და ამანათის დაახლოებითი წონა — ზუსტ ფასს დაგიანგარიშებთ. დაგვიკავშირდით ნომერზე 551 23 15 19 ან მოგვწერეთ Facebook გვერდზე.",
   },
 
   /**
-   * Supplied by the business: 16–21 days.
-   * Stored as a string — `16 - 21` was being evaluated as arithmetic (= -5).
-   * TODO: confirm whether this range is the same for all six destinations.
+   * The business's own published wording is "2–3 კვირა" (from the Facebook FAQ).
+   * An earlier note said 16–21 days, which sits inside that range; the weeks
+   * phrasing is the customer-facing one, so it is what the site shows.
    */
-  deliveryDays: "16–21",
+  deliveryTime: "2-3 კვირა",
 
-  /** TODO: awaiting business — do not render limits until set. */
+  /** TODO: awaiting business — no weight limit has been stated. */
   weightLimit: null as string | null,
+
+  /** Confirmed restrictions. Only what the business has actually stated. */
+  restrictions: {
+    /** Not sent at all. */
+    prohibited: ["მედიკამენტები"],
+    /** Accepted, but with a condition the customer must meet. */
+    conditional:
+      "მინის ნივთები სათანადოდ უნდა იყოს შეფუთული, რომ ტრანსპორტირებისას არ დაზიანდეს.",
+    /** Liability disclaimer, in the business's own terms. */
+    packingLiability: "შეფუთვაზე პასუხისმგებლობას არ ვიღებთ.",
+  },
+
+  /** How the customer must prepare a parcel — confirmed by the business. */
+  packaging: [
+    "ნივთები მოათავსეთ მუყაოს ყუთში.",
+    "ყუთზე მიუთითეთ გამგზავნის სახელი, გვარი და ტელეფონის ნომერი.",
+    "ყუთზე მიუთითეთ მიმღების ზუსტი მისამართი.",
+  ],
 } as const;
 
 /** Canonical site origin. TODO: replace once the domain is registered. */
