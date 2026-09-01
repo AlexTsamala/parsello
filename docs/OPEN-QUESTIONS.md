@@ -11,7 +11,7 @@ Answered items move to `CLAUDE.md` §10 and into `src/content/business.ts`.
 | 3 | Pickup is confirmed — **which cities/regions** does courier pickup actually cover? | How-it-works, trust section, FAQ |
 | 4 | Drop-off address(es) / office location | Contact page, LocalBusiness structured data |
 | 5 | Domain name | Canonical URLs, sitemap, Open Graph |
-| 6 | Logo files + real Parcello photography (courier, van, handover) | Design system, hero, all pages |
+| 6 | Image **files** saved into `public/images/` (see that folder's README). Chat-pasted images do not reach disk. The logo is needed as a clean vector/PNG — not cropped out of the courier photo. | Navbar, favicon, hero, OG image |
 
 ## Needed for content quality
 

@@ -1,29 +1,31 @@
-import { Button } from "@/components/ui/Button";
-import { Section, SectionHeading } from "@/components/ui/Section";
-import { business } from "@/content/business";
+import { CountriesSection } from "@/components/home/CountriesSection";
+import { FaqSection } from "@/components/home/FaqSection";
+import { FinalCta } from "@/components/home/FinalCta";
+import { Hero } from "@/components/home/Hero";
+import { HowItWorks } from "@/components/home/HowItWorks";
+import { PricingSection } from "@/components/home/PricingSection";
+import { TrustSection } from "@/components/home/TrustSection";
+import { featuredFaqs } from "@/content/faq";
+import { buildMetadata } from "@/lib/seo";
 
-/**
- * Placeholder homepage — the real one is built in Phase 4.
- * Exists so the design system can be checked in the browser.
- */
+export const metadata = buildMetadata({
+  title: "ამანათების გაგზავნა ევროპაში",
+  description:
+    "გაგზავნეთ ამანათი საქართველოდან ევროპაში მარტივად და კომფორტულად. Parcello გთავაზობთ ამანათების გაგზავნის სერვისს ევროპის სხვადასხვა ქვეყანაში.",
+  path: "/",
+});
+
+/** Section order follows the visual hierarchy in plan §33. */
 export default function HomePage() {
   return (
     <main id="main">
-      <Section>
-        <SectionHeading
-          as="h1"
-          title="ამანათების გაგზავნა საქართველოდან ევროპაში"
-          description={`${business.shortName} გეხმარებათ ამანათის მარტივად გაგზავნაში საქართველოდან ევროპის მიმართულებით.`}
-        />
-        <div className="mt-8 flex flex-wrap gap-3">
-          <Button href="/contact" size="lg">
-            ამანათის გაგზავნა
-          </Button>
-          <Button href="/how-it-works" size="lg" variant="secondary">
-            როგორ მუშაობს?
-          </Button>
-        </div>
-      </Section>
+      <Hero />
+      <TrustSection />
+      <HowItWorks />
+      <CountriesSection />
+      <PricingSection />
+      <FaqSection items={featuredFaqs} />
+      <FinalCta />
     </main>
   );
 }

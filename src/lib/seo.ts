@@ -33,7 +33,9 @@ export function buildMetadata({
   const fullTitle = `${title} | ${business.name}`;
 
   return {
-    title,
+    // Absolute, so the rendered <title> is exactly the one the plan specifies
+    // rather than depending on the layout's template resolving.
+    title: { absolute: fullTitle },
     description,
     alternates: { canonical: url },
     robots: noIndex ? { index: false, follow: false } : undefined,

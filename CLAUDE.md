@@ -148,6 +148,7 @@ The only verified facts so far. Everything else is an open question (`docs/OPEN-
 | Delivery time | 16–21 days (per-destination breakdown not yet confirmed) |
 | Facebook | `https://www.facebook.com/parcellogeorgia` |
 | Instagram | `https://www.instagram.com/parcellogeorgia` |
+| Logo | The **orange cube + "Parcello GEORGIA" wordmark** (the courier-uniform mark). The circular cartoon badge is not the site logo. |
 
 The phone number is the **primary contact** — it belongs in the footer, the contact page, every pricing context, and the mobile sticky CTA. Always render it as a `tel:` link so mobile users can tap to call.
 
