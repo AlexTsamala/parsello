@@ -12,8 +12,8 @@ import { publicImageExists } from "@/lib/assets";
 import { breadcrumbSchema } from "@/lib/schema";
 import { buildMetadata } from "@/lib/seo";
 
-const HERO_IMAGE = "what-you-can-send.jpg";
-const PACKING_IMAGE = "parcel-packed.jpg";
+/** A real packed box is the most persuasive image on this page, so it leads. */
+const HERO_IMAGE = "parcel-packed.jpg";
 
 export const metadata = buildMetadata({
   title: "რისი გაგზავნა შეიძლება ევროპაში",
@@ -24,7 +24,6 @@ export const metadata = buildMetadata({
 
 export default function WhatCanISendPage() {
   const heroImage = publicImageExists(HERO_IMAGE) ? HERO_IMAGE : null;
-  const packingImage = publicImageExists(PACKING_IMAGE) ? PACKING_IMAGE : null;
 
   return (
     <main id="main">
@@ -127,18 +126,6 @@ export default function WhatCanISendPage() {
                 </li>
               ))}
             </ol>
-
-            {packingImage ? (
-              <div className="relative mt-6 aspect-3/4 max-w-56 overflow-hidden rounded-xl border border-line">
-                <Image
-                  src={`/images/${packingImage}`}
-                  alt="შეფუთული ამანათი, მზად გასაგზავნად"
-                  fill
-                  sizes="224px"
-                  className="object-cover"
-                />
-              </div>
-            ) : null}
           </div>
         </div>
       </Section>

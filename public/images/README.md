@@ -44,8 +44,20 @@ The three photographs arrived as PNG data carrying `.jpg` extensions. They were 
 | `food-tkemali.jpg` | 635×357 | acceptable |
 | `food-spices-honey.jpg` | 840×559 | good |
 | `food-wine.jpg` | 1000×666 | good |
-| `parcel-packed.jpg` | 308×411 | too small for a hero; used in the small packing slot only |
+| `parcel-packed.jpg` | 1254×1254 | branded box — hero of /what-can-i-send |
 
 All were supplied with mixed extensions (`.jpeg`, `.webp`) and re-encoded to JPEG at quality 86 so the config can assume `.jpg` throughout.
 
 **Row slots render about 600px wide on desktop and 1200px on a retina screen.** Anything under ~1000px source width will look soft there. Replacing the two 547px images is the single easiest visual upgrade to this page.
+
+## Replacing an image in place
+
+`next/image` caches optimised variants under `.next/cache/images`, keyed by URL — not by file contents. Overwriting a file while keeping its name serves the **old** picture until that cache is cleared:
+
+```
+rm -rf .next/cache/images
+```
+
+Then hard-reload the browser (Cmd+Shift+R), which holds its own copy. Both caches must be cleared or the old image persists.
+
+Always check the real format too — `file public/images/*.jpg`. Supplied images have repeatedly been PNG or WebP data carrying a `.jpg` name; they render, but ship several times the necessary bytes.
