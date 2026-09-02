@@ -12,8 +12,8 @@ import { publicImageExists } from "@/lib/assets";
 import { breadcrumbSchema } from "@/lib/schema";
 import { buildMetadata } from "@/lib/seo";
 
-const HERO_IMAGE = "parcel-packed.jpg";
-const FALLBACK_HERO = "what-you-can-send.jpg";
+const HERO_IMAGE = "what-you-can-send.jpg";
+const PACKING_IMAGE = "parcel-packed.jpg";
 
 export const metadata = buildMetadata({
   title: "რისი გაგზავნა შეიძლება ევროპაში",
@@ -22,17 +22,9 @@ export const metadata = buildMetadata({
   path: "/what-can-i-send",
 });
 
-/**
- * The shareable page the business sends to customers who ask what is allowed
- * (plan §42). The EU animal-products rule is deliberately not on this page —
- * see docs/OPEN-QUESTIONS.md #15.
- */
 export default function WhatCanISendPage() {
-  const heroImage = publicImageExists(HERO_IMAGE)
-    ? HERO_IMAGE
-    : publicImageExists(FALLBACK_HERO)
-      ? FALLBACK_HERO
-      : null;
+  const heroImage = publicImageExists(HERO_IMAGE) ? HERO_IMAGE : null;
+  const packingImage = publicImageExists(PACKING_IMAGE) ? PACKING_IMAGE : null;
 
   return (
     <main id="main">
@@ -58,8 +50,8 @@ export default function WhatCanISendPage() {
             </h1>
 
             <p className="mt-5 max-w-lg text-base text-muted md:text-lg">
-              ქართული პროდუქტი, ტანსაცმელი, საჩუქრები და პირადი ნივთები — გაუგზავნეთ
-              ოჯახს, მეგობრებსა და ახლობლებს ევროპაში.
+              ქართული პროდუქტი, ტანსაცმელი, საჩუქრები და პირადი ნივთები —
+              გაუგზავნეთ ოჯახს, მეგობრებსა და ახლობლებს ევროპაში.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
@@ -106,18 +98,22 @@ export default function WhatCanISendPage() {
             <p className="mt-4 text-muted">
               {business.restrictions.prohibitedSentence}
             </p>
-            <p className="mt-3 text-muted">{business.restrictions.conditional}</p>
+            <p className="mt-3 text-muted">
+              {business.restrictions.conditional}
+            </p>
             <p className="mt-3 text-sm text-muted">
               {business.restrictions.packingLiability}
             </p>
             <p className="mt-5 text-muted">
-              თუ ეჭვი გაქვთ კონკრეტულ ნივთზე, უბრალოდ მოგვწერეთ — გადავამოწმებთ და
-              გიპასუხებთ.
+              თუ ეჭვი გაქვთ კონკრეტულ ნივთზე, უბრალოდ მოგვწერეთ — გადავამოწმებთ
+              და გიპასუხებთ.
             </p>
           </div>
 
           <div className="reveal">
-            <h2 className="text-2xl font-bold md:text-3xl">როგორ შევფუთოთ ამანათი?</h2>
+            <h2 className="text-2xl font-bold md:text-3xl">
+              როგორ შევფუთოთ ამანათი?
+            </h2>
             <ol className="mt-6 space-y-3">
               {business.packaging.map((step, index) => (
                 <li key={step} className="flex gap-3">
@@ -131,13 +127,27 @@ export default function WhatCanISendPage() {
                 </li>
               ))}
             </ol>
+
+            {packingImage ? (
+              <div className="relative mt-6 aspect-3/4 max-w-56 overflow-hidden rounded-xl border border-line">
+                <Image
+                  src={`/images/${packingImage}`}
+                  alt="შეფუთული ამანათი, მზად გასაგზავნად"
+                  fill
+                  sizes="224px"
+                  className="object-cover"
+                />
+              </div>
+            ) : null}
           </div>
         </div>
       </Section>
 
       <section className="bg-charcoal text-white">
         <div className="container-page py-16 text-center md:py-20">
-          <h2 className="text-2xl font-bold md:text-4xl">გსურთ ამანათის გაგზავნა?</h2>
+          <h2 className="text-2xl font-bold md:text-4xl">
+            გსურთ ამანათის გაგზავნა?
+          </h2>
           <p className="mx-auto mt-4 max-w-xl text-white/70">
             მოგვწერეთ ამანათის შიგთავსი და დანიშნულების ქვეყანა — ზუსტ ფასს
             დაგიანგარიშებთ.
