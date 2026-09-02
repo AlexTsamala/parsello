@@ -7,6 +7,7 @@ import {
   RichCountrySections,
 } from "@/components/country/RichCountrySections";
 import { FaqSection } from "@/components/home/FaqSection";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Button } from "@/components/ui/Button";
 import { Section, SectionHeading } from "@/components/ui/Section";
@@ -15,6 +16,7 @@ import { countries, getCountry, relatedCountries } from "@/content/countries";
 import { featuredFaqs } from "@/content/faq";
 import { howItWorksSteps } from "@/content/how-it-works";
 import { euImportRules } from "@/content/shipping-rules";
+import { breadcrumbSchema, faqSchema } from "@/lib/schema";
 import { buildMetadata } from "@/lib/seo";
 
 /**
@@ -68,6 +70,17 @@ export default async function CountryPage({
 
   return (
     <main id="main">
+      <JsonLd
+        data={[
+          breadcrumbSchema([
+            { name: "მთავარი", path: "/" },
+            { name: "მიმართულებები", path: "/countries" },
+            { name: country.nameKa, path: `/countries/${country.slug}` },
+          ]),
+          /* Exactly the Q&As rendered by <FaqSection /> below. */
+          faqSchema(faqItems),
+        ]}
+      />
       <section className="border-b border-line bg-surface">
         <div className="container-page py-10 md:py-16">
           <Breadcrumbs

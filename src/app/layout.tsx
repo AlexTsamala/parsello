@@ -4,7 +4,9 @@ import { Noto_Sans_Georgian } from "next/font/google";
 import { Footer } from "@/components/layout/Footer";
 import { MobileStickyCta } from "@/components/layout/MobileStickyCta";
 import { Navbar } from "@/components/layout/Navbar";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { business, siteUrl } from "@/content/business";
+import { organizationSchema, websiteSchema } from "@/lib/schema";
 
 import "./globals.css";
 
@@ -42,6 +44,7 @@ export default function RootLayout({
         >
           გადასვლა მთავარ კონტენტზე
         </a>
+        <JsonLd data={[organizationSchema(), websiteSchema()]} />
         <Navbar />
         {/* Bottom padding clears the mobile sticky CTA bar. */}
         <div className="pb-20 md:pb-0">{children}</div>
