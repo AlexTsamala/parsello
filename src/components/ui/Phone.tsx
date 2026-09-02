@@ -14,7 +14,7 @@ export function PhoneButton({
   className,
 }: {
   size?: "md" | "lg";
-  variant?: "primary" | "secondary";
+  variant?: "primary" | "secondary" | "onDark";
   className?: string;
 }) {
   return (

@@ -128,8 +128,7 @@ export default function FaqPage() {
               <Button
                 href={business.facebookUrl}
                 size="lg"
-                variant="secondary"
-                className="border-white/25 bg-transparent text-white hover:border-white hover:bg-white/10"
+                variant="onDark"
               >
                 Facebook-ზე მოწერა
               </Button>

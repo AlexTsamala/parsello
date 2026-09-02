@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 
-type Variant = "primary" | "secondary" | "ghost";
+type Variant = "primary" | "secondary" | "ghost" | "onDark";
 type Size = "md" | "lg";
 
 const base =
@@ -13,6 +13,14 @@ const variants: Record<Variant, string> = {
   secondary:
     "border border-line bg-white text-charcoal hover:border-charcoal hover:bg-surface",
   ghost: "text-charcoal hover:text-brand",
+  /**
+   * For charcoal sections. Use this instead of passing dark colours through
+   * `className`: those collide with the `secondary` background utility and
+   * Tailwind resolves the conflict by stylesheet order, which produced white
+   * text on a white button.
+   */
+  onDark:
+    "border border-white/30 bg-transparent text-white hover:border-white hover:bg-white/10",
 };
 
 const sizes: Record<Size, string> = {

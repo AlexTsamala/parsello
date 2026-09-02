@@ -155,7 +155,7 @@ export default async function BlogPostPage({
             <Button href="/contact" size="lg">
               ამანათის გაგზავნა
             </Button>
-            <PhoneButton size="lg" variant="secondary" className="border-white/25 bg-transparent text-white hover:border-white hover:bg-white/10" />
+            <PhoneButton size="lg" variant="onDark" />
           </div>
         </div>
       </section>
