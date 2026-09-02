@@ -1,12 +1,12 @@
-import Link from "next/link";
-
 import { Logo } from "@/components/layout/Logo";
 import { MobileMenu } from "@/components/layout/MobileMenu";
+import { NavLinks } from "@/components/layout/NavLinks";
 import { Button } from "@/components/ui/Button";
-import { mainNav, primaryCta } from "@/content/navigation";
+import { primaryCta } from "@/content/navigation";
 
 /**
- * Server Component — only the mobile menu ships JavaScript.
+ * Desktop nav appears at `lg`, not `md`: six Georgian labels plus the logo and
+ * CTA do not fit a 768px row. Below that the hamburger menu takes over.
  */
 export function Navbar() {
   return (
@@ -14,23 +14,10 @@ export function Navbar() {
       <div className="container-page flex h-16 items-center justify-between gap-4">
         <Logo />
 
-        <nav aria-label="მთავარი ნავიგაცია" className="hidden md:block">
-          <ul className="flex items-center gap-7">
-            {mainNav.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className="text-[15px] text-charcoal transition-colors hover:text-brand"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <NavLinks />
 
         <div className="flex items-center gap-1">
-          <Button href={primaryCta.href} className="hidden md:inline-flex">
+          <Button href={primaryCta.href} className="hidden lg:inline-flex">
             {primaryCta.label}
           </Button>
           <MobileMenu />

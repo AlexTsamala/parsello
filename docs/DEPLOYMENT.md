@@ -54,7 +54,7 @@ The site is fully static — every route prerenders — so any static host works
 - JSON-LD: Organization + WebSite site-wide, BreadcrumbList, FAQPage where FAQs are visible, Article on blog posts
 - One `<h1>` per page, logical `h2`/`h3` order
 - `lang="ka"`, Georgian-capable webfont, skip link, visible focus states
-- Static prerendering for all 15 routes; the mobile menu is the only client component
+- Static prerendering for all 15 routes; only the mobile menu and the desktop nav (for active-link highlighting) ship client JS
 
 ## Verified on 2026-09-02
 

@@ -5,12 +5,9 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/Button";
-import { mainNav, primaryCta } from "@/content/navigation";
+import { isActivePath, mainNav, primaryCta } from "@/content/navigation";
 
-/**
- * The only interactive part of the navbar, isolated so the rest of the header
- * stays a Server Component (CLAUDE.md §7).
- */
+/** Hamburger menu below `lg`, where the desktop nav is hidden. */
 export function MobileMenu() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
@@ -32,7 +29,7 @@ export function MobileMenu() {
   }, [open]);
 
   return (
-    <div className="md:hidden">
+    <div className="lg:hidden">
       <button
         type="button"
         onClick={() => setOpen((value) => !value)}
@@ -68,8 +65,7 @@ export function MobileMenu() {
         <nav aria-label="მობილური ნავიგაცია">
           <ul className="flex flex-col">
             {mainNav.map((link) => {
-              const isActive =
-                link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
+              const isActive = isActivePath(pathname, link.href);
 
               return (
                 <li key={link.href}>
