@@ -105,10 +105,25 @@ Rules:
 ## 8. Git workflow
 
 - **Commit each time a feature or phase is complete** and the build passes — not at the end of everything.
-- **Commit messages: 1–2 sentences, plain and factual.** No bullet lists, no long bodies, no ceremony.
-  - Good: `Add homepage hero and trust sections`
-  - Good: `Generate country pages from typed config with per-country metadata`
+- **Every commit message starts with a type prefix**, then a colon and a short description:
+
+  | Prefix | Use for |
+  |---|---|
+  | `feat` | A new page, section, component, or capability |
+  | `fix` | Incorrect behaviour, wrong output, broken markup or grammar |
+  | `content` | Business copy — country pages, FAQ answers, blog posts, wording |
+  | `docs` | `CLAUDE.md`, anything in `docs/`, README |
+  | `chore` | Config, dependencies, tooling, assets |
+  | `refactor` | Restructuring with no change in behaviour |
+  | `style` | Formatting only |
+
+- **Keep it to 1–2 sentences, plain and factual.** Lowercase after the colon, imperative mood, no trailing period. No bullet lists, no long bodies, no ceremony.
+  - Good: `feat: add homepage hero and trust sections`
+  - Good: `content: add Poland page copy with city keywords`
+  - Good: `fix: correct Georgian noun inflection in prohibited-items sentence`
+  - Bad: `Updated some stuff` — no prefix, says nothing
   - Bad: multi-paragraph messages explaining every file changed
+- **One type per commit.** If a change is both a `feat` and a `docs`, split it into two commits.
 - Never commit `plan.md`, `.env*`, or unverified business data.
 - Don't push, tag, or open PRs unless asked.
 
