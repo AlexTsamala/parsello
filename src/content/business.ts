@@ -26,10 +26,10 @@ export const business = {
   /** TODO: awaiting business. */
   email: null as string | null,
 
-  /** TODO: awaiting business — needed for the contact page and LocalBusiness schema. */
-  address: "III კვარტალი II-ა კორპუსი, გრიგოლ რობაქიძის 4, თბილისი, ",
+  /** Confirmed drop-off address. */
+  address: "გრიგოლ რობაქიძის 4, III კვარტალი, II-ა კორპუსი, თბილისი",
 
-  /** TODO: awaiting business. */
+  /** Confirmed. */
   workingHours: "8 AM – 10 PM",
 
   /**
@@ -77,8 +77,14 @@ export const business = {
 
   /** Confirmed restrictions. Only what the business has actually stated. */
   restrictions: {
-    /** Not sent at all. */
+    /** Not sent at all. Nominative — use this for lists. */
     prohibited: ["მედიკამენტები"],
+    /**
+     * Ready-made sentence. Georgian inflects the noun (მედიკამენტები →
+     * მედიკამენტებს), so a sentence cannot be built by concatenating a suffix
+     * onto the list. Write the sentence here; never assemble it in JSX.
+     */
+    prohibitedSentence: "არ ვაგზავნით მედიკამენტებს.",
     /** Accepted, but with a condition the customer must meet. */
     conditional:
       "მინის ნივთები სათანადოდ უნდა იყოს შეფუთული, რომ ტრანსპორტირებისას არ დაზიანდეს.",

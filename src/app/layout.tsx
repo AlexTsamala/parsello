@@ -46,7 +46,6 @@ export default function RootLayout({
         </a>
         <JsonLd data={[organizationSchema(), websiteSchema()]} />
         <Navbar />
-        {/* Bottom padding clears the mobile sticky CTA bar. */}
         <div className="pb-20 md:pb-0">{children}</div>
         <Footer />
         <MobileStickyCta />

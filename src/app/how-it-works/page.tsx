@@ -80,7 +80,7 @@ export default function HowItWorksPage() {
           <div>
             <h2 className="text-2xl font-bold md:text-3xl">რაზე უნდა მიაქციოთ ყურადღება</h2>
             <p className="mt-6 text-muted">
-              არ ვაგზავნით {business.restrictions.prohibited.join(", ")}-ს.
+              {business.restrictions.prohibitedSentence}
             </p>
             <p className="mt-3 text-muted">{business.restrictions.conditional}</p>
             <p className="mt-3 text-sm text-muted">{business.restrictions.packingLiability}</p>

@@ -63,7 +63,7 @@ export const posts: BlogPost[] = [
       {
         heading: "რისი გაგზავნა არ შეიძლება?",
         body: [
-          `Parcello არ აგზავნის ${business.restrictions.prohibited.join(", ")}-ს.`,
+          business.restrictions.prohibitedSentence,
           business.restrictions.conditional,
           `${business.restrictions.packingLiability} სწორედ ამიტომ ღირს დროის დათმობა სათანადო შეფუთვაზე, განსაკუთრებით მსხვრევადი ნივთების შემთხვევაში.`,
         ],

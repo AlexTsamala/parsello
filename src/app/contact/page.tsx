@@ -5,9 +5,9 @@ import { business } from "@/content/business";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "კონტაქტი და შეკვეთა",
+  title: "კონტაქტი და ამანათის გაგზავნა",
   description:
-    "დაიწყეთ ამანათის შეკვეთა Parcello-სთან — დაგვირეკეთ ან მოგვწერეთ Facebook-ზე. მოგვწერეთ ქვეყანა, წონა და შიგთავსი, და ზუსტ ფასს დაგიანგარიშებთ.",
+    "დაიწყეთ ამანათის გაგზავნა Parcello-სთან — დაგვირეკეთ ან მოგვწერეთ Facebook-ზე. მოგვწერეთ ქვეყანა, წონა და შიგთავსი, და ზუსტ ფასს დაგიანგარიშებთ.",
   path: "/contact",
 });
 
@@ -22,7 +22,10 @@ const orderDetails = [
   { label: "დანიშნულების ქვეყანა და ქალაქი", hint: "სად იგზავნება ამანათი" },
   { label: "ამანათის დაახლოებითი წონა", hint: "ფასის დასათვლელად" },
   { label: "ამანათის შიგთავსი", hint: "რა ნივთებია ყუთში" },
-  { label: "ამანათის აღების ადგილი", hint: "კურიერს გადააბარებთ თუ თავად ჩააბარებთ" },
+  {
+    label: "ამანათის აღების ადგილი",
+    hint: "კურიერს გადააბარებთ თუ თავად ჩააბარებთ",
+  },
 ];
 
 export default function ContactPage() {
@@ -30,13 +33,15 @@ export default function ContactPage() {
     <main id="main">
       <section className="border-b border-line bg-surface">
         <div className="container-page py-10 md:py-16">
-          <Breadcrumbs items={[{ href: "/", label: "მთავარი" }, { label: "კონტაქტი" }]} />
+          <Breadcrumbs
+            items={[{ href: "/", label: "მთავარი" }, { label: "კონტაქტი" }]}
+          />
           <h1 className="mt-6 max-w-3xl text-3xl font-bold md:text-5xl">
-            ამანათის შეკვეთა
+            ამანათის გაგზავნა
           </h1>
           <p className="mt-5 max-w-2xl text-base text-muted md:text-lg">
-            შეკვეთის დასაწყებად დაგვირეკეთ ან მოგვწერეთ Facebook-ზე. ქვემოთ ჩამოთვლილი
-            ინფორმაცია დაგვეხმარება, რომ ზუსტი ფასი მალევე გითხრათ.
+            ამანათის გასაგზავნად დაგვირეკეთ ან მოგვწერეთ Facebook-ზე. ქვემოთ
+            ჩამოთვლილი ინფორმაცია დაგვეხმარება, რომ ზუსტი ფასი მალევე გითხრათ.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
@@ -55,7 +60,9 @@ export default function ContactPage() {
       <Section>
         <div className="grid gap-10 md:grid-cols-2">
           <div>
-            <h2 className="text-2xl font-bold md:text-3xl">რა მოგვწეროთ შეკვეთისას</h2>
+            <h2 className="text-2xl font-bold md:text-3xl">
+              რა მოგვწეროთ შეკვეთისას
+            </h2>
             <ul className="mt-6 space-y-4">
               {orderDetails.map((item, index) => (
                 <li key={item.label} className="flex gap-4">
@@ -67,7 +74,9 @@ export default function ContactPage() {
                   </span>
                   <span>
                     <span className="block font-medium">{item.label}</span>
-                    <span className="block text-sm text-muted">{item.hint}</span>
+                    <span className="block text-sm text-muted">
+                      {item.hint}
+                    </span>
                   </span>
                 </li>
               ))}
@@ -75,11 +84,15 @@ export default function ContactPage() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold md:text-3xl">საკონტაქტო არხები</h2>
+            <h2 className="text-2xl font-bold md:text-3xl">
+              საკონტაქტო არხები
+            </h2>
 
             <dl className="mt-6 space-y-5">
               <div>
-                <dt className="text-sm font-semibold tracking-wide text-muted">ტელეფონი</dt>
+                <dt className="text-sm font-semibold tracking-wide text-muted">
+                  ტელეფონი
+                </dt>
                 <dd className="mt-1">
                   <a
                     href={`tel:${business.phone.tel}`}
@@ -90,9 +103,29 @@ export default function ContactPage() {
                 </dd>
               </div>
 
+              {business.address ? (
+                <div>
+                  <dt className="text-sm font-semibold tracking-wide text-muted">
+                    მისამართი
+                  </dt>
+                  <dd className="mt-1 font-medium">{business.address}</dd>
+                </div>
+              ) : null}
+
+              {business.workingHours ? (
+                <div>
+                  <dt className="text-sm font-semibold tracking-wide text-muted">
+                    სამუშაო საათები
+                  </dt>
+                  <dd className="mt-1 font-medium">{business.workingHours}</dd>
+                </div>
+              ) : null}
+
               {business.facebookUrl ? (
                 <div>
-                  <dt className="text-sm font-semibold tracking-wide text-muted">Facebook</dt>
+                  <dt className="text-sm font-semibold tracking-wide text-muted">
+                    Facebook
+                  </dt>
                   <dd className="mt-1">
                     <a
                       href={business.facebookUrl}
@@ -108,7 +141,9 @@ export default function ContactPage() {
 
               {business.instagramUrl ? (
                 <div>
-                  <dt className="text-sm font-semibold tracking-wide text-muted">Instagram</dt>
+                  <dt className="text-sm font-semibold tracking-wide text-muted">
+                    Instagram
+                  </dt>
                   <dd className="mt-1">
                     <a
                       href={business.instagramUrl}

@@ -17,11 +17,9 @@ export const metadata = buildMetadata({
   path: "/",
 });
 
-/** Section order follows the visual hierarchy in plan §33. */
 export default function HomePage() {
   return (
     <main id="main">
-      {/* These exact Q&As are rendered below by <FaqSection />. */}
       <JsonLd data={faqSchema(featuredFaqs)} />
       <Hero />
       <TrustSection />

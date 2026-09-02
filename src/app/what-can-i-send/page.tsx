@@ -99,7 +99,7 @@ export default function WhatCanISendPage() {
           <div>
             <h2 className="text-2xl font-bold md:text-3xl">რისი გაგზავნა არ შეიძლება?</h2>
             <p className="mt-4 text-muted">
-              არ ვაგზავნით {business.restrictions.prohibited.join(", ")}-ს.
+              {business.restrictions.prohibitedSentence}
             </p>
             <p className="mt-3 text-muted">{business.restrictions.conditional}</p>
             <p className="mt-3 text-sm text-muted">

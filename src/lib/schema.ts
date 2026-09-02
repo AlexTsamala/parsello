@@ -6,8 +6,10 @@ import { business, siteUrl } from "@/content/business";
  * RULES (CLAUDE.md §1 rule 5): structured data must match what the page
  * visibly says, and may never contain invented information.
  *  - No `Offer`, `price`, or `priceRange` anywhere — pricing is never published.
- *  - No `address` / LocalBusiness until the business supplies a real address;
- *    `Organization` is used instead.
+ *  - `LocalBusiness` (a subtype of Organization) is used now that a real
+ *    street address exists. `openingHoursSpecification` is deliberately absent:
+ *    the business stated hours (8 AM – 10 PM) but not which days, and schema
+ *    requires days — see docs/OPEN-QUESTIONS.md.
  *  - `FAQPage` only on pages that visibly render those exact Q&As.
  *  - `areaServed` is Europe, not the six priority countries (see business.coverage).
  */
@@ -22,7 +24,7 @@ export function organizationSchema() {
 
   return {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": "LocalBusiness",
     "@id": url("/#organization"),
     name: business.name,
     url: siteUrl,
@@ -32,6 +34,18 @@ export function organizationSchema() {
       "ამანათების გაგზავნა საქართველოდან ევროპის მიმართულებით.",
     telephone: business.phone.tel,
     areaServed: { "@type": "Place", name: "Europe" },
+    ...(business.address
+      ? {
+          address: {
+            "@type": "PostalAddress",
+            // The display string ends with the city; schema keeps the city only
+            // in addressLocality, so strip it from streetAddress.
+            streetAddress: business.address.replace(/,\s*თბილისი\s*$/, ""),
+            addressLocality: "თბილისი",
+            addressCountry: "GE",
+          },
+        }
+      : {}),
     ...(sameAs.length ? { sameAs } : {}),
     contactPoint: {
       "@type": "ContactPoint",

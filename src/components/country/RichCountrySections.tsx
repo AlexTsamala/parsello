@@ -51,17 +51,22 @@ export function RichCountrySections({ country }: { country: Country }) {
   const content = country.content;
   if (!content) return null;
 
-  const afterIntro = content.narrative?.filter((b) => b.placement === "afterIntro") ?? [];
+  const afterIntro =
+    content.narrative?.filter((b) => b.placement === "afterIntro") ?? [];
   const beforePricing =
     content.narrative?.filter((b) => b.placement === "beforePricing") ?? [];
 
   return (
     <>
-      {afterIntro.length ? <Narrative blocks={afterIntro} tone="surface" /> : null}
+      {afterIntro.length ? (
+        <Narrative blocks={afterIntro} tone="surface" />
+      ) : null}
 
       <Section>
         <div className="max-w-3xl">
-          <h2 className="text-2xl font-bold md:text-3xl">{content.why.heading}</h2>
+          <h2 className="text-2xl font-bold md:text-3xl">
+            {content.why.heading}
+          </h2>
           {content.why.body.map((paragraph) => (
             <p key={paragraph} className="mt-4 text-muted">
               {paragraph}
@@ -78,7 +83,10 @@ export function RichCountrySections({ country }: { country: Country }) {
 
         <ol className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {content.steps.items.map((step, index) => (
-            <li key={step.title} className="rounded-xl border border-line bg-white p-6">
+            <li
+              key={step.title}
+              className="rounded-xl border border-line bg-white p-6"
+            >
               <span
                 className="inline-flex size-9 items-center justify-center rounded-lg bg-brand-soft text-base font-bold text-brand"
                 aria-hidden="true"
@@ -95,7 +103,9 @@ export function RichCountrySections({ country }: { country: Country }) {
       <Section>
         <div className="grid gap-10 md:grid-cols-2">
           <div>
-            <h2 className="text-2xl font-bold md:text-3xl">{content.sendable.heading}</h2>
+            <h2 className="text-2xl font-bold md:text-3xl">
+              {content.sendable.heading}
+            </h2>
             <p className="mt-4 text-muted">{content.sendable.intro}</p>
 
             <ul className="mt-6 space-y-2.5">
@@ -135,7 +145,9 @@ export function RichCountrySections({ country }: { country: Country }) {
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold md:text-3xl">{content.cities.heading}</h2>
+            <h2 className="text-2xl font-bold md:text-3xl">
+              {content.cities.heading}
+            </h2>
             <p className="mt-4 text-muted">{content.cities.intro}</p>
 
             <ul className="mt-6 flex flex-wrap gap-2">
@@ -154,11 +166,16 @@ export function RichCountrySections({ country }: { country: Country }) {
         </div>
       </Section>
 
-      {beforePricing.length ? <Narrative blocks={beforePricing} tone="surface" /> : null}
+      {beforePricing.length ? (
+        <Narrative blocks={beforePricing} tone="surface" />
+      ) : null}
 
       <Section tone={beforePricing.length ? "white" : "surface"}>
         <div className="grid gap-8 md:grid-cols-2 md:items-center">
-          <SectionHeading title={content.pricing.heading} description={content.pricing.body} />
+          <SectionHeading
+            title={content.pricing.heading}
+            description={content.pricing.body}
+          />
 
           <div className="rounded-2xl border border-line bg-white p-7">
             <p className="font-semibold">{content.pricing.emphasis}</p>
@@ -168,7 +185,11 @@ export function RichCountrySections({ country }: { country: Country }) {
                 {business.phone.display}
               </Button>
               {business.facebookUrl ? (
-                <Button href={business.facebookUrl} size="lg" variant="secondary">
+                <Button
+                  href={business.facebookUrl}
+                  size="lg"
+                  variant="secondary"
+                >
                   Facebook-ზე მოწერა
                 </Button>
               ) : null}
@@ -190,12 +211,16 @@ export function RichCountryCta({ country }: { country: Country }) {
         <h2 className="mx-auto max-w-3xl text-2xl font-bold md:text-4xl">
           {content.cta.heading}
         </h2>
-        <p className="mx-auto mt-4 max-w-xl text-white/70">{content.cta.body}</p>
-        <p className="mx-auto mt-2 max-w-xl font-semibold">{content.cta.emphasis}</p>
+        <p className="mx-auto mt-4 max-w-xl text-white/70">
+          {content.cta.body}
+        </p>
+        <p className="mx-auto mt-2 max-w-xl font-semibold">
+          {content.cta.emphasis}
+        </p>
 
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           <Button href="/contact" size="lg">
-            ამანათის შეკვეთა
+            ამანათის გაგზავნა
           </Button>
           {business.facebookUrl ? (
             <Button

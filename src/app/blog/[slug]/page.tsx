@@ -63,8 +63,13 @@ export default async function BlogPostPage({
                 { label: post.title },
               ]}
             />
-            <h1 className="mt-6 max-w-3xl text-3xl font-bold md:text-5xl">{post.title}</h1>
-            <time dateTime={post.publishedAt} className="mt-5 block text-sm text-muted">
+            <h1 className="mt-6 max-w-3xl text-3xl font-bold md:text-5xl">
+              {post.title}
+            </h1>
+            <time
+              dateTime={post.publishedAt}
+              className="mt-5 block text-sm text-muted"
+            >
               {new Date(post.publishedAt).toLocaleDateString("ka-GE", {
                 year: "numeric",
                 month: "long",
@@ -78,7 +83,9 @@ export default async function BlogPostPage({
           <div className="max-w-3xl">
             {post.sections.map((section) => (
               <div key={section.heading} className="mt-10 first:mt-0">
-                <h2 className="text-2xl font-bold md:text-3xl">{section.heading}</h2>
+                <h2 className="text-2xl font-bold md:text-3xl">
+                  {section.heading}
+                </h2>
 
                 {section.body.map((paragraph) => (
                   <p key={paragraph} className="mt-4 text-muted">
@@ -137,13 +144,16 @@ export default async function BlogPostPage({
 
       <section className="bg-charcoal text-white">
         <div className="container-page py-16 text-center md:py-20">
-          <h2 className="text-2xl font-bold md:text-4xl">გსურთ ამანათის გაგზავნა?</h2>
+          <h2 className="text-2xl font-bold md:text-4xl">
+            გსურთ ამანათის გაგზავნა?
+          </h2>
           <p className="mx-auto mt-4 max-w-xl text-white/70">
-            დაიწყეთ შეკვეთა Parcello-სთან — დაგვირეკეთ ან მოგვწერეთ Facebook-ზე.
+            დაიწყეთ ამანათს გაგზავნა Parcello-სთან — დაგვირეკეთ ან მოგვწერეთ
+            Facebook-ზე.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Button href="/contact" size="lg">
-              ამანათის შეკვეთა
+              ამანათის გაგზავნა
             </Button>
             <Button
               href={`tel:${business.phone.tel}`}

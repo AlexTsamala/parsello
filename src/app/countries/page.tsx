@@ -82,9 +82,6 @@ export default function CountriesPage() {
                 <span className="mt-3 font-semibold group-hover:text-brand">
                   {country.nameKaIn} ამანათის გაგზავნა
                 </span>
-                <span className="mt-2 text-sm text-muted">
-                  დღგ {country.vatRate} · {country.currency}
-                </span>
               </Link>
             </li>
           ))}

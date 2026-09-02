@@ -47,7 +47,7 @@ export const faqs: FaqItem[] = [
   },
   {
     question: "რისი გაგზავნა არ შეიძლება?",
-    answer: `არ ვაგზავნით ${business.restrictions.prohibited.join(", ")}-ს. ${business.restrictions.conditional} ${business.restrictions.packingLiability}`,
+    answer: `${business.restrictions.prohibitedSentence} ${business.restrictions.conditional} ${business.restrictions.packingLiability}`,
     featured: true,
   },
   {

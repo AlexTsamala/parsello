@@ -26,13 +26,8 @@ export function CountriesSection() {
               <span className="text-3xl" aria-hidden="true">
                 {country.flag}
               </span>
-              <span>
-                <span className="block font-semibold group-hover:text-brand">
-                  {country.nameKaIn} ამანათის გაგზავნა
-                </span>
-                <span className="mt-1 block text-sm text-muted">
-                  დღგ {country.vatRate} · {country.currency}
-                </span>
+              <span className="font-semibold group-hover:text-brand">
+                {country.nameKaIn} ამანათის გაგზავნა
               </span>
             </Link>
           </li>
