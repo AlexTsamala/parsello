@@ -97,20 +97,20 @@ export const business = {
    */
   coverage: {
     scope: "ვაგზავნით ამანათებს ევროპის მასშტაბით, ნებისმიერ ქვეყანაში.",
-    priorityNote:
-      "ქვემოთ ჩამოთვლილია ჩვენი ძირითადი მიმართულებები. თუ თქვენი ქვეყანა სიაში არ არის, დაგვიკავშირდით — გაგზავნას შევათანხმებთ.",
+    priorityNote: "ქვემოთ ჩამოთვლილია ჩვენი ძირითადი მიმართულებები.",
   },
 
   /** Confirmed restrictions. Only what the business has actually stated. */
   restrictions: {
     /** Not sent at all. Nominative — use this for lists. */
-    prohibited: ["მედიკამენტები"],
+    prohibited: ["მედიკამენტები", "კანონით აკრძალული ნივთები"],
     /**
      * Ready-made sentence. Georgian inflects the noun (მედიკამენტები →
      * მედიკამენტებს), so a sentence cannot be built by concatenating a suffix
      * onto the list. Write the sentence here; never assemble it in JSX.
      */
-    prohibitedSentence: "არ ვაგზავნით მედიკამენტებს.",
+    prohibitedSentence:
+      "არ ვაგზავნით მედიკამენტებს, ასევე კანონით აკრძალულ ნივთებს — მათ შორის იარაღსა და ნარკოტიკულ საშუალებებს.",
     /** Accepted, but with a condition the customer must meet. */
     conditional:
       "მინის ნივთები სათანადოდ უნდა იყოს შეფუთული, რომ ტრანსპორტირებისას არ დაზიანდეს.",
