@@ -26,6 +26,21 @@
   /* Typography */
   --font-sans: var(--font-noto-georgian), ui-sans-serif, system-ui, sans-serif;
 
+  /**
+   * Heading line-heights, loosened for Georgian.
+   *
+   * Tailwind's font-size utilities carry their own line-height — `text-5xl`
+   * ships `1`, `text-4xl` about `1.11`. Those are tuned for Latin text and are
+   * far too tight for mkhedruli, whose ascenders and descenders (ღ, ვ, ჯ, ყ, ბ)
+   * collide between lines. Overriding here fixes every heading on the site at
+   * once; do not patch individual pages with `leading-*`.
+   */
+  --text-xl--line-height: 1.45;
+  --text-2xl--line-height: 1.4;
+  --text-3xl--line-height: 1.35;
+  --text-4xl--line-height: 1.3;
+  --text-5xl--line-height: 1.25;
+
   /* Motion — subtle only (CLAUDE.md §4) */
   --animate-fade-up: fade-up 0.5s ease-out both;
 }
@@ -63,7 +78,8 @@
   h1,
   h2,
   h3 {
-    line-height: 1.2;
+    /* Fallback for headings without an explicit text-size utility. */
+    line-height: 1.3;
     text-wrap: balance;
     font-weight: 700;
   }

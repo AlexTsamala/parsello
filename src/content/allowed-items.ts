@@ -42,7 +42,7 @@ export const sendableCategories: SendableCategory[] = [
   },
   {
     slug: "tkemali",
-    title: "ტყემალი და საკაზმები",
+    title: "ტყემალი",
     body: "ქილაში ჩაწყობილი პროდუქტი განსაკუთრებულ ყურადღებას საჭიროებს — მინის ნივთები სათანადოდ უნდა შეიფუთოს, რომ გზაში არ დაზიანდეს.",
     image: "food-tkemali.jpg",
     alt: "ტყემალი ქილებში ამანათისთვის",

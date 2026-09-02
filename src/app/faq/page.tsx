@@ -41,7 +41,10 @@ export default function FaqPage() {
       <section className="border-b border-line bg-surface">
         <div className="container-page py-10 md:py-16">
           <Breadcrumbs
-            items={[{ href: "/", label: "მთავარი" }, { label: "ხშირად დასმული კითხვები" }]}
+            items={[
+              { href: "/", label: "მთავარი" },
+              { label: "ხშირად დასმული კითხვები" },
+            ]}
           />
           <h1 className="mt-6 max-w-3xl text-3xl font-bold md:text-5xl">
             ხშირად დასმული კითხვები
@@ -82,15 +85,20 @@ export default function FaqPage() {
       </Section>
 
       <Section tone="surface">
-        <h2 className="text-2xl font-bold md:text-3xl">ევროკავშირის საბაჟო წესები</h2>
+        <h2 className="text-2xl font-bold md:text-3xl">
+          ევროკავშირის საბაჟო წესები
+        </h2>
         <p className="mt-3 max-w-2xl text-muted">
-          ქვემოთ მოცემულია ევროკავშირის ოფიციალური წესები, რომლებიც ამანათის მიღებაზე
-          მოქმედებს. ეს Parcello-ს პირობები არ არის.
+          ქვემოთ მოცემულია ევროკავშირის ოფიციალური წესები, რომლებიც ამანათის
+          მიღებაზე მოქმედებს. ეს Parcello-ს პირობები არ არის.
         </p>
 
         <ul className="mt-8 grid gap-4 md:grid-cols-2">
           {rules.map((fact) => (
-            <li key={fact.id} className="rounded-xl border border-line bg-white p-6">
+            <li
+              key={fact.id}
+              className="rounded-xl border border-line bg-white p-6"
+            >
               <h3 className="font-semibold">{fact.title}</h3>
               <p className="mt-2 text-sm text-muted">{fact.body}</p>
             </li>
@@ -118,18 +126,14 @@ export default function FaqPage() {
 
       <section className="bg-charcoal text-white">
         <div className="container-page py-16 text-center md:py-20">
-          <h2 className="text-2xl font-bold md:text-4xl">კითხვა დაგრჩათ?</h2>
+          <h2 className="text-2xl font-bold md:text-4xl">გაქვთ კითხვა?</h2>
           <p className="mx-auto mt-4 max-w-xl text-white/70">
-            დაგვირეკეთ ან მოგვწერეთ Facebook-ზე — სწრაფად გიპასუხებთ.
+            დაგვირეკეთ ან მოგვწერეთ Facebook-ზე — ჩვენ მაშინვე გიპასუხებთ.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <PhoneButton size="lg" />
             {business.facebookUrl ? (
-              <Button
-                href={business.facebookUrl}
-                size="lg"
-                variant="onDark"
-              >
+              <Button href={business.facebookUrl} size="lg" variant="onDark">
                 Facebook-ზე მოწერა
               </Button>
             ) : null}
