@@ -1,41 +1,56 @@
 import Image from "next/image";
 
+import { CategoryRow } from "@/components/sendable/CategoryRow";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Button } from "@/components/ui/Button";
 import { PhoneButton } from "@/components/ui/Phone";
-import { Section, SectionHeading } from "@/components/ui/Section";
-import { allowedItems } from "@/content/allowed-items";
+import { Section } from "@/components/ui/Section";
+import { sendableCategories } from "@/content/allowed-items";
 import { business } from "@/content/business";
 import { publicImageExists } from "@/lib/assets";
+import { breadcrumbSchema } from "@/lib/schema";
 import { buildMetadata } from "@/lib/seo";
 
-const HERO_IMAGE = "what-you-can-send.jpg";
+const HERO_IMAGE = "parcel-packed.jpg";
+const FALLBACK_HERO = "what-you-can-send.jpg";
 
 export const metadata = buildMetadata({
   title: "რისი გაგზავნა შეიძლება ევროპაში",
   description:
-    "რა ნივთების გაგზავნა შეიძლება საქართველოდან ევროპაში ამანათით — ტანსაცმელი, საჩუქრები, პირადი ნივთები და სხვა. გაიგეთ შეზღუდვები და შეფუთვის წესები.",
+    "რა ნივთების გაგზავნა შეიძლება საქართველოდან ევროპაში — ჩურჩხელა, ყველი, ტყემალი, ღვინო, ტანსაცმელი და პირადი ნივთები. გაიგეთ შეზღუდვები და შეფუთვის წესები.",
   path: "/what-can-i-send",
 });
 
 /**
- * The business's own list of what customers send, published as the shareable
- * link they hand to customers who ask (plan §42).
- *
- * The EU animal-products rule is deliberately NOT on this page — see
- * docs/OPEN-QUESTIONS.md #15. Do not add it, and do not edit the list to agree
- * with it, until the business has answered.
+ * The shareable page the business sends to customers who ask what is allowed
+ * (plan §42). The EU animal-products rule is deliberately not on this page —
+ * see docs/OPEN-QUESTIONS.md #15.
  */
 export default function WhatCanISendPage() {
-  const hasPhoto = publicImageExists(HERO_IMAGE);
+  const heroImage = publicImageExists(HERO_IMAGE)
+    ? HERO_IMAGE
+    : publicImageExists(FALLBACK_HERO)
+      ? FALLBACK_HERO
+      : null;
 
   return (
     <main id="main">
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "მთავარი", path: "/" },
+          { name: "რისი გაგზავნა შეიძლება", path: "/what-can-i-send" },
+        ])}
+      />
+
       <section className="border-b border-line bg-surface">
         <div className="container-page grid items-center gap-10 py-10 md:grid-cols-2 md:py-16">
-          <div>
+          <div className="animate-fade-up">
             <Breadcrumbs
-              items={[{ href: "/", label: "მთავარი" }, { label: "რისი გაგზავნა შეიძლება" }]}
+              items={[
+                { href: "/", label: "მთავარი" },
+                { label: "რისი გაგზავნა შეიძლება" },
+              ]}
             />
 
             <h1 className="mt-6 text-3xl font-bold md:text-5xl">
@@ -43,22 +58,23 @@ export default function WhatCanISendPage() {
             </h1>
 
             <p className="mt-5 max-w-lg text-base text-muted md:text-lg">
-              ამანათით შეგიძლიათ გაუგზავნოთ ოჯახის წევრებს, მეგობრებსა და ახლობლებს
-              ქართული პროდუქტები, ტანსაცმელი, საჩუქრები და პირადი ნივთები.
+              ქართული პროდუქტი, ტანსაცმელი, საჩუქრები და პირადი ნივთები — გაუგზავნეთ
+              ოჯახს, მეგობრებსა და ახლობლებს ევროპაში.
             </p>
 
-            <div className="mt-8">
+            <div className="mt-8 flex flex-wrap gap-3">
               <Button href="/contact" size="lg">
                 ამანათის გაგზავნა
               </Button>
+              <PhoneButton size="lg" variant="secondary" />
             </div>
           </div>
 
-          {hasPhoto ? (
+          {heroImage ? (
             <div className="relative aspect-4/3 overflow-hidden rounded-2xl border border-line md:aspect-square">
               <Image
-                src={`/images/${HERO_IMAGE}`}
-                alt="ამანათში ჩასალაგებელი ნივთები — ტანსაცმელი, ფეხსაცმელი, წიგნები და აქსესუარები"
+                src={`/images/${heroImage}`}
+                alt="Parcello-ს ამანათი, მზად ევროპაში გასაგზავნად"
                 fill
                 priority
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -70,35 +86,23 @@ export default function WhatCanISendPage() {
       </section>
 
       <Section>
-        <SectionHeading
-          title="რას აგზავნიან ჩვენი მომხმარებლები"
-          description="ყველაზე ხშირად გაგზავნილი ნივთების კატეგორიები."
-        />
-
-        <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {allowedItems.map((item) => (
-            <li
-              key={item.label}
-              className="flex items-center gap-4 rounded-xl border border-line bg-white p-5"
-            >
-              <span className="text-2xl" aria-hidden="true">
-                {item.emoji}
-              </span>
-              <span className="font-medium">{item.label}</span>
-            </li>
+        <div className="space-y-16 md:space-y-24">
+          {sendableCategories.map((category, index) => (
+            <CategoryRow
+              key={category.slug}
+              category={category}
+              flip={index % 2 === 1}
+            />
           ))}
-        </ul>
-
-        <p className="mt-8 max-w-2xl text-muted">
-          ზოგიერთ ნივთზე მოქმედებს შეზღუდვები, ამიტომ ამანათის გაგზავნამდე მოგვწერეთ მისი
-          შიგთავსი და დაგეხმარებით გადაამოწმოთ, შესაძლებელია თუ არა მისი გაგზავნა.
-        </p>
+        </div>
       </Section>
 
       <Section tone="surface">
         <div className="grid gap-10 md:grid-cols-2">
-          <div>
-            <h2 className="text-2xl font-bold md:text-3xl">რისი გაგზავნა არ შეიძლება?</h2>
+          <div className="reveal">
+            <h2 className="text-2xl font-bold md:text-3xl">
+              რისი გაგზავნა არ შეიძლება?
+            </h2>
             <p className="mt-4 text-muted">
               {business.restrictions.prohibitedSentence}
             </p>
@@ -106,11 +110,15 @@ export default function WhatCanISendPage() {
             <p className="mt-3 text-sm text-muted">
               {business.restrictions.packingLiability}
             </p>
+            <p className="mt-5 text-muted">
+              თუ ეჭვი გაქვთ კონკრეტულ ნივთზე, უბრალოდ მოგვწერეთ — გადავამოწმებთ და
+              გიპასუხებთ.
+            </p>
           </div>
 
-          <div>
+          <div className="reveal">
             <h2 className="text-2xl font-bold md:text-3xl">როგორ შევფუთოთ ამანათი?</h2>
-            <ol className="mt-4 space-y-3">
+            <ol className="mt-6 space-y-3">
               {business.packaging.map((step, index) => (
                 <li key={step} className="flex gap-3">
                   <span
@@ -131,7 +139,8 @@ export default function WhatCanISendPage() {
         <div className="container-page py-16 text-center md:py-20">
           <h2 className="text-2xl font-bold md:text-4xl">გსურთ ამანათის გაგზავნა?</h2>
           <p className="mx-auto mt-4 max-w-xl text-white/70">
-            მოგვწერეთ ამანათის შიგთავსი და დანიშნულების ქვეყანა — ზუსტ ფასს დაგიანგარიშებთ.
+            მოგვწერეთ ამანათის შიგთავსი და დანიშნულების ქვეყანა — ზუსტ ფასს
+            დაგიანგარიშებთ.
           </p>
 
           <div className="mt-8 flex flex-wrap justify-center gap-3">
