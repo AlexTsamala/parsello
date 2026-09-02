@@ -43,7 +43,6 @@ Until answered:
 | 10 | Delivery to recipient's door, or to a pickup point in Europe? | Country pages, FAQ |
 | 11 | When and how does the customer pay? | FAQ, order flow |
 | 12 | Email address | Contact page |
-| 13 | Working hours are 8 AM – 10 PM — **which days**? Schema needs days, so `openingHoursSpecification` is omitted until answered. | LocalBusiness schema |
 | 14 | Parcello-specific detail per destination (routes, typical timing, what customers usually send there) | Country pages — the researched layer alone can't carry them |
 
 ## Resolved
@@ -55,5 +54,5 @@ Until answered:
 - **Instagram** — `https://www.instagram.com/parcellogeorgia`.
 - **Delivery time** — 2-3 weeks site-wide; Poland 2 weeks. Per-destination breakdown still open (#7).
 - **Drop-off address** — გრიგოლ რობაქიძის 4, III კვარტალი, II-ა კორპუსი, თბილისი.
-- **Working hours** — 8 AM – 10 PM (days still open, #13).
+- **Working hours** — every day, 08:00–22:00. Published on the contact page and in `openingHoursSpecification`.
 - **Country-page content** — general destination facts are researched and published with sources, kept structurally separate from Parcello claims. See `CLAUDE.md` §1 rule 10 and `docs/RESEARCH-SOURCES.md`.

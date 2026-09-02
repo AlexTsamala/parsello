@@ -29,8 +29,25 @@ export const business = {
   /** Confirmed drop-off address. */
   address: "გრიგოლ რობაქიძის 4, III კვარტალი, II-ა კორპუსი, თბილისი",
 
-  /** Confirmed. */
-  workingHours: "8 AM – 10 PM",
+  /**
+   * Confirmed: every day, 8 AM – 10 PM.
+   * Stored structurally because schema.org needs days and 24-hour times, while
+   * the page shows Georgian-formatted text.
+   */
+  workingHours: {
+    display: "ყოველდღე, 08:00–22:00",
+    days: [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday",
+    ],
+    opens: "08:00",
+    closes: "22:00",
+  },
 
   /**
    * Confirmed: both courier pickup and drop-off are available.

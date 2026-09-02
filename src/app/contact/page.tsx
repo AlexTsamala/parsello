@@ -117,7 +117,9 @@ export default function ContactPage() {
                   <dt className="text-sm font-semibold tracking-wide text-muted">
                     სამუშაო საათები
                   </dt>
-                  <dd className="mt-1 font-medium">{business.workingHours}</dd>
+                  <dd className="mt-1 font-medium">
+                    {business.workingHours.display}
+                  </dd>
                 </div>
               ) : null}
 

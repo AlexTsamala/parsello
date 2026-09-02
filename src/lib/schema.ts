@@ -7,9 +7,7 @@ import { business, siteUrl } from "@/content/business";
  * visibly says, and may never contain invented information.
  *  - No `Offer`, `price`, or `priceRange` anywhere — pricing is never published.
  *  - `LocalBusiness` (a subtype of Organization) is used now that a real
- *    street address exists. `openingHoursSpecification` is deliberately absent:
- *    the business stated hours (8 AM – 10 PM) but not which days, and schema
- *    requires days — see docs/OPEN-QUESTIONS.md.
+ *    street address and opening hours exist.
  *  - `FAQPage` only on pages that visibly render those exact Q&As.
  *  - `areaServed` is Europe, not the six priority countries (see business.coverage).
  */
@@ -46,6 +44,14 @@ export function organizationSchema() {
           },
         }
       : {}),
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: [...business.workingHours.days],
+        opens: business.workingHours.opens,
+        closes: business.workingHours.closes,
+      },
+    ],
     ...(sameAs.length ? { sameAs } : {}),
     contactPoint: {
       "@type": "ContactPoint",
