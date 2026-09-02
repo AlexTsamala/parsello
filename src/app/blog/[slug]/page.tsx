@@ -4,9 +4,9 @@ import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Button } from "@/components/ui/Button";
+import { PhoneButton } from "@/components/ui/Phone";
 import { Section } from "@/components/ui/Section";
 import { getPost, posts } from "@/content/blog";
-import { business } from "@/content/business";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 import { buildMetadata } from "@/lib/seo";
 
@@ -155,14 +155,7 @@ export default async function BlogPostPage({
             <Button href="/contact" size="lg">
               ამანათის გაგზავნა
             </Button>
-            <Button
-              href={`tel:${business.phone.tel}`}
-              size="lg"
-              variant="secondary"
-              className="border-white/25 bg-transparent text-white hover:border-white hover:bg-white/10"
-            >
-              {business.phone.display}
-            </Button>
+            <PhoneButton size="lg" variant="secondary" className="border-white/25 bg-transparent text-white hover:border-white hover:bg-white/10" />
           </div>
         </div>
       </section>

@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Button } from "@/components/ui/Button";
+import { PhoneButton } from "@/components/ui/Phone";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { business } from "@/content/business";
 import { countries } from "@/content/countries";
@@ -78,9 +79,7 @@ export default function PricesPage() {
             <p className="mt-3 text-muted">{business.pricing.copy}</p>
 
             <div className="mt-6 flex flex-wrap gap-3">
-              <Button href={`tel:${business.phone.tel}`} size="lg">
-                {business.phone.display}
-              </Button>
+              <PhoneButton size="lg" />
               {business.facebookUrl ? (
                 <Button href={business.facebookUrl} size="lg" variant="secondary">
                   Facebook-ზე მოწერა

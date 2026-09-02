@@ -10,6 +10,7 @@ import { FaqSection } from "@/components/home/FaqSection";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Button } from "@/components/ui/Button";
+import { PhoneButton } from "@/components/ui/Phone";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { business } from "@/content/business";
 import { countries, getCountry, relatedCountries } from "@/content/countries";
@@ -108,9 +109,7 @@ export default async function CountryPage({
             <Button href="/contact" size="lg">
               ამანათის გაგზავნა
             </Button>
-            <Button href={`tel:${business.phone.tel}`} size="lg" variant="secondary">
-              {business.phone.display}
-            </Button>
+            <PhoneButton size="lg" variant="secondary" />
           </div>
         </div>
       </section>
@@ -161,9 +160,7 @@ export default async function CountryPage({
               <div className="rounded-2xl border border-line bg-white p-7">
                 <p>{business.pricing.copy}</p>
                 <div className="mt-6 flex flex-wrap gap-3">
-                  <Button href={`tel:${business.phone.tel}`} size="lg">
-                    {business.phone.display}
-                  </Button>
+                  <PhoneButton size="lg" />
                   {business.facebookUrl ? (
                     <Button href={business.facebookUrl} size="lg" variant="secondary">
                       Facebook-ზე მოწერა
@@ -222,14 +219,7 @@ export default async function CountryPage({
               <Button href="/contact" size="lg">
                 ამანათის გაგზავნა
               </Button>
-              <Button
-                href={`tel:${business.phone.tel}`}
-                size="lg"
-                variant="secondary"
-                className="border-white/25 bg-transparent text-white hover:border-white hover:bg-white/10"
-              >
-                {business.phone.display}
-              </Button>
+              <PhoneButton size="lg" variant="secondary" className="border-white/25 bg-transparent text-white hover:border-white hover:bg-white/10" />
             </div>
           </div>
         </section>

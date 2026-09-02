@@ -12,9 +12,13 @@ export const business = {
   name: "Parcello Georgia",
   shortName: "Parcello",
 
-  /** Confirmed. Primary contact across the whole site. */
+  /**
+   * Confirmed. Primary contact across the whole site.
+   * Always render via <PhoneButton /> or <PhoneLink /> so the format and the
+   * orange mobile icon stay consistent — do not write `display` into markup.
+   */
   phone: {
-    display: "551 23 15 19",
+    display: "+995 551 23 15 19",
     tel: "+995551231519",
   },
 
@@ -26,8 +30,13 @@ export const business = {
   /** TODO: awaiting business. */
   email: null as string | null,
 
-  /** Confirmed drop-off address. */
-  address: "გრიგოლ რობაქიძის 4, III კვარტალი, II-ა კორპუსი, თბილისი",
+  /** Confirmed drop-off address. `lines` is the display format the business specified. */
+  address: {
+    lines: ["გრიგოლ რობაქიძის გამზირი 4", "თბილისი, საქართველო"],
+    street: "გრიგოლ რობაქიძის გამზირი 4",
+    locality: "თბილისი",
+    countryCode: "GE",
+  },
 
   /**
    * Confirmed: every day, 8 AM – 10 PM.
@@ -68,7 +77,7 @@ export const business = {
     /** What the price actually depends on — confirmed by the business. */
     dependsOn:
       "ღირებულება დამოკიდებულია იმაზე, თუ რომელ ქვეყანაში აგზავნით ამანათს და რა არის მისი წონა.",
-    copy: "მოგვწერეთ ქვეყანა და ამანათის დაახლოებითი წონა — ზუსტ ფასს დაგიანგარიშებთ. დაგვიკავშირდით ნომერზე 551 23 15 19 ან მოგვწერეთ Facebook გვერდზე.",
+    copy: "მოგვწერეთ ქვეყანა და ამანათის დაახლოებითი წონა — ზუსტ ფასს დაგიანგარიშებთ. დაგვიკავშირდით ნომერზე +995 551 23 15 19 ან მოგვწერეთ Facebook გვერდზე.",
   },
 
   /**
@@ -87,7 +96,7 @@ export const business = {
    * Never write copy implying only those six are served.
    */
   coverage: {
-    scope: "ვაგზავნით ევროპის მასშტაბით.",
+    scope: "ვაგზავნით ამანათებს ევროპის მასშტაბით, ნებისმიერ ქვეყანაში.",
     priorityNote:
       "ქვემოთ ჩამოთვლილია ჩვენი ძირითადი მიმართულებები. თუ თქვენი ქვეყანა სიაში არ არის, დაგვიკავშირდით — გაგზავნას შევათანხმებთ.",
   },

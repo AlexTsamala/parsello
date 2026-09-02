@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Button } from "@/components/ui/Button";
+import { PhoneButton } from "@/components/ui/Phone";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { business } from "@/content/business";
 import { countries } from "@/content/countries";
@@ -33,9 +34,7 @@ export default function HowItWorksPage() {
             <Button href="/contact" size="lg">
               ამანათის გაგზავნა
             </Button>
-            <Button href={`tel:${business.phone.tel}`} size="lg" variant="secondary">
-              {business.phone.display}
-            </Button>
+            <PhoneButton size="lg" variant="secondary" />
           </div>
         </div>
       </section>

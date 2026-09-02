@@ -1,5 +1,7 @@
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Button } from "@/components/ui/Button";
+import { PhoneButton, PhoneLink } from "@/components/ui/Phone";
+import { LocationPinIcon } from "@/components/ui/icons";
 import { Section } from "@/components/ui/Section";
 import { business } from "@/content/business";
 import { buildMetadata } from "@/lib/seo";
@@ -45,9 +47,7 @@ export default function ContactPage() {
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <Button href={`tel:${business.phone.tel}`} size="lg">
-              {business.phone.display}
-            </Button>
+            <PhoneButton size="lg" />
             {business.facebookUrl ? (
               <Button href={business.facebookUrl} size="lg" variant="secondary">
                 Facebook-ზე მოწერა
@@ -94,23 +94,27 @@ export default function ContactPage() {
                   ტელეფონი
                 </dt>
                 <dd className="mt-1">
-                  <a
-                    href={`tel:${business.phone.tel}`}
-                    className="text-xl font-semibold transition-colors hover:text-brand"
-                  >
-                    {business.phone.display}
-                  </a>
+                  <PhoneLink className="text-xl font-semibold" />
                 </dd>
               </div>
 
-              {business.address ? (
-                <div>
-                  <dt className="text-sm font-semibold tracking-wide text-muted">
-                    მისამართი
-                  </dt>
-                  <dd className="mt-1 font-medium">{business.address}</dd>
-                </div>
-              ) : null}
+              <div>
+                <dt className="text-sm font-semibold tracking-wide text-muted">
+                  მისამართი
+                </dt>
+                <dd className="mt-1">
+                  <address className="flex items-start gap-2.5 not-italic font-medium">
+                    <LocationPinIcon className="mt-0.5 shrink-0 text-brand" />
+                    <span>
+                      {business.address.lines.map((line) => (
+                        <span key={line} className="block">
+                          {line}
+                        </span>
+                      ))}
+                    </span>
+                  </address>
+                </dd>
+              </div>
 
               {business.workingHours ? (
                 <div>

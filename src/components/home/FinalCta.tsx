@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/Button";
-import { business } from "@/content/business";
+import { PhoneButton } from "@/components/ui/Phone";
 
 export function FinalCta() {
   return (
@@ -16,14 +16,7 @@ export function FinalCta() {
           <Button href="/contact" size="lg">
             ამანათის გაგზავნა
           </Button>
-          <Button
-            href={`tel:${business.phone.tel}`}
-            size="lg"
-            variant="secondary"
-            className="border-white/25 bg-transparent text-white hover:border-white hover:bg-white/10"
-          >
-            {business.phone.display}
-          </Button>
+          <PhoneButton size="lg" variant="secondary" className="border-white/25 bg-transparent text-white hover:border-white hover:bg-white/10" />
         </div>
       </div>
     </section>

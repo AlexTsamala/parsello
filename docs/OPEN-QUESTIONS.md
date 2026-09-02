@@ -48,11 +48,11 @@ Until answered:
 ## Resolved
 
 - **Pricing** — never published. Customers are routed to Facebook or phone. See `CLAUDE.md` §10.
-- **Primary phone** — `551 23 15 19`.
+- **Primary phone** — `+995 551 23 15 19`. Always rendered via `<PhoneButton />` / `<PhoneLink />`.
 - **Parcel handover** — both courier pickup and drop-off are offered. Coverage details still open (#3, #4).
 - **Facebook** — `https://www.facebook.com/parcellogeorgia`.
 - **Instagram** — `https://www.instagram.com/parcellogeorgia`.
 - **Delivery time** — 2-3 weeks site-wide; Poland 2 weeks. Per-destination breakdown still open (#7).
-- **Drop-off address** — გრიგოლ რობაქიძის 4, III კვარტალი, II-ა კორპუსი, თბილისი.
+- **Drop-off address** — გრიგოლ რობაქიძის გამზირი 4, თბილისი, საქართველო.
 - **Working hours** — every day, 08:00–22:00. Published on the contact page and in `openingHoursSpecification`.
 - **Country-page content** — general destination facts are researched and published with sources, kept structurally separate from Parcello claims. See `CLAUDE.md` §1 rule 10 and `docs/RESEARCH-SOURCES.md`.

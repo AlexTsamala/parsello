@@ -170,6 +170,6 @@ The phone number is the **primary contact** — it belongs in the footer, the co
 
 **Pricing copy** (single source, reused everywhere pricing is mentioned):
 
-> ფასის გამოსათვლელად მოგვწერეთ ჩვენს Facebook გვერდზე ან დაგვიკავშირდით ნომერზე 551 23 15 19
+> ფასის გამოსათვლელად მოგვწერეთ ჩვენს Facebook გვერდზე ან დაგვიკავშირდით ნომერზე +995 551 23 15 19
 
 Store this string once in `src/content/business.ts` and import it. Do not rewrite or paraphrase it per page.

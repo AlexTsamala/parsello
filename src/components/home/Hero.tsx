@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { Button } from "@/components/ui/Button";
+import { PhoneLink } from "@/components/ui/Phone";
 import { business } from "@/content/business";
 import { publicImageExists } from "@/lib/assets";
 
@@ -31,14 +32,9 @@ export function Hero() {
             </Button>
           </div>
 
-          <p className="mt-6 text-sm text-muted">
-            დაგვირეკეთ:{" "}
-            <a
-              href={`tel:${business.phone.tel}`}
-              className="font-semibold text-charcoal transition-colors hover:text-brand"
-            >
-              {business.phone.display}
-            </a>
+          <p className="mt-6 flex flex-wrap items-center gap-2 text-sm text-muted">
+            დაგვირეკეთ:
+            <PhoneLink className="font-semibold text-charcoal" />
           </p>
         </div>
 

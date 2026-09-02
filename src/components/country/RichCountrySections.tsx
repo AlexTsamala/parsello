@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { Button } from "@/components/ui/Button";
+import { PhoneButton } from "@/components/ui/Phone";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { business } from "@/content/business";
 import type { Country } from "@/content/countries";
@@ -181,9 +182,7 @@ export function RichCountrySections({ country }: { country: Country }) {
             <p className="font-semibold">{content.pricing.emphasis}</p>
 
             <div className="mt-6 flex flex-wrap gap-3">
-              <Button href={`tel:${business.phone.tel}`} size="lg">
-                {business.phone.display}
-              </Button>
+              <PhoneButton size="lg" />
               {business.facebookUrl ? (
                 <Button
                   href={business.facebookUrl}

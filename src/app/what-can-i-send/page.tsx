@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Button } from "@/components/ui/Button";
+import { PhoneButton } from "@/components/ui/Phone";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { allowedItems } from "@/content/allowed-items";
 import { business } from "@/content/business";
@@ -134,9 +135,7 @@ export default function WhatCanISendPage() {
           </p>
 
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Button href={`tel:${business.phone.tel}`} size="lg">
-              {business.phone.display}
-            </Button>
+            <PhoneButton size="lg" />
             {business.facebookUrl ? (
               <Button
                 href={business.facebookUrl}

@@ -36,11 +36,9 @@ export function organizationSchema() {
       ? {
           address: {
             "@type": "PostalAddress",
-            // The display string ends with the city; schema keeps the city only
-            // in addressLocality, so strip it from streetAddress.
-            streetAddress: business.address.replace(/,\s*თბილისი\s*$/, ""),
-            addressLocality: "თბილისი",
-            addressCountry: "GE",
+            streetAddress: business.address.street,
+            addressLocality: business.address.locality,
+            addressCountry: business.address.countryCode,
           },
         }
       : {}),
