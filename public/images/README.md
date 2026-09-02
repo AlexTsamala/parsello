@@ -34,3 +34,18 @@ The three photographs arrived as PNG data carrying `.jpg` extensions. They were 
 - Export at 2× the largest rendered size, then let `next/image` handle the rest.
 - Every image needs descriptive Georgian alt text at the usage site, not here. No keyword stuffing (CLAUDE.md §6).
 - Prefer the real delivery photography over anything generic.
+
+## Food photography for /what-can-i-send
+
+| Filename | Size | Notes |
+|---|---|---|
+| `food-churchkhela.jpg` | 547×365 | soft on retina — 1200px+ preferred |
+| `food-cheese.jpg` | 547×365 | soft on retina — 1200px+ preferred |
+| `food-tkemali.jpg` | 635×357 | acceptable |
+| `food-spices-honey.jpg` | 840×559 | good |
+| `food-wine.jpg` | 1000×666 | good |
+| `parcel-packed.jpg` | 308×411 | too small for a hero; used in the small packing slot only |
+
+All were supplied with mixed extensions (`.jpeg`, `.webp`) and re-encoded to JPEG at quality 86 so the config can assume `.jpg` throughout.
+
+**Row slots render about 600px wide on desktop and 1200px on a retina screen.** Anything under ~1000px source width will look soft there. Replacing the two 547px images is the single easiest visual upgrade to this page.
