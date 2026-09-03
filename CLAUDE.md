@@ -76,6 +76,9 @@ Rules:
 
 - **Primary language is Georgian.** All customer-facing copy is Georgian.
 - Write natural Georgian a native speaker would write. **Never translate English word-for-word.**
+- **Never build a Georgian word's case form by concatenation.** Georgian inflects — the stem changes. Appending a suffix to a nominative in JSX or a template literal produces broken words: `{deliveryTime}-ის` → `2-3 კვირა-ის` (should be `2-3 კვირის`), `{item}-ს` → `მედიკამენტებ-ს`. This bug has shipped twice.
+  - Store the inflected form in the content file, as its own field (`deliveryTimeGenitive`, `nameKaIn`), or write the whole sentence there (`prohibitedSentence`). Components render text, they never decline it.
+  - A hyphenated suffix is correct **only** after Latin script: `Parcello-ს`, `Facebook-ზე`.
 - Structure content so English can be added later (locale-ready content files), but do not build i18n machinery in v1.
 - Code, comments, filenames, commit messages, and URL slugs stay in English.
 
