@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import { Logo } from "@/components/layout/Logo";
 import { PhoneLink } from "@/components/ui/Phone";
-import { LocationPinIcon } from "@/components/ui/icons";
+import { EnvelopeIcon, LocationPinIcon } from "@/components/ui/icons";
 import { business } from "@/content/business";
 import { footerNav } from "@/content/navigation";
 import { countries } from "@/content/countries";
@@ -28,6 +28,16 @@ export function Footer() {
           </p>
 
           <PhoneLink className="mt-5 text-lg font-semibold" />
+
+          {business.email ? (
+            <a
+              href={`mailto:${business.email}`}
+              className="mt-4 flex w-fit items-center gap-2.5 text-sm text-white/70 transition-colors hover:text-brand"
+            >
+              <EnvelopeIcon className="shrink-0 text-brand" />
+              <span>{business.email}</span>
+            </a>
+          ) : null}
 
           <address className="mt-4 flex items-start gap-2.5 not-italic text-sm text-white/70">
             <LocationPinIcon className="mt-0.5 shrink-0 text-brand" />

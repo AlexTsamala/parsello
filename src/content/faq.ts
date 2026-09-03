@@ -1,14 +1,6 @@
 import { business } from "./business";
 import { countries } from "./countries";
 
-/**
- * Answers come from the business's own published FAQ (CLAUDE.md §1).
- * Nothing here is inferred or filled in.
- *
- * Still missing — see docs/OPEN-QUESTIONS.md:
- *   - რამდენი კილოგრამის ამანათის გაგზავნა შემიძლია?  (no weight limit stated)
- */
-
 export type FaqItem = {
   question: string;
   answer: string;
@@ -22,7 +14,7 @@ export const faqs: FaqItem[] = [
   {
     question: "როგორ გავაგზავნო ამანათი ევროპაში?",
     answer:
-      "დაგვიკავშირდით ტელეფონით ან მოგვწერეთ Facebook-ზე, შეათანხმეთ დეტალები და მოამზადეთ ამანათი. შემდეგ ამანათს კურიერს გადააბარებთ ან თავად ჩააბარებთ.",
+      "დაგვიკავშირდით ტელეფონით ან მოგვწერეთ Facebook-ზე, შეათანხმეთ დეტალები და მოამზადეთ ამანათი. შემდეგ ამანათს კურიერს გადასცემთ ან თავად ჩააბარებთ.",
     featured: true,
   },
   {
@@ -53,7 +45,7 @@ export const faqs: FaqItem[] = [
   {
     question: "როგორ ხდება ამანათის აღება?",
     answer:
-      "ორივე ვარიანტი შესაძლებელია — ამანათი შეგიძლიათ კურიერს გადააბაროთ ან თავად ჩააბაროთ.",
+      "ორივე ვარიანტი შესაძლებელია — ამანათი შეგიძლიათ კურიერს გადასცეთ ან თავად ჩააბაროთ ჩვენს საწყობში.",
   },
 ];
 

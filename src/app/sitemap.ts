@@ -6,21 +6,11 @@ import { countries } from "@/content/countries";
 
 type StaticPage = {
   path: string;
-  /** Date this page's visible copy last changed, `YYYY-MM-DD`. */
   updatedAt: string;
   changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"];
   priority: number;
 };
 
-/**
- * `lastModified` is a real revision date, never the build time.
- *
- * Search engines trust the field only while it matches the page they fetch, so
- * stamping every URL with `new Date()` on each deploy would spend that trust on
- * nothing and leave no way to flag a page that genuinely changed. Bump the date
- * beside a route when a visitor would see a difference — styling, refactors and
- * metadata edits do not count.
- */
 const staticPages: StaticPage[] = [
   {
     path: "/",
@@ -77,10 +67,6 @@ function newest(dates: string[]): string {
   return dates.reduce((latest, date) => (date > latest ? date : latest), "");
 }
 
-/**
- * Generated, never hand-maintained (CLAUDE.md §6). New countries and blog posts
- * appear here automatically, each carrying the date from its content file.
- */
 export default function sitemap(): MetadataRoute.Sitemap {
   const url = (path: string) => new URL(path, siteUrl).toString();
 

@@ -10,7 +10,7 @@ export const business = {
 
   instagramUrl: "https://www.instagram.com/parcellogeorgia",
 
-  email: null as string | null,
+  email: "parcellogeorgia@gmail.com",
 
   address: {
     lines: ["გრიგოლ რობაქიძის გამზირი 4", "თბილისი, საქართველო"],
