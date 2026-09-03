@@ -31,6 +31,7 @@ export function organizationSchema() {
     description:
       "ამანათების გაგზავნა საქართველოდან ევროპის მიმართულებით.",
     telephone: business.phone.tel,
+    ...(business.email ? { email: business.email } : {}),
     areaServed: { "@type": "Place", name: "Europe" },
     ...(business.address
       ? {
@@ -54,6 +55,7 @@ export function organizationSchema() {
     contactPoint: {
       "@type": "ContactPoint",
       telephone: business.phone.tel,
+      ...(business.email ? { email: business.email } : {}),
       contactType: "customer service",
       availableLanguage: ["ka"],
     },

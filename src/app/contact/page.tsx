@@ -1,7 +1,7 @@
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Button } from "@/components/ui/Button";
 import { PhoneButton, PhoneLink } from "@/components/ui/Phone";
-import { LocationPinIcon } from "@/components/ui/icons";
+import { EnvelopeIcon, LocationPinIcon } from "@/components/ui/icons";
 import { Section } from "@/components/ui/Section";
 import { business } from "@/content/business";
 import { buildMetadata } from "@/lib/seo";
@@ -14,9 +14,9 @@ export const metadata = buildMetadata({
 });
 
 /**
- * No submission form: there is no backend and no email address yet
- * (docs/OPEN-QUESTIONS.md #12). A form that silently discards messages would be
- * worse than none, so the page routes to the channels that actually work.
+ * No submission form: there is no backend to deliver one. A form that silently
+ * discards messages would be worse than none, so the page routes to the
+ * channels that actually work — phone, email and Facebook.
  */
 const orderDetails = [
   { label: "სახელი და გვარი", hint: "ვისთან დავუკავშირდეთ" },
@@ -97,6 +97,23 @@ export default function ContactPage() {
                   <PhoneLink className="text-xl font-semibold" />
                 </dd>
               </div>
+
+              {business.email ? (
+                <div>
+                  <dt className="text-sm font-semibold tracking-wide text-muted">
+                    ელ. ფოსტა
+                  </dt>
+                  <dd className="mt-1">
+                    <a
+                      href={`mailto:${business.email}`}
+                      className="flex w-fit items-center gap-2.5 font-medium transition-colors hover:text-brand"
+                    >
+                      <EnvelopeIcon className="shrink-0 text-brand" />
+                      <span>{business.email}</span>
+                    </a>
+                  </dd>
+                </div>
+              ) : null}
 
               <div>
                 <dt className="text-sm font-semibold tracking-wide text-muted">
