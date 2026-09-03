@@ -42,7 +42,6 @@ Until answered:
 | 9 | Prohibited items (real list, not a generic one) | FAQ, blog article on what can be sent |
 | 10 | Delivery to recipient's door, or to a pickup point in Europe? | Country pages, FAQ |
 | 11 | When and how does the customer pay? | FAQ, order flow |
-| 12 | Email address | Contact page |
 | 16 | **Inbound handover** — how does someone in Greece or Poland actually give you the parcel? Courier pickup, a drop-off address, an agent? The `/services` steps say "by the agreed method" because this is unknown. | /services |
 | 17 | **Inbound delivery time** — how long from Greece/Poland to Georgia? Currently omitted; only the outbound 2-3 weeks is published. | /services, FAQ |
 | 18 | **Online-shopping service** — how does a customer get their forwarding address? Is there registration? Which countries have an address? Where is the parcel collected in Georgia, and is there a weight/price basis? | /services |
@@ -55,6 +54,7 @@ Until answered:
 - **Parcel handover** — both courier pickup and drop-off are offered. Coverage details still open (#3, #4).
 - **Facebook** — `https://www.facebook.com/parcellogeorgia`.
 - **Instagram** — `https://www.instagram.com/parcellogeorgia`.
+- **Email** (#12) — `parcellogeorgia@gmail.com`. Shown in the footer and on the contact page, and carried in the `LocalBusiness` schema.
 - **Delivery time** — 2-3 weeks site-wide; Poland 2 weeks. Per-destination breakdown still open (#7).
 - **Drop-off address** — გრიგოლ რობაქიძის გამზირი 4, თბილისი, საქართველო.
 - **Working hours** — every day, 08:00–22:00. Published on the contact page and in `openingHoursSpecification`.
