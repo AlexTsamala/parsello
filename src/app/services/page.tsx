@@ -62,7 +62,10 @@ export default function ServicesPage() {
                   href={`#${service.slug}`}
                   className="group flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-white transition-colors hover:border-brand"
                 >
-                  <div className="relative aspect-16/10 overflow-hidden bg-brand-soft">
+                  {/* Square: the service photos are 1:1, so a 16/10 frame cut
+                      roughly a third off the top and bottom. Matching the
+                      frame to the source shows each photo whole. */}
+                  <div className="relative aspect-square overflow-hidden bg-brand-soft">
                     {hasPhoto ? (
                       <Image
                         src={`/images/${service.image}`}
