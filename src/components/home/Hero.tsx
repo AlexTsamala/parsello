@@ -15,12 +15,12 @@ export function Hero() {
       <div className="container-page grid items-center gap-10 py-14 md:grid-cols-2 md:gap-14 md:py-24">
         <div className="animate-fade-up">
           <h1 className="text-3xl font-bold md:text-5xl">
-            ამანათების გაგზავნა საქართველოდან ევროპაში
+            ამანათების გაგზავნა და მიღება ევროპიდან
           </h1>
 
           <p className="mt-5 max-w-lg text-base text-muted md:text-lg">
-            {business.shortName} გეხმარებათ ამანათის მარტივად გაგზავნაში საქართველოდან
-            ევროპის მიმართულებით.
+            {business.shortName} გეხმარებათ ამანათის მარტივად გაგზავნაში
+            საქართველოდან ევროპის მიმართულებით და ევროპიდან მიღებაში.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
@@ -55,7 +55,12 @@ export function Hero() {
               aria-hidden="true"
               className="flex size-full items-center justify-center bg-brand-soft"
             >
-              <Image src="/images/logo-mark.svg" alt="" width={120} height={120} />
+              <Image
+                src="/images/logo-mark.svg"
+                alt=""
+                width={120}
+                height={120}
+              />
             </div>
           )}
         </div>
