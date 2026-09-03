@@ -60,9 +60,24 @@ The site is fully static — every route prerenders — so any static host works
 
 Against a local production build: 15 routes all 200, one `<h1>` each, valid JSON-LD on every page, **zero broken internal links**, sitemap listing all 15 URLs.
 
-## Analytics — not installed
+## Analytics — installed, dormant until you add the ID
 
-No Google Analytics or Tag Manager is in the code. Nothing was added speculatively (plan §25). When you want it, the events worth tracking are: CTA clicks, `tel:` clicks, Facebook clicks, and country-page engagement. Ask and it takes a few minutes.
+GA4 is wired up but sends nothing, loads no script and shows no cookie banner until this variable exists:
+
+```
+NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+```
+
+Create a GA4 property ([setup guide](https://support.google.com/analytics/answer/9304153)), copy the Measurement ID, and add it in Vercel → Settings → Environment Variables. No code change and no commit needed — but Vercel only injects env vars at build time, so **redeploy after adding it**.
+
+What it does once live:
+
+- **Page views and scroll depth** — automatic, via GA4 enhanced measurement.
+- **Custom events**, from one delegated listener in `ContactClickTracking.tsx`: `phone_click`, `email_click`, `facebook_click`, `instagram_click`, `cta_click`. Each carries `page_path`, so you can see which page produced the call. GA4 ignores `tel:` and `mailto:` clicks on its own, which is why these exist. Mark them as key events in GA4 → Admin → Events.
+- **Consent Mode v2** — advertising signals are denied always (the site runs no ads). `analytics_storage` defaults to denied in the EEA, UK and Switzerland, granted elsewhere; Google resolves the region from the visitor's IP, so no geolocation code runs here.
+- **Cookie banner** — shown to every visitor once, answer kept in their browser's `localStorage`. Declining leaves GA4 in its cookie-free state rather than removing it.
+
+Not set up: Google Search Console. It needs no code — just domain verification — and for an SEO site it matters more than GA4, since it is what reports actual search queries and rankings.
 
 ## Recurring
 
