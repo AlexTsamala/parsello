@@ -122,13 +122,13 @@ export default function ServicesPage() {
             <h2 className="mt-2 text-2xl font-bold md:text-4xl">{service.title}</h2>
             <p className="mt-4 max-w-2xl text-muted">{service.summary}</p>
 
-            {service.deliveryTime ? (
+            {service.deliveryTimeGenitive ? (
               <p className="mt-4 text-muted">
                 ამანათი ადრესატთან ჩადის გაგზავნიდან{" "}
                 <strong className="font-semibold text-charcoal">
-                  {service.deliveryTime}
-                </strong>
-                -ის ვადაში.
+                  {service.deliveryTimeGenitive}
+                </strong>{" "}
+                ვადაში.
               </p>
             ) : null}
 

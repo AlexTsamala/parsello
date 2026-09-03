@@ -24,8 +24,11 @@ export type Service = {
   image: string;
   alt: string;
   steps: { title: string; body: string }[];
-  /** Null until the business confirms a figure for this route. */
-  deliveryTime: string | null;
+  /**
+   * Genitive, for "... ვადაში" — see business.deliveryTimeGenitive.
+   * Null until the business confirms a figure for this route.
+   */
+  deliveryTimeGenitive: string | null;
 };
 
 export const services: Service[] = [
@@ -38,7 +41,7 @@ export const services: Service[] = [
     image: "courier-handover.jpg",
     alt: "Parcello-ს კურიერი ამანათს იბარებს მომხმარებლისგან",
     steps: howItWorksSteps,
-    deliveryTime: business.deliveryTime,
+    deliveryTimeGenitive: business.deliveryTimeGenitive,
   },
   {
     slug: "receive-from-europe",
@@ -66,7 +69,7 @@ export const services: Service[] = [
         body: "ამანათი მიემართება მითითებულ მიმღებთან საქართველოში.",
       },
     ],
-    deliveryTime: null,
+    deliveryTimeGenitive: null,
   },
   {
     slug: "online-shopping",
@@ -94,7 +97,7 @@ export const services: Service[] = [
         body: "ამანათი საქართველოში ჩამოდის და თქვენ გადმოგეცემათ.",
       },
     ],
-    deliveryTime: null,
+    deliveryTimeGenitive: null,
   },
 ];
 

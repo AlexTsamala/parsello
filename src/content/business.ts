@@ -50,6 +50,10 @@ export const business = {
 
   deliveryTime: "2-3 კვირა",
 
+  // Genitive, for "... 2-3 კვირის ვადაში". Georgian inflects, so the case form
+  // is written out — never built by appending "-ის" to the nominative above.
+  deliveryTimeGenitive: "2-3 კვირის",
+
   weightLimit: null as string | null,
 
   coverage: {

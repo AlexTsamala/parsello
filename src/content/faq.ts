@@ -29,7 +29,7 @@ export const faqs: FaqItem[] = [
   },
   {
     question: "რამდენ ხანში ჩადის ამანათი?",
-    answer: `ამანათი ადრესატთან ჩადის გაგზავნიდან ${business.deliveryTime}-ის ვადაში.`,
+    answer: `ამანათი ადრესატთან ჩადის გაგზავნიდან ${business.deliveryTimeGenitive} ვადაში.`,
     featured: true,
   },
   {
