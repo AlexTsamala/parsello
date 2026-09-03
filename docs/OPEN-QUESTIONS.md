@@ -30,7 +30,6 @@ Until answered:
 | # | Question | Blocks |
 |---|---|---|
 | 3 | Pickup is confirmed — **which cities/regions** does courier pickup actually cover? | How-it-works, trust section, FAQ |
-| 5 | Domain name | Canonical URLs, sitemap, Open Graph |
 | 6 | Image **files** saved into `public/images/` (see that folder's README). Chat-pasted images do not reach disk. The logo is needed as a clean vector/PNG — not cropped out of the courier photo. | Navbar, favicon, hero, OG image |
 
 ## Needed for content quality
@@ -55,6 +54,7 @@ Until answered:
 - **Facebook** — `https://www.facebook.com/parcellogeorgia`.
 - **Instagram** — `https://www.instagram.com/parcellogeorgia`.
 - **Email** (#12) — `parcellogeorgia@gmail.com`. Shown in the footer and on the contact page, and carried in the `LocalBusiness` schema.
+- **Domain** (#5) — `https://parcello.ge`, apex form, with `www` redirecting to it. Set `NEXT_PUBLIC_SITE_URL` to match; see `DEPLOYMENT.md`.
 - **Delivery time** — 2-3 weeks site-wide; Poland 2 weeks. Per-destination breakdown still open (#7).
 - **Drop-off address** — გრიგოლ რობაქიძის გამზირი 4, თბილისი, საქართველო.
 - **Working hours** — every day, 08:00–22:00. Published on the contact page and in `openingHoursSpecification`.

@@ -1,18 +1,22 @@
 # Deployment & SEO checklist
 
-## Before the first deploy
+## Live
 
-**1. Set the domain.** Everything canonical depends on it. `src/content/business.ts` falls back to `https://parcello.ge`; the real value comes from an env var:
+The site is deployed and serving at **`https://parcello.ge`** (apex). `www.parcello.ge` redirects to it.
+
+The apex is the canonical form: canonical tags, the sitemap and all Open Graph URLs use it, and Vercel's domain settings must keep the redirect pointing that way. Reversing it in Vercel without also setting `NEXT_PUBLIC_SITE_URL` would put every canonical URL back in conflict with the server.
+
+Set the env var explicitly rather than relying on the fallback in `src/content/business.ts`, which only happens to match:
 
 ```
-NEXT_PUBLIC_SITE_URL=https://your-real-domain.ge
+NEXT_PUBLIC_SITE_URL=https://parcello.ge
 ```
 
-Set it in Vercel → Project → Settings → Environment Variables, for Production *and* Preview. Wrong or missing, and every canonical URL, the sitemap and every OG tag point at a domain you may not own.
+## Still to do before launch
 
-**2. Resolve the open items** in `OPEN-QUESTIONS.md`. Blocking ones are the courier pickup coverage, the drop-off address, and #15 (cheese vs the EU dairy rule).
+**1. Resolve the open items** in `OPEN-QUESTIONS.md`. Blocking ones are the courier pickup coverage, the drop-off address, and #15 (cheese vs the EU dairy rule).
 
-**3. Check nothing unresolved is visible.**
+**2. Check nothing unresolved is visible.**
 
 ```
 grep -rn "TODO" src/content/     # every one should still be genuinely unknown
@@ -30,11 +34,12 @@ The site is fully static — every route prerenders — so any static host works
 
 ## After deploy
 
-| # | Step | Where |
-|---|---|---|
-| 1 | Connect the custom domain | Vercel → Domains |
-| 2 | Confirm HTTPS and the www → apex redirect | browser |
-| 3 | Verify the property | [Google Search Console](https://search.google.com/search-console) |
+| # | Step | Where | |
+|---|---|---|---|
+| 1 | Connect the custom domain | Vercel → Domains | done |
+| 2 | Confirm HTTPS and the www → apex redirect | browser | done |
+| 2b | Switch that redirect from 307 to **308 Permanent**, so Google consolidates signals onto the apex | Vercel → Domains | |
+| 3 | Verify the property — use a **Domain** property, which covers apex and www together | [Google Search Console](https://search.google.com/search-console) | |
 | 4 | Submit `/sitemap.xml` | Search Console → Sitemaps |
 | 5 | Request indexing for `/` and the six country pages | Search Console → URL Inspection |
 | 6 | Confirm `/robots.txt` resolves and allows crawling | `your-domain/robots.txt` |
@@ -60,24 +65,32 @@ The site is fully static — every route prerenders — so any static host works
 
 Against a local production build: 15 routes all 200, one `<h1>` each, valid JSON-LD on every page, **zero broken internal links**, sitemap listing all 15 URLs.
 
-## Analytics — installed, dormant until you add the ID
+## Verified on 2026-09-03
 
-GA4 is wired up but sends nothing, loads no script and shows no cookie banner until this variable exists:
+Against the live site: apex serves 200, `www` redirects to it, canonical tags and every sitemap URL name the apex, and the GA4 tag with its consent defaults is present in the served HTML.
+
+## Analytics — live
+
+GA4 is collecting, confirmed in the served HTML on 2026-09-03. The Measurement ID lives only in Vercel → Settings → Environment Variables, never in the repo:
 
 ```
-NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+NEXT_PUBLIC_GA_ID=G-…
 ```
 
-Create a GA4 property ([setup guide](https://support.google.com/analytics/answer/9304153)), copy the Measurement ID, and add it in Vercel → Settings → Environment Variables. No code change and no commit needed — but Vercel only injects env vars at build time, so **redeploy after adding it**.
+The whole feature is inert without that variable — no script, no cookies, no banner — which is what keeps local development and preview builds out of the reporting. Vercel injects env vars at build time, so **changing it requires a redeploy**, not just a save.
 
-What it does once live:
+The `NEXT_PUBLIC_` prefix is required, not an oversight: two of the three analytics components run in the browser and read the ID there. A Measurement ID is public by design — it ships in the page source of every GA-tracked site — so there is nothing to hide. Dropping the prefix would leave the tag loading while silently collecting no events.
+
+What it does:
 
 - **Page views and scroll depth** — automatic, via GA4 enhanced measurement.
 - **Custom events**, from one delegated listener in `ContactClickTracking.tsx`: `phone_click`, `email_click`, `facebook_click`, `instagram_click`, `cta_click`. Each carries `page_path`, so you can see which page produced the call. GA4 ignores `tel:` and `mailto:` clicks on its own, which is why these exist. Mark them as key events in GA4 → Admin → Events.
 - **Consent Mode v2** — advertising signals are denied always (the site runs no ads). `analytics_storage` defaults to denied in the EEA, UK and Switzerland, granted elsewhere; Google resolves the region from the visitor's IP, so no geolocation code runs here.
 - **Cookie banner** — shown to every visitor once, answer kept in their browser's `localStorage`. Declining leaves GA4 in its cookie-free state rather than removing it.
 
-Not set up: Google Search Console. It needs no code — just domain verification — and for an SEO site it matters more than GA4, since it is what reports actual search queries and rankings.
+Still to do in the GA interface: mark `phone_click` and `cta_click` as key events (Admin → Events → Recent events → star). Custom events only appear in that list once received and processed, which takes up to 24 hours — Realtime and DebugView show them immediately.
+
+Not set up: Google Search Console. It needs no code — just domain verification — and for an SEO site it matters more than GA4, since it is what reports actual search queries and rankings. Link it to the GA4 property afterwards so search queries surface there too.
 
 ## Recurring
 
