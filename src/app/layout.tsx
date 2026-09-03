@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Noto_Sans_Georgian } from "next/font/google";
 
+import { ContactClickTracking } from "@/components/analytics/ContactClickTracking";
+import { CookieConsent } from "@/components/analytics/CookieConsent";
+import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 import { Footer } from "@/components/layout/Footer";
 import { MobileStickyCta } from "@/components/layout/MobileStickyCta";
 import { Navbar } from "@/components/layout/Navbar";
@@ -49,6 +52,10 @@ export default function RootLayout({
         <div className="pb-20 lg:pb-0">{children}</div>
         <Footer />
         <MobileStickyCta />
+
+        <GoogleAnalytics />
+        <ContactClickTracking />
+        <CookieConsent />
       </body>
     </html>
   );
