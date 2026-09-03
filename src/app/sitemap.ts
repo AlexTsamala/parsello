@@ -4,38 +4,112 @@ import { posts } from "@/content/blog";
 import { siteUrl } from "@/content/business";
 import { countries } from "@/content/countries";
 
+type StaticPage = {
+  path: string;
+  /** Date this page's visible copy last changed, `YYYY-MM-DD`. */
+  updatedAt: string;
+  changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"];
+  priority: number;
+};
+
+/**
+ * `lastModified` is a real revision date, never the build time.
+ *
+ * Search engines trust the field only while it matches the page they fetch, so
+ * stamping every URL with `new Date()` on each deploy would spend that trust on
+ * nothing and leave no way to flag a page that genuinely changed. Bump the date
+ * beside a route when a visitor would see a difference — styling, refactors and
+ * metadata edits do not count.
+ */
+const staticPages: StaticPage[] = [
+  {
+    path: "/",
+    updatedAt: "2026-09-03",
+    changeFrequency: "monthly",
+    priority: 1,
+  },
+  {
+    path: "/countries",
+    updatedAt: "2026-09-02",
+    changeFrequency: "monthly",
+    priority: 0.9,
+  },
+  {
+    path: "/prices",
+    updatedAt: "2026-09-02",
+    changeFrequency: "monthly",
+    priority: 0.9,
+  },
+  {
+    path: "/services",
+    updatedAt: "2026-09-03",
+    changeFrequency: "monthly",
+    priority: 0.8,
+  },
+  {
+    path: "/what-can-i-send",
+    updatedAt: "2026-09-02",
+    changeFrequency: "monthly",
+    priority: 0.8,
+  },
+  {
+    path: "/faq",
+    updatedAt: "2026-09-03",
+    changeFrequency: "monthly",
+    priority: 0.7,
+  },
+  {
+    path: "/contact",
+    updatedAt: "2026-09-02",
+    changeFrequency: "yearly",
+    priority: 0.7,
+  },
+  {
+    path: "/blog",
+    updatedAt: "2026-09-02",
+    changeFrequency: "weekly",
+    priority: 0.6,
+  },
+];
+
+/** ISO dates sort lexicographically, so the newest is the string maximum. */
+function newest(dates: string[]): string {
+  return dates.reduce((latest, date) => (date > latest ? date : latest), "");
+}
+
 /**
  * Generated, never hand-maintained (CLAUDE.md §6). New countries and blog posts
- * appear here automatically.
+ * appear here automatically, each carrying the date from its content file.
  */
 export default function sitemap(): MetadataRoute.Sitemap {
   const url = (path: string) => new URL(path, siteUrl).toString();
-  const now = new Date();
 
-  const staticPages: MetadataRoute.Sitemap = [
-    { url: url("/"), lastModified: now, changeFrequency: "monthly", priority: 1 },
-    { url: url("/countries"), lastModified: now, changeFrequency: "monthly", priority: 0.9 },
-    { url: url("/prices"), lastModified: now, changeFrequency: "monthly", priority: 0.9 },
-    { url: url("/services"), lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: url("/what-can-i-send"), lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: url("/faq"), lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: url("/contact"), lastModified: now, changeFrequency: "yearly", priority: 0.7 },
-    { url: url("/blog"), lastModified: now, changeFrequency: "weekly", priority: 0.6 },
-  ];
+  /** An index page is at least as fresh as the newest entry it lists. */
+  const childDates: Record<string, string> = {
+    "/countries": newest(countries.map((country) => country.updatedAt)),
+    "/blog": newest(posts.map((post) => post.publishedAt)),
+  };
 
-  const countryPages: MetadataRoute.Sitemap = countries.map((country) => ({
+  const staticEntries: MetadataRoute.Sitemap = staticPages.map((page) => ({
+    url: url(page.path),
+    lastModified: newest([page.updatedAt, childDates[page.path] ?? ""]),
+    changeFrequency: page.changeFrequency,
+    priority: page.priority,
+  }));
+
+  const countryEntries: MetadataRoute.Sitemap = countries.map((country) => ({
     url: url(`/countries/${country.slug}`),
-    lastModified: now,
+    lastModified: country.updatedAt,
     changeFrequency: "monthly",
     priority: 0.9,
   }));
 
-  const blogPages: MetadataRoute.Sitemap = posts.map((post) => ({
+  const blogEntries: MetadataRoute.Sitemap = posts.map((post) => ({
     url: url(`/blog/${post.slug}`),
-    lastModified: new Date(post.publishedAt),
+    lastModified: post.publishedAt,
     changeFrequency: "yearly",
     priority: 0.6,
   }));
 
-  return [...staticPages, ...countryPages, ...blogPages];
+  return [...staticEntries, ...countryEntries, ...blogEntries];
 }

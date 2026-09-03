@@ -70,6 +70,13 @@ export type CountryContent = {
 
 export type Country = {
   slug: string;
+  /**
+   * Date this page's visible copy last changed, `YYYY-MM-DD`. Feeds the
+   * sitemap's `lastModified`, so bump it only when a visitor would see a
+   * difference — not on styling, refactors or metadata edits. Search engines
+   * ignore the field once it stops matching the page they fetch.
+   */
+  updatedAt: string;
   /** Nominative: "გერმანია" */
   nameKa: string;
   /** "in" form used in headings: "გერმანიაში" */
@@ -105,6 +112,7 @@ const NO_PARCELLO_INFO: ParcelloCountryInfo = {
 export const countries: Country[] = [
   {
     slug: "poland",
+    updatedAt: "2026-09-01",
     nameKa: "პოლონეთი",
     nameKaIn: "პოლონეთში",
     nameEn: "Poland",
@@ -228,6 +236,7 @@ export const countries: Country[] = [
   },
   {
     slug: "germany",
+    updatedAt: "2026-09-01",
     nameKa: "გერმანია",
     nameKaIn: "გერმანიაში",
     nameEn: "Germany",
@@ -403,6 +412,7 @@ export const countries: Country[] = [
   },
   {
     slug: "france",
+    updatedAt: "2026-09-01",
     nameKa: "საფრანგეთი",
     nameKaIn: "საფრანგეთში",
     nameEn: "France",
@@ -560,6 +570,7 @@ export const countries: Country[] = [
   },
   {
     slug: "hungary",
+    updatedAt: "2026-09-01",
     nameKa: "უნგრეთი",
     nameKaIn: "უნგრეთში",
     nameEn: "Hungary",
@@ -721,6 +732,7 @@ export const countries: Country[] = [
   },
   {
     slug: "italy",
+    updatedAt: "2026-09-01",
     nameKa: "იტალია",
     nameKaIn: "იტალიაში",
     nameEn: "Italy",
@@ -872,6 +884,7 @@ export const countries: Country[] = [
   },
   {
     slug: "bulgaria",
+    updatedAt: "2026-09-01",
     nameKa: "ბულგარეთი",
     nameKaIn: "ბულგარეთში",
     nameEn: "Bulgaria",
