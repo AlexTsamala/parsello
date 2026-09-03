@@ -11,7 +11,7 @@ export type NavLink = { href: string; label: string };
  */
 export const mainNav: NavLink[] = [
   { href: "/", label: "მთავარი" },
-  { href: "/how-it-works", label: "როგორ მუშაობს" },
+  { href: "/services", label: "სერვისები" },
   { href: "/prices", label: "ფასები" },
   { href: "/countries", label: "მიმართულებები" },
   { href: "/what-can-i-send", label: "დასაშვები ნივთები" },
@@ -21,7 +21,7 @@ export const mainNav: NavLink[] = [
 export const footerNav: NavLink[] = [
   { href: "/", label: "მთავარი" },
   { href: "/prices", label: "ფასები" },
-  { href: "/how-it-works", label: "როგორ მუშაობს" },
+  { href: "/services", label: "სერვისები" },
   { href: "/countries", label: "მიმართულებები" },
   { href: "/what-can-i-send", label: "რისი გაგზავნა შეიძლება" },
   { href: "/faq", label: "ხშირად დასმული კითხვები" },

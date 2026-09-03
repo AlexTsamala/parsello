@@ -102,7 +102,7 @@ export const posts: BlogPost[] = [
     related: [
       { href: "/what-can-i-send", label: "რისი გაგზავნა შეიძლება ევროპაში" },
       { href: "/prices", label: "ამანათის გაგზავნის ფასი" },
-      { href: "/how-it-works", label: "როგორ მუშაობს Parcello" },
+      { href: "/services", label: "Parcello-ს სერვისები" },
       { href: "/faq", label: "ხშირად დასმული კითხვები" },
     ],
   },

@@ -115,7 +115,7 @@ export default function FaqPage() {
           </Link>{" "}
           და{" "}
           <Link
-            href="/how-it-works"
+            href="/services"
             className="text-charcoal underline underline-offset-4 hover:text-brand"
           >
             როგორ მუშაობს Parcello

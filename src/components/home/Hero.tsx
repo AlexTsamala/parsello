@@ -27,7 +27,7 @@ export function Hero() {
             <Button href="/contact" size="lg">
               ამანათის გაგზავნა
             </Button>
-            <Button href="/how-it-works" size="lg" variant="secondary">
+            <Button href="/services" size="lg" variant="secondary">
               როგორ მუშაობს?
             </Button>
           </div>

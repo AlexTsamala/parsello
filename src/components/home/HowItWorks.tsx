@@ -26,8 +26,8 @@ export function HowItWorks() {
       </ol>
 
       <div className="mt-8">
-        <Button href="/how-it-works" variant="secondary">
-          დეტალურად — როგორ მუშაობს Parcello
+        <Button href="/services" variant="secondary">
+          ყველა სერვისი
         </Button>
       </div>
     </Section>

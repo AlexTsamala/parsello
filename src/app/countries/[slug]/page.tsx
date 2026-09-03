@@ -142,7 +142,7 @@ export default async function CountryPage({
             <p className="mt-8 text-sm text-muted">
               იხილეთ დეტალურად:{" "}
               <Link
-                href="/how-it-works"
+                href="/services"
                 className="text-charcoal underline underline-offset-4 hover:text-brand"
               >
                 როგორ მუშაობს Parcello

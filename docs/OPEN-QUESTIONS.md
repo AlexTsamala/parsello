@@ -43,6 +43,9 @@ Until answered:
 | 10 | Delivery to recipient's door, or to a pickup point in Europe? | Country pages, FAQ |
 | 11 | When and how does the customer pay? | FAQ, order flow |
 | 12 | Email address | Contact page |
+| 16 | **Inbound handover** — how does someone in Greece or Poland actually give you the parcel? Courier pickup, a drop-off address, an agent? The `/services` steps say "by the agreed method" because this is unknown. | /services |
+| 17 | **Inbound delivery time** — how long from Greece/Poland to Georgia? Currently omitted; only the outbound 2-3 weeks is published. | /services, FAQ |
+| 18 | **Online-shopping service** — how does a customer get their forwarding address? Is there registration? Which countries have an address? Where is the parcel collected in Georgia, and is there a weight/price basis? | /services |
 | 14 | Parcello-specific detail per destination (routes, typical timing, what customers usually send there) | Country pages — the researched layer alone can't carry them |
 
 ## Resolved
@@ -55,4 +58,5 @@ Until answered:
 - **Delivery time** — 2-3 weeks site-wide; Poland 2 weeks. Per-destination breakdown still open (#7).
 - **Drop-off address** — გრიგოლ რობაქიძის გამზირი 4, თბილისი, საქართველო.
 - **Working hours** — every day, 08:00–22:00. Published on the contact page and in `openingHoursSpecification`.
+- **Services** — three confirmed (2026-09-03): Georgia→Europe, Greece/Poland→Georgia, and online-shopping forwarding. `/services` owns the process copy; `/how-it-works` permanently redirects there.
 - **Country-page content** — general destination facts are researched and published with sources, kept structurally separate from Parcello claims. See `CLAUDE.md` §1 rule 10 and `docs/RESEARCH-SOURCES.md`.
