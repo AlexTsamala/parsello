@@ -30,15 +30,18 @@ export default function ServicesPage() {
 
       <section className="border-b border-line bg-surface">
         <div className="container-page py-10 md:py-16">
-          <Breadcrumbs items={[{ href: "/", label: "მთავარი" }, { label: "სერვისები" }]} />
+          <Breadcrumbs
+            items={[{ href: "/", label: "მთავარი" }, { label: "სერვისები" }]}
+          />
 
           <h1 className="mt-6 max-w-3xl text-3xl font-bold md:text-5xl">
             Parcello-ს სერვისები
           </h1>
 
           <p className="mt-5 max-w-2xl text-base text-muted md:text-lg">
-            ვაგზავნით ამანათებს საქართველოდან ევროპაში, ვიღებთ ამანათებს საბერძნეთიდან და
-            პოლონეთიდან, და გეხმარებით ევროპულ ონლაინ მაღაზიებში შეძენილი ნივთების მიღებაში.
+            ვაგზავნით ამანათებს საქართველოდან ევროპაში, ვიღებთ ამანათებს
+            საბერძნეთიდან და პოლონეთიდან, და გეხმარებით ევროპულ ონლაინ
+            მაღაზიებში შეძენილი ნივთების მიღებაში.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
@@ -62,9 +65,6 @@ export default function ServicesPage() {
                   href={`#${service.slug}`}
                   className="group flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-white transition-colors hover:border-brand"
                 >
-                  {/* Square: the service photos are 1:1, so a 16/10 frame cut
-                      roughly a third off the top and bottom. Matching the
-                      frame to the source shows each photo whole. */}
                   <div className="relative aspect-square overflow-hidden bg-brand-soft">
                     {hasPhoto ? (
                       <Image
@@ -93,9 +93,7 @@ export default function ServicesPage() {
                     <span className="text-xs font-semibold tracking-wide text-brand">
                       {service.direction}
                     </span>
-                    {/* Not a heading: this is a jump link to the section
-                        below, whose <h2> is the real heading for this service.
-                        Two identical h2s would duplicate the page outline. */}
+
                     <span className="mt-2 block text-lg font-bold group-hover:text-brand">
                       {service.title}
                     </span>
@@ -119,7 +117,9 @@ export default function ServicesPage() {
             <span className="text-sm font-semibold tracking-wide text-brand">
               {service.direction}
             </span>
-            <h2 className="mt-2 text-2xl font-bold md:text-4xl">{service.title}</h2>
+            <h2 className="mt-2 text-2xl font-bold md:text-4xl">
+              {service.title}
+            </h2>
             <p className="mt-4 max-w-2xl text-muted">{service.summary}</p>
 
             {service.deliveryTimeGenitive ? (
@@ -155,9 +155,12 @@ export default function ServicesPage() {
 
       <section className="bg-charcoal text-white">
         <div className="container-page py-16 text-center md:py-20">
-          <h2 className="text-2xl font-bold md:text-4xl">რომელი სერვისი გჭირდებათ?</h2>
+          <h2 className="text-2xl font-bold md:text-4xl">
+            რომელი სერვისი გჭირდებათ?
+          </h2>
           <p className="mx-auto mt-4 max-w-xl text-white/70">
-            მოგვწერეთ, საიდან სად იგზავნება ამანათი — დანარჩენში ჩვენ დაგეხმარებით.
+            მოგვწერეთ, საიდან სად იგზავნება ამანათი — დანარჩენში ჩვენ
+            დაგეხმარებით.
           </p>
 
           <div className="mt-8 flex flex-wrap justify-center gap-3">

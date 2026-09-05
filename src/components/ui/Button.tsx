@@ -13,18 +13,11 @@ const variants: Record<Variant, string> = {
   secondary:
     "border border-line bg-white text-charcoal hover:border-charcoal hover:bg-surface",
   ghost: "text-charcoal hover:text-brand",
-  /**
-   * For charcoal sections. Use this instead of passing dark colours through
-   * `className`: those collide with the `secondary` background utility and
-   * Tailwind resolves the conflict by stylesheet order, which produced white
-   * text on a white button.
-   */
   onDark:
     "border border-white/30 bg-transparent text-white hover:border-white hover:bg-white/10",
 };
 
 const sizes: Record<Size, string> = {
-  // Tall enough to stay thumb-friendly on mobile (CLAUDE.md §7).
   md: "min-h-11 px-5 py-2.5 text-[15px]",
   lg: "min-h-13 px-7 py-3 text-base md:text-[17px]",
 };
@@ -34,19 +27,13 @@ type ButtonProps = {
   variant?: Variant;
   size?: Size;
   className?: string;
-  /** When set, renders a link instead of a button. */
   href?: string;
   type?: "button" | "submit";
   disabled?: boolean;
   "aria-label"?: string;
-  /** Only usable from a Client Component. */
   onClick?: () => void;
 };
 
-/**
- * Shared CTA button. Renders a real <a> when given `href` and a real <button>
- * otherwise, so it stays keyboard-accessible with no client JS.
- */
 export function Button({
   children,
   variant = "primary",
@@ -82,7 +69,12 @@ export function Button({
     }
 
     return (
-      <Link href={href} className={cls} aria-label={ariaLabel} onClick={onClick}>
+      <Link
+        href={href}
+        className={cls}
+        aria-label={ariaLabel}
+        onClick={onClick}
+      >
         {children}
       </Link>
     );

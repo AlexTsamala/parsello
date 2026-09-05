@@ -20,15 +20,6 @@ import { euImportRules } from "@/content/shipping-rules";
 import { breadcrumbSchema, faqSchema } from "@/lib/schema";
 import { buildMetadata } from "@/lib/seo";
 
-/**
- * Facts withheld pending a business answer.
- *
- * `animal-products` states the EU prohibition on dairy. Parcello's own list of
- * what customers send includes cheese, so publishing both would put a Parcello
- * claim and an official rule in direct contradiction on the same site. Held
- * back until docs/OPEN-QUESTIONS.md #15 is resolved — then delete this and the
- * filter below. Do not "fix" it by editing either statement.
- */
 const WITHHELD_FACT_IDS = new Set(["animal-products"]);
 
 export function generateStaticParams() {
@@ -78,7 +69,7 @@ export default async function CountryPage({
             { name: "მიმართულებები", path: "/countries" },
             { name: country.nameKa, path: `/countries/${country.slug}` },
           ]),
-          /* Exactly the Q&As rendered by <FaqSection /> below. */
+
           faqSchema(faqItems),
         ]}
       />
@@ -100,7 +91,10 @@ export default async function CountryPage({
           </h1>
 
           {introParagraphs.map((paragraph) => (
-            <p key={paragraph} className="mt-5 max-w-2xl text-base text-muted md:text-lg">
+            <p
+              key={paragraph}
+              className="mt-5 max-w-2xl text-base text-muted md:text-lg"
+            >
               {paragraph}
             </p>
           ))}
@@ -126,7 +120,10 @@ export default async function CountryPage({
 
             <ol className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {howItWorksSteps.map((step, index) => (
-                <li key={step.title} className="rounded-xl border border-line bg-white p-6">
+                <li
+                  key={step.title}
+                  className="rounded-xl border border-line bg-white p-6"
+                >
                   <span
                     className="inline-flex size-9 items-center justify-center rounded-lg bg-brand-soft text-base font-bold text-brand"
                     aria-hidden="true"
@@ -162,7 +159,11 @@ export default async function CountryPage({
                 <div className="mt-6 flex flex-wrap gap-3">
                   <PhoneButton size="lg" />
                   {business.facebookUrl ? (
-                    <Button href={business.facebookUrl} size="lg" variant="secondary">
+                    <Button
+                      href={business.facebookUrl}
+                      size="lg"
+                      variant="secondary"
+                    >
                       Facebook-ზე მოწერა
                     </Button>
                   ) : null}
@@ -213,7 +214,8 @@ export default async function CountryPage({
               გსურთ ამანათის გაგზავნა {country.nameKaIn}?
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-white/70">
-              დაიწყეთ შეკვეთა Parcello-სთან — დაგვირეკეთ ან მოგვწერეთ Facebook-ზე.
+              დაიწყეთ შეკვეთა Parcello-სთან — დაგვირეკეთ ან მოგვწერეთ
+              Facebook-ზე.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Button href="/contact" size="lg">

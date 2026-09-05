@@ -1,14 +1,5 @@
-/**
- * Google Analytics 4.
- *
- * The whole feature is inert until `NEXT_PUBLIC_GA_ID` is set in the
- * environment: no script, no cookies, no consent banner. Nothing here reads or
- * sends business data — only page paths and which contact link was clicked.
- */
-
 export const GA_ID = process.env.NEXT_PUBLIC_GA_ID ?? null;
 
-/** Where the visitor's answer is kept. Their browser only — never sent to us. */
 export const CONSENT_KEY = "parcello-analytics-consent";
 
 export type ConsentChoice = "granted" | "denied";
@@ -25,7 +16,6 @@ export function readConsent(): ConsentChoice | null {
     const stored = window.localStorage.getItem(CONSENT_KEY);
     return stored === "granted" || stored === "denied" ? stored : null;
   } catch {
-    // Private mode and blocked storage both throw. No stored answer, so ask.
     return null;
   }
 }
@@ -50,7 +40,6 @@ export function writeConsent(choice: ConsentChoice): void {
   consentListeners.forEach((listener) => listener());
 }
 
-/** No-op until the tag loads, so callers never have to check. */
 export function trackEvent(
   name: string,
   params?: Record<string, string>,

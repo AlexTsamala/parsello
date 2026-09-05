@@ -13,10 +13,6 @@ import { organizationSchema, websiteSchema } from "@/lib/schema";
 
 import "./globals.css";
 
-/**
- * Georgian is the primary language (CLAUDE.md §5), so the font must have real
- * Georgian coverage — most default UI stacks do not.
- */
 const georgian = Noto_Sans_Georgian({
   subsets: ["georgian", "latin"],
   display: "swap",

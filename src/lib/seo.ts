@@ -3,13 +3,10 @@ import type { Metadata } from "next";
 import { business, siteUrl } from "@/content/business";
 import { publicImageExists } from "@/lib/assets";
 
-/**
- * The og:image tag is emitted only when the file is actually on disk: a tag
- * pointing at a missing file renders as a broken preview when the link is
- * shared, which is worse than having no preview image at all.
- */
 const OG_IMAGE_FILE = "og-default.jpg";
-const ogImage = publicImageExists(OG_IMAGE_FILE) ? `/images/${OG_IMAGE_FILE}` : null;
+const ogImage = publicImageExists(OG_IMAGE_FILE)
+  ? `/images/${OG_IMAGE_FILE}`
+  : null;
 
 type PageMetadataInput = {
   /** Page title without the brand suffix — the template adds it. */
@@ -25,8 +22,6 @@ type PageMetadataInput = {
 
 /**
  * Builds page metadata with a canonical URL, Open Graph and Twitter tags.
- * Every page must use this — see CLAUDE.md §6. Do not hand-write Metadata
- * objects, or canonicals drift.
  */
 export function buildMetadata({
   title,
@@ -40,8 +35,6 @@ export function buildMetadata({
   const fullTitle = `${title} | ${business.name}`;
 
   return {
-    // Absolute, so the rendered <title> is exactly the one the plan specifies
-    // rather than depending on the layout's template resolving.
     title: { absolute: fullTitle },
     description,
     alternates: { canonical: url },
@@ -55,7 +48,11 @@ export function buildMetadata({
       type,
       ...(publishedTime ? { publishedTime } : {}),
       ...(ogImage
-        ? { images: [{ url: ogImage, width: 1200, height: 630, alt: business.name }] }
+        ? {
+            images: [
+              { url: ogImage, width: 1200, height: 630, alt: business.name },
+            ],
+          }
         : {}),
     },
     twitter: {

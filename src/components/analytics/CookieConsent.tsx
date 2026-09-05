@@ -39,7 +39,6 @@ export function CookieConsent() {
     <div
       role="region"
       aria-label="ქუქი-ფაილების შეტყობინება"
-      // Sits above the mobile sticky CTA, which owns the bottom 5rem below lg.
       className="fixed inset-x-0 bottom-20 z-50 px-4 lg:bottom-4"
     >
       <div className="container-page">

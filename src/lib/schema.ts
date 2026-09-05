@@ -1,23 +1,12 @@
 import { business, siteUrl } from "@/content/business";
 
-/**
- * JSON-LD builders.
- *
- * RULES (CLAUDE.md §1 rule 5): structured data must match what the page
- * visibly says, and may never contain invented information.
- *  - No `Offer`, `price`, or `priceRange` anywhere — pricing is never published.
- *  - `LocalBusiness` (a subtype of Organization) is used now that a real
- *    street address and opening hours exist.
- *  - `FAQPage` only on pages that visibly render those exact Q&As.
- *  - `areaServed` is Europe, not the six priority countries (see business.coverage).
- */
-
 const url = (path: string) => new URL(path, siteUrl).toString();
 
 export function organizationSchema() {
-  // Typed explicitly: `business` is `as const`, so the inferred element type
-  // would be the literal URLs and the predicate below would not narrow.
-  const socialLinks: (string | null)[] = [business.facebookUrl, business.instagramUrl];
+  const socialLinks: (string | null)[] = [
+    business.facebookUrl,
+    business.instagramUrl,
+  ];
   const sameAs = socialLinks.filter((link): link is string => link !== null);
 
   return {
@@ -28,8 +17,7 @@ export function organizationSchema() {
     url: siteUrl,
     logo: url("/images/logo.svg"),
     image: url("/images/og-default.jpg"),
-    description:
-      "ამანათების გაგზავნა საქართველოდან ევროპის მიმართულებით.",
+    description: "ამანათების გაგზავნა საქართველოდან ევროპის მიმართულებით.",
     telephone: business.phone.tel,
     ...(business.email ? { email: business.email } : {}),
     areaServed: { "@type": "Place", name: "Europe" },

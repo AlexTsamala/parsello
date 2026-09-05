@@ -1,9 +1,5 @@
 import { Section, SectionHeading } from "@/components/ui/Section";
 
-/**
- * Every claim here is confirmed business information (CLAUDE.md §10).
- * Courier pickup and drop-off are both offered, so both may be stated.
- */
 const benefits = [
   {
     title: "სწრაფი კომუნიკაცია",
@@ -19,7 +15,7 @@ const benefits = [
   },
   {
     title: "ევროპის მიმართულებები",
-    body: "ამანათებს ევროპის მასშტაბით ვაგზავნით — ძირითადი მიმართულებებით და მათ მიღმაც.",
+    body: "ამანათებს ვაგზავნით მთელი ევროპის მასშტაბით  — ძირითადი მიმართულებებით და მათ მიღმაც.",
   },
 ];
 

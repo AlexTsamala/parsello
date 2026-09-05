@@ -8,9 +8,38 @@ import { CONSENT_KEY, GA_ID } from "@/lib/analytics";
  * analytics with no geolocation code here — and keeps the site fully static.
  */
 const CONSENT_REQUIRED_REGIONS = [
-  "AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR",
-  "HU", "IE", "IT", "LV", "LT", "LU", "MT", "NL", "PL", "PT", "RO", "SK",
-  "SI", "ES", "SE", "IS", "LI", "NO", "GB", "CH",
+  "AT",
+  "BE",
+  "BG",
+  "HR",
+  "CY",
+  "CZ",
+  "DK",
+  "EE",
+  "FI",
+  "FR",
+  "DE",
+  "GR",
+  "HU",
+  "IE",
+  "IT",
+  "LV",
+  "LT",
+  "LU",
+  "MT",
+  "NL",
+  "PL",
+  "PT",
+  "RO",
+  "SK",
+  "SI",
+  "ES",
+  "SE",
+  "IS",
+  "LI",
+  "NO",
+  "GB",
+  "CH",
 ];
 
 /**
@@ -53,12 +82,6 @@ export function GoogleAnalytics() {
 
   return (
     <>
-      {/*
-        A raw inline script, not next/script: this must execute while the
-        document is parsing, before gtag.js is injected, or the first hit goes
-        out with no consent state. `beforeInteractive` would also work but is
-        flagged by Next's own lint rule outside the pages router.
-      */}
       <script dangerouslySetInnerHTML={{ __html: consentDefaults }} />
 
       <Script
