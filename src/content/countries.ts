@@ -1,50 +1,13 @@
 import type { ResearchedFact } from "./shipping-rules";
 
-/**
- * PRIORITY destination countries — the six the business focuses on and the six
- * SEO landing pages we build. Parcello ships across Europe, so this list is NOT
- * the limit of the service: never write copy implying only these are served.
- * Site-wide coverage wording lives in `business.coverage`.
- *
- * Country pages are generated from this config — do not hand-write six
- * near-identical page components (CLAUDE.md §6).
- *
- * TWO LAYERS, DELIBERATELY SEPARATE (CLAUDE.md §1 rule 10):
- *
- *  `facts`    — researched, sourced, country-specific information about the
- *               destination. Describes the world, never Parcello.
- *
- *  `parcello` — what Parcello itself offers for this destination. Supplied by
- *               the business only. `null` means the UI omits it; it never means
- *               "write something plausible".
- *
- * The UI must render these under visibly different framing so a reader can tell
- * a customs rule from a company claim.
- */
-
 export type ParcelloCountryInfo = {
-  /** Overrides the site-wide estimate when a destination differs. */
   deliveryDays: string | null;
-  /** Anything Parcello wants to say about this destination specifically. */
   notes: string | null;
 };
 
-/**
- * Full page copy written by the business for one destination.
- *
- * Every field here is a PARCELLO CLAIM, supplied by the business — never
- * researched, inferred, or filled with placeholder text. A country without
- * `content` falls back to the shared layout, which is always publishable.
- */
 export type CountryContent = {
-  /** Lead paragraphs under the H1. */
   intro: string[];
-  /**
-   * Prose blocks specific to this destination. Where a block states an external
-   * fact (population, trade figures, history) it MUST carry `sources` — those
-   * are researched claims about the world, not Parcello claims, and the same
-   * provenance rule applies (CLAUDE.md §1 rule 10).
-   */
+
   narrative?: {
     heading: string;
     body: string[];
@@ -58,7 +21,6 @@ export type CountryContent = {
     intro: string;
     items: string[];
     note: string;
-    /** Internal link to the full allowed-items page. */
     moreHref?: string;
     moreLabel?: string;
   };
@@ -70,16 +32,8 @@ export type CountryContent = {
 
 export type Country = {
   slug: string;
-  /**
-   * Date this page's visible copy last changed, `YYYY-MM-DD`. Feeds the
-   * sitemap's `lastModified`, so bump it only when a visitor would see a
-   * difference — not on styling, refactors or metadata edits. Search engines
-   * ignore the field once it stops matching the page they fetch.
-   */
   updatedAt: string;
-  /** Nominative: "გერმანია" */
   nameKa: string;
-  /** "in" form used in headings: "გერმანიაში" */
   nameKaIn: string;
   nameEn: string;
   flag: string;
@@ -92,7 +46,6 @@ export type Country = {
   intro: string;
   facts: ResearchedFact[];
   parcello: ParcelloCountryInfo;
-  /** Present once the business has written this country's page copy. */
   content?: CountryContent;
 };
 
@@ -103,9 +56,16 @@ const VAT_SOURCE = {
   url: "https://taxfoundation.org/data/all/eu/value-added-tax-vat-rates-europe/",
 };
 
-/** TODO: awaiting business — replace the nulls per country as details arrive. */
-const NO_PARCELLO_INFO: ParcelloCountryInfo = {
-  deliveryDays: null,
+/**
+ * The site-wide delivery figure, used where the business has not given a
+ * per-country one. Matches `business.deliveryTime` (2-3 weeks) in days.
+ *
+ * Written as one quoted string on purpose: `14 - 21 + " დღე"` is valid
+ * TypeScript that silently evaluates to "-7 დღე", because the subtraction
+ * runs before the text is joined.
+ */
+const DEFAULT_PARCELLO_INFO: ParcelloCountryInfo = {
+  deliveryDays: "14-21 დღე",
   notes: null,
 };
 
@@ -126,7 +86,7 @@ export const countries: Country[] = [
     h1: "ამანათის გაგზავნა საქართველოდან პოლონეთში",
     seoTitle: "ამანათის გაგზავნა პოლონეთში",
     seoDescription:
-      "ამანათის გაგზავნა საქართველოდან პოლონეთში — ვარშავა, კრაკოვი, ვროცლავი, გდანსკი, პოზნანი. გაიგეთ ფასი და დაიწყეთ შეკვეთა Parcello-სთან.",
+      "ამანათის გაგზავნა და ჩამოტანა საქართველოდან პოლონეთში — ვარშავა, კრაკოვი, ვროცლავი, გდანსკი, პოზნანი. გაიგეთ ფასი და დაიწყეთ შეკვეთა Parcello-სთან.",
     intro:
       "პოლონეთი ერთ-ერთი ყველაზე მოთხოვნადი მიმართულებაა საქართველოდან გაგზავნილი ამანათებისთვის. ვინაიდან პოლონეთი ევროკავშირის წევრია, გზავნილზე ევროკავშირის საბაჟო წესები ვრცელდება — თუმცა ქვეყანას ეროვნული ვალუტა შენარჩუნებული აქვს, რაც ღირებულების დეკლარირებისას გასათვალისწინებელია.",
     facts: [
@@ -139,7 +99,6 @@ export const countries: Country[] = [
       },
     ],
     parcello: {
-      /** Poland is faster than the site-wide 2–3 weeks. Supplied by the business. */
       deliveryDays: "2 კვირა",
       notes: null,
     },
@@ -273,7 +232,7 @@ export const countries: Country[] = [
         verifiedOn: VERIFIED,
       },
     ],
-    parcello: NO_PARCELLO_INFO,
+    parcello: DEFAULT_PARCELLO_INFO,
     content: {
       intro: [
         "გსურთ ამანათის გაგზავნა საქართველოდან გერმანიაში? Parcello დაგეხმარებათ ამანათის გაგზავნაში მარტივად და კომფორტულად — იქნება ეს საჩუქარი, პირადი ნივთები, ტანსაცმელი თუ სხვა ნებადართული პროდუქტი.",
@@ -438,7 +397,7 @@ export const countries: Country[] = [
         verifiedOn: VERIFIED,
       },
     ],
-    parcello: NO_PARCELLO_INFO,
+    parcello: DEFAULT_PARCELLO_INFO,
     content: {
       intro: [
         "გსურთ ამანათის გაგზავნა საქართველოდან საფრანგეთში? Parcello დაგეხმარებათ ამანათის მარტივად და კომფორტულად გაგზავნაში — იქნება ეს საჩუქარი, პირადი ნივთები, ტანსაცმელი თუ სხვა ნებადართული პროდუქცია.",
@@ -550,7 +509,8 @@ export const countries: Country[] = [
             "ზოგიერთი პროდუქტის გაგზავნა შესაძლებელია, თუმცა კონკრეტულ ნივთებზე შეიძლება მოქმედებდეს შეზღუდვები. მოგვწერეთ, რა პროდუქტის გაგზავნა გსურთ, და დაგეხმარებით გადამოწმებაში.",
         },
         {
-          question: "შემიძლია თუ არა ამანათის გაგზავნა პარიზში ან სხვა ქალაქში?",
+          question:
+            "შემიძლია თუ არა ამანათის გაგზავნა პარიზში ან სხვა ქალაქში?",
           answer:
             "მოგვწერეთ მიმღების ქალაქი საფრანგეთში და დაგიდასტურებთ მოქმედი სერვისის შესაძლებლობას.",
         },
@@ -561,7 +521,8 @@ export const countries: Country[] = [
         },
       ],
       cta: {
-        heading: "გაგზავნეთ ამანათი საქართველოდან საფრანგეთში Parcello-სთან ერთად",
+        heading:
+          "გაგზავნეთ ამანათი საქართველოდან საფრანგეთში Parcello-სთან ერთად",
         body: "გაუგზავნეთ საჩუქარი, პირადი ნივთები ან სხვა ნებადართული ამანათი ოჯახს, მეგობრებსა და ახლობლებს საფრანგეთში.",
         emphasis:
           "მოგვწერეთ დღესვე და გაიგეთ თქვენი ამანათის გაგზავნის ფასი საფრანგეთში.",
@@ -596,7 +557,7 @@ export const countries: Country[] = [
         verifiedOn: VERIFIED,
       },
     ],
-    parcello: NO_PARCELLO_INFO,
+    parcello: DEFAULT_PARCELLO_INFO,
     content: {
       intro: [
         "გსურთ ამანათის გაგზავნა საქართველოდან უნგრეთში? Parcello დაგეხმარებათ ამანათის მარტივად და კომფორტულად გაგზავნაში — იქნება ეს საჩუქარი, პირადი ნივთები, ტანსაცმელი თუ სხვა ნებადართული პროდუქცია.",
@@ -613,7 +574,8 @@ export const countries: Country[] = [
           ],
           sources: [
             {
-              label: "საქართველოს საგარეო საქმეთა სამინისტრო — ორმხრივი ურთიერთობები",
+              label:
+                "საქართველოს საგარეო საქმეთა სამინისტრო — ორმხრივი ურთიერთობები",
               url: "https://mfa.gov.ge/en/bilateral-relations/hu",
             },
           ],
@@ -628,7 +590,8 @@ export const countries: Country[] = [
           ],
           sources: [
             {
-              label: "საქართველოს საგარეო საქმეთა სამინისტრო — ორმხრივი ურთიერთობები",
+              label:
+                "საქართველოს საგარეო საქმეთა სამინისტრო — ორმხრივი ურთიერთობები",
               url: "https://mfa.gov.ge/en/bilateral-relations/hu",
             },
             {
@@ -758,7 +721,7 @@ export const countries: Country[] = [
         verifiedOn: VERIFIED,
       },
     ],
-    parcello: NO_PARCELLO_INFO,
+    parcello: DEFAULT_PARCELLO_INFO,
     content: {
       intro: [
         "გსურთ ამანათის გაგზავნა საქართველოდან იტალიაში? Parcello დაგეხმარებათ ამანათის მარტივად და კომფორტულად გაგზავნაში — იქნება ეს საჩუქარი, ტანსაცმელი, პირადი ნივთები თუ სხვა ნებადართული პროდუქცია.",
@@ -784,7 +747,8 @@ export const countries: Country[] = [
           ],
           sources: [
             {
-              label: "Investor.ge — Georgia and Italy: wine, tradition and remittances",
+              label:
+                "Investor.ge — Georgia and Italy: wine, tradition and remittances",
               url: "https://www.investor.ge/2026/06/15/georgia-and-italy-a-relationship-built-on-wine-tradition-and-remittances/",
             },
           ],
@@ -921,7 +885,7 @@ export const countries: Country[] = [
         verifiedOn: VERIFIED,
       },
     ],
-    parcello: NO_PARCELLO_INFO,
+    parcello: DEFAULT_PARCELLO_INFO,
     content: {
       intro: [
         "გსურთ ამანათის გაგზავნა საქართველოდან ბულგარეთში? Parcello დაგეხმარებათ ამანათის მარტივად და კომფორტულად გაგზავნაში — იქნება ეს საჩუქარი, ტანსაცმელი, პირადი ნივთები თუ სხვა ნებადართული პროდუქცია.",
@@ -937,7 +901,8 @@ export const countries: Country[] = [
           ],
           sources: [
             {
-              label: "საქართველოს საგარეო საქმეთა სამინისტრო — ორმხრივი ურთიერთობები",
+              label:
+                "საქართველოს საგარეო საქმეთა სამინისტრო — ორმხრივი ურთიერთობები",
               url: "https://mfa.gov.ge/en/bilateral-relations/bg",
             },
           ],
@@ -1048,7 +1013,8 @@ export const countries: Country[] = [
         },
       ],
       cta: {
-        heading: "გაგზავნეთ ამანათი საქართველოდან ბულგარეთში Parcello-სთან ერთად",
+        heading:
+          "გაგზავნეთ ამანათი საქართველოდან ბულგარეთში Parcello-სთან ერთად",
         body: "გაუგზავნეთ საჩუქარი, პირადი ნივთები ან სხვა ნებადართული ამანათი ოჯახს, მეგობრებსა და ახლობლებს ბულგარეთში.",
         emphasis:
           "მოგვწერეთ დღესვე და გაიგეთ თქვენი ამანათის გაგზავნის ფასი ბულგარეთში.",
