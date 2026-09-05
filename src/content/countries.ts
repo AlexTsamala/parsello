@@ -1,10 +1,5 @@
 import type { ResearchedFact } from "./shipping-rules";
 
-export type ParcelloCountryInfo = {
-  deliveryDays: string | null;
-  notes: string | null;
-};
-
 export type CountryContent = {
   intro: string[];
 
@@ -35,17 +30,12 @@ export type Country = {
   updatedAt: string;
   nameKa: string;
   nameKaIn: string;
-  nameEn: string;
   flag: string;
-  currency: string;
-  vatRate: string;
-  customsAuthority: { name: string; url: string };
   h1: string;
   seoTitle: string;
   seoDescription: string;
   intro: string;
   facts: ResearchedFact[];
-  parcello: ParcelloCountryInfo;
   content?: CountryContent;
 };
 
@@ -56,33 +46,13 @@ const VAT_SOURCE = {
   url: "https://taxfoundation.org/data/all/eu/value-added-tax-vat-rates-europe/",
 };
 
-/**
- * The site-wide delivery figure, used where the business has not given a
- * per-country one. Matches `business.deliveryTime` (2-3 weeks) in days.
- *
- * Written as one quoted string on purpose: `14 - 21 + " დღე"` is valid
- * TypeScript that silently evaluates to "-7 დღე", because the subtraction
- * runs before the text is joined.
- */
-const DEFAULT_PARCELLO_INFO: ParcelloCountryInfo = {
-  deliveryDays: "14-21 დღე",
-  notes: null,
-};
-
 export const countries: Country[] = [
   {
     slug: "poland",
     updatedAt: "2026-09-01",
     nameKa: "პოლონეთი",
     nameKaIn: "პოლონეთში",
-    nameEn: "Poland",
     flag: "🇵🇱",
-    currency: "ზლოტი (PLN)",
-    vatRate: "23%",
-    customsAuthority: {
-      name: "Krajowa Administracja Skarbowa (KAS)",
-      url: "https://www.gov.pl/web/kas",
-    },
     h1: "ამანათის გაგზავნა საქართველოდან პოლონეთში",
     seoTitle: "ამანათის გაგზავნა პოლონეთში",
     seoDescription:
@@ -98,10 +68,6 @@ export const countries: Country[] = [
         verifiedOn: VERIFIED,
       },
     ],
-    parcello: {
-      deliveryDays: "2 კვირა",
-      notes: null,
-    },
     content: {
       intro: [
         "გსურთ ამანათის გაგზავნა საქართველოდან პოლონეთში? Parcello დაგეხმარებათ ამანათის მარტივად და კომფორტულად გაგზავნაში.",
@@ -198,14 +164,7 @@ export const countries: Country[] = [
     updatedAt: "2026-09-01",
     nameKa: "გერმანია",
     nameKaIn: "გერმანიაში",
-    nameEn: "Germany",
     flag: "🇩🇪",
-    currency: "ევრო (EUR)",
-    vatRate: "19%",
-    customsAuthority: {
-      name: "Zoll — German Customs",
-      url: "https://www.zoll.de",
-    },
     h1: "ამანათის გაგზავნა საქართველოდან გერმანიაში",
     seoDescription:
       "ამანათის გაგზავნა საქართველოდან გერმანიაში — ბერლინი, ფრანკფურტი, მიუნხენი, ჰამბურგი, კიოლნი. გაიგეთ ფასი და დაიწყეთ შეკვეთა Parcello-სთან.",
@@ -232,7 +191,6 @@ export const countries: Country[] = [
         verifiedOn: VERIFIED,
       },
     ],
-    parcello: DEFAULT_PARCELLO_INFO,
     content: {
       intro: [
         "გსურთ ამანათის გაგზავნა საქართველოდან გერმანიაში? Parcello დაგეხმარებათ ამანათის გაგზავნაში მარტივად და კომფორტულად — იქნება ეს საჩუქარი, პირადი ნივთები, ტანსაცმელი თუ სხვა ნებადართული პროდუქტი.",
@@ -374,14 +332,7 @@ export const countries: Country[] = [
     updatedAt: "2026-09-01",
     nameKa: "საფრანგეთი",
     nameKaIn: "საფრანგეთში",
-    nameEn: "France",
     flag: "🇫🇷",
-    currency: "ევრო (EUR)",
-    vatRate: "20%",
-    customsAuthority: {
-      name: "Douane — French Customs",
-      url: "https://www.douane.gouv.fr",
-    },
     h1: "ამანათის გაგზავნა საქართველოდან საფრანგეთში",
     seoTitle: "ამანათის გაგზავნა საფრანგეთში",
     seoDescription:
@@ -397,7 +348,6 @@ export const countries: Country[] = [
         verifiedOn: VERIFIED,
       },
     ],
-    parcello: DEFAULT_PARCELLO_INFO,
     content: {
       intro: [
         "გსურთ ამანათის გაგზავნა საქართველოდან საფრანგეთში? Parcello დაგეხმარებათ ამანათის მარტივად და კომფორტულად გაგზავნაში — იქნება ეს საჩუქარი, პირადი ნივთები, ტანსაცმელი თუ სხვა ნებადართული პროდუქცია.",
@@ -534,14 +484,7 @@ export const countries: Country[] = [
     updatedAt: "2026-09-01",
     nameKa: "უნგრეთი",
     nameKaIn: "უნგრეთში",
-    nameEn: "Hungary",
     flag: "🇭🇺",
-    currency: "ფორინტი (HUF)",
-    vatRate: "27%",
-    customsAuthority: {
-      name: "NAV — Hungarian Tax and Customs Administration",
-      url: "https://nav.gov.hu",
-    },
     h1: "ამანათის გაგზავნა საქართველოდან უნგრეთში",
     seoTitle: "ამანათის გაგზავნა უნგრეთში",
     seoDescription:
@@ -557,7 +500,6 @@ export const countries: Country[] = [
         verifiedOn: VERIFIED,
       },
     ],
-    parcello: DEFAULT_PARCELLO_INFO,
     content: {
       intro: [
         "გსურთ ამანათის გაგზავნა საქართველოდან უნგრეთში? Parcello დაგეხმარებათ ამანათის მარტივად და კომფორტულად გაგზავნაში — იქნება ეს საჩუქარი, პირადი ნივთები, ტანსაცმელი თუ სხვა ნებადართული პროდუქცია.",
@@ -698,14 +640,7 @@ export const countries: Country[] = [
     updatedAt: "2026-09-01",
     nameKa: "იტალია",
     nameKaIn: "იტალიაში",
-    nameEn: "Italy",
     flag: "🇮🇹",
-    currency: "ევრო (EUR)",
-    vatRate: "22%",
-    customsAuthority: {
-      name: "Agenzia delle Dogane e dei Monopoli (ADM)",
-      url: "https://www.adm.gov.it",
-    },
     h1: "ამანათის გაგზავნა საქართველოდან იტალიაში",
     seoTitle: "ამანათის გაგზავნა იტალიაში",
     seoDescription:
@@ -721,7 +656,6 @@ export const countries: Country[] = [
         verifiedOn: VERIFIED,
       },
     ],
-    parcello: DEFAULT_PARCELLO_INFO,
     content: {
       intro: [
         "გსურთ ამანათის გაგზავნა საქართველოდან იტალიაში? Parcello დაგეხმარებათ ამანათის მარტივად და კომფორტულად გაგზავნაში — იქნება ეს საჩუქარი, ტანსაცმელი, პირადი ნივთები თუ სხვა ნებადართული პროდუქცია.",
@@ -851,14 +785,7 @@ export const countries: Country[] = [
     updatedAt: "2026-09-01",
     nameKa: "ბულგარეთი",
     nameKaIn: "ბულგარეთში",
-    nameEn: "Bulgaria",
     flag: "🇧🇬",
-    currency: "ევრო (EUR)",
-    vatRate: "20%",
-    customsAuthority: {
-      name: "Агенция „Митници“ — Bulgarian Customs Agency",
-      url: "https://customs.bg",
-    },
     h1: "ამანათის გაგზავნა საქართველოდან ბულგარეთში",
     seoTitle: "ამანათის გაგზავნა ბულგარეთში",
     seoDescription:
@@ -885,7 +812,6 @@ export const countries: Country[] = [
         verifiedOn: VERIFIED,
       },
     ],
-    parcello: DEFAULT_PARCELLO_INFO,
     content: {
       intro: [
         "გსურთ ამანათის გაგზავნა საქართველოდან ბულგარეთში? Parcello დაგეხმარებათ ამანათის მარტივად და კომფორტულად გაგზავნაში — იქნება ეს საჩუქარი, ტანსაცმელი, პირადი ნივთები თუ სხვა ნებადართული პროდუქცია.",
