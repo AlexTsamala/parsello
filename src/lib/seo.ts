@@ -4,9 +4,9 @@ import { business, siteUrl } from "@/content/business";
 import { publicImageExists } from "@/lib/assets";
 
 /**
- * TODO: add a real branded 1200x630 image at public/images/og-default.jpg.
- * Until it exists we emit no og:image at all — a tag pointing at a missing
- * file renders as a broken preview when the link is shared.
+ * The og:image tag is emitted only when the file is actually on disk: a tag
+ * pointing at a missing file renders as a broken preview when the link is
+ * shared, which is worse than having no preview image at all.
  */
 const OG_IMAGE_FILE = "og-default.jpg";
 const ogImage = publicImageExists(OG_IMAGE_FILE) ? `/images/${OG_IMAGE_FILE}` : null;
