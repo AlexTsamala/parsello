@@ -2,7 +2,7 @@
 
 Every published fact about destination countries traces to a source here. Nothing on the site states a customs rule that isn't in this list.
 
-**Verified:** 2026-09-01 · **Re-check:** these rules change; verify before relying on them commercially.
+**Verified:** 2026-09-01 (Czechia and Slovakia: 2026-09-08) · **Re-check:** these rules change; verify before relying on them commercially.
 
 ## The two content layers
 
@@ -33,10 +33,13 @@ A researched fact describes the world. A Parcello claim describes the business. 
 | Germany | VAT 19%; national guidance on animal-origin food imports | [Tax Foundation 2026](https://taxfoundation.org/data/all/eu/value-added-tax-vat-rates-europe/) · [Zoll](https://www.zoll.de) · [BMLEH](https://www.bmleh.de/EN/topics/consumer-protection/food-hygiene-safety/importation-products-animal-origin.html) |
 | France | VAT 20%; euro | [Tax Foundation 2026](https://taxfoundation.org/data/all/eu/value-added-tax-vat-rates-europe/) · [Douane](https://www.douane.gouv.fr) |
 | Hungary | VAT 27% — highest in the EU; outside eurozone, uses forint (HUF) | [Tax Foundation 2026](https://taxfoundation.org/data/all/eu/value-added-tax-vat-rates-europe/) · [NAV](https://nav.gov.hu) |
-| Italy | VAT 22%; euro | [Tax Foundation 2026](https://taxfoundation.org/data/all/eu/value-added-tax-vat-rates-europe/) · [ADM](https://www.adm.gov.it) |
 | Bulgaria | Adopted the euro 1 Jan 2026 at 1 EUR = 1.95583 BGN; sole legal tender since 1 Feb 2026; VAT 20% | [Access2Markets](https://trade.ec.europa.eu/access-to-markets/en/news/bulgaria-adopts-euro-1-january-2026) · [Tax Foundation 2026](https://taxfoundation.org/data/all/eu/value-added-tax-vat-rates-europe/) |
+| Czechia | Outside the eurozone, uses the koruna (CZK), no euro target date; VAT 21%; diplomatic relations since 1 Jan 1993, Czech embassy in Tbilisi 2000, Georgian embassy in Prague 2006; diaspora association "IVERIA" founded 2014 | [European Commission — Czechia and the euro](https://economy-finance.ec.europa.eu/euro/eu-countries-and-euro/czechia-and-euro_en) · [Tax Foundation 2026](https://taxfoundation.org/data/all/eu/value-added-tax-vat-rates-europe/) · [MFA Georgia](https://mfa.gov.ge/en/bilateral-relations/cz) · [Embassy of Georgia — diaspora](https://czech.mfa.gov.ge/en/diaspora) |
+| Slovakia | Adopted the euro 1 Jan 2009 at 1 EUR = 30.1260 SKK; VAT 23%; diplomatic relations since 1 Jan 1993, Georgian embassy in Bratislava 2006, Slovak embassy in Tbilisi 2014; Feb 2023 cooperation protocol recognising Georgia's European perspective; June 2024 political consultations in Bratislava; direct Kutaisi–Bratislava flights from 12 Jan 2026, four times weekly | [European Commission — Slovakia and the euro](https://economy-finance.ec.europa.eu/euro/eu-countries-and-euro/slovakia-and-euro_en) · [Tax Foundation 2026](https://taxfoundation.org/data/all/eu/value-added-tax-vat-rates-europe/) · [MFA Georgia](https://mfa.gov.ge/en/bilateral-relations/sk) · [Georgia Today](https://georgiatoday.ge/wizz-air-launches-direct-flights-from-kutaisi-to-bratislava/) |
 
-All customs-authority URLs were checked and return HTTP 200 as of 2026-09-01.
+Italy was removed as a destination on 2026-09-08; its page and sources came out with it.
+
+All customs-authority URLs were checked and return HTTP 200 as of 2026-09-01; the Czechia and Slovakia URLs as of 2026-09-08.
 
 ## Deliberately not published
 
