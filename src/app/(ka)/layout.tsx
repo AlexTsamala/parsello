@@ -11,7 +11,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { business, siteUrl } from "@/content/business";
 import { organizationSchema, websiteSchema } from "@/lib/schema";
 
-import "./globals.css";
+import "../globals.css";
 
 const georgian = Noto_Sans_Georgian({
   subsets: ["georgian", "latin"],
