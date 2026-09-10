@@ -24,9 +24,11 @@ export const uiEn: UiStrings = {
   },
 
   hero: {
-    h1: "Send parcels to Europe and receive them from Europe",
+    // The Georgian names both directions of the service; English says the same
+    // thing without repeating "Europe" twice in one line.
+    h1: "Send and receive parcels between Georgia and Europe",
     lead: (brand) =>
-      `${brand} makes it simple to send a parcel from Georgia to Europe, and to receive one from Europe.`,
+      `${brand} makes it simple to send a parcel from Georgia to Europe, and to receive one coming the other way.`,
     ctaSend: "Send a parcel",
     ctaHowItWorks: "How does it work?",
     callPrefix: "Call us:",
