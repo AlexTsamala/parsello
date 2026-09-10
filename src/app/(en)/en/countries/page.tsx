@@ -1,7 +1,7 @@
 import { CountriesPage } from "@/components/pages/CountriesPage";
 import { pageMetadata } from "@/lib/seo";
 
-const locale = "ka";
+const locale = "en";
 
 export const metadata = pageMetadata(locale, "countries", "/countries");
 

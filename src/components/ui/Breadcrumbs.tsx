@@ -1,11 +1,19 @@
 import Link from "next/link";
 
-import { ui } from "@/content/ui";
+import { getContent } from "@/content";
+import { type Locale } from "@/content/locales";
 
 export type Crumb = { href?: string; label: string };
 
-/** Visible breadcrumbs; BreadcrumbList JSON-LD is added in Phase 9. */
-export function Breadcrumbs({ items }: { items: Crumb[] }) {
+export function Breadcrumbs({
+  items,
+  locale,
+}: {
+  items: Crumb[];
+  locale: Locale;
+}) {
+  const { ui } = getContent(locale);
+
   return (
     <nav aria-label={ui.aria.breadcrumb} className="text-sm text-muted">
       <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
@@ -15,11 +23,17 @@ export function Breadcrumbs({ items }: { items: Crumb[] }) {
           return (
             <li key={item.label} className="flex items-center gap-2">
               {item.href && !isLast ? (
-                <Link href={item.href} className="transition-colors hover:text-brand">
+                <Link
+                  href={item.href}
+                  className="transition-colors hover:text-brand"
+                >
                   {item.label}
                 </Link>
               ) : (
-                <span aria-current={isLast ? "page" : undefined} className="text-charcoal">
+                <span
+                  aria-current={isLast ? "page" : undefined}
+                  className="text-charcoal"
+                >
                   {item.label}
                 </span>
               )}

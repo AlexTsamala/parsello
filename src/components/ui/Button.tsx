@@ -50,9 +50,7 @@ export function Button({
     .join(" ");
 
   if (href) {
-    // tel:/mailto:/external links must not go through the router.
     if (/^(https?:|tel:|mailto:)/.test(href)) {
-      // Off-site links open in a new tab so visitors don't lose the page.
       const isHttp = /^https?:/.test(href);
 
       return (

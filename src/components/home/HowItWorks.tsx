@@ -1,9 +1,11 @@
 import { Button } from "@/components/ui/Button";
 import { Section, SectionHeading } from "@/components/ui/Section";
-import { howItWorksSteps } from "@/content/how-it-works";
-import { ui } from "@/content/ui";
+import { getContent } from "@/content";
+import { localePath, type Locale } from "@/content/locales";
 
-export function HowItWorks() {
+export function HowItWorks({ locale }: { locale: Locale }) {
+  const { ui, howItWorksSteps } = getContent(locale);
+
   return (
     <Section tone="surface" id="how-it-works">
       <SectionHeading
@@ -27,7 +29,7 @@ export function HowItWorks() {
       </ol>
 
       <div className="mt-8">
-        <Button href="/services" variant="secondary">
+        <Button href={localePath(locale, "/services")} variant="secondary">
           {ui.howItWorks.allServices}
         </Button>
       </div>

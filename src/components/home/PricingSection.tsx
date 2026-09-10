@@ -1,15 +1,17 @@
 import { Button } from "@/components/ui/Button";
 import { PhoneButton } from "@/components/ui/Phone";
 import { Section, SectionHeading } from "@/components/ui/Section";
-import { business } from "@/content/business";
-import { ui } from "@/content/ui";
+import { getContent } from "@/content";
+import { type Locale } from "@/content/locales";
 
 /**
  * NO PRICES HERE — ever. Pricing varies by destination and changes often, so
  * it is quoted on request only (CLAUDE.md §1 rule 2). The copy below is the
  * single approved wording; import it, never paraphrase it.
  */
-export function PricingSection() {
+export function PricingSection({ locale }: { locale: Locale }) {
+  const { ui, business } = getContent(locale);
+
   return (
     <Section tone="surface" id="prices">
       <div className="grid gap-8 md:grid-cols-2 md:items-center">

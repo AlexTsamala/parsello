@@ -9,6 +9,7 @@ import { MobileStickyCta } from "@/components/layout/MobileStickyCta";
 import { Navbar } from "@/components/layout/Navbar";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { business, siteUrl } from "@/content/business";
+import { getContent } from "@/content";
 import { organizationSchema, websiteSchema } from "@/lib/schema";
 
 import "../globals.css";
@@ -31,9 +32,13 @@ export const metadata: Metadata = {
   formatDetection: { telephone: true },
 };
 
+const locale = "ka";
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  const { ui } = getContent(locale);
+
   return (
     <html lang="ka" className={georgian.variable}>
       <body className="antialiased">
@@ -41,17 +46,24 @@ export default function RootLayout({
           href="#main"
           className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-charcoal focus:px-4 focus:py-2 focus:text-white"
         >
-          გადასვლა მთავარ კონტენტზე
+          {ui.skipToContent}
         </a>
-        <JsonLd data={[organizationSchema(), websiteSchema()]} />
-        <Navbar />
+        <JsonLd data={[organizationSchema(locale), websiteSchema(locale)]} />
+        <Navbar locale={locale} />
         <div className="pb-20 lg:pb-0">{children}</div>
-        <Footer />
-        <MobileStickyCta />
+        <Footer locale={locale} />
+        <MobileStickyCta locale={locale} />
 
         <GoogleAnalytics />
         <ContactClickTracking />
-        <CookieConsent />
+        <CookieConsent
+          labels={{
+            region: ui.aria.cookieBanner,
+            body: ui.cookie.body,
+            decline: ui.cookie.decline,
+            accept: ui.cookie.accept,
+          }}
+        />
       </body>
     </html>
   );

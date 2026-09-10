@@ -1,3 +1,5 @@
+import { stripLocale } from "./locales";
+
 /** Navigation labels are Georgian; hrefs stay English (CLAUDE.md §5). */
 
 export type NavLink = { href: string; label: string };
@@ -31,7 +33,17 @@ export const footerNav: NavLink[] = [
 
 export const primaryCta = { href: "/contact", label: "გაგზავნე ამანათი" };
 
-/** Shared active-route test, so the navbar and mobile menu never disagree. */
+/**
+ * Shared active-route test, so the navbar and mobile menu never disagree.
+ *
+ * Both sides are stripped of their locale prefix first. Without that, English
+ * would compare `/en/faq` against a home href of `/en` and mark Home active on
+ * every page — `startsWith` cannot tell a prefix from a match. Stripping is a
+ * no-op for Georgian, which has no prefix.
+ */
 export function isActivePath(pathname: string, href: string): boolean {
-  return href === "/" ? pathname === "/" : pathname.startsWith(href);
+  const path = stripLocale(pathname);
+  const target = stripLocale(href);
+
+  return target === "/" ? path === "/" : path.startsWith(target);
 }

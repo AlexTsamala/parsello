@@ -3,20 +3,30 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { isActivePath, mainNav } from "@/content/navigation";
-import { ui } from "@/content/ui";
+import { isActivePath, type NavLink } from "@/content/navigation";
 
 /**
  * Desktop navigation. Client-side only because the current route decides which
  * link is highlighted — `usePathname` is the only way a layout can know it.
+ *
+ * Links and labels arrive as props rather than being imported: this component
+ * ships to the browser, and importing the content registry would bundle both
+ * locales' copy into every page.
  */
-export function NavLinks() {
+export function NavLinks({
+  links,
+  ariaLabel,
+}: {
+  /** Already locale-prefixed by the server. */
+  links: NavLink[];
+  ariaLabel: string;
+}) {
   const pathname = usePathname();
 
   return (
-    <nav aria-label={ui.aria.mainNav} className="hidden lg:block">
+    <nav aria-label={ariaLabel} className="hidden lg:block">
       <ul className="flex items-center gap-6">
-        {mainNav.map((link) => {
+        {links.map((link) => {
           const active = isActivePath(pathname, link.href);
 
           return (

@@ -3,8 +3,9 @@ import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { PhoneButton } from "@/components/ui/Phone";
 import { Section, SectionHeading } from "@/components/ui/Section";
-import { business } from "@/content/business";
+import { getContent } from "@/content";
 import type { Country } from "@/content/countries";
+import { localePath, type Locale } from "@/content/locales";
 
 type NarrativeBlock = NonNullable<Country["content"]>["narrative"];
 
@@ -48,7 +49,14 @@ function Narrative({
  * through <CountryFacts />, and any external fact stated inside a narrative
  * block carries its source (CLAUDE.md §1 rule 10).
  */
-export function RichCountrySections({ country }: { country: Country }) {
+export function RichCountrySections({
+  country,
+  locale,
+}: {
+  country: Country;
+  locale: Locale;
+}) {
+  const { ui, business } = getContent(locale);
   const content = country.content;
   if (!content) return null;
 
@@ -137,7 +145,7 @@ export function RichCountrySections({ country }: { country: Country }) {
 
             {content.sendable.moreHref ? (
               <Link
-                href={content.sendable.moreHref}
+                href={localePath(locale, content.sendable.moreHref)}
                 className="mt-4 inline-block font-semibold text-charcoal underline underline-offset-4 transition-colors hover:text-brand"
               >
                 {content.sendable.moreLabel}
@@ -189,7 +197,7 @@ export function RichCountrySections({ country }: { country: Country }) {
                   size="lg"
                   variant="secondary"
                 >
-                  Facebook-ზე მოწერა
+                  {ui.common.facebookCta}
                 </Button>
               ) : null}
             </div>
@@ -200,7 +208,14 @@ export function RichCountrySections({ country }: { country: Country }) {
   );
 }
 
-export function RichCountryCta({ country }: { country: Country }) {
+export function RichCountryCta({
+  country,
+  locale,
+}: {
+  country: Country;
+  locale: Locale;
+}) {
+  const { ui, business } = getContent(locale);
   const content = country.content;
   if (!content) return null;
 
@@ -218,8 +233,8 @@ export function RichCountryCta({ country }: { country: Country }) {
         </p>
 
         <div className="mt-8 flex flex-wrap justify-center gap-3">
-          <Button href="/contact" size="lg">
-            ამანათის გაგზავნა
+          <Button href={localePath(locale, "/contact")} size="lg">
+            {ui.common.sendParcel}
           </Button>
           {business.facebookUrl ? (
             <Button
@@ -227,7 +242,7 @@ export function RichCountryCta({ country }: { country: Country }) {
               size="lg"
                 variant="onDark"
             >
-              Facebook-ზე მოწერა
+              {ui.common.facebookCta}
             </Button>
           ) : null}
         </div>

@@ -5,7 +5,7 @@ import { getContent } from "@/content";
 import { countrySlugs } from "@/content/countries";
 import { buildMetadata } from "@/lib/seo";
 
-const locale = "ka";
+const locale = "en";
 
 /** Both locales ship the same destinations, so the slugs come from one list. */
 export function generateStaticParams() {

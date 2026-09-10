@@ -1,8 +1,18 @@
+import { getContent } from "@/content";
 import { business, siteUrl } from "@/content/business";
+import { defaultLocale, htmlLang, type Locale } from "@/content/locales";
 
 const url = (path: string) => new URL(path, siteUrl).toString();
 
-export function organizationSchema() {
+/**
+ * The business itself, described once.
+ *
+ * `availableLanguage` stays Georgian-only deliberately: the site is now
+ * bilingual, but whether the business answers customers in English is a fact
+ * nobody has confirmed, and this claims customer service, not page language.
+ * See docs/OPEN-QUESTIONS.md.
+ */
+export function organizationSchema(locale: Locale = defaultLocale) {
   const socialLinks: (string | null)[] = [
     business.facebookUrl,
     business.instagramUrl,
@@ -17,7 +27,7 @@ export function organizationSchema() {
     url: siteUrl,
     logo: url("/images/logo.svg"),
     image: url("/images/og-default.jpg"),
-    description: "ამანათების გაგზავნა საქართველოდან ევროპის მიმართულებით.",
+    description: getContent(locale).ui.footer.tagline,
     telephone: business.phone.tel,
     ...(business.email ? { email: business.email } : {}),
     areaServed: { "@type": "Place", name: "Europe" },
@@ -50,14 +60,14 @@ export function organizationSchema() {
   };
 }
 
-export function websiteSchema() {
+export function websiteSchema(locale: Locale = defaultLocale) {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "@id": url("/#website"),
     name: business.name,
     url: siteUrl,
-    inLanguage: "ka",
+    inLanguage: htmlLang[locale],
     publisher: { "@id": url("/#organization") },
   };
 }

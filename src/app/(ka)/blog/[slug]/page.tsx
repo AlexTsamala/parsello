@@ -24,6 +24,9 @@ export async function generateMetadata({
   if (!post) return {};
 
   return buildMetadata({
+    // Georgian-only: no English twin exists, so no hreflang alternates.
+    locale: "ka",
+    translated: false,
     title: post.seoTitle,
     description: post.description,
     path: `/blog/${post.slug}`,
@@ -57,6 +60,7 @@ export default async function BlogPostPage({
         <section className="border-b border-line bg-surface">
           <div className="container-page py-10 md:py-16">
             <Breadcrumbs
+              locale="ka"
               items={[
                 { href: "/", label: "მთავარი" },
                 { href: "/blog", label: "ბლოგი" },

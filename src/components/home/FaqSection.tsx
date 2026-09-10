@@ -1,13 +1,22 @@
 import { Button } from "@/components/ui/Button";
 import { Section, SectionHeading } from "@/components/ui/Section";
+import { getContent } from "@/content";
 import type { FaqItem } from "@/content/faq";
-import { ui } from "@/content/ui";
+import { localePath, type Locale } from "@/content/locales";
 
 /**
  * Native <details>/<summary> — accessible and keyboard-operable with zero
  * client JavaScript (CLAUDE.md §7).
  */
-export function FaqSection({ items }: { items: FaqItem[] }) {
+export function FaqSection({
+  items,
+  locale,
+}: {
+  items: FaqItem[];
+  locale: Locale;
+}) {
+  const { ui } = getContent(locale);
+
   return (
     <Section id="faq">
       <SectionHeading title={ui.faqSection.heading} />
@@ -40,7 +49,7 @@ export function FaqSection({ items }: { items: FaqItem[] }) {
       </div>
 
       <div className="mt-8">
-        <Button href="/faq" variant="secondary">
+        <Button href={localePath(locale, "/faq")} variant="secondary">
           {ui.faqSection.allFaqs}
         </Button>
       </div>

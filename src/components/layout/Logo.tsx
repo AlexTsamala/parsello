@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { ui } from "@/content/ui";
+import { getContent } from "@/content";
+import { localePath, type Locale } from "@/content/locales";
 
 /**
  * The Parcello brand lockup: orange cube + "Parcello GEORGIA" wordmark.
@@ -11,10 +12,18 @@ import { ui } from "@/content/ui";
  * pairs the cube mark with white text — which is how the mark actually appears
  * on Parcello courier uniforms.
  */
-export function Logo({ inverted = false }: { inverted?: boolean }) {
+export function Logo({
+  locale,
+  inverted = false,
+}: {
+  locale: Locale;
+  inverted?: boolean;
+}) {
+  const { ui } = getContent(locale);
+
   return (
     <Link
-      href="/"
+      href={localePath(locale, "/")}
       className="inline-flex items-center gap-2.5"
       aria-label={ui.aria.logoHome}
     >

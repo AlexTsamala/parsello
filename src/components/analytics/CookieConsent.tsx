@@ -9,7 +9,6 @@ import {
   writeConsent,
   type ConsentChoice,
 } from "@/lib/analytics";
-import { ui } from "@/content/ui";
 
 /**
  * The server cannot read localStorage, so it renders as though the visitor has
@@ -24,9 +23,13 @@ const serverSnapshot = (): ConsentChoice => "denied";
  *
  * Consent Mode (see GoogleAnalytics.tsx) already blocks analytics cookies for
  * EU visitors before this renders, so the banner asks rather than assumes —
- * and answering "უარი" leaves GA in its cookie-free state.
+ * and declining leaves GA in its cookie-free state.
  */
-export function CookieConsent() {
+export function CookieConsent({
+  labels,
+}: {
+  labels: { region: string; body: string; decline: string; accept: string };
+}) {
   const consent = useSyncExternalStore(
     subscribeConsent,
     readConsent,
@@ -39,13 +42,13 @@ export function CookieConsent() {
   return (
     <div
       role="region"
-      aria-label={ui.aria.cookieBanner}
+      aria-label={labels.region}
       className="fixed inset-x-0 bottom-20 z-50 px-4 lg:bottom-4"
     >
       <div className="container-page">
         <div className="flex flex-col gap-4 rounded-2xl border border-line bg-white p-5 shadow-lg sm:flex-row sm:items-center sm:justify-between">
           <p className="text-sm text-muted">
-            {ui.cookie.body}
+            {labels.body}
           </p>
 
           <div className="flex shrink-0 gap-3">
@@ -54,14 +57,14 @@ export function CookieConsent() {
               onClick={() => writeConsent("denied")}
               className="rounded-lg border border-line px-4 py-2 text-sm font-medium transition-colors hover:border-charcoal"
             >
-              {ui.cookie.decline}
+              {labels.decline}
             </button>
             <button
               type="button"
               onClick={() => writeConsent("granted")}
               className="rounded-lg bg-brand px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand-hover"
             >
-              {ui.cookie.accept}
+              {labels.accept}
             </button>
           </div>
         </div>

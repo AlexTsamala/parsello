@@ -54,7 +54,14 @@ export type Country = {
   seoDescription: string;
   intro: string;
   facts: ResearchedFact[];
-  content?: CountryContent;
+  /**
+   * Required. Every destination has had full copy since the pages were
+   * written, so the generic fallback the page used to carry was unreachable —
+   * and it was the last place a sentence got assembled from a country name
+   * plus a suffix, which English cannot do. Making this required deleted both
+   * problems at once.
+   */
+  content: CountryContent;
 };
 
 /**

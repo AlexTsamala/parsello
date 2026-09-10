@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/Button";
 import { PhoneButton } from "@/components/ui/Phone";
-import { ui } from "@/content/ui";
+import { getContent } from "@/content";
+import { localePath, type Locale } from "@/content/locales";
 
-export function FinalCta() {
+export function FinalCta({ locale }: { locale: Locale }) {
+  const { ui } = getContent(locale);
+
   return (
     <section className="bg-charcoal text-white">
       <div className="container-page py-16 text-center md:py-20">
@@ -12,7 +15,7 @@ export function FinalCta() {
         </p>
 
         <div className="mt-8 flex flex-wrap justify-center gap-3">
-          <Button href="/contact" size="lg">
+          <Button href={localePath(locale, "/contact")} size="lg">
             {ui.finalCta.cta}
           </Button>
           <PhoneButton size="lg" variant="onDark" />

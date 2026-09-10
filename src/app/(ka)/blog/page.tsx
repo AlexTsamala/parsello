@@ -6,6 +6,9 @@ import { posts } from "@/content/blog";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
+  // Georgian-only: no English twin exists, so no hreflang alternates.
+  locale: "ka",
+  translated: false,
   title: "Parcello ბლოგი",
   description:
     "სასარგებლო ინფორმაცია ამანათების გაგზავნის, შეფუთვისა და ევროპის მიმართულებების შესახებ.",
@@ -17,7 +20,7 @@ export default function BlogIndexPage() {
     <main id="main">
       <section className="border-b border-line bg-surface">
         <div className="container-page py-10 md:py-16">
-          <Breadcrumbs items={[{ href: "/", label: "მთავარი" }, { label: "ბლოგი" }]} />
+          <Breadcrumbs locale="ka" items={[{ href: "/", label: "მთავარი" }, { label: "ბლოგი" }]} />
           <h1 className="mt-6 text-3xl font-bold md:text-5xl">Parcello ბლოგი</h1>
           <p className="mt-5 max-w-2xl text-base text-muted md:text-lg">
             სასარგებლო ინფორმაცია ამანათების გაგზავნის, შეფუთვისა და ევროპის მიმართულებების

@@ -1,30 +1,16 @@
 import { Section, SectionHeading } from "@/components/ui/Section";
+import { getContent } from "@/content";
+import { type Locale } from "@/content/locales";
 
-const benefits = [
-  {
-    title: "სწრაფი კომუნიკაცია",
-    body: "თქვენს კითხვებსა და შეკვეთაზე სწრაფად ვპასუხობთ ტელეფონით ან Facebook-ზე.",
-  },
-  {
-    title: "მარტივი პროცესი",
-    body: "ამანათის გაგზავნა რამდენიმე გასაგები ნაბიჯით სრულდება.",
-  },
-  {
-    title: "კურიერი ან ჩაბარება",
-    body: "ამანათი შეგიძლიათ კურიერს გადააბაროთ ან თავად ჩააბაროთ — როგორც თქვენთვის მოსახერხებელია.",
-  },
-  {
-    title: "ევროპის მიმართულებები",
-    body: "ამანათებს ვაგზავნით მთელი ევროპის მასშტაბით  — ძირითადი მიმართულებებით და მათ მიღმაც.",
-  },
-];
+export function TrustSection({ locale }: { locale: Locale }) {
+  const { ui } = getContent(locale);
+  const benefits = ui.trust.benefits;
 
-export function TrustSection() {
   return (
     <Section>
       <SectionHeading
-        title="რატომ Parcello?"
-        description="ევროპაში ამანათის გაგზავნა შეიძლება რთულად ჩანდეს, მაგრამ Parcello-ს მიზანია პროცესი თქვენთვის მაქსიმალურად მარტივი გახადოს."
+        title={ui.trust.heading}
+        description={ui.trust.description}
       />
 
       <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">

@@ -4,9 +4,8 @@ import { Logo } from "@/components/layout/Logo";
 import { PhoneLink } from "@/components/ui/Phone";
 import { EnvelopeIcon, LocationPinIcon } from "@/components/ui/icons";
 import { business } from "@/content/business";
-import { footerNav } from "@/content/navigation";
-import { countries } from "@/content/countries";
-import { ui } from "@/content/ui";
+import { getContent } from "@/content";
+import { localePath, type Locale } from "@/content/locales";
 
 /** Social links render only when the business has supplied them (CLAUDE.md §1). */
 const socialCandidates: Array<{ label: string; url: string | null }> = [
@@ -18,12 +17,14 @@ const socials = socialCandidates.filter(
   (social): social is { label: string; url: string } => social.url !== null,
 );
 
-export function Footer() {
+export function Footer({ locale }: { locale: Locale }) {
+  const { ui, footerNav, countries, business: biz } = getContent(locale);
+
   return (
     <footer className="bg-charcoal text-white">
       <div className="container-page grid gap-10 py-14 md:grid-cols-4 md:gap-8">
         <div className="md:col-span-2">
-          <Logo inverted />
+          <Logo locale={locale} inverted />
           <p className="mt-4 max-w-xs text-sm text-white/70">
             {ui.footer.tagline}
           </p>
@@ -43,7 +44,7 @@ export function Footer() {
           <address className="mt-4 flex items-start gap-2.5 not-italic text-sm text-white/70">
             <LocationPinIcon className="mt-0.5 shrink-0 text-brand" />
             <span>
-              {business.address.lines.map((line) => (
+              {biz.address.lines.map((line) => (
                 <span key={line} className="block">
                   {line}
                 </span>
@@ -77,7 +78,7 @@ export function Footer() {
             {footerNav.map((link) => (
               <li key={link.href}>
                 <Link
-                  href={link.href}
+                  href={localePath(locale, link.href)}
                   className="text-sm text-white/80 transition-colors hover:text-brand"
                 >
                   {link.label}
@@ -95,7 +96,7 @@ export function Footer() {
             {countries.map((country) => (
               <li key={country.slug}>
                 <Link
-                  href={`/countries/${country.slug}`}
+                  href={localePath(locale, `/countries/${country.slug}`)}
                   className="text-sm text-white/80 transition-colors hover:text-brand"
                 >
                   {country.footerLinkLabel}

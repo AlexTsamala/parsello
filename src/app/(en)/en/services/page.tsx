@@ -1,7 +1,7 @@
 import { ServicesPage } from "@/components/pages/ServicesPage";
 import { pageMetadata } from "@/lib/seo";
 
-const locale = "ka";
+const locale = "en";
 
 export const metadata = pageMetadata(locale, "services", "/services");
 

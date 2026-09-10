@@ -2,13 +2,14 @@ import Image from "next/image";
 
 import { Button } from "@/components/ui/Button";
 import { PhoneLink } from "@/components/ui/Phone";
-import { business } from "@/content/business";
-import { ui } from "@/content/ui";
+import { getContent } from "@/content";
+import { localePath, type Locale } from "@/content/locales";
 import { publicImageExists } from "@/lib/assets";
 
 const HERO_IMAGE = "courier-handover.jpg";
 
-export function Hero() {
+export function Hero({ locale }: { locale: Locale }) {
+  const { ui, business } = getContent(locale);
   const hasPhoto = publicImageExists(HERO_IMAGE);
 
   return (
@@ -22,10 +23,10 @@ export function Hero() {
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <Button href="/contact" size="lg">
+            <Button href={localePath(locale, "/contact")} size="lg">
               {ui.hero.ctaSend}
             </Button>
-            <Button href="/services" size="lg" variant="secondary">
+            <Button href={localePath(locale, "/services")} size="lg" variant="secondary">
               {ui.hero.ctaHowItWorks}
             </Button>
           </div>

@@ -4,12 +4,29 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
+import { LocaleSwitcher } from "@/components/layout/LocaleSwitcher";
 import { Button } from "@/components/ui/Button";
-import { isActivePath, mainNav, primaryCta } from "@/content/navigation";
-import { ui } from "@/content/ui";
+import type { Locale } from "@/content/locales";
+import { isActivePath, type NavLink } from "@/content/navigation";
 
-/** Hamburger menu below `lg`, where the desktop nav is hidden. */
-export function MobileMenu() {
+/**
+ * Hamburger menu below `lg`, where the desktop nav is hidden.
+ *
+ * Links and labels are props, not imports — this component ships to the
+ * browser and should not carry both locales' copy with it.
+ */
+export function MobileMenu({
+  links,
+  cta,
+  labels,
+  locale,
+}: {
+  /** Already locale-prefixed by the server. */
+  links: NavLink[];
+  cta: NavLink;
+  labels: { nav: string; open: string; close: string };
+  locale: Locale;
+}) {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
 
@@ -36,7 +53,7 @@ export function MobileMenu() {
         onClick={() => setOpen((value) => !value)}
         aria-expanded={open}
         aria-controls="mobile-menu"
-        aria-label={open ? ui.aria.closeMenu : ui.aria.openMenu}
+        aria-label={open ? labels.close : labels.open}
         className="inline-flex size-11 items-center justify-center rounded-lg text-charcoal hover:bg-surface"
       >
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -63,9 +80,9 @@ export function MobileMenu() {
         hidden={!open}
         className="fixed inset-x-0 top-16 z-40 max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-line bg-white px-5 pb-8 pt-4"
       >
-        <nav aria-label={ui.aria.mobileNav}>
+        <nav aria-label={labels.nav}>
           <ul className="flex flex-col">
-            {mainNav.map((link) => {
+            {links.map((link) => {
               const isActive = isActivePath(pathname, link.href);
 
               return (
@@ -87,13 +104,17 @@ export function MobileMenu() {
         </nav>
 
         <Button
-          href={primaryCta.href}
+          href={cta.href}
           size="lg"
           className="mt-6 w-full"
           onClick={() => setOpen(false)}
         >
-          {primaryCta.label}
+          {cta.label}
         </Button>
+
+        <div className="mt-6 border-t border-line pt-5">
+          <LocaleSwitcher locale={locale} />
+        </div>
       </div>
     </div>
   );

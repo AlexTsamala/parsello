@@ -1,15 +1,17 @@
 import Link from "next/link";
 
 import { Section, SectionHeading } from "@/components/ui/Section";
-import { business } from "@/content/business";
-import { countries } from "@/content/countries";
-import { ui } from "@/content/ui";
+import { getContent } from "@/content";
+import { localePath, type Locale } from "@/content/locales";
 
 /**
  * Real crawlable links, not decorative cards (plan §11) — each card is an
- * anchor to that country's SEO page with natural Georgian anchor text.
+ * anchor to that country's SEO page with natural anchor text in the page's
+ * own language.
  */
-export function CountriesSection() {
+export function CountriesSection({ locale }: { locale: Locale }) {
+  const { ui, business, countries } = getContent(locale);
+
   return (
     <Section id="countries">
       <SectionHeading
@@ -21,7 +23,7 @@ export function CountriesSection() {
         {countries.map((country) => (
           <li key={country.slug}>
             <Link
-              href={`/countries/${country.slug}`}
+              href={localePath(locale, `/countries/${country.slug}`)}
               className="group flex h-full items-center gap-4 rounded-xl border border-line bg-white p-5 transition-colors hover:border-brand"
             >
               <span className="text-3xl" aria-hidden="true">

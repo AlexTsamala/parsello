@@ -1,7 +1,7 @@
 import { WhatCanISendPage } from "@/components/pages/WhatCanISendPage";
 import { pageMetadata } from "@/lib/seo";
 
-const locale = "ka";
+const locale = "en";
 
 export const metadata = pageMetadata(locale, "whatCanISend", "/what-can-i-send");
 
