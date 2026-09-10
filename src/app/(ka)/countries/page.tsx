@@ -80,7 +80,7 @@ export default function CountriesPage() {
                   {country.flag}
                 </span>
                 <span className="mt-3 font-semibold group-hover:text-brand">
-                  {country.nameKaIn} ამანათის გაგზავნა
+                  {country.linkLabel}
                 </span>
               </Link>
             </li>

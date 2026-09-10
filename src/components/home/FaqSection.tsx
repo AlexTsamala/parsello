@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/Button";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import type { FaqItem } from "@/content/faq";
+import { ui } from "@/content/ui";
 
 /**
  * Native <details>/<summary> — accessible and keyboard-operable with zero
@@ -9,7 +10,7 @@ import type { FaqItem } from "@/content/faq";
 export function FaqSection({ items }: { items: FaqItem[] }) {
   return (
     <Section id="faq">
-      <SectionHeading title="ხშირად დასმული კითხვები" />
+      <SectionHeading title={ui.faqSection.heading} />
 
       <div className="mt-8 max-w-3xl divide-y divide-line border-y border-line">
         {items.map((item) => (
@@ -40,7 +41,7 @@ export function FaqSection({ items }: { items: FaqItem[] }) {
 
       <div className="mt-8">
         <Button href="/faq" variant="secondary">
-          ყველა კითხვა და პასუხი
+          {ui.faqSection.allFaqs}
         </Button>
       </div>
     </Section>

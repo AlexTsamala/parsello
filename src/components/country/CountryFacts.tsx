@@ -12,23 +12,26 @@ import type { ResearchedFact } from "@/content/shipping-rules";
  */
 export function CountryFacts({
   facts,
-  countryNameIn,
+  heading,
+  intro,
 }: {
   facts: ResearchedFact[];
-  /** Already inflected, e.g. "პოლონეთში" — never build this by appending "ში". */
-  countryNameIn: string;
+  /**
+   * The finished heading, e.g. "რა უნდა იცოდეთ პოლონეთში გაგზავნამდე".
+   *
+   * Passed whole rather than assembled here from a country name: Georgian
+   * needs the locative and English reverses the word order, so there is no
+   * one composition this component could perform for both.
+   */
+  heading: string;
+  intro: string;
 }) {
   if (facts.length === 0) return null;
 
   return (
     <div>
-      <h2 className="text-2xl font-bold md:text-3xl">
-        რა უნდა იცოდეთ {countryNameIn} გაგზავნამდე
-      </h2>
-      <p className="mt-3 max-w-2xl text-muted">
-        ქვემოთ მოცემულია ევროკავშირის ოფიციალური წესები, რომლებიც ამანათის მიღებაზე
-        მოქმედებს. ეს Parcello-ს პირობები არ არის.
-      </p>
+      <h2 className="text-2xl font-bold md:text-3xl">{heading}</h2>
+      <p className="mt-3 max-w-2xl text-muted">{intro}</p>
 
       <ul className="mt-8 grid gap-4 md:grid-cols-2">
         {facts.map((fact) => (

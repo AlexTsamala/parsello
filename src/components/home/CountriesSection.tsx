@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { business } from "@/content/business";
 import { countries } from "@/content/countries";
+import { ui } from "@/content/ui";
 
 /**
  * Real crawlable links, not decorative cards (plan §11) — each card is an
@@ -12,7 +13,7 @@ export function CountriesSection() {
   return (
     <Section id="countries">
       <SectionHeading
-        title="სად ვაგზავნით ამანათებს?"
+        title={ui.countriesSection.heading}
         description={`${business.coverage.scope} ${business.coverage.priorityNote}`}
       />
 
@@ -27,7 +28,7 @@ export function CountriesSection() {
                 {country.flag}
               </span>
               <span className="font-semibold group-hover:text-brand">
-                {country.nameKaIn} ამანათის გაგზავნა
+                {country.linkLabel}
               </span>
             </Link>
           </li>

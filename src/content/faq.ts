@@ -8,7 +8,7 @@ export type FaqItem = {
   featured?: boolean;
 };
 
-const destinations = countries.map((country) => country.nameKa).join(", ");
+const destinations = countries.map((country) => country.name).join(", ");
 
 export const faqs: FaqItem[] = [
   {

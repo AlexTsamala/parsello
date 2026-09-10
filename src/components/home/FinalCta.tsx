@@ -1,20 +1,19 @@
 import { Button } from "@/components/ui/Button";
 import { PhoneButton } from "@/components/ui/Phone";
+import { ui } from "@/content/ui";
 
 export function FinalCta() {
   return (
     <section className="bg-charcoal text-white">
       <div className="container-page py-16 text-center md:py-20">
-        <h2 className="text-2xl font-bold md:text-4xl">
-          გსურთ ამანათის გაგზავნა ევროპაში?
-        </h2>
+        <h2 className="text-2xl font-bold md:text-4xl">{ui.finalCta.heading}</h2>
         <p className="mx-auto mt-4 max-w-xl text-white/70">
-          დაიწყეთ შეკვეთა Parcello-სთან — დაგვირეკეთ ან მოგვწერეთ Facebook-ზე.
+          {ui.finalCta.body}
         </p>
 
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           <Button href="/contact" size="lg">
-            ამანათის გაგზავნა
+            {ui.finalCta.cta}
           </Button>
           <PhoneButton size="lg" variant="onDark" />
         </div>

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { isActivePath, mainNav } from "@/content/navigation";
+import { ui } from "@/content/ui";
 
 /**
  * Desktop navigation. Client-side only because the current route decides which
@@ -13,7 +14,7 @@ export function NavLinks() {
   const pathname = usePathname();
 
   return (
-    <nav aria-label="მთავარი ნავიგაცია" className="hidden lg:block">
+    <nav aria-label={ui.aria.mainNav} className="hidden lg:block">
       <ul className="flex items-center gap-6">
         {mainNav.map((link) => {
           const active = isActivePath(pathname, link.href);

@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/Button";
 import { MobilePhoneIcon } from "@/components/ui/icons";
 import { business } from "@/content/business";
 import { primaryCta } from "@/content/navigation";
+import { ui } from "@/content/ui";
 
 /**
  * Mobile-only sticky bar so ordering and calling are always one tap away
@@ -17,7 +18,7 @@ export function MobileStickyCta() {
         <Button
           href={`tel:${business.phone.tel}`}
           variant="secondary"
-          aria-label={`დარეკვა ნომერზე ${business.phone.display}`}
+          aria-label={ui.aria.callNumber(business.phone.display)}
           className="px-4"
         >
           <MobilePhoneIcon className="text-brand" />

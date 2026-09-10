@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { ui } from "@/content/ui";
+
 /**
  * The Parcello brand lockup: orange cube + "Parcello GEORGIA" wordmark.
  * Do not redesign or recolor it (CLAUDE.md §1 rule 8).
@@ -14,7 +16,7 @@ export function Logo({ inverted = false }: { inverted?: boolean }) {
     <Link
       href="/"
       className="inline-flex items-center gap-2.5"
-      aria-label="Parcello Georgia — მთავარი გვერდი"
+      aria-label={ui.aria.logoHome}
     >
       {inverted ? (
         <>

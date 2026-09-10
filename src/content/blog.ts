@@ -32,7 +32,7 @@ export type BlogPost = {
   related: { href: string; label: string }[];
 };
 
-const destinationList = countries.map((c) => c.nameKa).join(", ");
+const destinationList = countries.map((c) => c.name).join(", ");
 
 export const posts: BlogPost[] = [
   {

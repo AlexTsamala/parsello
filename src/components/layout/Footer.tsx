@@ -6,6 +6,7 @@ import { EnvelopeIcon, LocationPinIcon } from "@/components/ui/icons";
 import { business } from "@/content/business";
 import { footerNav } from "@/content/navigation";
 import { countries } from "@/content/countries";
+import { ui } from "@/content/ui";
 
 /** Social links render only when the business has supplied them (CLAUDE.md §1). */
 const socialCandidates: Array<{ label: string; url: string | null }> = [
@@ -24,7 +25,7 @@ export function Footer() {
         <div className="md:col-span-2">
           <Logo inverted />
           <p className="mt-4 max-w-xs text-sm text-white/70">
-            ამანათების გაგზავნა საქართველოდან ევროპის მიმართულებით.
+            {ui.footer.tagline}
           </p>
 
           <PhoneLink className="mt-5 text-lg font-semibold" />
@@ -68,9 +69,9 @@ export function Footer() {
           ) : null}
         </div>
 
-        <nav aria-label="ფუტერის ნავიგაცია">
+        <nav aria-label={ui.aria.footerNav}>
           <h2 className="text-xs font-semibold tracking-[0.14em] text-white/50">
-            გვერდები
+            {ui.footer.pagesHeading}
           </h2>
           <ul className="mt-4 flex flex-col gap-2.5">
             {footerNav.map((link) => (
@@ -86,9 +87,9 @@ export function Footer() {
           </ul>
         </nav>
 
-        <nav aria-label="მიმართულებები">
+        <nav aria-label={ui.aria.footerDestinations}>
           <h2 className="text-xs font-semibold tracking-[0.14em] text-white/50">
-            მიმართულებები
+            {ui.footer.destinationsHeading}
           </h2>
           <ul className="mt-4 flex flex-col gap-2.5">
             {countries.map((country) => (
@@ -97,7 +98,7 @@ export function Footer() {
                   href={`/countries/${country.slug}`}
                   className="text-sm text-white/80 transition-colors hover:text-brand"
                 >
-                  {country.nameKaIn} გაგზავნა
+                  {country.footerLinkLabel}
                 </Link>
               </li>
             ))}

@@ -106,7 +106,7 @@ export default function PricesPage() {
                   {country.flag}
                 </span>
                 <span className="font-semibold group-hover:text-brand">
-                  {country.nameKaIn} გაგზავნის ფასი
+                  {country.priceLinkLabel}
                 </span>
               </Link>
             </li>

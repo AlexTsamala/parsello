@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { PhoneLink } from "@/components/ui/Phone";
 import { business } from "@/content/business";
+import { ui } from "@/content/ui";
 import { publicImageExists } from "@/lib/assets";
 
 const HERO_IMAGE = "courier-handover.jpg";
@@ -14,26 +15,23 @@ export function Hero() {
     <section className="border-b border-line bg-surface">
       <div className="container-page grid items-center gap-10 py-14 md:grid-cols-2 md:gap-14 md:py-24">
         <div className="animate-fade-up">
-          <h1 className="text-3xl font-bold md:text-5xl">
-            ამანათების გაგზავნა და მიღება ევროპიდან
-          </h1>
+          <h1 className="text-3xl font-bold md:text-5xl">{ui.hero.h1}</h1>
 
           <p className="mt-5 max-w-lg text-base text-muted md:text-lg">
-            {business.shortName} გეხმარებათ ამანათის მარტივად გაგზავნაში
-            საქართველოდან ევროპის მიმართულებით და ევროპიდან მიღებაში.
+            {ui.hero.lead(business.shortName)}
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
             <Button href="/contact" size="lg">
-              ამანათის გაგზავნა
+              {ui.hero.ctaSend}
             </Button>
             <Button href="/services" size="lg" variant="secondary">
-              როგორ მუშაობს?
+              {ui.hero.ctaHowItWorks}
             </Button>
           </div>
 
           <p className="mt-6 flex flex-wrap items-center gap-2 text-sm text-muted">
-            დაგვირეკეთ:
+            {ui.hero.callPrefix}
             <PhoneLink className="font-semibold text-charcoal" />
           </p>
         </div>
@@ -42,7 +40,7 @@ export function Hero() {
           {hasPhoto ? (
             <Image
               src={`/images/${HERO_IMAGE}`}
-              alt="Parcello-ს კურიერი ამანათს იბარებს მომხმარებლისგან"
+              alt={ui.hero.imageAlt}
               fill
               priority
               sizes="(max-width: 768px) 100vw, 50vw"

@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/Button";
 import { isActivePath, mainNav, primaryCta } from "@/content/navigation";
+import { ui } from "@/content/ui";
 
 /** Hamburger menu below `lg`, where the desktop nav is hidden. */
 export function MobileMenu() {
@@ -35,7 +36,7 @@ export function MobileMenu() {
         onClick={() => setOpen((value) => !value)}
         aria-expanded={open}
         aria-controls="mobile-menu"
-        aria-label={open ? "მენიუს დახურვა" : "მენიუს გახსნა"}
+        aria-label={open ? ui.aria.closeMenu : ui.aria.openMenu}
         className="inline-flex size-11 items-center justify-center rounded-lg text-charcoal hover:bg-surface"
       >
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -62,7 +63,7 @@ export function MobileMenu() {
         hidden={!open}
         className="fixed inset-x-0 top-16 z-40 max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-line bg-white px-5 pb-8 pt-4"
       >
-        <nav aria-label="მობილური ნავიგაცია">
+        <nav aria-label={ui.aria.mobileNav}>
           <ul className="flex flex-col">
             {mainNav.map((link) => {
               const isActive = isActivePath(pathname, link.href);

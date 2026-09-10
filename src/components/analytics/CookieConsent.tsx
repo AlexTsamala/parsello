@@ -9,6 +9,7 @@ import {
   writeConsent,
   type ConsentChoice,
 } from "@/lib/analytics";
+import { ui } from "@/content/ui";
 
 /**
  * The server cannot read localStorage, so it renders as though the visitor has
@@ -38,14 +39,13 @@ export function CookieConsent() {
   return (
     <div
       role="region"
-      aria-label="ქუქი-ფაილების შეტყობინება"
+      aria-label={ui.aria.cookieBanner}
       className="fixed inset-x-0 bottom-20 z-50 px-4 lg:bottom-4"
     >
       <div className="container-page">
         <div className="flex flex-col gap-4 rounded-2xl border border-line bg-white p-5 shadow-lg sm:flex-row sm:items-center sm:justify-between">
           <p className="text-sm text-muted">
-            ვიყენებთ ქუქი-ფაილებს, რომ გავიგოთ როგორ სარგებლობენ ვიზიტორები
-            საიტით. ეს გვეხმარება საიტის გაუმჯობესებაში.
+            {ui.cookie.body}
           </p>
 
           <div className="flex shrink-0 gap-3">
@@ -54,14 +54,14 @@ export function CookieConsent() {
               onClick={() => writeConsent("denied")}
               className="rounded-lg border border-line px-4 py-2 text-sm font-medium transition-colors hover:border-charcoal"
             >
-              უარი
+              {ui.cookie.decline}
             </button>
             <button
               type="button"
               onClick={() => writeConsent("granted")}
               className="rounded-lg bg-brand px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand-hover"
             >
-              ვეთანხმები
+              {ui.cookie.accept}
             </button>
           </div>
         </div>

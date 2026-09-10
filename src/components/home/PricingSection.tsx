@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/Button";
 import { PhoneButton } from "@/components/ui/Phone";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { business } from "@/content/business";
+import { ui } from "@/content/ui";
 
 /**
  * NO PRICES HERE — ever. Pricing varies by destination and changes often, so
@@ -13,7 +14,7 @@ export function PricingSection() {
     <Section tone="surface" id="prices">
       <div className="grid gap-8 md:grid-cols-2 md:items-center">
         <SectionHeading
-          title="ამანათის გაგზავნის ფასი"
+          title={ui.pricingSection.heading}
           description={business.pricing.dependsOn}
         />
 
@@ -24,7 +25,7 @@ export function PricingSection() {
             <PhoneButton size="lg" />
             {business.facebookUrl ? (
               <Button href={business.facebookUrl} size="lg" variant="secondary">
-                Facebook-ზე მოწერა
+                {ui.pricingSection.facebookCta}
               </Button>
             ) : null}
           </div>

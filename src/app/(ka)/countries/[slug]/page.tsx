@@ -17,6 +17,7 @@ import { countries, getCountry, relatedCountries } from "@/content/countries";
 import { featuredFaqs } from "@/content/faq";
 import { howItWorksSteps } from "@/content/how-it-works";
 import { euImportRules } from "@/content/shipping-rules";
+import { ui } from "@/content/ui";
 import { breadcrumbSchema, faqSchema } from "@/lib/schema";
 import { buildMetadata } from "@/lib/seo";
 
@@ -67,7 +68,7 @@ export default async function CountryPage({
           breadcrumbSchema([
             { name: "მთავარი", path: "/" },
             { name: "მიმართულებები", path: "/countries" },
-            { name: country.nameKa, path: `/countries/${country.slug}` },
+            { name: country.name, path: `/countries/${country.slug}` },
           ]),
 
           faqSchema(faqItems),
@@ -79,7 +80,7 @@ export default async function CountryPage({
             items={[
               { href: "/", label: "მთავარი" },
               { href: "/countries", label: "მიმართულებები" },
-              { label: country.nameKa },
+              { label: country.name },
             ]}
           />
 
@@ -114,7 +115,7 @@ export default async function CountryPage({
         <>
           <Section>
             <SectionHeading
-              title={`როგორ ვაგზავნით ამანათს ${country.nameKaIn}`}
+              title={`როგორ ვაგზავნით ამანათს ${country.nameIn}`}
               description="პროცესი ყველა მიმართულებისთვის ერთნაირად მარტივია."
             />
 
@@ -150,7 +151,7 @@ export default async function CountryPage({
           <Section tone="surface">
             <div className="grid gap-8 md:grid-cols-2 md:items-center">
               <SectionHeading
-                title={`${country.nameKaIn} ამანათის გაგზავნის ფასი`}
+                title={`${country.nameIn} ამანათის გაგზავნის ფასი`}
                 description={business.pricing.dependsOn}
               />
 
@@ -175,7 +176,11 @@ export default async function CountryPage({
       )}
 
       <Section>
-        <CountryFacts facts={facts} countryNameIn={country.nameKaIn} />
+        <CountryFacts
+          facts={facts}
+          heading={country.factsHeading}
+          intro={ui.countryFacts.intro}
+        />
       </Section>
 
       <FaqSection items={faqItems} />
@@ -197,7 +202,7 @@ export default async function CountryPage({
                   {item.flag}
                 </span>
                 <span className="font-semibold group-hover:text-brand">
-                  {item.nameKaIn} ამანათის გაგზავნა
+                  {item.linkLabel}
                 </span>
               </Link>
             </li>
@@ -211,7 +216,7 @@ export default async function CountryPage({
         <section className="bg-charcoal text-white">
           <div className="container-page py-16 text-center md:py-20">
             <h2 className="text-2xl font-bold md:text-4xl">
-              გსურთ ამანათის გაგზავნა {country.nameKaIn}?
+              გსურთ ამანათის გაგზავნა {country.nameIn}?
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-white/70">
               დაიწყეთ შეკვეთა Parcello-სთან — დაგვირეკეთ ან მოგვწერეთ

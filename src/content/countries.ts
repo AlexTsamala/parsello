@@ -26,10 +26,28 @@ export type CountryContent = {
 };
 
 export type Country = {
-  slug: string;
+  slug: CountrySlug;
   updatedAt: string;
-  nameKa: string;
-  nameKaIn: string;
+  name: string;
+  /**
+   * "Into X" — the Georgian locative. English has no such form and simply
+   * repeats `name`; it exists so both locales satisfy one type.
+   *
+   * Prefer the whole-phrase labels below over composing sentences from this.
+   */
+  nameIn: string;
+  /**
+   * Whole phrases, one per place a country name appears inside a sentence.
+   *
+   * These used to be built in JSX as `{nameIn} + suffix`. Georgian tolerates
+   * that only because the locative is pre-inflected; English reverses the word
+   * order ("Send a parcel to Poland"), so no shared component can assemble
+   * them. Storing the finished sentence is also what CLAUDE.md §5 asks for.
+   */
+  linkLabel: string;
+  footerLinkLabel: string;
+  priceLinkLabel: string;
+  factsHeading: string;
   flag: string;
   h1: string;
   seoTitle: string;
@@ -38,6 +56,24 @@ export type Country = {
   facts: ResearchedFact[];
   content?: CountryContent;
 };
+
+/**
+ * The shipped destinations, as a closed union.
+ *
+ * Written out rather than inferred so it stays a literal union: the English
+ * copy is typed `Record<CountrySlug, …>`, which turns "added a country but
+ * did not translate it" into a build error instead of a page that silently
+ * falls back to Georgian. Adding a destination means editing this line too —
+ * that is the point.
+ */
+export type CountrySlug =
+  | "poland"
+  | "germany"
+  | "france"
+  | "hungary"
+  | "bulgaria"
+  | "czechia"
+  | "slovakia";
 
 const VERIFIED = "2026-09-01";
 
@@ -53,8 +89,12 @@ export const countries: Country[] = [
   {
     slug: "poland",
     updatedAt: "2026-09-01",
-    nameKa: "პოლონეთი",
-    nameKaIn: "პოლონეთში",
+    name: "პოლონეთი",
+    nameIn: "პოლონეთში",
+    linkLabel: "პოლონეთში ამანათის გაგზავნა",
+    footerLinkLabel: "პოლონეთში გაგზავნა",
+    priceLinkLabel: "პოლონეთში გაგზავნის ფასი",
+    factsHeading: "რა უნდა იცოდეთ პოლონეთში გაგზავნამდე",
     flag: "🇵🇱",
     h1: "ამანათის გაგზავნა საქართველოდან პოლონეთში",
     seoTitle: "ამანათის გაგზავნა პოლონეთში",
@@ -165,8 +205,12 @@ export const countries: Country[] = [
   {
     slug: "germany",
     updatedAt: "2026-09-01",
-    nameKa: "გერმანია",
-    nameKaIn: "გერმანიაში",
+    name: "გერმანია",
+    nameIn: "გერმანიაში",
+    linkLabel: "გერმანიაში ამანათის გაგზავნა",
+    footerLinkLabel: "გერმანიაში გაგზავნა",
+    priceLinkLabel: "გერმანიაში გაგზავნის ფასი",
+    factsHeading: "რა უნდა იცოდეთ გერმანიაში გაგზავნამდე",
     flag: "🇩🇪",
     h1: "ამანათის გაგზავნა საქართველოდან გერმანიაში",
     seoDescription:
@@ -333,8 +377,12 @@ export const countries: Country[] = [
   {
     slug: "france",
     updatedAt: "2026-09-01",
-    nameKa: "საფრანგეთი",
-    nameKaIn: "საფრანგეთში",
+    name: "საფრანგეთი",
+    nameIn: "საფრანგეთში",
+    linkLabel: "საფრანგეთში ამანათის გაგზავნა",
+    footerLinkLabel: "საფრანგეთში გაგზავნა",
+    priceLinkLabel: "საფრანგეთში გაგზავნის ფასი",
+    factsHeading: "რა უნდა იცოდეთ საფრანგეთში გაგზავნამდე",
     flag: "🇫🇷",
     h1: "ამანათის გაგზავნა საქართველოდან საფრანგეთში",
     seoTitle: "ამანათის გაგზავნა საფრანგეთში",
@@ -485,8 +533,12 @@ export const countries: Country[] = [
   {
     slug: "hungary",
     updatedAt: "2026-09-01",
-    nameKa: "უნგრეთი",
-    nameKaIn: "უნგრეთში",
+    name: "უნგრეთი",
+    nameIn: "უნგრეთში",
+    linkLabel: "უნგრეთში ამანათის გაგზავნა",
+    footerLinkLabel: "უნგრეთში გაგზავნა",
+    priceLinkLabel: "უნგრეთში გაგზავნის ფასი",
+    factsHeading: "რა უნდა იცოდეთ უნგრეთში გაგზავნამდე",
     flag: "🇭🇺",
     h1: "ამანათის გაგზავნა საქართველოდან უნგრეთში",
     seoTitle: "ამანათის გაგზავნა უნგრეთში",
@@ -641,8 +693,12 @@ export const countries: Country[] = [
   {
     slug: "bulgaria",
     updatedAt: "2026-09-01",
-    nameKa: "ბულგარეთი",
-    nameKaIn: "ბულგარეთში",
+    name: "ბულგარეთი",
+    nameIn: "ბულგარეთში",
+    linkLabel: "ბულგარეთში ამანათის გაგზავნა",
+    footerLinkLabel: "ბულგარეთში გაგზავნა",
+    priceLinkLabel: "ბულგარეთში გაგზავნის ფასი",
+    factsHeading: "რა უნდა იცოდეთ ბულგარეთში გაგზავნამდე",
     flag: "🇧🇬",
     h1: "ამანათის გაგზავნა საქართველოდან ბულგარეთში",
     seoTitle: "ამანათის გაგზავნა ბულგარეთში",
@@ -808,8 +864,12 @@ export const countries: Country[] = [
   {
     slug: "czechia",
     updatedAt: "2026-09-08",
-    nameKa: "ჩეხეთი",
-    nameKaIn: "ჩეხეთში",
+    name: "ჩეხეთი",
+    nameIn: "ჩეხეთში",
+    linkLabel: "ჩეხეთში ამანათის გაგზავნა",
+    footerLinkLabel: "ჩეხეთში გაგზავნა",
+    priceLinkLabel: "ჩეხეთში გაგზავნის ფასი",
+    factsHeading: "რა უნდა იცოდეთ ჩეხეთში გაგზავნამდე",
     flag: "🇨🇿",
     h1: "ამანათის გაგზავნა საქართველოდან ჩეხეთში",
     seoTitle: "ამანათის გაგზავნა ჩეხეთში",
@@ -983,8 +1043,12 @@ export const countries: Country[] = [
   {
     slug: "slovakia",
     updatedAt: "2026-09-08",
-    nameKa: "სლოვაკეთი",
-    nameKaIn: "სლოვაკეთში",
+    name: "სლოვაკეთი",
+    nameIn: "სლოვაკეთში",
+    linkLabel: "სლოვაკეთში ამანათის გაგზავნა",
+    footerLinkLabel: "სლოვაკეთში გაგზავნა",
+    priceLinkLabel: "სლოვაკეთში გაგზავნის ფასი",
+    factsHeading: "რა უნდა იცოდეთ სლოვაკეთში გაგზავნამდე",
     flag: "🇸🇰",
     h1: "ამანათის გაგზავნა საქართველოდან სლოვაკეთში",
     seoTitle: "ამანათის გაგზავნა სლოვაკეთში",

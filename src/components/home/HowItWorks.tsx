@@ -1,13 +1,14 @@
 import { Button } from "@/components/ui/Button";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { howItWorksSteps } from "@/content/how-it-works";
+import { ui } from "@/content/ui";
 
 export function HowItWorks() {
   return (
     <Section tone="surface" id="how-it-works">
       <SectionHeading
-        title="როგორ მუშაობს Parcello?"
-        description="ოთხი ნაბიჯი შეკვეთიდან ამანათის გამგზავრებამდე."
+        title={ui.howItWorks.heading}
+        description={ui.howItWorks.description}
       />
 
       <ol className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -27,7 +28,7 @@ export function HowItWorks() {
 
       <div className="mt-8">
         <Button href="/services" variant="secondary">
-          ყველა სერვისი
+          {ui.howItWorks.allServices}
         </Button>
       </div>
     </Section>
