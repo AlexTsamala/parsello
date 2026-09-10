@@ -24,6 +24,7 @@ export type UiStrings = {
     closeMenu: string;
     logoHome: string;
     cookieBanner: string;
+    languageSwitcher: string;
     /** Whole phrase — the number is interpolated, never the grammar. */
     callNumber: (phone: string) => string;
   };
@@ -192,6 +193,7 @@ export const ui: UiStrings = {
     closeMenu: "მენიუს დახურვა",
     logoHome: "Parcello Georgia — მთავარი გვერდი",
     cookieBanner: "ქუქი-ფაილების შეტყობინება",
+    languageSwitcher: "საიტის ენა",
     callNumber: (phone) => `დარეკვა ნომერზე ${phone}`,
   },
 

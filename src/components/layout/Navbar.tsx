@@ -24,8 +24,14 @@ export function Navbar({ locale }: { locale: Locale }) {
 
         <NavLinks links={links} ariaLabel={ui.aria.mainNav} />
 
-        <div className="flex items-center gap-1">
-          <LocaleSwitcher locale={locale} className="hidden lg:flex" />
+        <div className="flex items-center gap-3">
+          <div className="hidden lg:block">
+            <LocaleSwitcher
+              locale={locale}
+              ariaLabel={ui.aria.languageSwitcher}
+              variant="compact"
+            />
+          </div>
           <Button
             href={localePath(locale, primaryCta.href)}
             className="hidden lg:inline-flex"
@@ -39,6 +45,7 @@ export function Navbar({ locale }: { locale: Locale }) {
               nav: ui.aria.mobileNav,
               open: ui.aria.openMenu,
               close: ui.aria.closeMenu,
+              languageSwitcher: ui.aria.languageSwitcher,
             }}
             locale={locale}
           />

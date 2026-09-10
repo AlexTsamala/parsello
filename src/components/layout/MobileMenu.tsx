@@ -24,7 +24,12 @@ export function MobileMenu({
   /** Already locale-prefixed by the server. */
   links: NavLink[];
   cta: NavLink;
-  labels: { nav: string; open: string; close: string };
+  labels: {
+    nav: string;
+    open: string;
+    close: string;
+    languageSwitcher: string;
+  };
   locale: Locale;
 }) {
   const [open, setOpen] = useState(false);
@@ -113,7 +118,10 @@ export function MobileMenu({
         </Button>
 
         <div className="mt-6 border-t border-line pt-5">
-          <LocaleSwitcher locale={locale} />
+          <LocaleSwitcher
+            locale={locale}
+            ariaLabel={labels.languageSwitcher}
+          />
         </div>
       </div>
     </div>

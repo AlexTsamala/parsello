@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { LocaleSwitcher } from "@/components/layout/LocaleSwitcher";
 import { Logo } from "@/components/layout/Logo";
 import { PhoneLink } from "@/components/ui/Phone";
 import { EnvelopeIcon, LocationPinIcon } from "@/components/ui/icons";
@@ -108,10 +109,16 @@ export function Footer({ locale }: { locale: Locale }) {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="container-page py-6">
+        <div className="container-page flex flex-col-reverse items-start gap-4 py-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-xs text-white/50">
             © {new Date().getFullYear()} {business.name}
           </p>
+
+          <LocaleSwitcher
+            locale={locale}
+            ariaLabel={ui.aria.languageSwitcher}
+            tone="onDark"
+          />
         </div>
       </div>
     </footer>

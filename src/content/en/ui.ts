@@ -20,6 +20,7 @@ export const uiEn: UiStrings = {
     closeMenu: "Close menu",
     logoHome: "Parcello Georgia — home page",
     cookieBanner: "Cookie notice",
+    languageSwitcher: "Site language",
     callNumber: (phone) => `Call ${phone}`,
   },
 
