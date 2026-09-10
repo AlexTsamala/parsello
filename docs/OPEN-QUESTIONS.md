@@ -36,6 +36,7 @@ Until answered:
 
 | # | Question | Blocks |
 |---|---|---|
+| 19 | **Is customer service available in English?** The site is bilingual as of 2026-09-10, but that describes the pages, not the people. `organizationSchema()` therefore still declares `availableLanguage: ["ka"]` — it is a claim about who can answer the phone, and only the business can confirm it. | `LocalBusiness` JSON-LD |
 | 7 | Delivery time given as 2–3 weeks — does it hold across all of Europe, or vary by destination? Calendar or working days? | FAQ, country pages |
 | 8 | Maximum parcel weight / size limits | FAQ, how-it-works |
 | 9 | Prohibited items (real list, not a generic one) | FAQ, blog article on what can be sent |

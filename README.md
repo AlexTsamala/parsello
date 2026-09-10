@@ -55,14 +55,24 @@ the production analytics property.
 
 ```
 src/
-  app/          Routes. Server Components; page files hold layout, not copy
-  components/   Presentation, grouped by area (home, country, layout, ui, analytics, seo)
-  content/      All copy and business data, typed
+  app/
+    (ka)/       Georgian routes, served at /
+    (en)/en/    English routes, served at /en
+  components/
+    pages/      One component per page, rendered by both locales
+    ...         Presentation, grouped by area (home, country, layout, ui, analytics, seo)
+  content/      Georgian copy and business data, typed
+    en/         English copy, typed against the same shapes
   lib/          Metadata, JSON-LD builders, asset helpers
 docs/           Deployment checklist, open questions, research sources
 ```
 
-15 routes, all prerendered at build time: eight static pages, six country pages and the blog.
+30 routes, all prerendered at build time: 16 Georgian (eight static pages, seven country
+pages, the blog) and 14 English (seven static pages, seven country pages).
+
+The two route groups exist because `<html lang>` has to differ per language, and only a root
+layout renders `<html>`. Route groups keep both out of the URL, so every Georgian path is
+exactly what it was before English was added.
 
 ## How content works
 
@@ -98,15 +108,46 @@ No price, price range or per-kg rate appears anywhere on the site — not in cop
 structured data. Rates vary by destination and change often, so every pricing context routes
 the customer to contact instead. This is a product decision, not missing content.
 
-## Georgian
+## Languages
 
-All customer-facing copy is Georgian, and the language shapes the code more than expected.
+Georgian is primary and lives at `/`. English lives at `/en` and was added on 2026-09-10.
+
+Pages never import a language's content directly. Each takes a `Locale` and calls
+`getContent(locale)`, so one component in `components/pages/` renders both sites — which is
+what keeps the two identical in layout and styling; there is no second copy of the markup to
+drift.
+
+English is typed against the Georgian shapes (`UiStrings`, `Country`, `BusinessContent`), so
+a string added in Georgian and not translated fails `npm run build` rather than shipping
+Georgian text on an English page. Destinations are typed `Record<CountrySlug, …>` for the
+same reason.
+
+Facts are never retyped per language. English country records spread the Georgian record, so
+`slug`, `flag`, `updatedAt` and every `source`/`verifiedOn` have exactly one definition — a
+researched fact cannot exist in English without the citation its Georgian twin was checked
+against.
+
+English is a **translation, not a second voice**. It may claim only what the Georgian already
+claims: no speed, guarantee, insurance or price the Georgian copy does not state.
+
+The blog is deliberately Georgian-only — it is long-form copy written around Georgian search
+terms. It carries no `hreflang` alternates, appears once in the sitemap, and is absent from
+the English navigation.
+
+### Georgian
+
+Georgian shapes the code more than expected.
 
 Georgian is inflected: the stem changes with case, so a suffix cannot be appended to a
 nominative form. `{deliveryTime}-ის` renders as `2-3 კვირა-ის`, which is simply a broken word.
 Inflected forms are therefore stored as their own fields in the content files
-(`deliveryTimeGenitive`, `nameKaIn`) or written out as complete sentences. Components never
+(`deliveryTimeGenitive`, `nameIn`) or written out as complete sentences. Components never
 decline a word.
+
+Adding English made this stricter. A phrase like "send a parcel to Poland" puts the country
+name at the end in English and at the start in Georgian, so no shared component can assemble
+it from a name plus a suffix. Whole phrases are stored per country instead — `linkLabel`,
+`footerLinkLabel`, `priceLinkLabel`, `factsHeading`.
 
 Hyphenated suffixes are correct only after Latin script — `Parcello-ს`, `Facebook-ზე`.
 
@@ -117,11 +158,16 @@ Hyphenated suffixes are correct only after Latin script — `Parcello-ს`, `Fac
 - `sitemap.xml` and `robots.txt` are generated from the same content files the pages use
 - `lastModified` carries real revision dates, never the build timestamp — search engines stop
   trusting the field when every page claims to have changed on every deploy
-- JSON-LD for LocalBusiness, WebSite, BreadcrumbList, FAQPage and Article
+- JSON-LD for LocalBusiness, WebSite, BreadcrumbList, FAQPage and Article, with `inLanguage`
+  following the page's locale
 - Structured data may only assert what the page visibly says
+- `hreflang` alternates on every page that exists in both languages, with Georgian as
+  `x-default`. Georgian-only pages carry none — pointing hreflang at a URL that does not
+  exist is worse than omitting the tag
 
-The six country pages carry genuinely different content — local customs rules, city names,
-country-specific context — rather than one template with the country name swapped.
+The seven country pages carry genuinely different content — local customs rules, city names,
+country-specific context — rather than one template with the country name swapped. That holds
+in both languages.
 
 ## Analytics and consent
 
