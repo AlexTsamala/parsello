@@ -67,8 +67,8 @@ src/
 docs/           Deployment checklist, open questions, research sources
 ```
 
-30 routes, all prerendered at build time: 16 Georgian (eight static pages, seven country
-pages, the blog) and 14 English (seven static pages, seven country pages).
+32 routes, all prerendered at build time: 17 Georgian (eight static pages, eight country
+pages, the blog) and 15 English (seven static pages, eight country pages).
 
 The two route groups exist because `<html lang>` has to differ per language, and only a root
 layout renders `<html>`. Route groups keep both out of the URL, so every Georgian path is
@@ -80,7 +80,7 @@ The rule the codebase is built around: **components render, they never author.**
 
 Everything a visitor reads lives in `src/content/` as typed data. Country pages, the FAQ, the
 allowed-items list and the services page are all generated from those files, not hand-written
-JSX. Adding a seventh destination means adding one object to `countries.ts` — the page, the
+JSX. Adding a destination means adding one object to `countries.ts` — the page, the
 sitemap entry, the footer link and the country grid all follow automatically.
 
 `business.ts` is the single source of truth for business facts. A value that isn't confirmed
@@ -165,7 +165,7 @@ Hyphenated suffixes are correct only after Latin script — `Parcello-ს`, `Fac
   `x-default`. Georgian-only pages carry none — pointing hreflang at a URL that does not
   exist is worse than omitting the tag
 
-The seven country pages carry genuinely different content — local customs rules, city names,
+The eight country pages carry genuinely different content — local customs rules, city names,
 country-specific context — rather than one template with the country name swapped. That holds
 in both languages.
 

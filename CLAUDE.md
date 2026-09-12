@@ -4,7 +4,7 @@ Guidance for Claude Code working in this repository.
 
 ## Project
 
-**Parcello Georgia** — marketing + SEO website for a Georgian parcel-delivery company that sends parcels from Georgia to Europe (Poland, Germany, France, Hungary, Bulgaria, Czechia, Slovakia).
+**Parcello Georgia** — marketing + SEO website for a Georgian parcel-delivery company that sends parcels from Georgia to Europe (Poland, Germany, France, Hungary, Bulgaria, Czechia, Slovakia, the Netherlands).
 
 This is a **marketing and SEO site**, not an application. Its job: explain the service in 5 seconds, build trust, and generate order inquiries.
 
@@ -164,7 +164,7 @@ The only verified facts so far. Everything else is an open question (`docs/OPEN-
 | Business name | Parcello Georgia |
 | Phone | `551 23 15 19` → `tel:+995551231519` |
 | Pricing model | Quoted on request only — never published |
-| Coverage | **All of Europe.** Poland, Germany, France, Hungary, Bulgaria, Czechia and Slovakia are *priority* destinations and SEO targets — not the limit of the service. Never write copy implying only those seven are served. (Italy was dropped as a priority destination on 2026-09-08.) |
+| Coverage | **All of Europe.** Poland, Germany, France, Hungary, Bulgaria, Czechia, Slovakia and the Netherlands are *priority* destinations and SEO targets — not the limit of the service. Never write copy implying only those eight are served. (Italy was dropped as a priority destination on 2026-09-08; the Netherlands was added on 2026-09-12.) |
 | Parcel handover | **Both** courier pickup and drop-off are offered (specific cities/addresses still TBC) |
 | Delivery time | 16–21 days (per-destination breakdown not yet confirmed) |
 | Facebook | `https://www.facebook.com/parcellogeorgia` |
