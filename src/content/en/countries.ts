@@ -84,6 +84,14 @@ const factCopy: Record<string, { title: string; body: string }> = {
     title: "VAT rate",
     body: "The standard VAT rate in Slovakia is 23%.",
   },
+  "nl-euro": {
+    title: "The Netherlands is a founding member of the eurozone",
+    body: "The Netherlands adopted the euro on 1 January 1999, and euro banknotes and coins entered circulation on 1 January 2002. The euro replaced the Dutch guilder at a fixed rate of €1 = 2.20371 guilders, and the guilder ceased to be legal tender on 28 January 2002. Because EU customs relief thresholds are also set in euro, comparing the value of a consignment against them requires no further conversion.",
+  },
+  "nl-vat": {
+    title: "VAT rate",
+    body: "The standard VAT rate in the Netherlands is 21%.",
+  },
 };
 
 const SENDABLE_ITEMS = [
@@ -944,6 +952,139 @@ const copy: Record<CountrySlug, CountryCopy> = {
         body: "Send a gift, personal belongings or other permitted goods to family, friends and relatives in Slovakia.",
         emphasis:
           "Message us today and find out the cost of sending your parcel to Slovakia.",
+      },
+    },
+  },
+  netherlands: {
+    // No article: `name` renders as a standalone breadcrumb crumb and in the
+    // FAQ's comma-separated destination list. The article belongs to the
+    // sentences below, which is what the whole-phrase fields are for.
+    name: "Netherlands",
+    nameIn: "the Netherlands",
+    linkLabel: "Send a parcel to the Netherlands",
+    footerLinkLabel: "Send to the Netherlands",
+    priceLinkLabel: "Cost of sending to the Netherlands",
+    factsHeading: "What to know before sending to the Netherlands",
+    h1: "Send a parcel from Georgia to the Netherlands",
+    seoTitle: "Send a parcel to the Netherlands",
+    seoDescription:
+      "Send a parcel from Georgia to the Netherlands — Amsterdam, Rotterdam, The Hague, Utrecht, Eindhoven. Find out the price and start your order with Parcello.",
+    intro:
+      "The Netherlands is a founding member of the eurozone, so the value of a consignment and the EU's customs relief thresholds are in the same currency — which makes declaring it simpler.",
+    content: {
+      intro: [
+        "Want to send a parcel from Georgia to the Netherlands? Parcello will help you send it simply and conveniently — whether it is a gift, clothing, personal belongings or other permitted goods.",
+      ],
+      narrative: [
+        {
+          placement: "afterIntro",
+          heading: "Sending a parcel from Georgia to the Netherlands",
+          body: [
+            "Diplomatic relations between Georgia and the Kingdom of the Netherlands were established on 22 April 1992. The Dutch embassy opened in Georgia in 2001, and Georgia maintains an embassy in The Hague.",
+            "For Georgians living in the Netherlands, receiving a parcel from home is often a simple way of keeping a connection to family, friends and the place they came from.",
+            "Whether it is a gift, clothing, personal belongings or other permitted goods, Parcello's aim is to make sending it as straightforward as possible for you.",
+            "You give us the parcel and the details we need, and we help organise the process of getting it to the Netherlands.",
+          ],
+        },
+        {
+          placement: "beforePricing",
+          heading: "The Netherlands — one of Europe's main freight hubs",
+          body: [
+            "The Netherlands is one of Europe's principal trade and transport hubs. Rotterdam is the largest freight port in the European Union — in 2024 it alone accounted for 11.8% of the total gross weight of goods handled across EU ports, with Antwerp-Bruges and Hamburg in second and third place.",
+            "That national profile does not change the EU's customs rules: a parcel sent from Georgia goes through the same procedure in the Netherlands as it would in any other member state.",
+            "What matters practically to the sender is that the Netherlands is a founding member of the eurozone and the euro is the currency in use. EU customs relief thresholds are set in euro as well, so a consignment's value is compared against them in a single currency.",
+            "That is why describing a parcel's contents and value accurately matters on the Dutch route too — it helps the customs procedure complete without delay.",
+          ],
+        },
+      ],
+      why: {
+        heading: "Why Parcello?",
+        body: [
+          "Sending an international parcel should not be complicated.",
+          "Easy communication matters to us, and so does your knowing what is needed to send your parcel.",
+        ],
+        highlight:
+          "Parcello lets you send a parcel from Georgia to the Netherlands and get the information you need, all in one place.",
+      },
+      steps: {
+        heading: "How we send parcels to the Netherlands",
+        items: [
+          {
+            title: "Get in touch",
+            body: "Tell us you want to send a parcel to the Netherlands and give us its approximate weight, its contents and the destination city.",
+          },
+          {
+            title: "Prepare your parcel",
+            body: "Pack the items securely and make sure they are permitted to be sent.",
+          },
+          {
+            title: "Hand over the parcel",
+            body: "Our team collects your parcel by whichever method you have agreed with us.",
+          },
+          {
+            title: "Your parcel sets off for the Netherlands",
+            body: "We take care of organising the transport process.",
+          },
+          {
+            title: "The parcel arrives in the Netherlands",
+            body: "It goes on to the recipient you named in the Netherlands.",
+          },
+        ],
+      },
+      sendable: {
+        heading: "What can you send to the Netherlands?",
+        intro:
+          "With Parcello you can send a range of permitted personal items, including:",
+        items: SENDABLE_ITEMS,
+        note: "Restrictions apply to some items in international shipping. Before you send, tell us what you would like to put in the parcel and we will help you check.",
+        moreHref: "/what-can-i-send",
+        moreLabel: "See the full list of permitted items",
+      },
+      cities: {
+        heading: "Sending a parcel to cities across the Netherlands",
+        intro:
+          "Parcels can be sent to destinations throughout the Netherlands, including cities such as:",
+        list: ["Amsterdam", "Rotterdam", "The Hague", "Utrecht", "Eindhoven"],
+        note: "When you order, give the recipient's full address and contact details so the parcel can be processed correctly.",
+      },
+      pricing: {
+        heading: "How much does it cost to send a parcel to the Netherlands?",
+        body: "The cost depends on the weight of the parcel and the rate in force.",
+        emphasis:
+          "Send us the weight of your parcel and the destination city in the Netherlands to get the current price.",
+      },
+      faqs: [
+        {
+          question: "How long does a parcel take to reach the Netherlands?",
+          answer:
+            "Delivery time depends on the route and the service chosen. We will confirm the expected time with you before your order is finalised.",
+        },
+        {
+          question: "What currency is used in the Netherlands?",
+          answer:
+            "The Netherlands is a founding member of the eurozone and the euro is the currency in use. EU customs relief thresholds are also set in euro, so a consignment's value is compared against them in a single currency.",
+        },
+        {
+          question: "Can I send Georgian products to the Netherlands?",
+          answer:
+            "Some products can be sent, though restrictions may apply to particular items. Tell us what you would like to send and we will help you check.",
+        },
+        {
+          question: "Can I send a parcel to Amsterdam or Rotterdam?",
+          answer:
+            "Send us the recipient's city and full address in the Netherlands and we will confirm what the service can do.",
+        },
+        {
+          question: "How do I start sending a parcel?",
+          answer:
+            "Get in touch and tell us the approximate weight of the parcel, what is inside it, and the destination city in the Netherlands.",
+        },
+      ],
+      cta: {
+        heading: "Send your parcel from Georgia to the Netherlands with Parcello",
+        body: "Send a gift, personal belongings or other permitted goods to family, friends and relatives in the Netherlands.",
+        emphasis:
+          "Message us today and find out the cost of sending your parcel to the Netherlands.",
       },
     },
   },
