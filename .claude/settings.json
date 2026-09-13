@@ -14,7 +14,10 @@
       "Bash(rm -f public/*.svg src/app/favicon.ico)",
       "Bash(npm install *)",
       "Bash(npm pkg *)",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "Bash(node -e ' *)",
+      "Bash(git reset *)",
+      "Bash(git restore *)"
     ]
   }
 }
