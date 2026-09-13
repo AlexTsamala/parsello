@@ -48,7 +48,7 @@ Until answered:
 | 14 | Parcello-specific detail per destination (routes, typical timing, what customers usually send there) | Country pages — the researched layer alone can't carry them |
 | 20 | **Commercial freight — which European countries?** The service copy says "from Europe", and names Italy only for groupage consignments. Whether the full-load service covers all of Europe or a specific set of countries is unstated, so the page says "Europe". | `/services` |
 | 21 | **Commercial freight — transit time and any weight/volume floor.** No figure is published; the service carries `deliveryTimeGenitive: null` and the steps promise a quote rather than a timescale. | `/services` |
-| 22 | **A photo for commercial freight.** `public/images/commercial-freight.jpg` does not exist, so that card renders the logo placeholder while the other three show photography. | `/services` |
+| 22 | **A photo for commercial freight.** `public/images/commercial-freight.jpg` does not exist, so that card renders the logo placeholder while the other three show photography. Needs freight subject matter — pallets, a loaded truck, a warehouse — and a square or near-square crop, since the card slot is `aspect-square`. `cargo.png` was reviewed on 2026-09-13 and set aside: it shows one hand-held parcel in a living room, which reads as a consumer service rather than B2B freight. | `/services` |
 
 ## Resolved
 

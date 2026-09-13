@@ -12,6 +12,8 @@ Drop the real Parcello assets here with these exact filenames — the components
 | `og-default.jpg` | 1200×630 branded share image | Open Graph / Twitter cards | ✅ generated |
 | `commercial-freight.jpg` | Palletised / groupage cargo, ideally Parcello's own | `/services` commercial freight card | ⬜ needed — card shows the logo placeholder until it lands |
 
+`cargo.png` sits in this folder but is **not referenced by any component and is not committed** — it is a consumer-parcel marketing banner (one hand-held box in a living room, 1448×1086), reviewed on 2026-09-13 and judged wrong for the freight card, which needs pallets or a truck in a square crop. Being untracked, it does not deploy. If it is ever wanted on the site, re-encode it to JPEG first like the photographs below, and note it is 4:3 — any `aspect-square` slot centre-crops it and clips the logo, the first flag and the badge.
+
 Georgian food photography for `/what-can-i-send` (churchkhela, tkemali, cheese, wine, spices, dried fruit) is still needed — see `plan.md` §42.
 
 `logo.svg` keeps the supplied artwork unchanged; only its viewBox was cropped to the artwork bounds. The original canvas was 920×220 with roughly 48% empty space on the right, which made the mark render too small in the navbar.

@@ -21,7 +21,7 @@ These are the boundaries. If following an instruction would violate one, stop an
 1. **Never invent business information.** No prices, delivery times, weight limits, prohibited items, guarantees, addresses, phone numbers, emails, social links, company registration details, or legal text unless the user gave them.
 2. **Never publish a price, price range, or per-kg rate anywhere on the site.** Pricing varies by destination and changes often. Every pricing context — the `/prices` page, the homepage pricing section, country pages, blog posts, FAQ, structured data — routes the customer to contact instead. This is a deliberate business decision, not missing data: do not "helpfully" add example prices, starting-from figures, or a price calculator.
 3. **Unknown data goes in one place.** All business facts live in `src/content/business.ts`. Missing values are explicit `TODO` placeholders there — never hardcoded guesses scattered across components.
-4. **Never make a promise the business hasn't confirmed.** No "fast delivery", "guaranteed 5 days", "cheapest prices", "insured". If it isn't verified, omit the claim entirely rather than softening it.
+4. **Never make a promise the business hasn't confirmed.** No "fast delivery", "guaranteed 5 days", "cheapest prices", "insured". If it isn't verified, omit the claim entirely rather than softening it. A claim the business itself authored in its own brand assets *is* confirmed — see §10, "Claims in supplied brand assets".
 5. **Structured data must match visible content.** Never put a fact in JSON-LD that isn't rendered on the page. In particular: no `Offer`, `price`, or `priceRange` anywhere.
 6. **No placeholder text ships.** Anything unresolved must be obviously marked (`TODO:`) and listed in `docs/OPEN-QUESTIONS.md`, not quietly filled in with plausible-sounding filler.
 7. **Don't add scope.** No auth, user accounts, tracking system, dashboard, payments, database, CMS, or admin panel. Version 1 is static marketing pages.
@@ -172,6 +172,12 @@ The only verified facts so far. Everything else is an open question (`docs/OPEN-
 | Logo | The **orange cube + "Parcello GEORGIA" wordmark** (the courier-uniform mark). The circular cartoon badge is not the site logo. |
 
 The phone number is the **primary contact** — it belongs in the footer, the contact page, every pricing context, and the mobile sticky CTA. Always render it as a `tel:` link so mobile users can tap to call.
+
+**Claims in supplied brand assets** (confirmed 2026-09-13):
+
+Marketing wording the business wrote into its own artwork is a confirmed business claim, not an unverified one — the business is the source, so rule #4 is satisfied. `cargo.png` carries a badge reading **უსაფრთხო · სწრაფი · საიმედო**, and the business has confirmed it stands behind it. Do not re-litigate that badge or ask about it again.
+
+This does **not** license the same words in written copy. "სწრაფი"/"fast" still does not go into page text, headings, meta descriptions or JSON-LD unless the business asks for it specifically. Published *numbers* remain governed by rule #2 and §10 regardless of what any image says.
 
 **Pricing copy** (single source, reused everywhere pricing is mentioned):
 
