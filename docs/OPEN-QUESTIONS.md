@@ -46,6 +46,9 @@ Until answered:
 | 17 | **Inbound delivery time** — how long from Greece/Poland to Georgia? Currently omitted; only the outbound 2-3 weeks is published. | /services, FAQ |
 | 18 | **Online-shopping service** — how does a customer get their forwarding address? Is there registration? Which countries have an address? Where is the parcel collected in Georgia, and is there a weight/price basis? | /services |
 | 14 | Parcello-specific detail per destination (routes, typical timing, what customers usually send there) | Country pages — the researched layer alone can't carry them |
+| 20 | **Commercial freight — which European countries?** The service copy says "from Europe", and names Italy only for groupage consignments. Whether the full-load service covers all of Europe or a specific set of countries is unstated, so the page says "Europe". | `/services` |
+| 21 | **Commercial freight — transit time and any weight/volume floor.** No figure is published; the service carries `deliveryTimeGenitive: null` and the steps promise a quote rather than a timescale. | `/services` |
+| 22 | **A photo for commercial freight.** `public/images/commercial-freight.jpg` does not exist, so that card renders the logo placeholder while the other three show photography. | `/services` |
 
 ## Resolved
 

@@ -227,10 +227,10 @@ export const uiEn: UiStrings = {
     services: {
       metaTitle: "Services",
       metaDescription:
-        "Parcello's services — sending parcels from Georgia to Europe, sending parcels from Greece and Poland to Georgia, and online shopping from Europe.",
+        "Parcello's services — sending parcels from Georgia to Europe, sending parcels from Greece and Poland to Georgia, online shopping from Europe, and commercial freight transport.",
       breadcrumb: "Services",
       h1: "Parcello's services",
-      lead: "We send parcels from Georgia to Europe, receive parcels from Greece and Poland, and help you receive items bought from European online shops.",
+      lead: "We send parcels from Georgia to Europe, receive parcels from Greece and Poland, help you receive items bought from European online shops, and transport commercial freight from Europe to Georgia.",
       deliveryBefore: "The parcel reaches the recipient within",
       deliveryAfter: "of being sent.",
       ctaHeading: "Which service do you need?",

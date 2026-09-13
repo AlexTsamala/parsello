@@ -10,6 +10,7 @@ Drop the real Parcello assets here with these exact filenames — the components
 | `parcels-tbilisi.jpg` | Stacked Parcello boxes by the Bridge of Peace | `/countries` hero (Phase 5) | ✅ added |
 | `what-you-can-send.jpg` | Flat-lay of clothes, shoes, electronics with Georgia→EU map | `/what-can-i-send` (Phase 6) | ✅ added |
 | `og-default.jpg` | 1200×630 branded share image | Open Graph / Twitter cards | ✅ generated |
+| `commercial-freight.jpg` | Palletised / groupage cargo, ideally Parcello's own | `/services` commercial freight card | ⬜ needed — card shows the logo placeholder until it lands |
 
 Georgian food photography for `/what-can-i-send` (churchkhela, tkemali, cheese, wine, spices, dried fruit) is still needed — see `plan.md` §42.
 

@@ -2,11 +2,12 @@ import { business } from "./business";
 import { howItWorksSteps } from "./how-it-works";
 
 /**
- * Parcello's three services. `/services` is the single place the process is
+ * Parcello's four services. `/services` is the single place the process is
  * described — `/how-it-works` redirects here, so there is no duplicate content.
  *
  * CONFIRMED (2026-09-03): outbound Georgia → Europe, inbound Greece/Poland →
  * Georgia, and an online-shopping forwarding service.
+ * CONFIRMED (2026-09-13): commercial freight, Europe → Georgia.
  *
  * The steps below describe only what each service is by definition. Anything
  * operational that has not been confirmed — how a parcel is handed over abroad,
@@ -21,6 +22,15 @@ export type Service = {
   /** Short route label, e.g. "საქართველო → ევროპა". */
   direction: string;
   summary: string;
+  /**
+   * Optional prose for the detail section, shown under the summary.
+   *
+   * Only commercial freight carries this: it is a quoted, business-to-business
+   * service rather than a fixed consumer flow, so the business supplied real
+   * copy describing it. The three consumer services are fully described by
+   * their summary and steps.
+   */
+  body?: string[];
   image: string;
   alt: string;
   steps: { title: string; body: string }[];
@@ -95,6 +105,39 @@ export const services: Service[] = [
       {
         title: "მიიღეთ ამანათი საქართველოში",
         body: "ამანათი საქართველოში ჩამოდის და თქვენ გადმოგეცემათ.",
+      },
+    ],
+    deliveryTimeGenitive: null,
+  },
+  {
+    slug: "commercial-freight",
+    title: "კომერციული ტვირთები",
+    direction: "ევროპა → საქართველო",
+    summary:
+      "Parcello გთავაზობთ კომერციული ტვირთების ტრანსპორტირებას ევროპიდან საქართველოში.",
+    body: [
+      "ინდუსტრიაში მრავალწლიანი გამოცდილების მქონე გუნდი ზრუნავს იმაზე, რომ თქვენი ტვირთი უსაფრთხოდ, ეფექტურად და დროულად ჩავიდეს დანიშნულების ადგილზე. ასევე გთავაზობთ ნაკრები ტვირთების ტრანსპორტირებას იტალიიდან საქართველოში.",
+      "თუ თქვენი ბიზნესისთვის პროდუქციის იმპორტი ან ექსპორტი გესაჭიროებათ, სერვისს თქვენს მოთხოვნებზე მოვარგებთ.",
+      "დაინტერესების შემთხვევაში მოგვწერეთ შეკვეთის დეტალები ან დაგვიკავშირდით ტელეფონით — და ჩვენ დაგიკავშირდებით.",
+    ],
+    image: "commercial-freight.jpg",
+    alt: "კომერციული ტვირთი ევროპიდან საქართველოში ტრანსპორტირებისთვის მომზადებული",
+    steps: [
+      {
+        title: "მოგვწერეთ ტვირთის დეტალები",
+        body: "მოგვწერეთ, საიდან იგზავნება ტვირთი, რა ტიპისაა და დაახლოებით რა მოცულობა და წონა აქვს.",
+      },
+      {
+        title: "ჩვენ დაგიკავშირდებით",
+        body: "თქვენს მოთხოვნებს გავეცნობით და შემოგთავაზებთ ბიზნესზე მორგებულ პირობებს.",
+      },
+      {
+        title: "ტვირთს ჩავიბარებთ",
+        body: "შეთანხმებული წესით ტვირთი ევროპაში ჩვენს გუნდს გადაეცემა.",
+      },
+      {
+        title: "ტვირთი ჩამოდის საქართველოში",
+        body: "ჩვენ ვიზრუნებთ ტრანსპორტირების პროცესის ორგანიზებაზე დანიშნულების ადგილამდე.",
       },
     ],
     deliveryTimeGenitive: null,

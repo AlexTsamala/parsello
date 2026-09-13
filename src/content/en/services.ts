@@ -3,7 +3,7 @@ import { businessEn } from "./business";
 import { howItWorksStepsEn } from "./how-it-works";
 
 /**
- * English wording for the three confirmed services.
+ * English wording for the four confirmed services.
  *
  * As in the Georgian file, the steps describe only what each service is by
  * definition. Anything operational that the business has not confirmed — how a
@@ -77,6 +77,39 @@ export const servicesEn: Service[] = [
       {
         title: "Receive the parcel in Georgia",
         body: "The parcel arrives in Georgia and is handed over to you.",
+      },
+    ],
+    deliveryTimeGenitive: null,
+  },
+  {
+    slug: "commercial-freight",
+    title: "Commercial freight",
+    direction: "Europe → Georgia",
+    summary:
+      "Parcello transports commercial freight from Europe to Georgia.",
+    body: [
+      "Our team has many years of experience in the industry and works to get your cargo to its destination safely, efficiently and on schedule. We also carry groupage consignments from Italy to Georgia.",
+      "If your business needs to import or export goods, we will tailor the service to your requirements.",
+      "If you are interested, send us the details of your consignment or call us — and we will get back to you.",
+    ],
+    image: "commercial-freight.jpg",
+    alt: "Commercial freight prepared for transport from Europe to Georgia",
+    steps: [
+      {
+        title: "Send us the details",
+        body: "Tell us where the cargo is being sent from, what kind it is, and roughly what volume and weight it has.",
+      },
+      {
+        title: "We get back to you",
+        body: "We go through your requirements and come back with terms suited to your business.",
+      },
+      {
+        title: "We collect the cargo",
+        body: "The cargo is handed to our team in Europe by the method agreed with us.",
+      },
+      {
+        title: "The cargo arrives in Georgia",
+        body: "We take care of organising transport through to the destination.",
       },
     ],
     deliveryTimeGenitive: null,

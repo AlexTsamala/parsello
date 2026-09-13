@@ -50,9 +50,9 @@ export function ServicesPage({ locale }: { locale: Locale }) {
         </div>
       </section>
 
-      {/* Overview cards — a quick scan of all three before the detail below. */}
+      {/* Overview cards — a quick scan of all four before the detail below. */}
       <Section>
-        <ul className="grid gap-5 md:grid-cols-3">
+        <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((service) => {
             const hasPhoto = publicImageExists(service.image);
 
@@ -118,6 +118,12 @@ export function ServicesPage({ locale }: { locale: Locale }) {
               {service.title}
             </h2>
             <p className="mt-4 max-w-2xl text-muted">{service.summary}</p>
+
+            {service.body?.map((paragraph) => (
+              <p key={paragraph} className="mt-4 max-w-2xl text-muted">
+                {paragraph}
+              </p>
+            ))}
 
             {service.deliveryTimeGenitive ? (
               <p className="mt-4 text-muted">
