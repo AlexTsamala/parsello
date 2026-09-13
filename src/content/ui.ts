@@ -171,6 +171,10 @@ export type UiStrings = {
        */
       deliveryBefore: string;
       deliveryAfter: string;
+      /** Detail pages at `/services/<slug>`. */
+      stepsHeading: string;
+      otherServices: string;
+      backToServices: string;
       ctaHeading: string;
       ctaBody: string;
     };
@@ -400,6 +404,9 @@ export const ui: UiStrings = {
       lead: "ვაგზავნით ამანათებს საქართველოდან ევროპაში, ვიღებთ ამანათებს საბერძნეთიდან და პოლონეთიდან, გეხმარებით ევროპულ ონლაინ მაღაზიებში შეძენილი ნივთების მიღებაში და ვახორციელებთ კომერციული ტვირთების ტრანსპორტირებას ევროპიდან საქართველოში.",
       deliveryBefore: "ამანათი ადრესატთან ჩადის გაგზავნიდან",
       deliveryAfter: "ვადაში.",
+      stepsHeading: "როგორ მუშაობს?",
+      otherServices: "სხვა სერვისები",
+      backToServices: "ყველა სერვისი",
       ctaHeading: "რომელი სერვისი გჭირდებათ?",
       ctaBody:
         "მოგვწერეთ, საიდან სად იგზავნება ამანათი — დანარჩენში ჩვენ დაგეხმარებით.",

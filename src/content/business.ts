@@ -54,6 +54,11 @@ export const business = {
   // is written out — never built by appending "-ის" to the nominative above.
   deliveryTimeGenitive: "2-3 კვირის",
 
+  // Inbound, Europe → Georgia. Confirmed 2026-09-13, separately from the
+  // 2-3 week outbound figure above — the two routes are not the same journey.
+  inboundDeliveryTime: "2 კვირა",
+  inboundDeliveryTimeGenitive: "2 კვირის",
+
   weightLimit: null as string | null,
 
   coverage: {

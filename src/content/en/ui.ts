@@ -233,6 +233,9 @@ export const uiEn: UiStrings = {
       lead: "We send parcels from Georgia to Europe, receive parcels from Greece and Poland, help you receive items bought from European online shops, and transport commercial freight from Europe to Georgia.",
       deliveryBefore: "The parcel reaches the recipient within",
       deliveryAfter: "of being sent.",
+      stepsHeading: "How it works",
+      otherServices: "Other services",
+      backToServices: "All services",
       ctaHeading: "Which service do you need?",
       ctaBody:
         "Tell us where the parcel is going from and to — we will help with the rest.",

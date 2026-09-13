@@ -16,6 +16,10 @@ import { howItWorksStepsEn } from "./how-it-works";
 export const servicesEn: Service[] = [
   {
     slug: "send-to-europe",
+    seoTitle: "Sending a parcel to Europe",
+    seoDescription:
+      "Send a parcel to family, friends or relatives in Europe. Find out how the service works and how to start your order with Parcello.",
+    updatedAt: "2026-09-03",
     title: "Sending a parcel to Europe",
     direction: "Georgia → Europe",
     summary:
@@ -27,6 +31,10 @@ export const servicesEn: Service[] = [
   },
   {
     slug: "receive-from-europe",
+    seoTitle: "Sending a parcel to Georgia",
+    seoDescription:
+      "People in Greece and Poland can send a parcel to Georgia. Find out how to hand your parcel over and how long it takes to arrive.",
+    updatedAt: "2026-09-13",
     title: "Sending a parcel to Georgia",
     direction: "Greece and Poland → Georgia",
     summary:
@@ -35,26 +43,31 @@ export const servicesEn: Service[] = [
     alt: "Parcello parcels in Tbilisi",
     steps: [
       {
-        title: "Get in touch",
-        body: "Tell us where the parcel is being sent from and who the recipient in Georgia is.",
+        title: "Message us",
+        body: "Tell us you want to send a parcel to Georgia, and who the recipient is.",
       },
       {
-        title: "Prepare the parcel",
-        body: "Place the items in a cardboard box and write the sender's and recipient's details on it.",
+        title: "Get our warehouse address",
+        body: "We reply with the address of our warehouse, where the parcel should be dropped off.",
       },
       {
-        title: "Hand the parcel over",
-        body: "You pass the parcel to our team by the method agreed with us.",
+        title: "Prepare and drop off the parcel",
+        body: "Place the items in a cardboard box, write the sender's and recipient's details on it, and bring it to the address we gave you.",
       },
       {
         title: "Receive the parcel in Georgia",
         body: "The parcel goes on to the named recipient in Georgia.",
       },
     ],
-    deliveryTimeGenitive: null,
+    // Confirmed 2026-09-13. Inbound has its own figure, not the outbound 2-3 weeks.
+    deliveryTimeGenitive: businessEn.inboundDeliveryTimeGenitive,
   },
   {
     slug: "online-shopping",
+    seoTitle: "Online shopping from Europe",
+    seoDescription:
+      "Buy from European online shops and receive your items in Georgia. Find out how Parcello's online shopping service works.",
+    updatedAt: "2026-09-03",
     title: "Online shopping from Europe",
     direction: "European online shops → Georgia",
     summary:
@@ -83,6 +96,10 @@ export const servicesEn: Service[] = [
   },
   {
     slug: "commercial-freight",
+    seoTitle: "Commercial freight transport from Europe",
+    seoDescription:
+      "Commercial freight transport from Europe to Georgia. Import and export for your business — send us the details of your consignment.",
+    updatedAt: "2026-09-13",
     title: "Commercial freight",
     direction: "Europe → Georgia",
     summary:

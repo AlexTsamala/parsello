@@ -40,6 +40,9 @@ export const businessEn: BusinessContent = {
   // English does not inflect; the genitive field simply repeats the base form.
   deliveryTimeGenitive: "2–3 weeks",
 
+  inboundDeliveryTime: "2 weeks",
+  inboundDeliveryTimeGenitive: "2 weeks",
+
   coverage: {
     scope: "We send parcels anywhere in Europe.",
     priorityNote: "Our main destinations are listed below.",

@@ -4,6 +4,7 @@ import { posts } from "@/content/blog";
 import { siteUrl } from "@/content/business";
 import { countries } from "@/content/countries";
 import { localePath, locales, type Locale } from "@/content/locales";
+import { services } from "@/content/services";
 
 type StaticPage = {
   path: string;
@@ -82,6 +83,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const childDates: Record<string, string> = {
     "/countries": newest(countries.map((country) => country.updatedAt)),
     "/blog": newest(posts.map((post) => post.publishedAt)),
+    "/services": newest(services.map((service) => service.updatedAt)),
   };
 
   const staticEntries: MetadataRoute.Sitemap = staticPages.flatMap((page) => {
@@ -105,6 +107,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   );
 
+  const serviceEntries: MetadataRoute.Sitemap = services.flatMap((service) =>
+    locales.map((locale) => ({
+      url: url(locale, `/services/${service.slug}`),
+      lastModified: service.updatedAt,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
+  );
+
   // Georgian only — the blog was not translated.
   const blogEntries: MetadataRoute.Sitemap = posts.map((post) => ({
     url: url("ka", `/blog/${post.slug}`),
@@ -113,5 +124,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticEntries, ...countryEntries, ...blogEntries];
+  return [
+    ...staticEntries,
+    ...countryEntries,
+    ...serviceEntries,
+    ...blogEntries,
+  ];
 }

@@ -41,6 +41,9 @@ export type BusinessContent = {
    * render both without knowing which language it is in.
    */
   deliveryTimeGenitive: string;
+  /** Inbound, Europe → Georgia — a different journey from `deliveryTime`. */
+  inboundDeliveryTime: string;
+  inboundDeliveryTimeGenitive: string;
   weightLimit: string | null;
   coverage: { scope: string; priorityNote: string };
   restrictions: {

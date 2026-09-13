@@ -18,6 +18,14 @@ import { howItWorksSteps } from "./how-it-works";
 
 export type Service = {
   slug: string;
+  /**
+   * Each service has its own URL at `/services/<slug>`, so each needs its own
+   * title and description — a page cannot inherit them from the hub.
+   */
+  seoTitle: string;
+  seoDescription: string;
+  /** ISO date, for the sitemap. */
+  updatedAt: string;
   title: string;
   /** Short route label, e.g. "საქართველო → ევროპა". */
   direction: string;
@@ -44,6 +52,10 @@ export type Service = {
 export const services: Service[] = [
   {
     slug: "send-to-europe",
+    seoTitle: "ამანათის გაგზავნა ევროპაში",
+    seoDescription:
+      "გაუგზავნეთ ამანათი ოჯახს, მეგობრებს ან ახლობლებს ევროპაში. გაიგეთ, როგორ მუშაობს სერვისი და როგორ დაიწყოთ შეკვეთა Parcello-სთან.",
+    updatedAt: "2026-09-03",
     title: "ამანათის გაგზავნა ევროპაში",
     direction: "საქართველო → ევროპა",
     summary:
@@ -55,6 +67,10 @@ export const services: Service[] = [
   },
   {
     slug: "receive-from-europe",
+    seoTitle: "ამანათის გამოგზავნა საქართველოში",
+    seoDescription:
+      "საბერძნეთსა და პოლონეთში მყოფ ახლობლებს შეუძლიათ ამანათი საქართველოში გამოგზავნონ. გაიგეთ, როგორ ჩააბაროთ ამანათი და რამდენ ხანში ჩამოდის.",
+    updatedAt: "2026-09-13",
     title: "ამანათის გამოგზავნა საქართველოში",
     direction: "საბერძნეთი და პოლონეთი → საქართველო",
     summary:
@@ -63,26 +79,31 @@ export const services: Service[] = [
     alt: "Parcello-ს ამანათები თბილისში",
     steps: [
       {
-        title: "დაგვიკავშირდით",
-        body: "მოგვწერეთ, საიდან იგზავნება ამანათი და ვინ არის მიმღები საქართველოში.",
+        title: "მოგვწერეთ",
+        body: "მოგვწერეთ, რომ გსურთ ამანათის გამოგზავნა საქართველოში, და მიუთითეთ ვინ არის მიმღები.",
       },
       {
-        title: "მოამზადეთ ამანათი",
-        body: "ნივთები მუყაოს ყუთში მოათავსეთ და მიუთითეთ გამგზავნისა და მიმღების მონაცემები.",
+        title: "მიიღეთ საწყობის მისამართი",
+        body: "პასუხად მოგაწვდით ჩვენი საწყობის მისამართს, სადაც ამანათი უნდა ჩააბაროთ.",
       },
       {
-        title: "გადმოგვეცით ამანათი",
-        body: "შეთანხმებული წესით ამანათს ჩვენს გუნდს გადასცემთ.",
+        title: "მოამზადეთ და ჩააბარეთ ამანათი",
+        body: "ნივთები მუყაოს ყუთში მოათავსეთ, მიუთითეთ გამგზავნისა და მიმღების მონაცემები და ამანათი მითითებულ მისამართზე მიიტანეთ.",
       },
       {
         title: "მიიღეთ ამანათი საქართველოში",
         body: "ამანათი მიემართება მითითებულ მიმღებთან საქართველოში.",
       },
     ],
-    deliveryTimeGenitive: null,
+    // Confirmed 2026-09-13. Inbound is its own figure, not the outbound 2-3 weeks.
+    deliveryTimeGenitive: business.inboundDeliveryTimeGenitive,
   },
   {
     slug: "online-shopping",
+    seoTitle: "ონლაინ შოპინგი ევროპიდან",
+    seoDescription:
+      "შეიძინეთ ნივთები ევროპულ ონლაინ მაღაზიებში და მიიღეთ საქართველოში. გაიგეთ, როგორ მუშაობს Parcello-ს ონლაინ შოპინგის სერვისი.",
+    updatedAt: "2026-09-03",
     title: "ონლაინ შოპინგი ევროპიდან",
     direction: "ევროპული ონლაინ მაღაზიები → საქართველო",
     summary:
@@ -111,6 +132,10 @@ export const services: Service[] = [
   },
   {
     slug: "commercial-freight",
+    seoTitle: "კომერციული ტვირთების ტრანსპორტირება ევროპიდან",
+    seoDescription:
+      "კომერციული ტვირთების ტრანსპორტირება ევროპიდან საქართველოში. იმპორტი და ექსპორტი ბიზნესისთვის — მოგვწერეთ ტვირთის დეტალები.",
+    updatedAt: "2026-09-13",
     title: "კომერციული ტვირთები",
     direction: "ევროპა → საქართველო",
     summary:
@@ -143,6 +168,9 @@ export const services: Service[] = [
     deliveryTimeGenitive: null,
   },
 ];
+
+/** Both locales ship the same services, so one list drives both route trees. */
+export const serviceSlugs = services.map((service) => service.slug);
 
 export function getService(slug: string): Service | undefined {
   return services.find((service) => service.slug === slug);

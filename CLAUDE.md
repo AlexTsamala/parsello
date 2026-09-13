@@ -167,6 +167,8 @@ The only verified facts so far. Everything else is an open question (`docs/OPEN-
 | Coverage | **All of Europe.** Poland, Germany, France, Hungary, Bulgaria, Czechia, Slovakia and the Netherlands are *priority* destinations and SEO targets — not the limit of the service. Never write copy implying only those eight are served. (Italy was dropped as a priority destination on 2026-09-08; the Netherlands was added on 2026-09-12.) |
 | Parcel handover | **Both** courier pickup and drop-off are offered (specific cities/addresses still TBC) |
 | Delivery time | 16–21 days (per-destination breakdown not yet confirmed) |
+| Inbound handover | Sender messages Parcello first; Parcello replies with the **warehouse address**; the sender drops the parcel there. The warehouse address is given on request — it is not published on the site. |
+| Inbound delivery time | **2 weeks**, Europe → Georgia. A separate figure from the 2–3 week outbound time; do not merge them. |
 | Facebook | `https://www.facebook.com/parcellogeorgia` |
 | Instagram | `https://www.instagram.com/parcellogeorgia` |
 | Logo | The **orange cube + "Parcello GEORGIA" wordmark** (the courier-uniform mark). The circular cartoon badge is not the site logo. |

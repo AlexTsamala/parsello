@@ -67,8 +67,9 @@ src/
 docs/           Deployment checklist, open questions, research sources
 ```
 
-32 routes, all prerendered at build time: 17 Georgian (eight static pages, eight country
-pages, the blog) and 15 English (seven static pages, eight country pages).
+40 routes, all prerendered at build time: 21 Georgian (eight static pages, eight country
+pages, four service pages, the blog) and 19 English (seven static pages, eight country
+pages, four service pages).
 
 The two route groups exist because `<html lang>` has to differ per language, and only a root
 layout renders `<html>`. Route groups keep both out of the URL, so every Georgian path is

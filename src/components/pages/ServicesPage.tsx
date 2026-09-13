@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -58,8 +59,8 @@ export function ServicesPage({ locale }: { locale: Locale }) {
 
             return (
               <li key={service.slug} className="reveal">
-                <a
-                  href={`#${service.slug}`}
+                <Link
+                  href={localePath(locale, `/services/${service.slug}`)}
                   className="group flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-white transition-colors hover:border-brand"
                 >
                   <div className="relative aspect-square overflow-hidden bg-brand-soft">
@@ -96,65 +97,12 @@ export function ServicesPage({ locale }: { locale: Locale }) {
                     </span>
                     <p className="mt-3 text-sm text-muted">{service.summary}</p>
                   </div>
-                </a>
+                </Link>
               </li>
             );
           })}
         </ul>
       </Section>
-
-      {/* Each service in detail, with its own numbered steps. */}
-      {services.map((service, index) => (
-        <Section
-          key={service.slug}
-          id={service.slug}
-          tone={index % 2 === 0 ? "surface" : "white"}
-        >
-          <div className="reveal scroll-mt-20">
-            <span className="text-sm font-semibold tracking-wide text-brand">
-              {service.direction}
-            </span>
-            <h2 className="mt-2 text-2xl font-bold md:text-4xl">
-              {service.title}
-            </h2>
-            <p className="mt-4 max-w-2xl text-muted">{service.summary}</p>
-
-            {service.body?.map((paragraph) => (
-              <p key={paragraph} className="mt-4 max-w-2xl text-muted">
-                {paragraph}
-              </p>
-            ))}
-
-            {service.deliveryTimeGenitive ? (
-              <p className="mt-4 text-muted">
-                {copy.deliveryBefore}{" "}
-                <strong className="font-semibold text-charcoal">
-                  {service.deliveryTimeGenitive}
-                </strong>{" "}
-                {copy.deliveryAfter}
-              </p>
-            ) : null}
-
-            <ol className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-              {service.steps.map((step, stepIndex) => (
-                <li
-                  key={step.title}
-                  className="rounded-xl border border-line bg-white p-6"
-                >
-                  <span
-                    className="inline-flex size-9 items-center justify-center rounded-lg bg-brand-soft text-base font-bold text-brand"
-                    aria-hidden="true"
-                  >
-                    {stepIndex + 1}
-                  </span>
-                  <h3 className="mt-4 text-lg font-semibold">{step.title}</h3>
-                  <p className="mt-2 text-sm text-muted">{step.body}</p>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </Section>
-      ))}
 
       <section className="bg-charcoal text-white">
         <div className="container-page py-16 text-center md:py-20">
