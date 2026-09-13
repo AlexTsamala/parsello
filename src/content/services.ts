@@ -63,8 +63,7 @@ export const services: Service[] = [
     body: [
       "Parcello აგზავნის ამანათებს საქართველოდან ევროპის ნებისმიერ ქვეყანაში. გააგზავნეთ ქართული პროდუქტი, ტანსაცმელი, საჩუქრები ან პირადი ნივთები ოჯახის წევრებთან, მეგობრებთან და ახლობლებთან.",
       "ამანათი შეგიძლიათ კურიერს გადასცეთ ან თავად ჩააბაროთ ჩვენს მისამართზე — აირჩიეთ ის ვარიანტი, რომელიც თქვენთვის უფრო მოსახერხებელია.",
-      // The pricing sentences have exactly one definition on the site
-      // (CLAUDE.md §10) — referenced, never paraphrased per page.
+
       business.pricing.dependsOn,
       business.pricing.copy,
     ],
