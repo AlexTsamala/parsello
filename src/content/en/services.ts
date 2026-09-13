@@ -93,7 +93,7 @@ export const servicesEn: Service[] = [
       "If you are interested, send us the details of your consignment or call us — and we will get back to you.",
     ],
     image: "commercial-freight.jpg",
-    alt: "A customer holding a Parcello-branded box",
+    alt: "A lorry, a container ship and Parcello boxes on a pallet at a port",
     steps: [
       {
         title: "Send us the details",

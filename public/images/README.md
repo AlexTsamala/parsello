@@ -10,15 +10,17 @@ Drop the real Parcello assets here with these exact filenames — the components
 | `parcels-tbilisi.jpg` | Stacked Parcello boxes by the Bridge of Peace | `/countries` hero (Phase 5) | ✅ added |
 | `what-you-can-send.jpg` | Flat-lay of clothes, shoes, electronics with Georgia→EU map | `/what-can-i-send` (Phase 6) | ✅ added |
 | `og-default.jpg` | 1200×630 branded share image | Open Graph / Twitter cards | ✅ generated |
-| `commercial-freight.jpg` | Customer holding a branded Parcello box | `/services` commercial freight card | ✅ in use — cropped from `cargo.png` |
+| `commercial-freight.jpg` | Lorry, container ship, cargo plane and palletised Parcello boxes | `/services` commercial freight card | ✅ in use — cropped from `cargo_image.png` |
 
-`commercial-freight.jpg` is a 678×678 crop of `cargo.png`, taken at `left:770, top:178` and encoded to JPEG at quality 86. The source is a 1448×1086 consumer-parcel banner whose left third carries the logo, a flag row and an orange badge; the card slot is `aspect-square`, so those had to be cropped out entirely rather than sliced — a half-cut wordmark or flag at the frame edge looks like a rendering bug. The chosen window is the widest square that clears the flag row (which ends at x≈763) while still containing the model's face and the full `Parcello GEORGIA` wordmark on the box. Reproduce with:
+`commercial-freight.jpg` is a 901×901 crop of `cargo_image.png` at `left:300, top:40`, encoded to JPEG at quality 86. The source is a 1672×941 freight scene — lorry, container ship, cargo plane and palletised Parcello boxes — and the card slot is `aspect-square`, so roughly a third of the width had to go. The window keeps the lorry cab, all three branded boxes, the aircraft and the ship in one frame, and is inset from the top and left edges because the source carries noise artifacts in its corners. It stops short of x≈1230, where the baked-in `Parcello` wordmark begins: including part of it would put a sliced logo at the frame edge. Reproduce with:
 
 ```
-node -e "require('sharp')('public/images/cargo.png').extract({left:770,top:178,width:678,height:678}).jpeg({quality:86,chromaSubsampling:'4:4:4'}).toFile('public/images/commercial-freight.jpg')"
+node -e "require('sharp')('public/images/cargo_image.png').extract({left:300,top:40,width:901,height:901}).flatten({background:'#ffffff'}).jpeg({quality:86,chromaSubsampling:'4:4:4'}).toFile('public/images/commercial-freight.jpg')"
 ```
 
-`cargo.png` itself is the uncropped original and is **not committed**, so it does not deploy.
+The source is RGBA, so `.flatten()` is needed — JPEG has no alpha channel. `cargo_image.png` is the uncropped original and is **not committed**, so it does not deploy.
+
+An earlier draft used `cargo.png`, a consumer-parcel banner showing one hand-held box; it was replaced on 2026-09-13 because a B2B freight card should show freight.
 
 Georgian food photography for `/what-can-i-send` (churchkhela, tkemali, cheese, wine, spices, dried fruit) is still needed — see `plan.md` §42.
 
