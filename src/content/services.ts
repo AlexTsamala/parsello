@@ -60,6 +60,14 @@ export const services: Service[] = [
     direction: "საქართველო → ევროპა",
     summary:
       "გაუგზავნეთ ამანათი ოჯახის წევრებს, მეგობრებს ან ახლობლებს ევროპაში — ქართული პროდუქტი, ტანსაცმელი, საჩუქრები და პირადი ნივთები.",
+    body: [
+      "Parcello აგზავნის ამანათებს საქართველოდან ევროპის ნებისმიერ ქვეყანაში. გააგზავნეთ ქართული პროდუქტი, ტანსაცმელი, საჩუქრები ან პირადი ნივთები ოჯახის წევრებთან, მეგობრებთან და ახლობლებთან.",
+      "ამანათი შეგიძლიათ კურიერს გადასცეთ ან თავად ჩააბაროთ ჩვენს მისამართზე — აირჩიეთ ის ვარიანტი, რომელიც თქვენთვის უფრო მოსახერხებელია.",
+      // The pricing sentences have exactly one definition on the site
+      // (CLAUDE.md §10) — referenced, never paraphrased per page.
+      business.pricing.dependsOn,
+      business.pricing.copy,
+    ],
     image: "courier-handover.jpg",
     alt: "Parcello-ს კურიერი ამანათს იბარებს მომხმარებლისგან",
     steps: howItWorksSteps,

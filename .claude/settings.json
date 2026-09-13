@@ -17,7 +17,8 @@
       "Bash(npm run *)",
       "Bash(node -e ' *)",
       "Bash(git reset *)",
-      "Bash(git restore *)"
+      "Bash(git restore *)",
+      "Bash(npx tsx -e ' *)"
     ]
   }
 }
