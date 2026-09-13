@@ -10,9 +10,15 @@ Drop the real Parcello assets here with these exact filenames — the components
 | `parcels-tbilisi.jpg` | Stacked Parcello boxes by the Bridge of Peace | `/countries` hero (Phase 5) | ✅ added |
 | `what-you-can-send.jpg` | Flat-lay of clothes, shoes, electronics with Georgia→EU map | `/what-can-i-send` (Phase 6) | ✅ added |
 | `og-default.jpg` | 1200×630 branded share image | Open Graph / Twitter cards | ✅ generated |
-| `commercial-freight.jpg` | Palletised / groupage cargo, ideally Parcello's own | `/services` commercial freight card | ⬜ needed — card shows the logo placeholder until it lands |
+| `commercial-freight.jpg` | Customer holding a branded Parcello box | `/services` commercial freight card | ✅ in use — cropped from `cargo.png` |
 
-`cargo.png` sits in this folder but is **not referenced by any component and is not committed** — it is a consumer-parcel marketing banner (one hand-held box in a living room, 1448×1086), reviewed on 2026-09-13 and judged wrong for the freight card, which needs pallets or a truck in a square crop. Being untracked, it does not deploy. If it is ever wanted on the site, re-encode it to JPEG first like the photographs below, and note it is 4:3 — any `aspect-square` slot centre-crops it and clips the logo, the first flag and the badge.
+`commercial-freight.jpg` is a 678×678 crop of `cargo.png`, taken at `left:770, top:178` and encoded to JPEG at quality 86. The source is a 1448×1086 consumer-parcel banner whose left third carries the logo, a flag row and an orange badge; the card slot is `aspect-square`, so those had to be cropped out entirely rather than sliced — a half-cut wordmark or flag at the frame edge looks like a rendering bug. The chosen window is the widest square that clears the flag row (which ends at x≈763) while still containing the model's face and the full `Parcello GEORGIA` wordmark on the box. Reproduce with:
+
+```
+node -e "require('sharp')('public/images/cargo.png').extract({left:770,top:178,width:678,height:678}).jpeg({quality:86,chromaSubsampling:'4:4:4'}).toFile('public/images/commercial-freight.jpg')"
+```
+
+`cargo.png` itself is the uncropped original and is **not committed**, so it does not deploy.
 
 Georgian food photography for `/what-can-i-send` (churchkhela, tkemali, cheese, wine, spices, dried fruit) is still needed — see `plan.md` §42.
 

@@ -88,12 +88,12 @@ export const servicesEn: Service[] = [
     summary:
       "Parcello transports commercial freight from Europe to Georgia.",
     body: [
-      "Our team has many years of experience in the industry and works to get your cargo to its destination safely, efficiently and on schedule. We also carry groupage consignments from Italy to Georgia.",
+      "Our team has many years of experience in the industry and works to get your cargo to its destination safely, efficiently and on schedule.",
       "If your business needs to import or export goods, we will tailor the service to your requirements.",
       "If you are interested, send us the details of your consignment or call us — and we will get back to you.",
     ],
     image: "commercial-freight.jpg",
-    alt: "Commercial freight prepared for transport from Europe to Georgia",
+    alt: "A customer holding a Parcello-branded box",
     steps: [
       {
         title: "Send us the details",
