@@ -172,6 +172,7 @@ The only verified facts so far. Everything else is an open question (`docs/OPEN-
 | Delivery time | 16–21 days (per-destination breakdown not yet confirmed) |
 | Inbound handover | Sender messages Parcello first; Parcello replies with the **warehouse address**; the sender drops the parcel there. The warehouse address is given on request — it is not published on the site. |
 | Inbound delivery time | **2 weeks**, Europe → Georgia. A separate figure from the 2–3 week outbound time; do not merge them. |
+| Customer-service languages | Georgian, English and Russian (English and Russian confirmed 2026-09-24) |
 | Facebook | `https://www.facebook.com/parcellogeorgia` |
 | Instagram | `https://www.instagram.com/parcellogeorgia` |
 | Logo | The **orange cube + "Parcello GEORGIA" wordmark** (the courier-uniform mark). The circular cartoon badge is not the site logo. |
