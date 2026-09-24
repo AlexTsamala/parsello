@@ -36,7 +36,8 @@ Until answered:
 
 | # | Question | Blocks |
 |---|---|---|
-| 19 | **Is customer service available in English?** The site is bilingual as of 2026-09-10, but that describes the pages, not the people. `organizationSchema()` therefore still declares `availableLanguage: ["ka"]` — it is a claim about who can answer the phone, and only the business can confirm it. | `LocalBusiness` JSON-LD |
+| 19 | **Is customer service available in English?** The site serves English pages (since 2026-09-10), but that describes the pages, not the people. `organizationSchema()` declares `availableLanguage: ["ka", "ru"]` — English stays out until the business confirms someone can answer in it. | `LocalBusiness` JSON-LD |
+| 22 | **Native-speaker review of the Russian copy.** The Russian site (2026-09-24) was translated from the approved Georgian/English copy and has not yet been proofread by a native Russian speaker. Priority: titles, H1s and meta descriptions, then country pages. | `/ru` |
 | 7 | Delivery time given as 2–3 weeks — does it hold across all of Europe, or vary by destination? Calendar or working days? | FAQ, country pages |
 | 8 | Maximum parcel weight / size limits | FAQ, how-it-works |
 | 9 | Prohibited items (real list, not a generic one) | FAQ, blog article on what can be sent |
@@ -62,4 +63,5 @@ Until answered:
 - **Services** — four confirmed: Georgia→Europe, Greece/Poland→Georgia and online-shopping forwarding (2026-09-03), plus commercial freight Europe→Georgia (2026-09-13). Each has its own URL at `/services/<slug>`; `/services` is the hub and `/how-it-works` permanently redirects there.
 - **Inbound handover** (#16) — the sender messages Parcello, receives the warehouse address in reply, and drops the parcel there. Confirmed 2026-09-13; the address itself is given on request, not published.
 - **Inbound delivery time** (#17) — 2 weeks, Europe → Georgia. Confirmed 2026-09-13. Stored as `business.inboundDeliveryTime` / `inboundDeliveryTimeGenitive`, separate from the outbound 2–3 weeks.
+- **Russian customer service** — confirmed 2026-09-24: the team answers customers in Russian. Declared in `availableLanguage`. The Russian site lives at `/ru`, targets Russian speakers living in Georgia, keeps English URL slugs, and its language switcher entry has no flag (text «РУС» only), by the business's choice.
 - **Country-page content** — general destination facts are researched and published with sources, kept structurally separate from Parcello claims. See `CLAUDE.md` §1 rule 10 and `docs/RESEARCH-SOURCES.md`.

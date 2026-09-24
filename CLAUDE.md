@@ -80,8 +80,11 @@ Rules:
   - Store the inflected form in the content file, as its own field (`deliveryTimeGenitive`, `nameKaIn`), or write the whole sentence there (`prohibitedSentence`). Components render text, they never decline it.
   - A hyphenated suffix is correct **only** after Latin script: `Parcello-ს`, `Facebook-ზე`.
 - **English was added on 2026-09-10** and lives at `/en`; Georgian stays at `/` and stays primary. English copy lives in `src/content/en/`, typed against the Georgian shapes so an untranslated string fails the build. Pages never import a language directly — they take a `Locale` and call `getContent(locale)`.
-- English is a **translation, not a second voice**: it may claim only what the Georgian already claims. No speed, guarantee, insurance or price that the Georgian copy does not state.
-- The blog is deliberately Georgian-only. It carries no `hreflang` alternates and is absent from the English navigation.
+- **Russian was added on 2026-09-24** and lives at `/ru`, for Russian speakers living in Georgia. Copy lives in `src/content/ru/`, typed the same way. URL slugs stay English (`/ru/countries/germany`). Titles are built around the phrases people search with — «Отправить посылку из Грузии в Германию».
+- English and Russian are **translations, not second voices**: they may claim only what the Georgian already claims. No speed, guarantee, insurance or price that the Georgian copy does not state.
+- Russian inflects like Georgian, so the same rule applies: never build a case form in code. Store «в Германию» / «в Германии» as whole phrases.
+- The language switcher shows **no flag for Russian** — text «РУС» only. This is the business's decision; do not add 🇷🇺.
+- The blog is deliberately Georgian-only. It carries no `hreflang` alternates and is absent from the English and Russian navigation.
 - Code, comments, filenames, commit messages, and URL slugs stay in English.
 
 ## 6. SEO rules
