@@ -7,10 +7,9 @@ const url = (path: string) => new URL(path, siteUrl).toString();
 /**
  * The business itself, described once.
  *
- * `availableLanguage` claims customer service, not page language. Georgian and
- * Russian are confirmed (Russian on 2026-09-24, when the Russian site was
- * added); English is not, so it stays out even though an English site exists.
- * See docs/OPEN-QUESTIONS.md.
+ * `availableLanguage` claims customer service, not page language. All three
+ * are confirmed by the business: Georgian from the start, Russian and English
+ * on 2026-09-24.
  */
 export function organizationSchema(locale: Locale = defaultLocale) {
   const socialLinks: (string | null)[] = [
@@ -55,7 +54,7 @@ export function organizationSchema(locale: Locale = defaultLocale) {
       telephone: business.phone.tel,
       ...(business.email ? { email: business.email } : {}),
       contactType: "customer service",
-      availableLanguage: ["ka", "ru"],
+      availableLanguage: ["ka", "en", "ru"],
     },
   };
 }
