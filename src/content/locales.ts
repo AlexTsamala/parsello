@@ -2,22 +2,26 @@
  * Locale primitives.
  *
  * Georgian is the primary language and lives at the site root; English is
- * served under `/en`. That asymmetry is deliberate — every Georgian URL was
- * already indexed, and prefixing them would have forced a site-wide 301
- * migration on an SEO-driven site.
+ * served under `/en` and Russian under `/ru`. That asymmetry is deliberate —
+ * every Georgian URL was already indexed, and prefixing them would have forced
+ * a site-wide 301 migration on an SEO-driven site.
  */
 
-export const locales = ["ka", "en"] as const;
+export const locales = ["ka", "en", "ru"] as const;
 
 export type Locale = (typeof locales)[number];
 
 export const defaultLocale: Locale = "ka";
 
 /** BCP 47 tags, for `<html lang>` and hreflang. */
-export const htmlLang: Record<Locale, string> = { ka: "ka", en: "en" };
+export const htmlLang: Record<Locale, string> = { ka: "ka", en: "en", ru: "ru" };
 
 /** Open Graph locale identifiers. */
-export const ogLocale: Record<Locale, string> = { ka: "ka_GE", en: "en_US" };
+export const ogLocale: Record<Locale, string> = {
+  ka: "ka_GE",
+  en: "en_US",
+  ru: "ru_RU",
+};
 
 /**
  * Turns a locale-agnostic site path into the path for `locale`.

@@ -9,8 +9,8 @@ import { business } from "@/content/business";
  * here is inline-styled and self-contained for that reason; do not reach for
  * Tailwind classes in this file, they will not be applied.
  *
- * Bilingual for the same reason: with no route to read a locale from, there is
- * nothing to pick a language by, and guessing one would be wrong half the time.
+ * Trilingual for the same reason: with no route to read a locale from, there is
+ * nothing to pick a language by, and guessing one would usually be wrong.
  * Palette values are the fixed brand tokens (CLAUDE.md §4), written literally
  * because the stylesheet that defines them is not loaded here.
  */
@@ -66,6 +66,15 @@ export default function NotFound() {
         <p style={{ margin: "0.75rem 0 0", color: "#666666" }}>
           The page may have been removed, or the address may be mistyped.
         </p>
+        <h2
+          lang="ru"
+          style={{ margin: "1.5rem 0 0", fontSize: "1.25rem", lineHeight: 1.4 }}
+        >
+          Страница не найдена
+        </h2>
+        <p lang="ru" style={{ margin: "0.75rem 0 0", color: "#666666" }}>
+          Возможно, страница удалена или адрес введен с ошибкой.
+        </p>
       </div>
 
       <div
@@ -77,8 +86,8 @@ export default function NotFound() {
         }}
       >
         {/*
-          Plain anchors, not next/link. This page renders outside both root
-          layouts, and moving from here into either locale crosses a root
+          Plain anchors, not next/link. This page renders outside every root
+          layout, and moving from here into any locale crosses a root
           layout boundary — which Next serves as a full document load however
           it is triggered. A client-side Link would buy nothing and has no
           layout context to navigate within.
@@ -89,6 +98,9 @@ export default function NotFound() {
         </a>
         <a href="/en" style={buttonStyle}>
           English home
+        </a>
+        <a href="/ru" lang="ru" style={buttonStyle}>
+          Главная на русском
         </a>
         <a href={`tel:${business.phone.tel}`} style={secondaryButtonStyle}>
           {business.phone.display}

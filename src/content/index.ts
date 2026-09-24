@@ -28,6 +28,20 @@ import { servicesEn, getServiceEn } from "./en/services";
 import { euImportRulesEn } from "./en/shipping-rules";
 import { uiEn } from "./en/ui";
 
+import { allowedItemsRu, sendableCategoriesRu } from "./ru/allowed-items";
+import { businessRu } from "./ru/business";
+import {
+  countriesRu,
+  getCountryRu,
+  relatedCountriesRu,
+} from "./ru/countries";
+import { faqsRu, featuredFaqsRu } from "./ru/faq";
+import { howItWorksStepsRu } from "./ru/how-it-works";
+import { footerNavRu, mainNavRu, primaryCtaRu } from "./ru/navigation";
+import { getServiceRu, servicesRu } from "./ru/services";
+import { euImportRulesRu } from "./ru/shipping-rules";
+import { uiRu } from "./ru/ui";
+
 import { sendableCategories } from "./allowed-items";
 import { getService } from "./services";
 
@@ -36,7 +50,7 @@ import { getService } from "./services";
  *
  * Pages take a `Locale` and call `getContent(locale)` — they never import a
  * language's content files directly. That is what lets one component render
- * both sites, which in turn is what keeps the design identical between them.
+ * every site, which in turn is what keeps the design identical between them.
  *
  * The blog is deliberately absent: it exists only in Georgian, so its pages
  * import `./blog` directly rather than going through here.
@@ -101,7 +115,27 @@ const en: SiteContent = {
   euImportRules: euImportRulesEn,
 };
 
-const byLocale: Record<Locale, SiteContent> = { ka, en };
+const ru: SiteContent = {
+  locale: "ru",
+  business: businessRu,
+  ui: uiRu,
+  mainNav: mainNavRu,
+  footerNav: footerNavRu,
+  primaryCta: primaryCtaRu,
+  countries: countriesRu,
+  getCountry: getCountryRu,
+  relatedCountries: relatedCountriesRu,
+  faqs: faqsRu,
+  featuredFaqs: featuredFaqsRu,
+  howItWorksSteps: howItWorksStepsRu,
+  services: servicesRu,
+  getService: getServiceRu,
+  sendableCategories: sendableCategoriesRu,
+  allowedItems: allowedItemsRu,
+  euImportRules: euImportRulesRu,
+};
+
+const byLocale: Record<Locale, SiteContent> = { ka, en, ru };
 
 export function getContent(locale: Locale = defaultLocale): SiteContent {
   return byLocale[locale];
