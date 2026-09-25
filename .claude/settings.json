@@ -18,7 +18,9 @@
       "Bash(node -e ' *)",
       "Bash(git reset *)",
       "Bash(git restore *)",
-      "Bash(npx tsx -e ' *)"
+      "Bash(npx tsx -e ' *)",
+      "Bash(curl -s https://parcello.ge/robots.txt)",
+      "Bash(python3 -c ' *)"
     ]
   }
 }
