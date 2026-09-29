@@ -92,6 +92,18 @@ const factCopy: Record<string, { title: string; body: string }> = {
     title: "VAT rate",
     body: "The standard VAT rate in the Netherlands is 21%.",
   },
+  "fi-euro": {
+    title: "Finland is a founding member of the eurozone",
+    body: "Finland joined the European Union in 1995 and was among the first countries to adopt the euro, on 1 January 1999. Euro banknotes and coins entered circulation on 1 January 2002. The euro replaced the Finnish markka at a fixed rate of €1 = 5.94573 markka, and the markka ceased to be legal tender after 28 February 2002.",
+  },
+  "fi-vat": {
+    title: "The second-highest VAT rate in the European Union",
+    body: "The standard VAT rate in Finland is 25.5% — the second-highest in the European Union, after Hungary (27%).",
+  },
+  "fi-gift-clearance": {
+    title: "The recipient handles customs clearance of a gift",
+    body: "According to Posti, Finland's national postal operator, a gift arriving from outside the EU must also be cleared through customs, and the recipient does this through the Finnish Customs service. If the gift is worth €45 or less, the recipient pays neither VAT nor Posti's handling fee; above €45, both are payable.",
+  },
 };
 
 const SENDABLE_ITEMS = [
@@ -1085,6 +1097,136 @@ const copy: Record<CountrySlug, CountryCopy> = {
         body: "Send a gift, personal belongings or other permitted goods to family, friends and relatives in the Netherlands.",
         emphasis:
           "Message us today and find out the cost of sending your parcel to the Netherlands.",
+      },
+    },
+  },
+  finland: {
+    name: "Finland",
+    nameIn: "Finland",
+    linkLabel: "Send a parcel to Finland",
+    footerLinkLabel: "Send to Finland",
+    priceLinkLabel: "Cost of sending to Finland",
+    factsHeading: "What to know before sending to Finland",
+    h1: "Send a parcel from Georgia to Finland",
+    seoTitle: "Send a parcel to Finland",
+    seoDescription:
+      "Send a parcel from Georgia to Finland — Helsinki, Espoo, Tampere, Vantaa, Oulu, Turku. Find out the price and start your order with Parcello.",
+    intro:
+      "Two things are worth knowing when sending a parcel to Finland: the country has the second-highest VAT rate in the European Union, and a gift arriving from outside the EU is cleared through customs by the recipient themselves.",
+    content: {
+      intro: [
+        "Want to send a parcel from Georgia to Finland? Parcello will help you send it simply and conveniently — whether it is a gift, clothing, personal belongings or other permitted goods.",
+      ],
+      narrative: [
+        {
+          placement: "afterIntro",
+          heading: "Sending a parcel from Georgia to Finland",
+          body: [
+            "Diplomatic relations between Georgia and the Republic of Finland were established on 8 July 1992. Georgia's embassy in Helsinki has operated since 2011, while Finland is represented in Georgia from Helsinki, through a non-resident ambassador.",
+            "For Georgians living in Finland, receiving a parcel from home is often a simple way of keeping a connection to family, friends and the place they came from.",
+            "Whether it is a gift, clothing, personal belongings or other permitted goods, Parcello's aim is to make sending it as straightforward as possible for you.",
+            "You give us the parcel and the details we need, and we help organise the process of getting it to Finland.",
+          ],
+        },
+        {
+          placement: "beforePricing",
+          heading: "Finland — the euro, a high VAT rate, and clearance by the recipient",
+          body: [
+            "Finland is a founding member of the eurozone and the euro is the currency in use. EU customs relief thresholds are also set in euro, so a consignment's value is compared against them in a single currency.",
+            "At the same time, Finland applies the second-highest VAT rate in the European Union — 25.5%. That means exceeding the €45 gift relief threshold costs the recipient noticeably more.",
+            "Finland also differs in that a gift arriving from outside the EU is declared for customs clearance by the recipient themselves, through the Finnish Customs service. It helps if the recipient knows in advance what is in the parcel and what it is worth.",
+            "That is why describing a parcel's contents and value accurately matters especially on the Finnish route — it helps the customs procedure complete without delay.",
+          ],
+        },
+      ],
+      why: {
+        heading: "Why Parcello?",
+        body: [
+          "Sending an international parcel should not be complicated.",
+          "Easy communication matters to us, and so does your knowing what is needed to send your parcel.",
+        ],
+        highlight:
+          "Parcello lets you send a parcel from Georgia to Finland and get the information you need, all in one place.",
+      },
+      steps: {
+        heading: "How we send parcels to Finland",
+        items: [
+          {
+            title: "Get in touch",
+            body: "Tell us you want to send a parcel to Finland and give us its approximate weight, its contents and the destination city.",
+          },
+          {
+            title: "Prepare your parcel",
+            body: "Pack the items securely and make sure they are permitted to be sent.",
+          },
+          {
+            title: "Hand over the parcel",
+            body: "Our team collects your parcel by whichever method you have agreed with us.",
+          },
+          {
+            title: "Your parcel sets off for Finland",
+            body: "We take care of organising the transport process.",
+          },
+          {
+            title: "The parcel arrives in Finland",
+            body: "It goes on to the recipient you named in Finland.",
+          },
+        ],
+      },
+      sendable: {
+        heading: "What can you send to Finland?",
+        intro:
+          "With Parcello you can send a range of permitted personal items, including:",
+        items: SENDABLE_ITEMS,
+        note: "Restrictions apply to some items in international shipping. Before you send, tell us what you would like to put in the parcel and we will help you check.",
+        moreHref: "/what-can-i-send",
+        moreLabel: "See the full list of permitted items",
+      },
+      cities: {
+        heading: "Sending a parcel to cities across Finland",
+        intro:
+          "Parcels can be sent to destinations throughout Finland, including cities such as:",
+        list: ["Helsinki", "Espoo", "Tampere", "Vantaa", "Oulu", "Turku"],
+        note: "When you order, give the recipient's full address and contact details so the parcel can be processed correctly.",
+      },
+      pricing: {
+        heading: "How much does it cost to send a parcel to Finland?",
+        body: "The cost depends on the weight of the parcel and the rate in force.",
+        emphasis:
+          "Send us the weight of your parcel and the destination city in Finland to get the current price.",
+      },
+      faqs: [
+        {
+          question: "How long does a parcel take to reach Finland?",
+          answer:
+            "Delivery time depends on the route and the service chosen. We will confirm the expected time with you before your order is finalised.",
+        },
+        {
+          question: "Who handles customs clearance for a parcel in Finland?",
+          answer:
+            "According to Posti, Finland's postal operator, a gift arriving from outside the EU is declared for customs clearance by the recipient, through the Finnish Customs service. No VAT is payable on a gift worth €45 or less.",
+        },
+        {
+          question: "Can I send Georgian products to Finland?",
+          answer:
+            "Some products can be sent, though restrictions may apply to particular items. Tell us what you would like to send and we will help you check.",
+        },
+        {
+          question: "Can I send a parcel to Helsinki or Tampere?",
+          answer:
+            "Send us the recipient's city and full address in Finland and we will confirm what the service can do.",
+        },
+        {
+          question: "How do I start sending a parcel?",
+          answer:
+            "Get in touch and tell us the approximate weight of the parcel, what is inside it, and the destination city in Finland.",
+        },
+      ],
+      cta: {
+        heading: "Send your parcel from Georgia to Finland with Parcello",
+        body: "Send a gift, personal belongings or other permitted goods to family, friends and relatives in Finland.",
+        emphasis:
+          "Message us today and find out the cost of sending your parcel to Finland.",
       },
     },
   },
