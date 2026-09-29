@@ -92,6 +92,18 @@ const factCopy: Record<string, { title: string; body: string }> = {
     title: "VAT rate",
     body: "The standard VAT rate in the Netherlands is 21%.",
   },
+  "se-currency": {
+    title: "Sweden is not in the eurozone",
+    body: "Sweden joined the European Union in 1995 but is not a member of the eurozone — its national currency is the Swedish krona (SEK). The krona is not part of the exchange rate mechanism (ERM II), and the country has set no target date for adopting the euro.",
+  },
+  "se-vat": {
+    title: "VAT rate",
+    body: "The standard VAT rate in Sweden is 25%.",
+  },
+  "se-gift-600": {
+    title: "The gift relief threshold is SEK 600",
+    body: "According to Swedish Customs (Tullverket), a gift received from outside the EU is free of customs duty and VAT if its total actual value is no more than SEK 600 and the parcel contains no alcohol or tobacco. The parcel must clearly state that it is a gift, what it contains and what it is worth, and that both sender and recipient are private individuals.",
+  },
   "fi-euro": {
     title: "Finland is a founding member of the eurozone",
     body: "Finland joined the European Union in 1995 and was among the first countries to adopt the euro, on 1 January 1999. Euro banknotes and coins entered circulation on 1 January 2002. The euro replaced the Finnish markka at a fixed rate of €1 = 5.94573 markka, and the markka ceased to be legal tender after 28 February 2002.",
@@ -1227,6 +1239,141 @@ const copy: Record<CountrySlug, CountryCopy> = {
         body: "Send a gift, personal belongings or other permitted goods to family, friends and relatives in Finland.",
         emphasis:
           "Message us today and find out the cost of sending your parcel to Finland.",
+      },
+    },
+  },
+  sweden: {
+    name: "Sweden",
+    nameIn: "Sweden",
+    linkLabel: "Send a parcel to Sweden",
+    footerLinkLabel: "Send to Sweden",
+    priceLinkLabel: "Cost of sending to Sweden",
+    factsHeading: "What to know before sending to Sweden",
+    h1: "Send a parcel from Georgia to Sweden",
+    seoTitle: "Send a parcel to Sweden",
+    seoDescription:
+      "Send a parcel from Georgia to Sweden — Stockholm, Gothenburg, Malmö, Uppsala, Örebro. Find out the price and start your order with Parcello.",
+    intro:
+      "Sweden is a member of the European Union but not of the eurozone — the Swedish krona is the currency in use. Swedish Customs therefore sets the gift relief threshold in kronor, which is worth bearing in mind when stating a consignment's value.",
+    content: {
+      intro: [
+        "Want to send a parcel from Georgia to Sweden? Parcello will help you send it simply and conveniently — whether it is a gift, clothing, personal belongings or other permitted goods.",
+      ],
+      narrative: [
+        {
+          placement: "afterIntro",
+          heading: "Sending a parcel from Georgia to Sweden",
+          body: [
+            "Relations between Georgia and the Kingdom of Sweden have a long history, dating back to the First Democratic Republic of Georgia. Diplomatic relations were established in 1918 and re-established on 19 September 1992, and 2018 marked 100 years since Georgia's diplomatic mission to Sweden was founded.",
+            "The Georgian embassy in Stockholm opened in 2006, and the Swedish embassy in Georgia in 2010.",
+            "For Georgians living in Sweden, receiving a parcel from home is often a simple way of keeping a connection to family, friends and the place they came from.",
+            "You give us the parcel and the details we need, and we help organise the process of getting it to Sweden.",
+          ],
+        },
+        {
+          placement: "beforePricing",
+          heading: "Sweden is in the EU, but its currency is the krona",
+          body: [
+            "Sweden is a member of the European Union, so EU customs rules apply to a parcel sent from Georgia. The country is not in the eurozone, however, and has set no date for adopting the euro.",
+            "In practice, that means Swedish Customs publishes the gift relief threshold in kronor: no customs duty or VAT is charged on a gift whose total value is no more than SEK 600 and which contains no alcohol or tobacco. The standard VAT rate in the country is 25%.",
+            "Swedish Customs also stresses that the parcel must clearly state that it is a gift, what it contains and what it is worth.",
+            "That is why describing a parcel's contents and value accurately matters especially on the Swedish route — it helps the customs procedure complete without delay.",
+          ],
+        },
+      ],
+      why: {
+        heading: "Why Parcello?",
+        body: [
+          "Sending an international parcel should not be complicated.",
+          "Easy communication matters to us, and so does your knowing what is needed to send your parcel.",
+        ],
+        highlight:
+          "Parcello lets you send a parcel from Georgia to Sweden and get the information you need, all in one place.",
+      },
+      steps: {
+        heading: "How we send parcels to Sweden",
+        items: [
+          {
+            title: "Get in touch",
+            body: "Tell us you want to send a parcel to Sweden and give us its approximate weight, its contents and the destination city.",
+          },
+          {
+            title: "Prepare your parcel",
+            body: "Pack the items securely and make sure they are permitted to be sent.",
+          },
+          {
+            title: "Hand over the parcel",
+            body: "Our team collects your parcel by whichever method you have agreed with us.",
+          },
+          {
+            title: "Your parcel sets off for Sweden",
+            body: "We take care of organising the transport process.",
+          },
+          {
+            title: "The parcel arrives in Sweden",
+            body: "It goes on to the recipient you named in Sweden.",
+          },
+        ],
+      },
+      sendable: {
+        heading: "What can you send to Sweden?",
+        intro:
+          "With Parcello you can send a range of permitted personal items, including:",
+        items: SENDABLE_ITEMS,
+        note: "Restrictions apply to some items in international shipping. Before you send, tell us what you would like to put in the parcel and we will help you check.",
+        moreHref: "/what-can-i-send",
+        moreLabel: "See the full list of permitted items",
+      },
+      cities: {
+        heading: "Sending a parcel to cities across Sweden",
+        intro:
+          "Parcels can be sent to destinations throughout Sweden, including cities such as:",
+        list: ["Stockholm", "Gothenburg", "Malmö", "Uppsala", "Örebro"],
+        note: "When you order, give the recipient's full address and contact details so the parcel can be processed correctly.",
+      },
+      pricing: {
+        heading: "How much does it cost to send a parcel to Sweden?",
+        body: "The cost depends on the weight of the parcel and the rate in force.",
+        emphasis:
+          "Send us the weight of your parcel and the destination city in Sweden to get the current price.",
+      },
+      faqs: [
+        {
+          question: "How long does a parcel take to reach Sweden?",
+          answer:
+            "Delivery time depends on the route and the service chosen. We will confirm the expected time with you before your order is finalised.",
+        },
+        {
+          question: "What currency is used in Sweden?",
+          answer:
+            "Sweden is not in the eurozone and uses the Swedish krona (SEK). Swedish Customs also sets the gift relief threshold in kronor — SEK 600.",
+        },
+        {
+          question: "What should a parcel sent as a gift be marked with?",
+          answer:
+            "According to Swedish Customs, the parcel must clearly state that it is a gift, what it contains and what it is worth, and that both sender and recipient are private individuals.",
+        },
+        {
+          question: "Can I send Georgian products to Sweden?",
+          answer:
+            "Some products can be sent, though restrictions may apply to particular items. Tell us what you would like to send and we will help you check.",
+        },
+        {
+          question: "Can I send a parcel to Stockholm or Gothenburg?",
+          answer:
+            "Send us the recipient's city and full address in Sweden and we will confirm what the service can do.",
+        },
+        {
+          question: "How do I start sending a parcel?",
+          answer:
+            "Get in touch and tell us the approximate weight of the parcel, what is inside it, and the destination city in Sweden.",
+        },
+      ],
+      cta: {
+        heading: "Send your parcel from Georgia to Sweden with Parcello",
+        body: "Send a gift, personal belongings or other permitted goods to family, friends and relatives in Sweden.",
+        emphasis:
+          "Message us today and find out the cost of sending your parcel to Sweden.",
       },
     },
   },
