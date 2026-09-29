@@ -2,7 +2,7 @@
 
 Every published fact about destination countries traces to a source here. Nothing on the site states a customs rule that isn't in this list.
 
-**Verified:** 2026-09-01 (Czechia and Slovakia: 2026-09-08 · Netherlands: 2026-09-12) · **Re-check:** these rules change; verify before relying on them commercially.
+**Verified:** 2026-09-01 (Czechia and Slovakia: 2026-09-08 · Netherlands: 2026-09-12 · Finland: 2026-09-29) · **Re-check:** these rules change; verify before relying on them commercially.
 
 ## The two content layers
 
@@ -38,10 +38,11 @@ A researched fact describes the world. A Parcello claim describes the business. 
 | Slovakia | Adopted the euro 1 Jan 2009 at 1 EUR = 30.1260 SKK; VAT 23%; diplomatic relations since 1 Jan 1993, Georgian embassy in Bratislava 2006, Slovak embassy in Tbilisi 2014; Feb 2023 cooperation protocol recognising Georgia's European perspective; June 2024 political consultations in Bratislava; direct Kutaisi–Bratislava flights from 12 Jan 2026, four times weekly | [European Commission — Slovakia and the euro](https://economy-finance.ec.europa.eu/euro/eu-countries-and-euro/slovakia-and-euro_en) · [Tax Foundation 2026](https://taxfoundation.org/data/all/eu/value-added-tax-vat-rates-europe/) · [MFA Georgia](https://mfa.gov.ge/en/bilateral-relations/sk) · [Georgia Today](https://georgiatoday.ge/wizz-air-launches-direct-flights-from-kutaisi-to-bratislava/) |
 
 | Netherlands | Founding eurozone member: euro adopted 1 Jan 1999, notes and coins 1 Jan 2002, fixed rate 1 EUR = 2.20371 NLG, guilder ceased to be legal tender 28 Jan 2002; VAT 21%; diplomatic relations since 22 Apr 1992, Dutch embassy in Georgia 2001, Georgian embassy in The Hague; Rotterdam is the EU's largest freight port, 11.8% of total EU port tonnage in 2024, ahead of Antwerp-Bruges and Hamburg | [European Commission — The Netherlands and the euro](https://economy-finance.ec.europa.eu/euro/eu-countries-and-euro/netherlands-and-euro_en) · [Tax Foundation 2026](https://taxfoundation.org/data/all/eu/value-added-tax-vat-rates-europe/) · [MFA Georgia](https://mfa.gov.ge/en/bilateral-relations/nl) · [Eurostat — Maritime transport of goods, annual data](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Maritime_transport_of_goods_-_annual_data) |
+| Finland | Founding eurozone member: joined the EU 1995, euro adopted 1 Jan 1999, notes and coins 1 Jan 2002, fixed rate 1 EUR = 5.94573 FIM, markka legal tender ended 28 Feb 2002; VAT 25.5%, second-highest in the EU after Hungary; gifts from outside the EU must be customs-cleared by the recipient via Finnish Customs, no VAT or Posti handling fee at €45 or less; diplomatic relations since 8 Jul 1992, Georgian embassy in Helsinki since 2011, Finland represented through a non-resident ambassador in Helsinki | [European Commission — Finland and the euro](https://economy-finance.ec.europa.eu/euro/eu-countries-and-euro/finland-and-euro_en) · [Tax Foundation 2026](https://taxfoundation.org/data/all/eu/value-added-tax-vat-rates-europe/) · [Posti — Customs clearance of gifts](https://www.posti.fi/en/receiving/customs-clearance/gift-clearance) · [MFA Georgia](https://mfa.gov.ge/en/bilateral-relations/fi) |
 
-Italy was removed as a destination on 2026-09-08; its page and sources came out with it. The Netherlands was added on 2026-09-12.
+Italy was removed as a destination on 2026-09-08; its page and sources came out with it. The Netherlands was added on 2026-09-12, Finland on 2026-09-29.
 
-All customs-authority URLs were checked and return HTTP 200 as of 2026-09-01; the Czechia and Slovakia URLs as of 2026-09-08; the Netherlands URLs as of 2026-09-12.
+All customs-authority URLs were checked and return HTTP 200 as of 2026-09-01; the Czechia and Slovakia URLs as of 2026-09-08; the Netherlands URLs as of 2026-09-12; the Finland URLs as of 2026-09-29.
 
 ## Deliberately not published
 
@@ -49,4 +50,6 @@ All customs-authority URLs were checked and return HTTP 200 as of 2026-09-01; th
 - **Whether the meat/dairy ban applies identically to postal parcels.** The Your Europe page is written for travellers. The site states the prohibition on bringing these goods into the EU and directs readers to the destination's customs authority rather than asserting postal specifics.
 - **Country-level delivery times, prices, and prohibited-item lists.** Business information — awaiting Parcello.
 - **The size of the Georgian community in the Netherlands.** The Germany and France pages carry a diaspora figure because each has one current official source. For the Netherlands the available figures disagree and are stale (a ~2,000 census count from 2006 against 544 Georgian citizens in 2016, measuring different things), so the Dutch page states no number rather than picking one.
+- **Finnish Customs pages directly.** tulli.fi blocks automated access, so the recipient-clearance rule is cited from Posti, Finland's national postal operator, and phrased as Posti's explanation.
+- **The size of the Georgian community in Finland.** No current official figure was found; the Finnish page states no number.
 - **Air links between Georgia and the Netherlands.** The Slovakia page cites a direct Kutaisi–Bratislava route because it was reported by a named outlet with a start date. The Tbilisi–Amsterdam schedules only turned up on commercial flight aggregators, which change without notice — not a citable source.
