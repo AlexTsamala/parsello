@@ -1,7 +1,11 @@
 import { business } from "@/content/business";
 
 /**
- * Global 404, for URLs that match no route in either locale.
+ * Last-resort 404. Every URL now belongs to a locale — each has a catch-all
+ * route and its own `not-found.tsx` — so visitors normally see the 404 in
+ * their own language. This file only renders if something escapes all three.
+ *
+ * Global 404, for URLs that match no route in any locale.
  *
  * It sits at the app root, outside both locale route groups, because an
  * unmatched URL belongs to neither — so Next renders it without a root layout
@@ -96,9 +100,11 @@ export default function NotFound() {
         <a href="/" style={buttonStyle}>
           მთავარი გვერდი
         </a>
+        {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
         <a href="/en" style={buttonStyle}>
           English home
         </a>
+        {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
         <a href="/ru" lang="ru" style={buttonStyle}>
           Главная на русском
         </a>
