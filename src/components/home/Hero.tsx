@@ -22,16 +22,23 @@ export function Hero({ locale }: { locale: Locale }) {
             {ui.hero.lead(business.shortName)}
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div data-nosnippet className="mt-8 flex flex-wrap gap-3">
             <Button href={localePath(locale, "/contact")} size="lg">
               {ui.hero.ctaSend}
             </Button>
-            <Button href={localePath(locale, "/services")} size="lg" variant="secondary">
+            <Button
+              href={localePath(locale, "/services")}
+              size="lg"
+              variant="secondary"
+            >
               {ui.hero.ctaHowItWorks}
             </Button>
           </div>
 
-          <p className="mt-6 flex flex-wrap items-center gap-2 text-sm text-muted">
+          <p
+            data-nosnippet
+            className="mt-6 flex flex-wrap items-center gap-2 text-sm text-muted"
+          >
             {ui.hero.callPrefix}
             <PhoneLink className="font-semibold text-charcoal" />
           </p>
