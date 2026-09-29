@@ -59,7 +59,7 @@ Until answered:
 - **Delivery time** — 2-3 weeks site-wide; Poland 2 weeks. Per-destination breakdown still open (#7).
 - **Drop-off address** — გრიგოლ რობაქიძის გამზირი 4, თბილისი, საქართველო.
 - **Working hours** — every day, 08:00–22:00. Published on the contact page and in `openingHoursSpecification`.
-- **Services** — four confirmed: Georgia→Europe, Greece/Poland→Georgia and online-shopping forwarding (2026-09-03), plus commercial freight Europe→Georgia (2026-09-13). Each has its own URL at `/services/<slug>`; `/services` is the hub and `/how-it-works` permanently redirects there.
+- **Services** — four confirmed: Georgia→Europe, Greece/Poland→Georgia and online-shopping forwarding (2026-09-03), plus commercial freight Europe→Georgia (2026-09-13), extended to Georgia→Europe as well (2026-09-29). Each has its own URL at `/services/<slug>`; `/services` is the hub and `/how-it-works` permanently redirects there.
 - **Inbound handover** (#16) — the sender messages Parcello, receives the warehouse address in reply, and drops the parcel there. Confirmed 2026-09-13; the address itself is given on request, not published.
 - **Inbound delivery time** (#17) — 2 weeks, Europe → Georgia. Confirmed 2026-09-13. Stored as `business.inboundDeliveryTime` / `inboundDeliveryTimeGenitive`, separate from the outbound 2–3 weeks.
 - **Customer-service languages** (#19) — Georgian, English and Russian. Russian and English confirmed 2026-09-24. Declared in `availableLanguage`. The Russian site lives at `/ru`, targets Russian speakers living in Georgia, keeps English URL slugs, and its language switcher entry has no flag (text «РУС» only), by the business's choice.
