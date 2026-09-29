@@ -14,9 +14,7 @@ export function NotFoundPage({ locale }: { locale: Locale }) {
     <main id="main">
       <section className="bg-surface">
         <div className="container-page flex min-h-[60vh] flex-col items-center justify-center py-16 text-center md:py-24">
-          <p className="text-sm font-semibold tracking-[0.18em] text-brand">
-            404
-          </p>
+          <p className="text-lg font-bold tracking-[0.18em] text-brand">404</p>
           <h1 className="mt-4 text-3xl font-bold md:text-5xl">
             {copy.heading}
           </h1>
