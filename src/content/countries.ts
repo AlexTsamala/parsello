@@ -927,7 +927,7 @@ export const countries: Country[] = [
   },
   {
     slug: "czechia",
-    updatedAt: "2026-09-08",
+    updatedAt: "2026-10-08",
     name: "ჩეხეთი",
     nameIn: "ჩეხეთში",
     linkLabel: "ჩეხეთში ამანათის გაგზავნა",
@@ -1288,7 +1288,7 @@ export const countries: Country[] = [
   },
   {
     slug: "netherlands",
-    updatedAt: "2026-09-12",
+    updatedAt: "2026-10-08",
     name: "ნიდერლანდები",
     nameIn: "ნიდერლანდებში",
     linkLabel: "ნიდერლანდებში ამანათის გაგზავნა",
