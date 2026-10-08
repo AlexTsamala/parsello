@@ -177,7 +177,7 @@ export default async function BlogPostPage({
             გსურთ ამანათის გაგზავნა?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-white/70">
-            დაიწყეთ ამანათს გაგზავნა Parcello-სთან — დაგვირეკეთ ან მოგვწერეთ
+            დაიწყეთ ამანათის გაგზავნა Parcello-სთან — დაგვირეკეთ ან მოგვწერეთ
             Facebook-ზე.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
