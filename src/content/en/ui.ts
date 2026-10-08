@@ -111,6 +111,8 @@ export const uiEn: UiStrings = {
     home: "Home",
     sendParcel: "Send a parcel",
     facebookCta: "Message us on Facebook",
+    pricePerKg: "Price per kg",
+    allPrices: "All prices",
   },
 
   pages: {
@@ -123,12 +125,14 @@ export const uiEn: UiStrings = {
     prices: {
       metaTitle: "The cost of sending a parcel",
       metaDescription:
-        "How much does it cost to send a parcel from Georgia to Europe? The price depends on the country and the weight — message us and we will calculate it exactly.",
+        "How much does it cost to send a parcel from Georgia to Europe? See our prices per kilogram, country by country — and message us for any other destination.",
       breadcrumb: "Prices",
       h1: "The cost of sending a parcel",
-      howCalculatedHeading: "How is the price worked out?",
-      howCalculatedBody:
-        "Two things mainly affect the price: which country the parcel is going to, and how much it weighs. Because rates change, we work the price out individually for each order — that way you are never quoted something out of date.",
+      lead: "Below is the cost of sending a parcel per kilogram, country by country.",
+      ratesHeading: "Price per kilogram",
+      ratesDescription: "Prices are in Georgian lari (GEL).",
+      countryColumn: "Country",
+      notListedHeading: "Your country is not in the table?",
       whatToSendHeading: "What should you tell us?",
       whatToSendItems: [
         "The destination country and city",

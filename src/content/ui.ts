@@ -97,6 +97,9 @@ export type UiStrings = {
     home: string;
     sendParcel: string;
     facebookCta: string;
+    /** Label over a per-kg rate, and the price table's column heading. */
+    pricePerKg: string;
+    allPrices: string;
   };
 
   pages: {
@@ -104,8 +107,12 @@ export type UiStrings = {
     prices: Meta & {
       breadcrumb: string;
       h1: string;
-      howCalculatedHeading: string;
-      howCalculatedBody: string;
+      lead: string;
+      ratesHeading: string;
+      ratesDescription: string;
+      countryColumn: string;
+      /** Over `business.pricing.dependsOn`, for destinations without a rate. */
+      notListedHeading: string;
       whatToSendHeading: string;
       whatToSendItems: string[];
       quoteBoxHeading: string;
@@ -286,6 +293,8 @@ export const ui: UiStrings = {
     home: "მთავარი",
     sendParcel: "ამანათის გაგზავნა",
     facebookCta: "Facebook-ზე მოწერა",
+    pricePerKg: "ფასი 1 კგ-ზე",
+    allPrices: "ყველა ფასი",
   },
 
   pages: {
@@ -298,12 +307,14 @@ export const ui: UiStrings = {
     prices: {
       metaTitle: "ამანათის გაგზავნის ფასი",
       metaDescription:
-        "რამდენი ღირს ამანათის გაგზავნა საქართველოდან ევროპაში? ფასი დამოკიდებულია ქვეყანასა და წონაზე — მოგვწერეთ და ზუსტ ფასს დაგიანგარიშებთ.",
+        "რამდენი ღირს ამანათის გაგზავნა საქართველოდან ევროპაში? იხილეთ ფასები 1 კილოგრამზე ქვეყნების მიხედვით, სხვა მიმართულებებისთვის კი მოგვწერეთ.",
       breadcrumb: "ფასები",
       h1: "ამანათის გაგზავნის ფასი",
-      howCalculatedHeading: "როგორ ითვლება ფასი?",
-      howCalculatedBody:
-        "ფასზე ორი ძირითადი რამ მოქმედებს: რომელ ქვეყანაში იგზავნება ამანათი და რამდენია მისი წონა. ვინაიდან ტარიფები იცვლება, ფასს თითოეული შეკვეთისთვის ინდივიდუალურად ვთვლით — ასე თავიდან ავიცილებთ მოძველებულ ინფორმაციას.",
+      lead: "ქვემოთ მოცემულია ამანათის გაგზავნის ფასი 1 კილოგრამზე, ქვეყნების მიხედვით.",
+      ratesHeading: "ფასი 1 კილოგრამზე",
+      ratesDescription: "ფასები ლარშია მითითებული.",
+      countryColumn: "ქვეყანა",
+      notListedHeading: "ცხრილში არ არის თქვენი ქვეყანა?",
       whatToSendHeading: "რა მოგვწეროთ?",
       whatToSendItems: [
         "დანიშნულების ქვეყანა და ქალაქი",

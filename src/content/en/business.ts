@@ -1,5 +1,28 @@
-import { business } from "../business";
+import { business, type RateId } from "../business";
 import type { BusinessContent } from "../types";
+
+/** Country names for the price table; the rates themselves are inherited. */
+const rateNames: Record<RateId, string> = {
+  greece: "Greece",
+  poland: "Poland",
+  germany: "Germany",
+  hungary: "Hungary",
+  slovakia: "Slovakia",
+  austria: "Austria",
+  lithuania: "Lithuania",
+  latvia: "Latvia",
+  estonia: "Estonia",
+  france: "France",
+  belgium: "Belgium",
+  sweden: "Sweden",
+  norway: "Norway",
+  denmark: "Denmark",
+  finland: "Finland",
+  portugal: "Portugal",
+  bulgaria: "Bulgaria",
+  "great-britain": "Great Britain",
+  ireland: "Ireland",
+};
 
 /**
  * English business copy.
@@ -12,7 +35,7 @@ import type { BusinessContent } from "../types";
  *
  * This is a TRANSLATION, not a rewrite. Nothing here may claim anything the
  * Georgian copy does not already claim — no speed, no guarantee, no insurance,
- * and above all no price (CLAUDE.md §1 rules 2 and 4).
+ * and no price beyond the inherited rates (CLAUDE.md §1 rules 2 and 4).
  */
 export const businessEn: BusinessContent = {
   ...business,
@@ -30,7 +53,12 @@ export const businessEn: BusinessContent = {
   },
 
   pricing: {
-    model: business.pricing.model,
+    ...business.pricing,
+    rates: business.pricing.rates.map((rate) => ({
+      ...rate,
+      name: rateNames[rate.id],
+    })),
+    currency: "GEL",
     dependsOn:
       "The cost depends on which country you are sending the parcel to and how much it weighs.",
     copy: "Send us the destination country and the approximate weight of your parcel and we will calculate the exact price for you. Call us on +995 551 23 15 19 or message us on Facebook.",

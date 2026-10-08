@@ -8,6 +8,19 @@
  * are held to one contract without either constraining the other.
  */
 
+/** One row of the published price table. */
+export type Rate = {
+  /**
+   * Stable key. Where the destination has its own country page this is that
+   * page's slug, which is how the table and the page find each other.
+   */
+  id: string;
+  flag: string;
+  name: string;
+  /** GEL per kilogram, exactly as the business gave it. */
+  perKg: number;
+};
+
 export type BusinessContent = {
   name: string;
   shortName: string;
@@ -32,8 +45,18 @@ export type BusinessContent = {
     dropOff: boolean;
     pickupCities: readonly string[] | null;
   };
-  /** Never a number, never a range — quoted on request (CLAUDE.md §1 rule 2). */
-  pricing: { model: string; dependsOn: string; copy: string };
+  pricing: {
+    model: string;
+    /**
+     * Per-kg rates the business supplied (CLAUDE.md §1 rule 2). A destination
+     * that is not listed is quoted on request — never estimate one.
+     */
+    rates: readonly Rate[];
+    /** Written after the amount: "15 ₾", "15 GEL". */
+    currency: string;
+    dependsOn: string;
+    copy: string;
+  };
   deliveryTime: string;
   /**
    * Georgian genitive, for "… <time> ვადაში". English does not inflect and

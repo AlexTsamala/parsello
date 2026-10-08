@@ -5,9 +5,9 @@ import { getContent } from "@/content";
 import { type Locale } from "@/content/locales";
 
 /**
- * NO PRICES HERE — ever. Pricing varies by destination and changes often, so
- * it is quoted on request only (CLAUDE.md §1 rule 2). The copy below is the
- * single approved wording; import it, never paraphrase it.
+ * No rates here. The per-kg rates are shown on /prices and on their country
+ * pages (CLAUDE.md §1 rule 2); this section keeps the general wording. The
+ * copy below is the single approved wording; import it, never paraphrase it.
  */
 export function PricingSection({ locale }: { locale: Locale }) {
   const { ui, business } = getContent(locale);

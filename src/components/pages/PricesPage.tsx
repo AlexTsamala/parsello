@@ -8,12 +8,12 @@ import { getContent } from "@/content";
 import { localePath, type Locale } from "@/content/locales";
 
 /**
- * NO PRICES — ever, anywhere on this page, in either language (CLAUDE.md §1
- * rule 2). Pricing is quoted on request. Do not add example figures, ranges,
- * or a calculator.
+ * Shows only the per-kg rates the business supplied (`business.pricing.rates`,
+ * CLAUDE.md §1 rule 2). Every other destination is quoted on request. Do not
+ * add example totals, ranges, "from" prices, or a calculator.
  */
 export function PricesPage({ locale }: { locale: Locale }) {
-  const { ui, business, countries } = getContent(locale);
+  const { ui, business, countries, getCountry } = getContent(locale);
   const copy = ui.pages.prices;
 
   return (
@@ -31,18 +31,70 @@ export function PricesPage({ locale }: { locale: Locale }) {
             {copy.h1}
           </h1>
           <p className="mt-5 max-w-2xl text-base text-muted md:text-lg">
-            {business.pricing.dependsOn}
+            {copy.lead}
           </p>
         </div>
       </section>
 
       <Section>
+        <SectionHeading
+          title={copy.ratesHeading}
+          description={copy.ratesDescription}
+        />
+        <div className="mt-8 max-w-2xl overflow-hidden rounded-2xl border border-line">
+          <table className="w-full text-left">
+            <caption className="sr-only">{copy.ratesHeading}</caption>
+            <thead className="bg-surface text-sm text-muted">
+              <tr>
+                <th scope="col" className="px-5 py-3 font-medium">
+                  {copy.countryColumn}
+                </th>
+                <th scope="col" className="px-5 py-3 text-right font-medium">
+                  {ui.common.pricePerKg}
+                </th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-line">
+              {business.pricing.rates.map((rate) => {
+                const country = getCountry(rate.id);
+
+                return (
+                  <tr key={rate.id}>
+                    <th scope="row" className="px-5 py-3.5 font-medium">
+                      <span className="flex items-center gap-3">
+                        <span className="text-2xl" aria-hidden="true">
+                          {rate.flag}
+                        </span>
+                        {country ? (
+                          <Link
+                            href={localePath(locale, `/countries/${country.slug}`)}
+                            className="underline decoration-line underline-offset-4 transition-colors hover:text-brand hover:decoration-brand"
+                          >
+                            {rate.name}
+                          </Link>
+                        ) : (
+                          rate.name
+                        )}
+                      </span>
+                    </th>
+                    <td className="whitespace-nowrap px-5 py-3.5 text-right font-semibold">
+                      {rate.perKg} {business.pricing.currency}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </Section>
+
+      <Section tone="surface">
         <div className="grid gap-8 md:grid-cols-2 md:items-start">
           <div>
             <h2 className="text-2xl font-bold md:text-3xl">
-              {copy.howCalculatedHeading}
+              {copy.notListedHeading}
             </h2>
-            <p className="mt-4 text-muted">{copy.howCalculatedBody}</p>
+            <p className="mt-4 text-muted">{business.pricing.dependsOn}</p>
 
             <h2 className="mt-10 text-2xl font-bold md:text-3xl">
               {copy.whatToSendHeading}
@@ -72,7 +124,7 @@ export function PricesPage({ locale }: { locale: Locale }) {
             </ul>
           </div>
 
-          <div className="rounded-2xl border border-line bg-surface p-7">
+          <div className="rounded-2xl border border-line bg-white p-7">
             <h2 className="text-lg font-semibold">{copy.quoteBoxHeading}</h2>
             <p className="mt-3 text-muted">{business.pricing.copy}</p>
 
@@ -88,7 +140,7 @@ export function PricesPage({ locale }: { locale: Locale }) {
         </div>
       </Section>
 
-      <Section tone="surface">
+      <Section>
         <SectionHeading
           title={copy.byDestinationHeading}
           description={copy.byDestinationDescription}

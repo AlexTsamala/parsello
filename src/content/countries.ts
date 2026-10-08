@@ -152,7 +152,7 @@ const VAT_SOURCE = {
 export const countries: Country[] = [
   {
     slug: "poland",
-    updatedAt: "2026-09-01",
+    updatedAt: "2026-10-08",
     name: "პოლონეთი",
     nameIn: "პოლონეთში",
     linkLabel: "პოლონეთში ამანათის გაგზავნა",
@@ -268,7 +268,7 @@ export const countries: Country[] = [
   },
   {
     slug: "germany",
-    updatedAt: "2026-09-01",
+    updatedAt: "2026-10-08",
     name: "გერმანია",
     nameIn: "გერმანიაში",
     linkLabel: "გერმანიაში ამანათის გაგზავნა",
@@ -440,7 +440,7 @@ export const countries: Country[] = [
   },
   {
     slug: "france",
-    updatedAt: "2026-09-01",
+    updatedAt: "2026-10-08",
     name: "საფრანგეთი",
     nameIn: "საფრანგეთში",
     linkLabel: "საფრანგეთში ამანათის გაგზავნა",
@@ -596,7 +596,7 @@ export const countries: Country[] = [
   },
   {
     slug: "hungary",
-    updatedAt: "2026-09-01",
+    updatedAt: "2026-10-08",
     name: "უნგრეთი",
     nameIn: "უნგრეთში",
     linkLabel: "უნგრეთში ამანათის გაგზავნა",
@@ -756,7 +756,7 @@ export const countries: Country[] = [
   },
   {
     slug: "bulgaria",
-    updatedAt: "2026-09-01",
+    updatedAt: "2026-10-08",
     name: "ბულგარეთი",
     nameIn: "ბულგარეთში",
     linkLabel: "ბულგარეთში ამანათის გაგზავნა",
@@ -1106,7 +1106,7 @@ export const countries: Country[] = [
   },
   {
     slug: "slovakia",
-    updatedAt: "2026-09-08",
+    updatedAt: "2026-10-08",
     name: "სლოვაკეთი",
     nameIn: "სლოვაკეთში",
     linkLabel: "სლოვაკეთში ამანათის გაგზავნა",
@@ -1471,7 +1471,7 @@ export const countries: Country[] = [
   },
   {
     slug: "finland",
-    updatedAt: "2026-09-29",
+    updatedAt: "2026-10-08",
     name: "ფინეთი",
     nameIn: "ფინეთში",
     linkLabel: "ფინეთში ამანათის გაგზავნა",
@@ -1641,7 +1641,7 @@ export const countries: Country[] = [
   },
   {
     slug: "sweden",
-    updatedAt: "2026-09-29",
+    updatedAt: "2026-10-08",
     name: "შვედეთი",
     nameIn: "შვედეთში",
     linkLabel: "შვედეთში ამანათის გაგზავნა",

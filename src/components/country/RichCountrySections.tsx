@@ -60,6 +60,9 @@ export function RichCountrySections({
   const content = country.content;
   if (!content) return null;
 
+  // Only destinations the business has priced have one; the rest stay on request.
+  const rate = business.pricing.rates.find((r) => r.id === country.slug);
+
   const afterIntro =
     content.narrative?.filter((b) => b.placement === "afterIntro") ?? [];
   const beforePricing =
@@ -187,6 +190,21 @@ export function RichCountrySections({
           />
 
           <div className="rounded-2xl border border-line bg-white p-7">
+            {rate ? (
+              <div className="mb-6 border-b border-line pb-6">
+                <p className="text-sm text-muted">{ui.common.pricePerKg}</p>
+                <p className="mt-1 text-4xl font-bold">
+                  {rate.perKg} {business.pricing.currency}
+                </p>
+                <Link
+                  href={localePath(locale, "/prices")}
+                  className="mt-3 inline-block text-sm font-medium text-brand underline-offset-4 hover:underline"
+                >
+                  {ui.common.allPrices}
+                </Link>
+              </div>
+            ) : null}
+
             <p className="font-semibold">{content.pricing.emphasis}</p>
 
             <div className="mt-6 flex flex-wrap gap-3">

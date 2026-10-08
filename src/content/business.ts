@@ -1,3 +1,36 @@
+/**
+ * Per-kg rates in GEL, supplied by the business on 2026-10-08. Cheapest first;
+ * ties keep the order the business gave them in. A destination missing from
+ * this list is quoted on request — never estimate one (CLAUDE.md §1 rule 2).
+ *
+ * `id` is the country-page slug where one exists, so the price table links to
+ * the page and the page shows its own rate.
+ */
+const rates = [
+  { id: "greece", flag: "🇬🇷", name: "საბერძნეთი", perKg: 9 },
+  { id: "poland", flag: "🇵🇱", name: "პოლონეთი", perKg: 15 },
+  { id: "germany", flag: "🇩🇪", name: "გერმანია", perKg: 15 },
+  { id: "hungary", flag: "🇭🇺", name: "უნგრეთი", perKg: 15 },
+  { id: "slovakia", flag: "🇸🇰", name: "სლოვაკეთი", perKg: 16 },
+  { id: "austria", flag: "🇦🇹", name: "ავსტრია", perKg: 18 },
+  { id: "lithuania", flag: "🇱🇹", name: "ლიტვა", perKg: 18 },
+  { id: "latvia", flag: "🇱🇻", name: "ლატვია", perKg: 18 },
+  { id: "estonia", flag: "🇪🇪", name: "ესტონეთი", perKg: 18 },
+  { id: "france", flag: "🇫🇷", name: "საფრანგეთი", perKg: 18 },
+  { id: "belgium", flag: "🇧🇪", name: "ბელგია", perKg: 18 },
+  { id: "sweden", flag: "🇸🇪", name: "შვედეთი", perKg: 20 },
+  { id: "norway", flag: "🇳🇴", name: "ნორვეგია", perKg: 20 },
+  { id: "denmark", flag: "🇩🇰", name: "დანია", perKg: 20 },
+  { id: "finland", flag: "🇫🇮", name: "ფინეთი", perKg: 20 },
+  { id: "portugal", flag: "🇵🇹", name: "პორტუგალია", perKg: 21 },
+  { id: "bulgaria", flag: "🇧🇬", name: "ბულგარეთი", perKg: 21 },
+  { id: "great-britain", flag: "🇬🇧", name: "დიდი ბრიტანეთი", perKg: 24 },
+  { id: "ireland", flag: "🇮🇪", name: "ირლანდია", perKg: 24 },
+] as const;
+
+/** Lets the translations key their country names, so a missing one fails the build. */
+export type RateId = (typeof rates)[number]["id"];
+
 export const business = {
   name: "Parcello Georgia",
   shortName: "Parcello",
@@ -41,7 +74,10 @@ export const business = {
   },
 
   pricing: {
-    model: "on-request",
+    // Per kg for the destinations in `rates`; on request everywhere else.
+    model: "per-kg",
+    rates,
+    currency: "₾",
 
     dependsOn:
       "ღირებულება დამოკიდებულია იმაზე, თუ რომელ ქვეყანაში აგზავნით ამანათს და რა არის მისი წონა.",

@@ -1,5 +1,28 @@
-import { business } from "../business";
+import { business, type RateId } from "../business";
 import type { BusinessContent } from "../types";
+
+/** Country names for the price table; the rates themselves are inherited. */
+const rateNames: Record<RateId, string> = {
+  greece: "Греция",
+  poland: "Польша",
+  germany: "Германия",
+  hungary: "Венгрия",
+  slovakia: "Словакия",
+  austria: "Австрия",
+  lithuania: "Литва",
+  latvia: "Латвия",
+  estonia: "Эстония",
+  france: "Франция",
+  belgium: "Бельгия",
+  sweden: "Швеция",
+  norway: "Норвегия",
+  denmark: "Дания",
+  finland: "Финляндия",
+  portugal: "Португалия",
+  bulgaria: "Болгария",
+  "great-britain": "Великобритания",
+  ireland: "Ирландия",
+};
 
 /**
  * Russian business copy.
@@ -10,7 +33,7 @@ import type { BusinessContent } from "../types";
  *
  * This is a TRANSLATION, not a rewrite. Nothing here may claim anything the
  * Georgian copy does not already claim — no speed, no guarantee, no insurance,
- * and above all no price (CLAUDE.md §1 rules 2 and 4).
+ * and no price beyond the inherited rates (CLAUDE.md §1 rules 2 and 4).
  *
  * Russian inflects, like Georgian. Case forms are written out in full (see
  * `deliveryTimeGenitive`) and never built by gluing an ending onto a word.
@@ -31,7 +54,12 @@ export const businessRu: BusinessContent = {
   },
 
   pricing: {
-    model: business.pricing.model,
+    ...business.pricing,
+    rates: business.pricing.rates.map((rate) => ({
+      ...rate,
+      name: rateNames[rate.id],
+    })),
+    currency: "₾",
     dependsOn:
       "Стоимость зависит от того, в какую страну вы отправляете посылку, и от ее веса.",
     copy: "Напишите нам страну назначения и примерный вес посылки — мы рассчитаем точную стоимость. Позвоните нам по номеру +995 551 23 15 19 или напишите на нашу страницу в Facebook.",
