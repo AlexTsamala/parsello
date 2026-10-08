@@ -50,7 +50,7 @@ All customs-authority URLs were checked and return HTTP 200 as of 2026-09-01; th
 
 - **Whether the €3 duty applies to private gifts.** The Commission and Council materials frame it around e-commerce and do not state the treatment of gift consignments. The site says the rule mainly concerns e-commerce and does not claim gifts are exempt.
 - **Whether the meat/dairy ban applies identically to postal parcels.** The Your Europe page is written for travellers. The site states the prohibition on bringing these goods into the EU and directs readers to the destination's customs authority rather than asserting postal specifics.
-- **Country-level delivery times, prices, and prohibited-item lists.** Business information — awaiting Parcello.
+- **Country-level delivery times and prohibited-item lists.** Business information — awaiting Parcello. (Per-kg prices are business information too: Parcello supplied them on 2026-10-08, and they live in `business.ts`, never here.)
 - **The size of the Georgian community in the Netherlands.** The Germany and France pages carry a diaspora figure because each has one current official source. For the Netherlands the available figures disagree and are stale (a ~2,000 census count from 2006 against 544 Georgian citizens in 2016, measuring different things), so the Dutch page states no number rather than picking one.
 - **Finnish Customs pages directly.** tulli.fi blocks automated access, so the recipient-clearance rule is cited from Posti, Finland's national postal operator, and phrased as Posti's explanation.
 - **The size of the Georgian community in Finland or Sweden.** No current official figure was found; neither page states a number.

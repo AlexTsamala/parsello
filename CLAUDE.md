@@ -19,7 +19,7 @@ The full product brief lives in `plan.md` (git-ignored, local only). Read it whe
 These are the boundaries. If following an instruction would violate one, stop and ask.
 
 1. **Never invent business information.** No prices, delivery times, weight limits, prohibited items, guarantees, addresses, phone numbers, emails, social links, company registration details, or legal text unless the user gave them.
-2. **Never publish a price, price range, or per-kg rate anywhere on the site.** Pricing varies by destination and changes often. Every pricing context — the `/prices` page, the homepage pricing section, country pages, blog posts, FAQ, structured data — routes the customer to contact instead. This is a deliberate business decision, not missing data: do not "helpfully" add example prices, starting-from figures, or a price calculator.
+2. **Publish only the per-kg rates the business supplied.** Since 2026-10-08 the business publishes a per-kg rate in GEL for some destinations. The rates live in `business.pricing.rates` and nowhere else, and are rendered on `/prices` and on the matching country pages. Never add a rate the business didn't give, a price range, a starting-from figure, an example total, a discount, or a price calculator, and never estimate a destination missing from the table — those are quoted on request, routing the customer to contact.
 3. **Unknown data goes in one place.** All business facts live in `src/content/business.ts`. Missing values are explicit `TODO` placeholders there — never hardcoded guesses scattered across components.
 4. **Never make a promise the business hasn't confirmed.** No "fast delivery", "guaranteed 5 days", "cheapest prices", "insured". If it isn't verified, omit the claim entirely rather than softening it. A claim the business itself authored in its own brand assets *is* confirmed — see §10, "Claims in supplied brand assets".
 5. **Structured data must match visible content.** Never put a fact in JSON-LD that isn't rendered on the page. In particular: no `Offer`, `price`, or `priceRange` anywhere.
@@ -145,7 +145,7 @@ export const business = {
   name: "Parcello Georgia",
   phone: { display: "551 23 15 19", tel: "+995551231519" },
   deliveryDays: null, // TODO: awaiting business — do not render a range
-  pricing: "on-request", // never a number; see hard rule #2
+  pricing: { rates: [{ id: "poland", perKg: 15 } /* … */] }, // only rates the business gave; see hard rule #2
 } as const;
 ```
 
@@ -166,7 +166,7 @@ The only verified facts so far. Everything else is an open question (`docs/OPEN-
 |---|---|
 | Business name | Parcello Georgia |
 | Phone | `551 23 15 19` → `tel:+995551231519` |
-| Pricing model | Quoted on request only — never published |
+| Pricing model | **Per kg, in GEL**, for the 19 destinations in `business.pricing.rates` (supplied 2026-10-08), shown on `/prices` and the matching country pages. Every other destination is quoted on request. |
 | Coverage | **All of Europe.** Poland, Germany, France, Hungary, Bulgaria, Czechia, Slovakia, the Netherlands, Finland, Sweden and Portugal are *priority* destinations and SEO targets — not the limit of the service. Never write copy implying only those eleven are served. (Italy was dropped as a priority destination on 2026-09-08; the Netherlands was added on 2026-09-12, Finland and Sweden on 2026-09-29, and Portugal on 2026-10-08.) |
 | Parcel handover | **Both** courier pickup and drop-off are offered (specific cities/addresses still TBC) |
 | Delivery time | 16–21 days (per-destination breakdown not yet confirmed) |
