@@ -110,7 +110,7 @@ export type UiStrings = {
       lead: string;
       ratesHeading: string;
       ratesDescription: string;
-      countryColumn: string;
+      countriesColumn: string;
       /** Over `business.pricing.dependsOn`, for destinations without a rate. */
       notListedHeading: string;
       whatToSendHeading: string;
@@ -313,7 +313,7 @@ export const ui: UiStrings = {
       lead: "ქვემოთ მოცემულია ამანათის გაგზავნის ფასი 1 კილოგრამზე, ქვეყნების მიხედვით.",
       ratesHeading: "ფასი 1 კილოგრამზე",
       ratesDescription: "ფასები ლარშია მითითებული.",
-      countryColumn: "ქვეყანა",
+      countriesColumn: "ქვეყნები",
       notListedHeading: "ცხრილში არ არის თქვენი ქვეყანა?",
       whatToSendHeading: "რა მოგვწეროთ?",
       whatToSendItems: [

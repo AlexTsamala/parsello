@@ -131,7 +131,7 @@ export const uiEn: UiStrings = {
       lead: "Below is the cost of sending a parcel per kilogram, country by country.",
       ratesHeading: "Price per kilogram",
       ratesDescription: "Prices are in Georgian lari (GEL).",
-      countryColumn: "Country",
+      countriesColumn: "Countries",
       notListedHeading: "Your country is not in the table?",
       whatToSendHeading: "What should you tell us?",
       whatToSendItems: [

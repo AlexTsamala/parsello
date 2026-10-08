@@ -132,7 +132,7 @@ export const uiRu: UiStrings = {
       lead: "Ниже — стоимость отправки посылки за 1 кг по странам.",
       ratesHeading: "Цена за 1 кг",
       ratesDescription: "Цены указаны в лари.",
-      countryColumn: "Страна",
+      countriesColumn: "Страны",
       notListedHeading: "Вашей страны нет в таблице?",
       whatToSendHeading: "Что нужно нам сообщить?",
       whatToSendItems: [
