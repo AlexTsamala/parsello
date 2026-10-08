@@ -116,6 +116,18 @@ const factCopy: Record<string, { title: string; body: string }> = {
     title: "The recipient handles customs clearance of a gift",
     body: "According to Posti, Finland's national postal operator, a gift arriving from outside the EU must also be cleared through customs, and the recipient does this through the Finnish Customs service. If the gift is worth €45 or less, the recipient pays neither VAT nor Posti's handling fee; above €45, both are payable.",
   },
+  "pt-euro": {
+    title: "Portugal is a founding member of the eurozone",
+    body: "Portugal joined the European Union in 1986 and was among the first countries to adopt the euro, on 1 January 1999. Euro banknotes and coins entered circulation on 1 January 2002. The euro replaced the Portuguese escudo at a fixed rate of €1 = 200.482 escudos, and the period in which both currencies circulated ended on 28 February 2002.",
+  },
+  "pt-vat": {
+    title: "The VAT rate depends on the region",
+    body: "The standard VAT rate in mainland Portugal is 23%. Lower rates apply in the country's autonomous regions: 22% in Madeira and 16% in the Azores.",
+  },
+  "pt-recipient-id": {
+    title: "Customs clearance needs a NIF or a passport",
+    body: "According to CTT, Portugal's national postal operator, when a parcel from outside the EU is cleared through CTT's portal, the recipient must give either a Portuguese tax number (NIF) or a passport number. There is no need to give both.",
+  },
 };
 
 const SENDABLE_ITEMS = [
@@ -1374,6 +1386,141 @@ const copy: Record<CountrySlug, CountryCopy> = {
         body: "Send a gift, personal belongings or other permitted goods to family, friends and relatives in Sweden.",
         emphasis:
           "Message us today and find out the cost of sending your parcel to Sweden.",
+      },
+    },
+  },
+  portugal: {
+    name: "Portugal",
+    nameIn: "Portugal",
+    linkLabel: "Send a parcel to Portugal",
+    footerLinkLabel: "Send to Portugal",
+    priceLinkLabel: "Cost of sending to Portugal",
+    factsHeading: "What to know before sending to Portugal",
+    h1: "Send a parcel from Georgia to Portugal",
+    seoTitle: "Send a parcel to Portugal",
+    seoDescription:
+      "Send a parcel from Georgia to Portugal — Lisbon, Porto, Braga, Coimbra, Faro. Find out the price and start your order with Parcello.",
+    intro:
+      "Portugal is a founding member of the eurozone, but the country does not have a single VAT rate — in Madeira and the Azores it is lower than on the mainland. And when a parcel is cleared through the portal of CTT, the national postal operator, the recipient needs a tax number (NIF) or a passport number.",
+    content: {
+      intro: [
+        "Want to send a parcel from Georgia to Portugal? Parcello will help you send it simply and conveniently — whether it is a gift, clothing, personal belongings or other permitted goods.",
+      ],
+      narrative: [
+        {
+          placement: "afterIntro",
+          heading: "Sending a parcel from Georgia to Portugal",
+          body: [
+            "Diplomatic relations between Georgia and the Portuguese Republic were established on 23 May 1992. The Georgian embassy in Lisbon opened in 2010, and since 2005 Portugal has been represented in Georgia through its embassy in Turkey.",
+            "For Georgians living in Portugal, receiving a parcel from home is often a simple way of keeping a connection to family, friends and the place they came from.",
+            "You give us the parcel and the details we need, and we help organise the process of getting it to Portugal.",
+          ],
+        },
+        {
+          placement: "beforePricing",
+          heading: "What the recipient in Portugal should know",
+          body: [
+            "Portugal is a member of the European Union, so EU customs rules apply to a parcel sent from Georgia. The country uses the euro, so a consignment's value and the EU customs relief thresholds are in the same currency.",
+            "What is particular to Portugal is that when a parcel is cleared through the portal of CTT, the national postal operator, the recipient needs a Portuguese tax number (NIF) or a passport number. CTT also explains that even a gift must always have a value stated — and if the recipient does not know it, they should contact the sender.",
+            "According to CTT, a non-commercial parcel between private individuals worth no more than €45 can be claimed as exempt from charges. The standard VAT rate is 23% in mainland Portugal, 22% in Madeira and 16% in the Azores.",
+            "That is why it helps if the recipient knows in advance what is in the parcel and what it is worth — it helps the customs procedure complete without delay.",
+          ],
+        },
+      ],
+      why: {
+        heading: "Why Parcello?",
+        body: [
+          "Sending an international parcel should not be complicated.",
+          "Easy communication matters to us, and so does your knowing what is needed to send your parcel.",
+        ],
+        highlight:
+          "Parcello lets you send a parcel from Georgia to Portugal and get the information you need, all in one place.",
+      },
+      steps: {
+        heading: "How we send parcels to Portugal",
+        items: [
+          {
+            title: "Get in touch",
+            body: "Tell us you want to send a parcel to Portugal and give us its approximate weight, its contents and the destination city.",
+          },
+          {
+            title: "Prepare your parcel",
+            body: "Pack the items securely and make sure they are permitted to be sent.",
+          },
+          {
+            title: "Hand over the parcel",
+            body: "Our team collects your parcel by whichever method you have agreed with us.",
+          },
+          {
+            title: "Your parcel sets off for Portugal",
+            body: "We take care of organising the transport process.",
+          },
+          {
+            title: "The parcel arrives in Portugal",
+            body: "It goes on to the recipient you named in Portugal.",
+          },
+        ],
+      },
+      sendable: {
+        heading: "What can you send to Portugal?",
+        intro:
+          "With Parcello you can send a range of permitted personal items, including:",
+        items: SENDABLE_ITEMS,
+        note: "Restrictions apply to some items in international shipping. Before you send, tell us what you would like to put in the parcel and we will help you check.",
+        moreHref: "/what-can-i-send",
+        moreLabel: "See the full list of permitted items",
+      },
+      cities: {
+        heading: "Sending a parcel to cities across Portugal",
+        intro:
+          "Parcels can be sent to destinations throughout Portugal, including cities such as:",
+        list: ["Lisbon", "Porto", "Braga", "Coimbra", "Faro"],
+        note: "When you order, give the recipient's full address and contact details so the parcel can be processed correctly.",
+      },
+      pricing: {
+        heading: "How much does it cost to send a parcel to Portugal?",
+        body: "The cost depends on the weight of the parcel and the rate in force.",
+        emphasis:
+          "Send us the weight of your parcel and the destination city in Portugal to get the current price.",
+      },
+      faqs: [
+        {
+          question: "How long does a parcel take to reach Portugal?",
+          answer:
+            "Delivery time depends on the route and the service chosen. We will confirm the expected time with you before your order is finalised.",
+        },
+        {
+          question:
+            "What does the recipient in Portugal need to clear a parcel through customs?",
+          answer:
+            "According to CTT, Portugal's postal operator, a recipient clearing a parcel through its portal must give a Portuguese tax number (NIF) or a passport number. The parcel must always have a value stated, even if it is a gift.",
+        },
+        {
+          question: "Is VAT the same across all of Portugal?",
+          answer:
+            "No. The standard VAT rate is 23% in mainland Portugal and lower in the autonomous regions: 22% in Madeira and 16% in the Azores.",
+        },
+        {
+          question: "Can I send Georgian products to Portugal?",
+          answer:
+            "Some products can be sent, though restrictions may apply to particular items. Tell us what you would like to send and we will help you check.",
+        },
+        {
+          question: "Can I send a parcel to Lisbon or Porto?",
+          answer:
+            "Send us the recipient's city and full address in Portugal and we will confirm what the service can do.",
+        },
+        {
+          question: "How do I start sending a parcel?",
+          answer:
+            "Get in touch and tell us the approximate weight of the parcel, what is inside it, and the destination city in Portugal.",
+        },
+      ],
+      cta: {
+        heading: "Send your parcel from Georgia to Portugal with Parcello",
+        body: "Send a gift, personal belongings or other permitted goods to family, friends and relatives in Portugal.",
+        emphasis:
+          "Message us today and find out the cost of sending your parcel to Portugal.",
       },
     },
   },
