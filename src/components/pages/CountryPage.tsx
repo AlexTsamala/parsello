@@ -17,10 +17,10 @@ import { localePath, type Locale } from "@/content/locales";
 import { breadcrumbSchema, faqSchema } from "@/lib/schema";
 
 /**
- * Withheld because the business's own list of what customers send includes
- * cheese, while the EU rule says dairy is prohibited — the two must not be
- * rendered on the same page until the business resolves the contradiction.
- * See docs/OPEN-QUESTIONS.md #15.
+ * Withheld by the business's decision (2026-10-08): Parcello ships cheese, and
+ * the EU rule says dairy is prohibited from non-EU countries. The rule stays
+ * researched and sourced but unpublished. Keep this filter.
+ * See docs/OPEN-QUESTIONS.md, Resolved, #15.
  */
 const WITHHELD_FACT_IDS = new Set(["animal-products"]);
 

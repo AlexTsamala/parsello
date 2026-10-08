@@ -11,7 +11,7 @@ import { breadcrumbSchema, faqSchema } from "@/lib/schema";
 
 /**
  * `animal-products` is withheld here for the same reason as on country pages —
- * docs/OPEN-QUESTIONS.md #15. Remove the filter once the business answers.
+ * the business's decision, docs/OPEN-QUESTIONS.md #15. Keep this filter.
  */
 const WITHHELD_FACT_IDS = new Set(["animal-products"]);
 

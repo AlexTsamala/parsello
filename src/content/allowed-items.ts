@@ -5,9 +5,10 @@
  * are medicines and items restricted by law (weapons, drugs). Everything else
  * on this page is offered.
  *
- * The EU animal-products rule is deliberately NOT rendered alongside this list
- * — see docs/OPEN-QUESTIONS.md #15. Do not add it here, and do not trim the
- * list to agree with it.
+ * CHEESE (confirmed 2026-10-08): Parcello ships it. The EU animal-products
+ * rule is deliberately NOT published, by the business's decision — see
+ * docs/OPEN-QUESTIONS.md #15. Do not add it here, and do not trim the list to
+ * agree with it.
  *
  * `image` names a file in `public/images/`. Rows render with or without their
  * photo, so the page is publishable before the photography arrives.

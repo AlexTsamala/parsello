@@ -6,27 +6,6 @@ Answered items move to `CLAUDE.md` §10 and into `src/content/business.ts`.
 
 ## Blocking — pages can't be finished without these
 
-### 15. Food categories vs EU import rules ⚠️
-
-Parcello's own list of what customers send includes **ყველი (cheese)**, **ღვინო (wine)**, **თაფლი (honey)** and "ყველა სახის პროდუქტი" (all kinds of food products).
-
-Researched EU rules say otherwise:
-
-| Category | EU rule | Source |
-|---|---|---|
-| Cheese / dairy | **Prohibited** from non-EU countries | [Your Europe](https://europa.eu/youreurope/citizens/travel/carry/meat-dairy-animal/index_en.htm) |
-| Honey | Allowed, **2 kg** limit | same |
-| Wine / alcohol | Allowed, but excise + VAT apply; strict quantity limits under gift relief | [Irish Revenue](https://www.revenue.ie/en/customs/individuals/relief-gifts-low-value/rules-gifts.aspx) |
-
-This is the site's only direct contradiction between a Parcello claim and a researched fact, and it cannot be resolved by writing around it. **What the business needs to confirm:** does Parcello actually ship cheese to the EU, and if so, how is it handled at customs?
-
-Until answered:
-
-- `src/content/allowed-items.ts` carries the business's full list unchanged, with affected categories flagged via `euNote`.
-- The list is not published on any page that also states the animal-products rule.
-- Neither the list nor the EU rule may be softened to make them agree.
-
-
 | # | Question | Blocks |
 |---|---|---|
 | 3 | Pickup is confirmed — **which cities/regions** does courier pickup actually cover? | How-it-works, trust section, FAQ |
@@ -63,4 +42,5 @@ Until answered:
 - **Inbound handover** (#16) — the sender messages Parcello, receives the warehouse address in reply, and drops the parcel there. Confirmed 2026-09-13; the address itself is given on request, not published.
 - **Inbound delivery time** (#17) — 2 weeks, Europe → Georgia. Confirmed 2026-09-13. Stored as `business.inboundDeliveryTime` / `inboundDeliveryTimeGenitive`, separate from the outbound 2–3 weeks.
 - **Customer-service languages** (#19) — Georgian, English and Russian. Russian and English confirmed 2026-09-24. Declared in `availableLanguage`. The Russian site lives at `/ru`, targets Russian speakers living in Georgia, keeps English URL slugs, and its language switcher entry has no flag (text «РУС» only), by the business's choice.
+- **Cheese vs the EU dairy rule** (#15) — Parcello ships cheese to Europe (confirmed 2026-10-08). The researched EU rule that meat and dairy may not be brought in from non-EU countries ([Your Europe](https://europa.eu/youreurope/citizens/travel/carry/meat-dairy-animal/index_en.htm)) stays in `src/content/shipping-rules.ts` with its source, but is **not published**, by the business's decision: the `animal-products` fact is filtered out of country pages and the FAQ. Do not remove the filter, and do not trim cheese from the list to agree with the rule. How cheese is handled at customs was not specified.
 - **Country-page content** — general destination facts are researched and published with sources, kept structurally separate from Parcello claims. See `CLAUDE.md` §1 rule 10 and `docs/RESEARCH-SOURCES.md`.

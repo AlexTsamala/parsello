@@ -4,9 +4,9 @@ import { allowedItems, type SendableCategory } from "../allowed-items";
  * English wording for the business's own list of what customers send.
  *
  * As in the Georgian file, the EU animal-products rule is deliberately NOT
- * rendered alongside this list, and the list is not trimmed to agree with it
- * (docs/OPEN-QUESTIONS.md #15). Translate what the business says it carries;
- * do not resolve the contradiction here.
+ * published, and the list is not trimmed to agree with it — the business
+ * ships cheese and chose this (docs/OPEN-QUESTIONS.md #15). Translate what the
+ * business says it carries.
  *
  * Georgian food names are kept as themselves — churchkhela, sulguni, tkemali —
  * with a short gloss where an English reader would need one. Translating them

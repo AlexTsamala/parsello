@@ -4,8 +4,9 @@ import { allowedItems, type SendableCategory } from "../allowed-items";
  * Russian wording for the business's own list of what customers send.
  *
  * The same caveat as the Georgian and English files applies: the EU
- * animal-products rule is not rendered alongside this list, and the list is not
- * trimmed to agree with it (docs/OPEN-QUESTIONS.md #15).
+ * animal-products rule is not published, and the list is not trimmed to agree
+ * with it — the business ships cheese and chose this (docs/OPEN-QUESTIONS.md
+ * #15).
  *
  * Georgian food names are the names Russian speakers already use — чурчхела,
  * сулугуни, ткемали, аджика — so they need no gloss.
