@@ -4,7 +4,7 @@ Guidance for Claude Code working in this repository.
 
 ## Project
 
-**Parcello Georgia** — marketing + SEO website for a Georgian parcel-delivery company that sends parcels from Georgia to Europe (Poland, Germany, France, Hungary, Bulgaria, Czechia, Slovakia, the Netherlands, Finland, Sweden).
+**Parcello Georgia** — marketing + SEO website for a Georgian parcel-delivery company that sends parcels from Georgia to Europe (Poland, Germany, France, Hungary, Bulgaria, Czechia, Slovakia, the Netherlands, Finland, Sweden, Portugal).
 
 This is a **marketing and SEO site**, not an application. Its job: explain the service in 5 seconds, build trust, and generate order inquiries.
 
@@ -167,7 +167,7 @@ The only verified facts so far. Everything else is an open question (`docs/OPEN-
 | Business name | Parcello Georgia |
 | Phone | `551 23 15 19` → `tel:+995551231519` |
 | Pricing model | Quoted on request only — never published |
-| Coverage | **All of Europe.** Poland, Germany, France, Hungary, Bulgaria, Czechia, Slovakia, the Netherlands, Finland and Sweden are *priority* destinations and SEO targets — not the limit of the service. Never write copy implying only those ten are served. (Italy was dropped as a priority destination on 2026-09-08; the Netherlands was added on 2026-09-12 and Finland and Sweden on 2026-09-29.) |
+| Coverage | **All of Europe.** Poland, Germany, France, Hungary, Bulgaria, Czechia, Slovakia, the Netherlands, Finland, Sweden and Portugal are *priority* destinations and SEO targets — not the limit of the service. Never write copy implying only those eleven are served. (Italy was dropped as a priority destination on 2026-09-08; the Netherlands was added on 2026-09-12, Finland and Sweden on 2026-09-29, and Portugal on 2026-10-08.) |
 | Parcel handover | **Both** courier pickup and drop-off are offered (specific cities/addresses still TBC) |
 | Delivery time | 16–21 days (per-destination breakdown not yet confirmed) |
 | Inbound handover | Sender messages Parcello first; Parcello replies with the **warehouse address**; the sender drops the parcel there. The warehouse address is given on request — it is not published on the site. |
