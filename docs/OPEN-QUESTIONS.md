@@ -28,7 +28,7 @@ Answered items move to `CLAUDE.md` §10 and into `src/content/business.ts`.
 
 ## Resolved
 
-- **Pricing** — per-kg rates in GEL for 19 destinations, supplied 2026-10-08 and published on `/prices` and the matching country pages. Every other destination is quoted on request via Facebook or phone. See `CLAUDE.md` §1 rule 2 and §10.
+- **Pricing** — per-kg rates in GEL for 21 destinations, supplied 2026-10-08 and published on `/prices` and the matching country pages. Every other destination is quoted on request via Facebook or phone. See `CLAUDE.md` §1 rule 2 and §10.
 - **Primary phone** — `+995 551 23 15 19`. Always rendered via `<PhoneButton />` / `<PhoneLink />`.
 - **Parcel handover** — both courier pickup and drop-off are offered. Coverage details still open (#3, #4).
 - **Facebook** — `https://www.facebook.com/parcellogeorgia`.
