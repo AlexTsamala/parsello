@@ -17,6 +17,10 @@ export type BlogSection = {
   body: string[];
   /** Rendered as a checklist under the paragraphs. */
   list?: string[];
+  /** Sub-steps, each an h3 with its own paragraphs, after the list. */
+  steps?: { heading: string; body: string[] }[];
+  /** Closing paragraphs, after the list and steps. */
+  outro?: string[];
 };
 
 export type BlogPost = {
@@ -27,6 +31,8 @@ export type BlogPost = {
   /** ISO date — drives <time> and OG publishedTime. */
   publishedAt: string;
   excerpt: string;
+  /** Opening paragraphs, before the first heading. */
+  intro?: string[];
   sections: BlogSection[];
   /** Internal links rendered at the end (CLAUDE.md §6). */
   related: { href: string; label: string }[];

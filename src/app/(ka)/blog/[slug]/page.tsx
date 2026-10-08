@@ -85,6 +85,12 @@ export default async function BlogPostPage({
 
         <Section>
           <div className="max-w-3xl">
+            {post.intro?.map((paragraph) => (
+              <p key={paragraph} className="mt-4 text-muted first:mt-0">
+                {paragraph}
+              </p>
+            ))}
+
             {post.sections.map((section) => (
               <div key={section.heading} className="mt-10 first:mt-0">
                 <h2 className="text-2xl font-bold md:text-3xl">
@@ -122,6 +128,25 @@ export default async function BlogPostPage({
                     ))}
                   </ul>
                 ) : null}
+
+                {section.steps?.map((step) => (
+                  <div key={step.heading} className="mt-8">
+                    <h3 className="text-lg font-bold md:text-xl">
+                      {step.heading}
+                    </h3>
+                    {step.body.map((paragraph) => (
+                      <p key={paragraph} className="mt-3 text-muted">
+                        {paragraph}
+                      </p>
+                    ))}
+                  </div>
+                ))}
+
+                {section.outro?.map((paragraph) => (
+                  <p key={paragraph} className="mt-6 text-muted">
+                    {paragraph}
+                  </p>
+                ))}
               </div>
             ))}
           </div>
