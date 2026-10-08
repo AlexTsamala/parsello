@@ -14,7 +14,7 @@ NEXT_PUBLIC_SITE_URL=https://parcello.ge
 
 ## Still to do before launch
 
-**1. Resolve the open items** in `OPEN-QUESTIONS.md`. Blocking ones are the courier pickup coverage and the drop-off address.
+**1. Resolve the open items** in `OPEN-QUESTIONS.md`. Blocking ones are the courier pickup coverage (#3) and the image files (#6).
 
 **2. Check nothing unresolved is visible.**
 
