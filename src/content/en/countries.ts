@@ -128,6 +128,42 @@ const factCopy: Record<string, { title: string; body: string }> = {
     title: "Customs clearance needs a NIF or a passport",
     body: "According to CTT, Portugal's national postal operator, when a parcel from outside the EU is cleared through CTT's portal, the recipient must give either a Portuguese tax number (NIF) or a passport number. There is no need to give both.",
   },
+  "lt-euro": {
+    title: "Lithuania was the last Baltic state to join the eurozone",
+    body: "Lithuania joined the European Union in 2004 and adopted the euro on 1 January 2015 — after Estonia (2011) and Latvia (2014). The euro replaced the Lithuanian litas at a fixed rate of €1 = 3.45280 litas. The Bank of Lithuania exchanges litas banknotes and coins for euro with no time limit.",
+  },
+  "lt-vat": {
+    title: "VAT rate",
+    body: "The standard VAT rate in Lithuania is 21%.",
+  },
+  "lt-gift-declaration": {
+    title: "Gifts must be declared too",
+    body: "According to Lithuania Post (Lietuvos paštas), a gift sent free of charge from one private person to another from outside the EU must be declared to customs even when it is not taxed. A gift worth no more than €45 is tax-free. The recipient can declare the parcel through Lithuania Post's service, or independently — through Lithuanian Customs or another customs broker.",
+  },
+  "lv-euro": {
+    title: "Latvia has used the euro since 2014",
+    body: "Latvia joined the European Union in 2004 and adopted the euro on 1 January 2014. Before that, from 2 May 2005, the Latvian lats took part in the European exchange rate mechanism (ERM II). The euro replaced the lats at a fixed rate of €1 = 0.702804 lats.",
+  },
+  "lv-vat": {
+    title: "VAT rate",
+    body: "The standard VAT rate in Latvia is 21%.",
+  },
+  "lv-declaration": {
+    title: "Recipients can declare a parcel themselves",
+    body: "According to the State Revenue Service of Latvia (VID), every consignment received from outside the EU must be declared. The recipient can fill in a short import customs declaration themselves in VID's Electronic Declaration System (EDS), or authorise the postal or express delivery company to handle customs clearance for a fee.",
+  },
+  "ee-euro": {
+    title: "Estonia was the first Baltic state to join the eurozone",
+    body: "Estonia joined the European Union in 2004 and the eurozone on 1 January 2011 — the first of the Baltic states, ahead of Latvia (2014) and Lithuania (2015). The euro replaced the Estonian kroon at a fixed rate of €1 = 15.6466 kroons. Estonia's central bank (Eesti Pank) exchanges kroon banknotes and coins for euro with no time limit.",
+  },
+  "ee-vat": {
+    title: "VAT has been 24% since July 2025",
+    body: "The standard VAT rate in Estonia rose from 22% to 24% in July 2025.",
+  },
+  "ee-gift": {
+    title: "Gifts worth more than €45 are taxed",
+    body: "According to Omniva, Estonia's national postal operator, a parcel sent from one private person to another counts as a gift. A gift worth up to €45 is exempt from VAT unless it contains excise goods. A gift worth more than €45 is charged VAT and customs duty, plus a service fee, because a customs agent is involved in clearing it.",
+  },
 };
 
 const SENDABLE_ITEMS = [
@@ -1521,6 +1557,408 @@ const copy: Record<CountrySlug, CountryCopy> = {
         body: "Send a gift, personal belongings or other permitted goods to family, friends and relatives in Portugal.",
         emphasis:
           "Message us today and find out the cost of sending your parcel to Portugal.",
+      },
+    },
+  },
+  lithuania: {
+    name: "Lithuania",
+    nameIn: "Lithuania",
+    linkLabel: "Send a parcel to Lithuania",
+    footerLinkLabel: "Send to Lithuania",
+    priceLinkLabel: "Cost of sending to Lithuania",
+    factsHeading: "What to know before sending to Lithuania",
+    h1: "Send a parcel from Georgia to Lithuania",
+    seoTitle: "Send a parcel to Lithuania",
+    seoDescription:
+      "Send a parcel from Georgia to Lithuania — Vilnius, Kaunas, Klaipėda, Šiauliai, Panevėžys. Find out the price and start your order with Parcello.",
+    intro:
+      "Lithuania has used the euro since 2015 — the last of the Baltic states to join the eurozone. And according to Lithuania Post (Lietuvos paštas), a gift received from outside the EU must be declared to customs even when it is not taxed.",
+    content: {
+      intro: [
+        "Want to send a parcel from Georgia to Lithuania? Parcello will help you send it simply and conveniently — whether it is a gift, clothing, personal belongings or other permitted goods.",
+      ],
+      narrative: [
+        {
+          placement: "afterIntro",
+          heading: "Sending a parcel from Georgia to Lithuania",
+          body: [
+            "Diplomatic relations between Georgia and the Republic of Lithuania were established on 16 September 1994. The Georgian embassy in Lithuania opened in 2004. From 2001 to 2005 Lithuania was represented in Georgia through its embassy in Ukraine, and in 2005 a Lithuanian embassy opened in Georgia as well.",
+            "For Georgians living in Lithuania, receiving a parcel from home is often a simple way of keeping a connection to family, friends and the place they came from.",
+            "You give us the parcel and the details we need, and we help organise the process of getting it to Lithuania.",
+          ],
+        },
+        {
+          placement: "beforePricing",
+          heading: "In Lithuania, gifts are declared too",
+          body: [
+            "Lithuania is a member of the European Union and the eurozone, so EU customs rules apply to a parcel sent from Georgia, and a consignment's value and the customs relief thresholds are in the same currency — the euro.",
+            "Lithuania Post (Lietuvos paštas) makes a point of stressing that a gift received from outside the EU must be declared to customs even when it is not taxed. A gift worth up to €45 is tax-free, but it still has to be declared.",
+            "The recipient can declare the parcel through Lithuania Post's service, or independently through Lithuanian Customs or another customs broker. According to the post, the parcel is handed over for delivery once the taxes are paid. The standard VAT rate in Lithuania is 21%.",
+            "That is why it helps if the recipient knows in advance what is in the parcel and what it is worth — they will need exactly that information when filling in the declaration.",
+          ],
+        },
+      ],
+      why: {
+        heading: "Why Parcello?",
+        body: [
+          "Sending an international parcel should not be complicated.",
+          "Easy communication matters to us, and so does your knowing what is needed to send your parcel.",
+        ],
+        highlight:
+          "Parcello lets you send a parcel from Georgia to Lithuania and get the information you need, all in one place.",
+      },
+      steps: {
+        heading: "How we send parcels to Lithuania",
+        items: [
+          {
+            title: "Get in touch",
+            body: "Tell us you want to send a parcel to Lithuania and give us its approximate weight, its contents and the destination city.",
+          },
+          {
+            title: "Prepare your parcel",
+            body: "Pack the items securely and make sure they are permitted to be sent.",
+          },
+          {
+            title: "Hand over the parcel",
+            body: "Our team collects your parcel by whichever method you have agreed with us.",
+          },
+          {
+            title: "Your parcel sets off for Lithuania",
+            body: "We take care of organising the transport process.",
+          },
+          {
+            title: "The parcel arrives in Lithuania",
+            body: "It goes on to the recipient you named in Lithuania.",
+          },
+        ],
+      },
+      sendable: {
+        heading: "What can you send to Lithuania?",
+        intro:
+          "With Parcello you can send a range of permitted personal items, including:",
+        items: SENDABLE_ITEMS,
+        note: "Restrictions apply to some items in international shipping. Before you send, tell us what you would like to put in the parcel and we will help you check.",
+        moreHref: "/what-can-i-send",
+        moreLabel: "See the full list of permitted items",
+      },
+      cities: {
+        heading: "Sending a parcel to cities across Lithuania",
+        intro:
+          "Parcels can be sent to destinations throughout Lithuania, including cities such as:",
+        list: ["Vilnius", "Kaunas", "Klaipėda", "Šiauliai", "Panevėžys"],
+        note: "When you order, give the recipient's full address and contact details so the parcel can be processed correctly.",
+      },
+      pricing: {
+        heading: "How much does it cost to send a parcel to Lithuania?",
+        body: "The cost depends on the weight of the parcel and the rate in force.",
+        emphasis:
+          "Send us the weight of your parcel and the destination city in Lithuania to get the current price.",
+      },
+      faqs: [
+        {
+          question: "How long does a parcel take to reach Lithuania?",
+          answer:
+            "Delivery time depends on the route and the service chosen. We will confirm the expected time with you before your order is finalised.",
+        },
+        {
+          question: "Does a gift have to be declared in Lithuania?",
+          answer:
+            "Yes. According to Lithuania Post (Lietuvos paštas), a gift received from outside the EU must be declared to customs even when it is worth up to €45 and is not taxed.",
+        },
+        {
+          question: "Since when has Lithuania used the euro?",
+          answer:
+            "Lithuania adopted the euro on 1 January 2015, the last of the Baltic states to join the eurozone.",
+        },
+        {
+          question: "Can I send Georgian products to Lithuania?",
+          answer:
+            "Some products can be sent, though restrictions may apply to particular items. Tell us what you would like to send and we will help you check.",
+        },
+        {
+          question: "Can I send a parcel to Vilnius or Kaunas?",
+          answer:
+            "Send us the recipient's city and full address in Lithuania and we will confirm what the service can do.",
+        },
+        {
+          question: "How do I start sending a parcel?",
+          answer:
+            "Get in touch and tell us the approximate weight of the parcel, what is inside it, and the destination city in Lithuania.",
+        },
+      ],
+      cta: {
+        heading: "Send your parcel from Georgia to Lithuania with Parcello",
+        body: "Send a gift, personal belongings or other permitted goods to family, friends and relatives in Lithuania.",
+        emphasis:
+          "Message us today and find out the cost of sending your parcel to Lithuania.",
+      },
+    },
+  },
+  latvia: {
+    name: "Latvia",
+    nameIn: "Latvia",
+    linkLabel: "Send a parcel to Latvia",
+    footerLinkLabel: "Send to Latvia",
+    priceLinkLabel: "Cost of sending to Latvia",
+    factsHeading: "What to know before sending to Latvia",
+    h1: "Send a parcel from Georgia to Latvia",
+    seoTitle: "Send a parcel to Latvia",
+    seoDescription:
+      "Send a parcel from Georgia to Latvia — Riga, Daugavpils, Liepāja, Jelgava, Jūrmala. Find out the price and start your order with Parcello.",
+    intro:
+      "Latvia has used the euro since 2014. According to the State Revenue Service of Latvia (VID), every consignment received from outside the EU must be declared — and recipients can do this themselves, online.",
+    content: {
+      intro: [
+        "Want to send a parcel from Georgia to Latvia? Parcello will help you send it simply and conveniently — whether it is a gift, clothing, personal belongings or other permitted goods.",
+      ],
+      narrative: [
+        {
+          placement: "afterIntro",
+          heading: "Sending a parcel from Georgia to Latvia",
+          body: [
+            "Diplomatic relations between Georgia and the Republic of Latvia were established on 11 March 1993. From 2004 to 2007 Georgia was represented in Latvia through its embassy in Vilnius, and in 2007 the Georgian embassy in Latvia opened. The Latvian embassy in Georgia has operated since 2006 — before that, from 2004 to 2006, Latvia was represented in Georgia through its embassy in Ukraine.",
+            "For Georgians living in Latvia, receiving a parcel from home is often a simple way of keeping a connection to family, friends and the place they came from.",
+            "You give us the parcel and the details we need, and we help organise the process of getting it to Latvia.",
+          ],
+        },
+        {
+          placement: "beforePricing",
+          heading: "Two ways to declare a parcel in Latvia",
+          body: [
+            "Latvia is a member of the European Union and the eurozone: the euro has been the currency since 2014, so a consignment's value and the EU customs relief thresholds are in the same currency.",
+            "According to the State Revenue Service of Latvia (VID), every consignment received from outside the EU must be declared — online purchases and gifts alike.",
+            "The recipient has two options: fill in a short import declaration themselves in VID's Electronic Declaration System (EDS), or authorise the postal or express delivery company to handle customs clearance for a fee. The standard VAT rate in Latvia is 21%.",
+            "That is why it helps if the recipient knows in advance what is in the parcel and what it is worth — if they fill in the declaration themselves, they will need exactly that information.",
+          ],
+        },
+      ],
+      why: {
+        heading: "Why Parcello?",
+        body: [
+          "Sending an international parcel should not be complicated.",
+          "Easy communication matters to us, and so does your knowing what is needed to send your parcel.",
+        ],
+        highlight:
+          "Parcello lets you send a parcel from Georgia to Latvia and get the information you need, all in one place.",
+      },
+      steps: {
+        heading: "How we send parcels to Latvia",
+        items: [
+          {
+            title: "Get in touch",
+            body: "Tell us you want to send a parcel to Latvia and give us its approximate weight, its contents and the destination city.",
+          },
+          {
+            title: "Prepare your parcel",
+            body: "Pack the items securely and make sure they are permitted to be sent.",
+          },
+          {
+            title: "Hand over the parcel",
+            body: "Our team collects your parcel by whichever method you have agreed with us.",
+          },
+          {
+            title: "Your parcel sets off for Latvia",
+            body: "We take care of organising the transport process.",
+          },
+          {
+            title: "The parcel arrives in Latvia",
+            body: "It goes on to the recipient you named in Latvia.",
+          },
+        ],
+      },
+      sendable: {
+        heading: "What can you send to Latvia?",
+        intro:
+          "With Parcello you can send a range of permitted personal items, including:",
+        items: SENDABLE_ITEMS,
+        note: "Restrictions apply to some items in international shipping. Before you send, tell us what you would like to put in the parcel and we will help you check.",
+        moreHref: "/what-can-i-send",
+        moreLabel: "See the full list of permitted items",
+      },
+      cities: {
+        heading: "Sending a parcel to cities across Latvia",
+        intro:
+          "Parcels can be sent to destinations throughout Latvia, including cities such as:",
+        list: ["Riga", "Daugavpils", "Liepāja", "Jelgava", "Jūrmala"],
+        note: "When you order, give the recipient's full address and contact details so the parcel can be processed correctly.",
+      },
+      pricing: {
+        heading: "How much does it cost to send a parcel to Latvia?",
+        body: "The cost depends on the weight of the parcel and the rate in force.",
+        emphasis:
+          "Send us the weight of your parcel and the destination city in Latvia to get the current price.",
+      },
+      faqs: [
+        {
+          question: "How long does a parcel take to reach Latvia?",
+          answer:
+            "Delivery time depends on the route and the service chosen. We will confirm the expected time with you before your order is finalised.",
+        },
+        {
+          question: "Who fills in the customs declaration in Latvia?",
+          answer:
+            "According to the State Revenue Service of Latvia (VID), the recipient can fill in a short import declaration themselves in VID's Electronic Declaration System (EDS), or authorise the postal or express delivery company to do it for a fee.",
+        },
+        {
+          question: "Since when has Latvia used the euro?",
+          answer:
+            "Latvia adopted the euro on 1 January 2014. The euro replaced the lats at a fixed rate of €1 = 0.702804 lats.",
+        },
+        {
+          question: "Can I send Georgian products to Latvia?",
+          answer:
+            "Some products can be sent, though restrictions may apply to particular items. Tell us what you would like to send and we will help you check.",
+        },
+        {
+          question: "Can I send a parcel to Riga or Daugavpils?",
+          answer:
+            "Send us the recipient's city and full address in Latvia and we will confirm what the service can do.",
+        },
+        {
+          question: "How do I start sending a parcel?",
+          answer:
+            "Get in touch and tell us the approximate weight of the parcel, what is inside it, and the destination city in Latvia.",
+        },
+      ],
+      cta: {
+        heading: "Send your parcel from Georgia to Latvia with Parcello",
+        body: "Send a gift, personal belongings or other permitted goods to family, friends and relatives in Latvia.",
+        emphasis:
+          "Message us today and find out the cost of sending your parcel to Latvia.",
+      },
+    },
+  },
+  estonia: {
+    name: "Estonia",
+    nameIn: "Estonia",
+    linkLabel: "Send a parcel to Estonia",
+    footerLinkLabel: "Send to Estonia",
+    priceLinkLabel: "Cost of sending to Estonia",
+    factsHeading: "What to know before sending to Estonia",
+    h1: "Send a parcel from Georgia to Estonia",
+    seoTitle: "Send a parcel to Estonia",
+    seoDescription:
+      "Send a parcel from Georgia to Estonia — Tallinn, Tartu, Narva, Pärnu, Kohtla-Järve. Find out the price and start your order with Parcello.",
+    intro:
+      "Estonia was the first of the Baltic states to join the eurozone, in 2011. And in July 2025 its standard VAT rate rose from 22% to 24% — worth bearing in mind for anyone receiving a gift worth more than €45.",
+    content: {
+      intro: [
+        "Want to send a parcel from Georgia to Estonia? Parcello will help you send it simply and conveniently — whether it is a gift, clothing, personal belongings or other permitted goods.",
+      ],
+      narrative: [
+        {
+          placement: "afterIntro",
+          heading: "Sending a parcel from Georgia to Estonia",
+          body: [
+            "Diplomatic relations between Georgia and the Republic of Estonia were established on 17 June 1992. From 2004 to 2007 Georgia was represented in Estonia through its embassy in Vilnius, and in 2007 a Georgian embassy opened in Estonia as well.",
+            "For Georgians living in Estonia, receiving a parcel from home is often a simple way of keeping a connection to family, friends and the place they came from.",
+            "You give us the parcel and the details we need, and we help organise the process of getting it to Estonia.",
+          ],
+        },
+        {
+          placement: "beforePricing",
+          heading: "Estonia — the euro, 24% VAT and the gift threshold",
+          body: [
+            "Estonia is a member of the European Union and the eurozone, so EU customs rules apply to a parcel sent from Georgia, and a consignment's value and the customs relief thresholds are in euro.",
+            "Since July 2025 the standard VAT rate in Estonia has been 24%. That is why going over the €45 gift threshold means a noticeable cost for the recipient.",
+            "According to Omniva, a gift worth more than €45 is charged customs duty as well as VAT, plus a service fee — a customs agent is involved in clearing such a consignment. A gift worth up to €45 is exempt from VAT unless it contains excise goods.",
+            "That is why describing a parcel's contents and value accurately matters especially on the Estonian route — it helps the customs procedure complete without delay.",
+          ],
+        },
+      ],
+      why: {
+        heading: "Why Parcello?",
+        body: [
+          "Sending an international parcel should not be complicated.",
+          "Easy communication matters to us, and so does your knowing what is needed to send your parcel.",
+        ],
+        highlight:
+          "Parcello lets you send a parcel from Georgia to Estonia and get the information you need, all in one place.",
+      },
+      steps: {
+        heading: "How we send parcels to Estonia",
+        items: [
+          {
+            title: "Get in touch",
+            body: "Tell us you want to send a parcel to Estonia and give us its approximate weight, its contents and the destination city.",
+          },
+          {
+            title: "Prepare your parcel",
+            body: "Pack the items securely and make sure they are permitted to be sent.",
+          },
+          {
+            title: "Hand over the parcel",
+            body: "Our team collects your parcel by whichever method you have agreed with us.",
+          },
+          {
+            title: "Your parcel sets off for Estonia",
+            body: "We take care of organising the transport process.",
+          },
+          {
+            title: "The parcel arrives in Estonia",
+            body: "It goes on to the recipient you named in Estonia.",
+          },
+        ],
+      },
+      sendable: {
+        heading: "What can you send to Estonia?",
+        intro:
+          "With Parcello you can send a range of permitted personal items, including:",
+        items: SENDABLE_ITEMS,
+        note: "Restrictions apply to some items in international shipping. Before you send, tell us what you would like to put in the parcel and we will help you check.",
+        moreHref: "/what-can-i-send",
+        moreLabel: "See the full list of permitted items",
+      },
+      cities: {
+        heading: "Sending a parcel to cities across Estonia",
+        intro:
+          "Parcels can be sent to destinations throughout Estonia, including cities such as:",
+        list: ["Tallinn", "Tartu", "Narva", "Pärnu", "Kohtla-Järve"],
+        note: "When you order, give the recipient's full address and contact details so the parcel can be processed correctly.",
+      },
+      pricing: {
+        heading: "How much does it cost to send a parcel to Estonia?",
+        body: "The cost depends on the weight of the parcel and the rate in force.",
+        emphasis:
+          "Send us the weight of your parcel and the destination city in Estonia to get the current price.",
+      },
+      faqs: [
+        {
+          question: "How long does a parcel take to reach Estonia?",
+          answer:
+            "Delivery time depends on the route and the service chosen. We will confirm the expected time with you before your order is finalised.",
+        },
+        {
+          question: "What is the VAT rate in Estonia?",
+          answer:
+            "The standard VAT rate in Estonia has been 24% since July 2025 — before that it was 22%.",
+        },
+        {
+          question: "What happens if a gift is worth more than €45?",
+          answer:
+            "According to Omniva, Estonia's postal operator, such a gift is charged VAT and customs duty, plus a service fee, because a customs agent is involved in clearing it.",
+        },
+        {
+          question: "Can I send Georgian products to Estonia?",
+          answer:
+            "Some products can be sent, though restrictions may apply to particular items. Tell us what you would like to send and we will help you check.",
+        },
+        {
+          question: "Can I send a parcel to Tallinn or Tartu?",
+          answer:
+            "Send us the recipient's city and full address in Estonia and we will confirm what the service can do.",
+        },
+        {
+          question: "How do I start sending a parcel?",
+          answer:
+            "Get in touch and tell us the approximate weight of the parcel, what is inside it, and the destination city in Estonia.",
+        },
+      ],
+      cta: {
+        heading: "Send your parcel from Georgia to Estonia with Parcello",
+        body: "Send a gift, personal belongings or other permitted goods to family, friends and relatives in Estonia.",
+        emphasis:
+          "Message us today and find out the cost of sending your parcel to Estonia.",
       },
     },
   },
