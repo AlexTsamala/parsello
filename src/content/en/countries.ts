@@ -236,9 +236,10 @@ const copy: Record<CountrySlug, CountryCopy> = {
         moreLabel: "See the full list of permitted items",
       },
       cities: {
-        heading: "Sending parcels to cities across Poland",
+        heading:
+          "Sending a parcel to any city or village in Poland",
         intro:
-          "With Parcello you can send a parcel to cities throughout Poland, including:",
+          "We deliver anywhere in Poland — to big cities as well as small towns and villages. For example:",
         list: ["Warsaw", "Kraków", "Wrocław", "Gdańsk", "Poznań"],
         note: "When you order, you will need to give the recipient's full address and contact details.",
       },
@@ -353,9 +354,10 @@ const copy: Record<CountrySlug, CountryCopy> = {
         moreLabel: "See the full list of permitted items",
       },
       cities: {
-        heading: "Sending a parcel to cities across Germany",
+        heading:
+          "Sending a parcel to any city or village in Germany",
         intro:
-          "Parcels can be sent to destinations throughout Germany, including major cities such as:",
+          "We deliver anywhere in Germany — to big cities as well as small towns and villages. For example:",
         list: ["Berlin", "Frankfurt", "Munich", "Hamburg", "Cologne"],
         note: "When you order, be sure to give the recipient's full address and contact details so the parcel can be processed correctly.",
       },
@@ -379,7 +381,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
         {
           question: "Can I send a parcel to Berlin, Frankfurt or Munich?",
           answer:
-            "Yes, and not only those. We send parcels to any city in Germany, wherever it is.",
+            "Yes, and not only those. We deliver to any city, town or village in Germany, wherever it is.",
         },
         {
           question: "How do I start sending a parcel?",
@@ -477,9 +479,10 @@ const copy: Record<CountrySlug, CountryCopy> = {
         moreLabel: "See the full list of permitted items",
       },
       cities: {
-        heading: "Sending a parcel to cities across France",
+        heading:
+          "Sending a parcel to any city or village in France",
         intro:
-          "With Parcello you can send a parcel to destinations throughout France, including cities such as:",
+          "We deliver anywhere in France — to big cities as well as small towns and villages. For example:",
         list: ["Paris", "Lyon", "Marseille", "Strasbourg", "Toulouse"],
         note: "When you order, give the recipient's full address and contact details so the parcel can be processed correctly.",
       },
@@ -503,7 +506,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
         {
           question: "Can I send a parcel to Paris or another city?",
           answer:
-            "Send us the recipient's city in France and we will confirm what the service can do.",
+            "Yes. We deliver to any city, town or village in France — just give us the recipient's full address when you order.",
         },
         {
           question: "How do I start sending a parcel?",
@@ -601,9 +604,10 @@ const copy: Record<CountrySlug, CountryCopy> = {
         moreLabel: "See the full list of permitted items",
       },
       cities: {
-        heading: "Sending a parcel to cities across Hungary",
+        heading:
+          "Sending a parcel to any city or village in Hungary",
         intro:
-          "Parcels can be sent to destinations throughout Hungary, including:",
+          "We deliver anywhere in Hungary — to big cities as well as small towns and villages. For example:",
         list: ["Budapest", "Debrecen", "Szeged", "Miskolc", "Pécs"],
         note: "When you order, give the recipient's full address and contact details so the parcel can be processed correctly.",
       },
@@ -627,7 +631,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
         {
           question: "Can I send a parcel to Budapest?",
           answer:
-            "Send us the recipient's full address in Budapest and we will confirm what the service can do.",
+            "Yes. We deliver to any city, town or village in Hungary — just give us the recipient's full address when you order.",
         },
         {
           question: "How do I start sending a parcel?",
@@ -725,9 +729,10 @@ const copy: Record<CountrySlug, CountryCopy> = {
         moreLabel: "See the full list of permitted items",
       },
       cities: {
-        heading: "Sending a parcel to cities across Bulgaria",
+        heading:
+          "Sending a parcel to any city or village in Bulgaria",
         intro:
-          "Parcels can be sent to destinations throughout Bulgaria, including cities such as:",
+          "We deliver anywhere in Bulgaria — to big cities as well as small towns and villages. For example:",
         list: ["Sofia", "Plovdiv", "Varna", "Burgas"],
         note: "When you order, give the recipient's full address and contact details so the parcel can be processed correctly.",
       },
@@ -751,7 +756,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
         {
           question: "Can I send a parcel to Sofia or Varna?",
           answer:
-            "Send us the recipient's city and full address in Bulgaria and we will confirm what the service can do.",
+            "Yes. We deliver to any city, town or village in Bulgaria — just give us the recipient's full address when you order.",
         },
         {
           question: "How do I start sending a parcel?",
@@ -850,9 +855,10 @@ const copy: Record<CountrySlug, CountryCopy> = {
         moreLabel: "See the full list of permitted items",
       },
       cities: {
-        heading: "Sending a parcel to cities across Czechia",
+        heading:
+          "Sending a parcel to any city or village in Czechia",
         intro:
-          "Parcels can be sent to destinations throughout Czechia, including cities such as:",
+          "We deliver anywhere in Czechia — to big cities as well as small towns and villages. For example:",
         list: ["Prague", "Brno", "Ostrava", "Plzeň", "Liberec"],
         note: "When you order, give the recipient's full address and contact details so the parcel can be processed correctly.",
       },
@@ -881,7 +887,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
         {
           question: "Can I send a parcel to Prague or Brno?",
           answer:
-            "Send us the recipient's city and full address in Czechia and we will confirm what the service can do.",
+            "Yes. We deliver to any city, town or village in Czechia — just give us the recipient's full address when you order.",
         },
         {
           question: "How do I start sending a parcel?",
@@ -980,9 +986,10 @@ const copy: Record<CountrySlug, CountryCopy> = {
         moreLabel: "See the full list of permitted items",
       },
       cities: {
-        heading: "Sending a parcel to cities across Slovakia",
+        heading:
+          "Sending a parcel to any city or village in Slovakia",
         intro:
-          "Parcels can be sent to destinations throughout Slovakia, including cities such as:",
+          "We deliver anywhere in Slovakia — to big cities as well as small towns and villages. For example:",
         list: ["Bratislava", "Košice", "Žilina", "Nitra", "Prešov"],
         note: "When you order, give the recipient's full address and contact details so the parcel can be processed correctly.",
       },
@@ -1011,7 +1018,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
         {
           question: "Can I send a parcel to Bratislava or Košice?",
           answer:
-            "Send us the recipient's city and full address in Slovakia and we will confirm what the service can do.",
+            "Yes. We deliver to any city, town or village in Slovakia — just give us the recipient's full address when you order.",
         },
         {
           question: "How do I start sending a parcel?",
@@ -1113,9 +1120,10 @@ const copy: Record<CountrySlug, CountryCopy> = {
         moreLabel: "See the full list of permitted items",
       },
       cities: {
-        heading: "Sending a parcel to cities across the Netherlands",
+        heading:
+          "Sending a parcel to any city or village in the Netherlands",
         intro:
-          "Parcels can be sent to destinations throughout the Netherlands, including cities such as:",
+          "We deliver anywhere in the Netherlands — to big cities as well as small towns and villages. For example:",
         list: ["Amsterdam", "Rotterdam", "The Hague", "Utrecht", "Eindhoven"],
         note: "When you order, give the recipient's full address and contact details so the parcel can be processed correctly.",
       },
@@ -1144,7 +1152,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
         {
           question: "Can I send a parcel to Amsterdam or Rotterdam?",
           answer:
-            "Send us the recipient's city and full address in the Netherlands and we will confirm what the service can do.",
+            "Yes. We deliver to any city, town or village in the Netherlands — just give us the recipient's full address when you order.",
         },
         {
           question: "How do I start sending a parcel?",
@@ -1243,9 +1251,10 @@ const copy: Record<CountrySlug, CountryCopy> = {
         moreLabel: "See the full list of permitted items",
       },
       cities: {
-        heading: "Sending a parcel to cities across Finland",
+        heading:
+          "Sending a parcel to any city or village in Finland",
         intro:
-          "Parcels can be sent to destinations throughout Finland, including cities such as:",
+          "We deliver anywhere in Finland — to big cities as well as small towns and villages. For example:",
         list: ["Helsinki", "Espoo", "Tampere", "Vantaa", "Oulu", "Turku"],
         note: "When you order, give the recipient's full address and contact details so the parcel can be processed correctly.",
       },
@@ -1274,7 +1283,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
         {
           question: "Can I send a parcel to Helsinki or Tampere?",
           answer:
-            "Send us the recipient's city and full address in Finland and we will confirm what the service can do.",
+            "Yes. We deliver to any city, town or village in Finland — just give us the recipient's full address when you order.",
         },
         {
           question: "How do I start sending a parcel?",
@@ -1373,9 +1382,10 @@ const copy: Record<CountrySlug, CountryCopy> = {
         moreLabel: "See the full list of permitted items",
       },
       cities: {
-        heading: "Sending a parcel to cities across Sweden",
+        heading:
+          "Sending a parcel to any city or village in Sweden",
         intro:
-          "Parcels can be sent to destinations throughout Sweden, including cities such as:",
+          "We deliver anywhere in Sweden — to big cities as well as small towns and villages. For example:",
         list: ["Stockholm", "Gothenburg", "Malmö", "Uppsala", "Örebro"],
         note: "When you order, give the recipient's full address and contact details so the parcel can be processed correctly.",
       },
@@ -1409,7 +1419,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
         {
           question: "Can I send a parcel to Stockholm or Gothenburg?",
           answer:
-            "Send us the recipient's city and full address in Sweden and we will confirm what the service can do.",
+            "Yes. We deliver to any city, town or village in Sweden — just give us the recipient's full address when you order.",
         },
         {
           question: "How do I start sending a parcel?",
@@ -1507,9 +1517,10 @@ const copy: Record<CountrySlug, CountryCopy> = {
         moreLabel: "See the full list of permitted items",
       },
       cities: {
-        heading: "Sending a parcel to cities across Portugal",
+        heading:
+          "Sending a parcel to any city or village in Portugal",
         intro:
-          "Parcels can be sent to destinations throughout Portugal, including cities such as:",
+          "We deliver anywhere in Portugal — to big cities as well as small towns and villages. For example:",
         list: ["Lisbon", "Porto", "Braga", "Coimbra", "Faro"],
         note: "When you order, give the recipient's full address and contact details so the parcel can be processed correctly.",
       },
@@ -1544,7 +1555,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
         {
           question: "Can I send a parcel to Lisbon or Porto?",
           answer:
-            "Send us the recipient's city and full address in Portugal and we will confirm what the service can do.",
+            "Yes. We deliver to any city, town or village in Portugal — just give us the recipient's full address when you order.",
         },
         {
           question: "How do I start sending a parcel?",
@@ -1642,9 +1653,10 @@ const copy: Record<CountrySlug, CountryCopy> = {
         moreLabel: "See the full list of permitted items",
       },
       cities: {
-        heading: "Sending a parcel to cities across Lithuania",
+        heading:
+          "Sending a parcel to any city or village in Lithuania",
         intro:
-          "Parcels can be sent to destinations throughout Lithuania, including cities such as:",
+          "We deliver anywhere in Lithuania — to big cities as well as small towns and villages. For example:",
         list: ["Vilnius", "Kaunas", "Klaipėda", "Šiauliai", "Panevėžys"],
         note: "When you order, give the recipient's full address and contact details so the parcel can be processed correctly.",
       },
@@ -1678,7 +1690,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
         {
           question: "Can I send a parcel to Vilnius or Kaunas?",
           answer:
-            "Send us the recipient's city and full address in Lithuania and we will confirm what the service can do.",
+            "Yes. We deliver to any city, town or village in Lithuania — just give us the recipient's full address when you order.",
         },
         {
           question: "How do I start sending a parcel?",
@@ -1776,9 +1788,10 @@ const copy: Record<CountrySlug, CountryCopy> = {
         moreLabel: "See the full list of permitted items",
       },
       cities: {
-        heading: "Sending a parcel to cities across Latvia",
+        heading:
+          "Sending a parcel to any city or village in Latvia",
         intro:
-          "Parcels can be sent to destinations throughout Latvia, including cities such as:",
+          "We deliver anywhere in Latvia — to big cities as well as small towns and villages. For example:",
         list: ["Riga", "Daugavpils", "Liepāja", "Jelgava", "Jūrmala"],
         note: "When you order, give the recipient's full address and contact details so the parcel can be processed correctly.",
       },
@@ -1812,7 +1825,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
         {
           question: "Can I send a parcel to Riga or Daugavpils?",
           answer:
-            "Send us the recipient's city and full address in Latvia and we will confirm what the service can do.",
+            "Yes. We deliver to any city, town or village in Latvia — just give us the recipient's full address when you order.",
         },
         {
           question: "How do I start sending a parcel?",
@@ -1910,9 +1923,10 @@ const copy: Record<CountrySlug, CountryCopy> = {
         moreLabel: "See the full list of permitted items",
       },
       cities: {
-        heading: "Sending a parcel to cities across Estonia",
+        heading:
+          "Sending a parcel to any city or village in Estonia",
         intro:
-          "Parcels can be sent to destinations throughout Estonia, including cities such as:",
+          "We deliver anywhere in Estonia — to big cities as well as small towns and villages. For example:",
         list: ["Tallinn", "Tartu", "Narva", "Pärnu", "Kohtla-Järve"],
         note: "When you order, give the recipient's full address and contact details so the parcel can be processed correctly.",
       },
@@ -1946,7 +1960,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
         {
           question: "Can I send a parcel to Tallinn or Tartu?",
           answer:
-            "Send us the recipient's city and full address in Estonia and we will confirm what the service can do.",
+            "Yes. We deliver to any city, town or village in Estonia — just give us the recipient's full address when you order.",
         },
         {
           question: "How do I start sending a parcel?",
