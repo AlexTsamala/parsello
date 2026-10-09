@@ -1,21 +1,12 @@
 import Link from "next/link";
 
+import { RateTable } from "@/components/pricing/RateTable";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Button } from "@/components/ui/Button";
 import { PhoneButton } from "@/components/ui/Phone";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { getContent } from "@/content";
 import { localePath, type Locale } from "@/content/locales";
-import type { Rate } from "@/content/types";
-
-/** One row per price, cheapest first, countries in the order the business gave. */
-function groupByPrice(rates: readonly Rate[]): [number, Rate[]][] {
-  const tiers = new Map<number, Rate[]>();
-  for (const rate of rates) {
-    tiers.set(rate.perKg, [...(tiers.get(rate.perKg) ?? []), rate]);
-  }
-  return [...tiers].sort(([a], [b]) => a - b);
-}
 
 /**
  * Shows only the per-kg rates the business supplied (`business.pricing.rates`,
@@ -23,7 +14,7 @@ function groupByPrice(rates: readonly Rate[]): [number, Rate[]][] {
  * add example totals, ranges, "from" prices, or a calculator.
  */
 export function PricesPage({ locale }: { locale: Locale }) {
-  const { ui, business, countries, getCountry } = getContent(locale);
+  const { ui, business, countries } = getContent(locale);
   const copy = ui.pages.prices;
 
   return (
@@ -51,63 +42,8 @@ export function PricesPage({ locale }: { locale: Locale }) {
           title={copy.ratesHeading}
           description={copy.ratesDescription}
         />
-        <div className="mt-8 max-w-3xl overflow-hidden rounded-2xl border border-line">
-          <table className="w-full text-left">
-            <caption className="sr-only">{copy.ratesHeading}</caption>
-            <thead className="bg-surface text-sm text-muted">
-              <tr>
-                <th scope="col" className="px-5 py-3 font-medium">
-                  {ui.common.pricePerKg}
-                </th>
-                <th scope="col" className="px-5 py-3 font-medium">
-                  {copy.countriesColumn}
-                </th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-line">
-              {groupByPrice(business.pricing.rates).map(([perKg, rates]) => (
-                <tr key={perKg} className="align-top">
-                  <th
-                    scope="row"
-                    className="whitespace-nowrap px-5 py-4 text-xl font-bold"
-                  >
-                    {perKg} {business.pricing.currency}
-                  </th>
-                  <td className="px-5 py-4">
-                    <ul className="flex flex-wrap gap-x-5 gap-y-2.5">
-                      {rates.map((rate) => {
-                        const country = getCountry(rate.id);
-
-                        return (
-                          <li
-                            key={rate.id}
-                            className="flex items-center gap-2 whitespace-nowrap"
-                          >
-                            <span className="text-xl" aria-hidden="true">
-                              {rate.flag}
-                            </span>
-                            {country ? (
-                              <Link
-                                href={localePath(
-                                  locale,
-                                  `/countries/${country.slug}`,
-                                )}
-                                className="underline decoration-line underline-offset-4 transition-colors hover:text-brand hover:decoration-brand"
-                              >
-                                {rate.name}
-                              </Link>
-                            ) : (
-                              rate.name
-                            )}
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div className="mt-8 max-w-3xl">
+          <RateTable locale={locale} />
         </div>
       </Section>
 

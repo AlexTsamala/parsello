@@ -1,3 +1,5 @@
+import { formatRateTiers } from "@/lib/rates";
+
 import type { FaqItem } from "../faq";
 import { businessRu } from "./business";
 import { countriesRu } from "./countries";
@@ -24,7 +26,7 @@ export const faqsRu: FaqItem[] = [
   },
   {
     question: "Сколько стоит отправить посылку?",
-    answer: `${businessRu.pricing.dependsOn} ${businessRu.pricing.copy}`,
+    answer: `Цены за 1 кг: ${formatRateTiers(businessRu.pricing.rates, businessRu.pricing.currency)}. Другая страна? ${businessRu.pricing.copy}`,
     featured: true,
   },
   {

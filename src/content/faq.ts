@@ -1,3 +1,5 @@
+import { formatRateTiers } from "@/lib/rates";
+
 import { business } from "./business";
 import { countries } from "./countries";
 
@@ -24,7 +26,7 @@ export const faqs: FaqItem[] = [
   },
   {
     question: "რა ღირს ამანათის გაგზავნა?",
-    answer: `${business.pricing.dependsOn} ${business.pricing.copy}`,
+    answer: `ფასი 1 კილოგრამზე: ${formatRateTiers(business.pricing.rates, business.pricing.currency)}. სხვა ქვეყანაში აგზავნით? ${business.pricing.copy}`,
     featured: true,
   },
   {

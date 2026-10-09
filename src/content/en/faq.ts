@@ -1,3 +1,5 @@
+import { formatRateTiers } from "@/lib/rates";
+
 import { countriesEn } from "./countries";
 import type { FaqItem } from "../faq";
 import { businessEn } from "./business";
@@ -8,8 +10,8 @@ const destinations = countriesEn.map((country) => country.name).join(", ");
  * English FAQ.
  *
  * Composed from `businessEn` the same way the Georgian file composes from
- * `business`, so an answer can never contradict the business facts — and the
- * pricing answer routes to contact rather than quoting a figure.
+ * `business`, so an answer can never contradict the business facts — the
+ * pricing answer quotes only the published rates.
  */
 export const faqsEn: FaqItem[] = [
   {
@@ -25,7 +27,7 @@ export const faqsEn: FaqItem[] = [
   },
   {
     question: "How much does it cost to send a parcel?",
-    answer: `${businessEn.pricing.dependsOn} ${businessEn.pricing.copy}`,
+    answer: `Prices per kilogram: ${formatRateTiers(businessEn.pricing.rates, businessEn.pricing.currency)}. Sending somewhere else? ${businessEn.pricing.copy}`,
     featured: true,
   },
   {
