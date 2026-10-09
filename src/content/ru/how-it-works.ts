@@ -17,6 +17,6 @@ export const howItWorksStepsRu: HowItWorksStep[] = [
   },
   {
     title: "Посылка едет в Европу",
-    body: `Посылка отправляется в Европу и доходит до получателя в течение ${businessRu.deliveryTimeGenitive} после отправки.`,
+    body: `Посылка отправляется в Европу и доходит до получателя в течение ${businessRu.deliveryTimeGenitive} после отправки. ${businessRu.doorDelivery}`,
   },
 ];

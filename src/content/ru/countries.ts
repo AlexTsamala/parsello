@@ -4,6 +4,7 @@ import {
   type CountryContent,
   type CountrySlug,
 } from "../countries";
+import { businessRu } from "./business";
 
 /**
  * Russian destination pages.
@@ -191,8 +192,8 @@ const SENDABLE_NOTE =
 const CITIES_NOTE =
   "При заказе укажите полный адрес и контактные данные получателя, чтобы посылку можно было правильно оформить.";
 
-const DELIVERY_TIME_ANSWER =
-  "Срок доставки зависит от маршрута и выбранной услуги. Ожидаемый срок мы подтвердим до оформления заказа.";
+/** The same everywhere, Poland included (confirmed 2026-10-09). */
+const DELIVERY_TIME_ANSWER = `Посылка доходит до получателя в течение ${businessRu.deliveryTimeGenitive} после отправки.`;
 
 const PRODUCTS_ANSWER =
   "Некоторые продукты отправить можно, но на отдельные позиции могут действовать ограничения. Расскажите, что хотите отправить, и мы поможем проверить.";
@@ -244,7 +245,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
           },
           {
             title: "Посылка прибывает в Польшу",
-            body: "Она передается получателю, которого вы указали в Польше.",
+            body: businessRu.doorDelivery,
           },
         ],
       },
@@ -273,7 +274,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
       faqs: [
         {
           question: "Сколько идет посылка в Польшу?",
-          answer: "Срок доставки в Польшу — 2 недели.",
+          answer: DELIVERY_TIME_ANSWER,
         },
         {
           question: "Можно ли отправить грузинские продукты?",
@@ -355,7 +356,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
           },
           {
             title: "Посылка прибывает в Германию",
-            body: "Она передается получателю, которого вы указали в Германии.",
+            body: businessRu.doorDelivery,
           },
         ],
       },
@@ -472,7 +473,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
           },
           {
             title: "Посылка прибывает во Францию",
-            body: "Она передается получателю, которого вы указали во Франции.",
+            body: businessRu.doorDelivery,
           },
         ],
       },
@@ -588,7 +589,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
           },
           {
             title: "Посылка прибывает в Венгрию",
-            body: "Она передается получателю, которого вы указали в Венгрии.",
+            body: businessRu.doorDelivery,
           },
         ],
       },
@@ -705,7 +706,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
           },
           {
             title: "Посылка прибывает в Болгарию",
-            body: "Она передается получателю, которого вы указали в Болгарии.",
+            body: businessRu.doorDelivery,
           },
         ],
       },
@@ -823,7 +824,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
           },
           {
             title: "Посылка прибывает в Чехию",
-            body: "Она передается получателю, которого вы указали в Чехии.",
+            body: businessRu.doorDelivery,
           },
         ],
       },
@@ -946,7 +947,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
           },
           {
             title: "Посылка прибывает в Словакию",
-            body: "Она передается получателю, которого вы указали в Словакии.",
+            body: businessRu.doorDelivery,
           },
         ],
       },
@@ -1071,7 +1072,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
           },
           {
             title: "Посылка прибывает в Нидерланды",
-            body: "Она передается получателю, которого вы указали в Нидерландах.",
+            body: businessRu.doorDelivery,
           },
         ],
       },
@@ -1194,7 +1195,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
           },
           {
             title: "Посылка прибывает в Финляндию",
-            body: "Она передается получателю, которого вы указали в Финляндии.",
+            body: businessRu.doorDelivery,
           },
         ],
       },
@@ -1317,7 +1318,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
           },
           {
             title: "Посылка прибывает в Швецию",
-            body: "Она передается получателю, которого вы указали в Швеции.",
+            body: businessRu.doorDelivery,
           },
         ],
       },
@@ -1444,7 +1445,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
           },
           {
             title: "Посылка прибывает в Португалию",
-            body: "Она передается получателю, которого вы указали в Португалии.",
+            body: businessRu.doorDelivery,
           },
         ],
       },
@@ -1572,7 +1573,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
           },
           {
             title: "Посылка прибывает в Литву",
-            body: "Она передается получателю, которого вы указали в Литве.",
+            body: businessRu.doorDelivery,
           },
         ],
       },
@@ -1699,7 +1700,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
           },
           {
             title: "Посылка прибывает в Латвию",
-            body: "Она передается получателю, которого вы указали в Латвии.",
+            body: businessRu.doorDelivery,
           },
         ],
       },
@@ -1826,7 +1827,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
           },
           {
             title: "Посылка прибывает в Эстонию",
-            body: "Она передается получателю, которого вы указали в Эстонии.",
+            body: businessRu.doorDelivery,
           },
         ],
       },

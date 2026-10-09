@@ -4,6 +4,7 @@ import {
   type CountryContent,
   type CountrySlug,
 } from "../countries";
+import { businessEn } from "./business";
 
 /**
  * English destination pages.
@@ -166,6 +167,9 @@ const factCopy: Record<string, { title: string; body: string }> = {
   },
 };
 
+/** The same everywhere, Poland included (confirmed 2026-10-09). */
+const DELIVERY_TIME_ANSWER = `A parcel reaches the recipient within ${businessEn.deliveryTimeGenitive} of being sent.`;
+
 const SENDABLE_ITEMS = [
   "Clothing and footwear",
   "Gifts",
@@ -222,7 +226,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
           },
           {
             title: "The parcel arrives in Poland",
-            body: "It goes on to the recipient you named in Poland.",
+            body: businessEn.doorDelivery,
           },
         ],
       },
@@ -252,7 +256,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
       faqs: [
         {
           question: "How long does a parcel take to reach Poland?",
-          answer: "Delivery time to Poland is 2 weeks.",
+          answer: DELIVERY_TIME_ANSWER,
         },
         {
           question: "Can I send Georgian products?",
@@ -340,7 +344,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
           },
           {
             title: "The parcel arrives in Germany",
-            body: "It goes on to the recipient you named in Germany.",
+            body: businessEn.doorDelivery,
           },
         ],
       },
@@ -370,8 +374,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
       faqs: [
         {
           question: "How long does a parcel take to reach Germany?",
-          answer:
-            "Delivery time depends on the route and the service chosen. We will confirm the expected time with you before your order is finalised.",
+          answer: DELIVERY_TIME_ANSWER,
         },
         {
           question: "Can I send Georgian products to Germany?",
@@ -465,7 +468,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
           },
           {
             title: "The parcel arrives in France",
-            body: "It goes on to the recipient you named in France.",
+            body: businessEn.doorDelivery,
           },
         ],
       },
@@ -495,8 +498,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
       faqs: [
         {
           question: "How long does a parcel take to reach France?",
-          answer:
-            "Delivery time depends on the route and the service chosen. We will confirm the expected time with you before your order is finalised.",
+          answer: DELIVERY_TIME_ANSWER,
         },
         {
           question: "Can I send Georgian products to France?",
@@ -590,7 +592,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
           },
           {
             title: "The parcel arrives in Hungary",
-            body: "It goes on to the recipient you named in Hungary.",
+            body: businessEn.doorDelivery,
           },
         ],
       },
@@ -620,8 +622,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
       faqs: [
         {
           question: "How long does a parcel take to reach Hungary?",
-          answer:
-            "Delivery time depends on the route and the service chosen. We will confirm the expected time with you before your order is finalised.",
+          answer: DELIVERY_TIME_ANSWER,
         },
         {
           question: "Can I send Georgian products to Hungary?",
@@ -715,7 +716,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
           },
           {
             title: "The parcel arrives in Bulgaria",
-            body: "It goes on to the recipient you named in Bulgaria.",
+            body: businessEn.doorDelivery,
           },
         ],
       },
@@ -745,8 +746,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
       faqs: [
         {
           question: "How long does a parcel take to reach Bulgaria?",
-          answer:
-            "Delivery time depends on the route and the service chosen. We will confirm the expected time with you before your order is finalised.",
+          answer: DELIVERY_TIME_ANSWER,
         },
         {
           question: "Can I send Georgian products to Bulgaria?",
@@ -841,7 +841,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
           },
           {
             title: "The parcel arrives in Czechia",
-            body: "It goes on to the recipient you named in Czechia.",
+            body: businessEn.doorDelivery,
           },
         ],
       },
@@ -871,8 +871,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
       faqs: [
         {
           question: "How long does a parcel take to reach Czechia?",
-          answer:
-            "Delivery time depends on the route and the service chosen. We will confirm the expected time with you before your order is finalised.",
+          answer: DELIVERY_TIME_ANSWER,
         },
         {
           question: "Does Czechia use the euro or its own currency?",
@@ -972,7 +971,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
           },
           {
             title: "The parcel arrives in Slovakia",
-            body: "It goes on to the recipient you named in Slovakia.",
+            body: businessEn.doorDelivery,
           },
         ],
       },
@@ -1002,8 +1001,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
       faqs: [
         {
           question: "How long does a parcel take to reach Slovakia?",
-          answer:
-            "Delivery time depends on the route and the service chosen. We will confirm the expected time with you before your order is finalised.",
+          answer: DELIVERY_TIME_ANSWER,
         },
         {
           question: "What currency is used in Slovakia?",
@@ -1106,7 +1104,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
           },
           {
             title: "The parcel arrives in the Netherlands",
-            body: "It goes on to the recipient you named in the Netherlands.",
+            body: businessEn.doorDelivery,
           },
         ],
       },
@@ -1136,8 +1134,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
       faqs: [
         {
           question: "How long does a parcel take to reach the Netherlands?",
-          answer:
-            "Delivery time depends on the route and the service chosen. We will confirm the expected time with you before your order is finalised.",
+          answer: DELIVERY_TIME_ANSWER,
         },
         {
           question: "What currency is used in the Netherlands?",
@@ -1237,7 +1234,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
           },
           {
             title: "The parcel arrives in Finland",
-            body: "It goes on to the recipient you named in Finland.",
+            body: businessEn.doorDelivery,
           },
         ],
       },
@@ -1267,8 +1264,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
       faqs: [
         {
           question: "How long does a parcel take to reach Finland?",
-          answer:
-            "Delivery time depends on the route and the service chosen. We will confirm the expected time with you before your order is finalised.",
+          answer: DELIVERY_TIME_ANSWER,
         },
         {
           question: "Who handles customs clearance for a parcel in Finland?",
@@ -1368,7 +1364,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
           },
           {
             title: "The parcel arrives in Sweden",
-            body: "It goes on to the recipient you named in Sweden.",
+            body: businessEn.doorDelivery,
           },
         ],
       },
@@ -1398,8 +1394,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
       faqs: [
         {
           question: "How long does a parcel take to reach Sweden?",
-          answer:
-            "Delivery time depends on the route and the service chosen. We will confirm the expected time with you before your order is finalised.",
+          answer: DELIVERY_TIME_ANSWER,
         },
         {
           question: "What currency is used in Sweden?",
@@ -1503,7 +1498,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
           },
           {
             title: "The parcel arrives in Portugal",
-            body: "It goes on to the recipient you named in Portugal.",
+            body: businessEn.doorDelivery,
           },
         ],
       },
@@ -1533,8 +1528,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
       faqs: [
         {
           question: "How long does a parcel take to reach Portugal?",
-          answer:
-            "Delivery time depends on the route and the service chosen. We will confirm the expected time with you before your order is finalised.",
+          answer: DELIVERY_TIME_ANSWER,
         },
         {
           question:
@@ -1639,7 +1633,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
           },
           {
             title: "The parcel arrives in Lithuania",
-            body: "It goes on to the recipient you named in Lithuania.",
+            body: businessEn.doorDelivery,
           },
         ],
       },
@@ -1669,8 +1663,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
       faqs: [
         {
           question: "How long does a parcel take to reach Lithuania?",
-          answer:
-            "Delivery time depends on the route and the service chosen. We will confirm the expected time with you before your order is finalised.",
+          answer: DELIVERY_TIME_ANSWER,
         },
         {
           question: "Does a gift have to be declared in Lithuania?",
@@ -1774,7 +1767,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
           },
           {
             title: "The parcel arrives in Latvia",
-            body: "It goes on to the recipient you named in Latvia.",
+            body: businessEn.doorDelivery,
           },
         ],
       },
@@ -1804,8 +1797,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
       faqs: [
         {
           question: "How long does a parcel take to reach Latvia?",
-          answer:
-            "Delivery time depends on the route and the service chosen. We will confirm the expected time with you before your order is finalised.",
+          answer: DELIVERY_TIME_ANSWER,
         },
         {
           question: "Who fills in the customs declaration in Latvia?",
@@ -1909,7 +1901,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
           },
           {
             title: "The parcel arrives in Estonia",
-            body: "It goes on to the recipient you named in Estonia.",
+            body: businessEn.doorDelivery,
           },
         ],
       },
@@ -1939,8 +1931,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
       faqs: [
         {
           question: "How long does a parcel take to reach Estonia?",
-          answer:
-            "Delivery time depends on the route and the service chosen. We will confirm the expected time with you before your order is finalised.",
+          answer: DELIVERY_TIME_ANSWER,
         },
         {
           question: "What is the VAT rate in Estonia?",

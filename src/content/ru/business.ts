@@ -74,6 +74,9 @@ export const businessRu: BusinessContent = {
   inboundDeliveryTime: "2 недели",
   inboundDeliveryTimeGenitive: "2 недель",
 
+  doorDelivery:
+    "Курьер доставит посылку получателю до двери — по указанному вами адресу.",
+
   coverage: {
     scope: "Мы отправляем посылки в любую страну Европы.",
     priorityNote: "Ниже перечислены наши основные направления.",

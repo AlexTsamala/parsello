@@ -98,6 +98,11 @@ export const business = {
   inboundDeliveryTime: "2 კვირა",
   inboundDeliveryTimeGenitive: "2 კვირის",
 
+  // Confirmed 2026-10-09: in every destination a courier brings the parcel to
+  // the recipient's door. No pickup points.
+  doorDelivery:
+    "ამანათს მიმღებს კურიერი კარამდე მიუტანს — თქვენ მიერ მითითებულ მისამართზე.",
+
   weightLimit: null as string | null,
 
   coverage: {

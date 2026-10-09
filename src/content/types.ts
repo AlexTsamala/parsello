@@ -67,6 +67,8 @@ export type BusinessContent = {
   /** Inbound, Europe → Georgia — a different journey from `deliveryTime`. */
   inboundDeliveryTime: string;
   inboundDeliveryTimeGenitive: string;
+  /** How the recipient in Europe gets the parcel — courier to the door (2026-10-09). */
+  doorDelivery: string;
   weightLimit: string | null;
   coverage: { scope: string; priorityNote: string };
   restrictions: {

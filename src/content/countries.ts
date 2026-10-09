@@ -1,3 +1,4 @@
+import { business } from "./business";
 import type { ResearchedFact } from "./shipping-rules";
 
 export type CountryContent = {
@@ -185,6 +186,9 @@ const VAT_SOURCE = {
   url: "https://taxfoundation.org/data/all/eu/value-added-tax-vat-rates-europe/",
 };
 
+/** The same everywhere, Poland included (confirmed 2026-10-09). */
+const DELIVERY_TIME_ANSWER = `ამანათი ადრესატთან ჩადის გაგზავნიდან ${business.deliveryTimeGenitive} ვადაში.`;
+
 export const countries: Country[] = [
   {
     slug: "poland",
@@ -245,7 +249,7 @@ export const countries: Country[] = [
           },
           {
             title: "მიიღეთ ამანათი პოლონეთში",
-            body: "ამანათი მიემართება მითითებულ მიმღებთან პოლონეთში.",
+            body: business.doorDelivery,
           },
         ],
       },
@@ -281,7 +285,7 @@ export const countries: Country[] = [
       faqs: [
         {
           question: "რამდენ ხანში ჩადის ამანათი პოლონეთში?",
-          answer: "პოლონეთში ამანათის ჩასვლის დრო არის 2 კვირა.",
+          answer: DELIVERY_TIME_ANSWER,
         },
         {
           question: "შემიძლია თუ არა ქართული პროდუქციის გაგზავნა?",
@@ -411,7 +415,7 @@ export const countries: Country[] = [
           },
           {
             title: "მიიღეთ ამანათი გერმანიაში",
-            body: "ამანათი მიემართება მითითებულ მიმღებთან გერმანიაში.",
+            body: business.doorDelivery,
           },
         ],
       },
@@ -447,8 +451,7 @@ export const countries: Country[] = [
       faqs: [
         {
           question: "რამდენ ხანში ჩადის ამანათი გერმანიაში?",
-          answer:
-            "მიწოდების ვადა დამოკიდებულია მიმართულებასა და არჩეულ სერვისზე. შეკვეთის გაფორმებამდე დაგიკონკრეტებთ მოსალოდნელ ვადას.",
+          answer: DELIVERY_TIME_ANSWER,
         },
         {
           question: "შემიძლია თუ არა ქართული პროდუქციის გაგზავნა გერმანიაში?",
@@ -568,7 +571,7 @@ export const countries: Country[] = [
           },
           {
             title: "მიიღეთ ამანათი საფრანგეთში",
-            body: "ამანათი მიემართება თქვენ მიერ მითითებულ მიმღებთან საფრანგეთში.",
+            body: business.doorDelivery,
           },
         ],
       },
@@ -604,8 +607,7 @@ export const countries: Country[] = [
       faqs: [
         {
           question: "რამდენ ხანში ჩადის ამანათი საფრანგეთში?",
-          answer:
-            "მიწოდების ვადა დამოკიდებულია მიმართულებასა და არჩეულ სერვისზე. შეკვეთის გაფორმებამდე დაგიკონკრეტებთ მოსალოდნელ ვადას.",
+          answer: DELIVERY_TIME_ANSWER,
         },
         {
           question: "შემიძლია თუ არა ქართული პროდუქციის გაგზავნა საფრანგეთში?",
@@ -731,7 +733,7 @@ export const countries: Country[] = [
           },
           {
             title: "მიიღეთ ამანათი უნგრეთში",
-            body: "ამანათი მიემართება თქვენ მიერ მითითებულ მიმღებთან უნგრეთში.",
+            body: business.doorDelivery,
           },
         ],
       },
@@ -767,8 +769,7 @@ export const countries: Country[] = [
       faqs: [
         {
           question: "რამდენ ხანში ჩადის ამანათი უნგრეთში?",
-          answer:
-            "მიწოდების ვადა დამოკიდებულია მიმართულებასა და არჩეულ სერვისზე. შეკვეთის გაფორმებამდე დაგიკონკრეტებთ მოსალოდნელ ვადას.",
+          answer: DELIVERY_TIME_ANSWER,
         },
         {
           question: "შემიძლია თუ არა ქართული პროდუქციის გაგზავნა უნგრეთში?",
@@ -902,7 +903,7 @@ export const countries: Country[] = [
           },
           {
             title: "მიიღეთ ამანათი ბულგარეთში",
-            body: "ამანათი მიემართება თქვენ მიერ მითითებულ მიმღებთან ბულგარეთში.",
+            body: business.doorDelivery,
           },
         ],
       },
@@ -938,8 +939,7 @@ export const countries: Country[] = [
       faqs: [
         {
           question: "რამდენ ხანში ჩადის ამანათი ბულგარეთში?",
-          answer:
-            "მიწოდების ვადა დამოკიდებულია მიმართულებასა და არჩეულ სერვისზე. შეკვეთის გაფორმებამდე დაგიკონკრეტებთ მოსალოდნელ ვადას.",
+          answer: DELIVERY_TIME_ANSWER,
         },
         {
           question: "შემიძლია თუ არა ქართული პროდუქციის გაგზავნა ბულგარეთში?",
@@ -1078,7 +1078,7 @@ export const countries: Country[] = [
           },
           {
             title: "მიიღეთ ამანათი ჩეხეთში",
-            body: "ამანათი მიემართება თქვენ მიერ მითითებულ მიმღებთან ჩეხეთში.",
+            body: business.doorDelivery,
           },
         ],
       },
@@ -1114,8 +1114,7 @@ export const countries: Country[] = [
       faqs: [
         {
           question: "რამდენ ხანში ჩადის ამანათი ჩეხეთში?",
-          answer:
-            "მიწოდების ვადა დამოკიდებულია მიმართულებასა და არჩეულ სერვისზე. შეკვეთის გაფორმებამდე დაგიკონკრეტებთ მოსალოდნელ ვადას.",
+          answer: DELIVERY_TIME_ANSWER,
         },
         {
           question: "ჩეხეთში ევრო მოქმედებს თუ ეროვნული ვალუტა?",
@@ -1260,7 +1259,7 @@ export const countries: Country[] = [
           },
           {
             title: "მიიღეთ ამანათი სლოვაკეთში",
-            body: "ამანათი მიემართება თქვენ მიერ მითითებულ მიმღებთან სლოვაკეთში.",
+            body: business.doorDelivery,
           },
         ],
       },
@@ -1296,8 +1295,7 @@ export const countries: Country[] = [
       faqs: [
         {
           question: "რამდენ ხანში ჩადის ამანათი სლოვაკეთში?",
-          answer:
-            "მიწოდების ვადა დამოკიდებულია მიმართულებასა და არჩეულ სერვისზე. შეკვეთის გაფორმებამდე დაგიკონკრეტებთ მოსალოდნელ ვადას.",
+          answer: DELIVERY_TIME_ANSWER,
         },
         {
           question: "რა ვალუტა მოქმედებს სლოვაკეთში?",
@@ -1438,7 +1436,7 @@ export const countries: Country[] = [
           },
           {
             title: "მიიღეთ ამანათი ნიდერლანდებში",
-            body: "ამანათი მიემართება თქვენ მიერ მითითებულ მიმღებთან ნიდერლანდებში.",
+            body: business.doorDelivery,
           },
         ],
       },
@@ -1480,8 +1478,7 @@ export const countries: Country[] = [
       faqs: [
         {
           question: "რამდენ ხანში ჩადის ამანათი ნიდერლანდებში?",
-          answer:
-            "მიწოდების ვადა დამოკიდებულია მიმართულებასა და არჩეულ სერვისზე. შეკვეთის გაფორმებამდე დაგიკონკრეტებთ მოსალოდნელ ვადას.",
+          answer: DELIVERY_TIME_ANSWER,
         },
         {
           question: "რა ვალუტა მოქმედებს ნიდერლანდებში?",
@@ -1616,7 +1613,7 @@ export const countries: Country[] = [
           },
           {
             title: "მიიღეთ ამანათი ფინეთში",
-            body: "ამანათი მიემართება თქვენ მიერ მითითებულ მიმღებთან ფინეთში.",
+            body: business.doorDelivery,
           },
         ],
       },
@@ -1652,8 +1649,7 @@ export const countries: Country[] = [
       faqs: [
         {
           question: "რამდენ ხანში ჩადის ამანათი ფინეთში?",
-          answer:
-            "მიწოდების ვადა დამოკიდებულია მიმართულებასა და არჩეულ სერვისზე. შეკვეთის გაფორმებამდე დაგიკონკრეტებთ მოსალოდნელ ვადას.",
+          answer: DELIVERY_TIME_ANSWER,
         },
         {
           question: "ვინ აფორმებს ამანათის განბაჟებას ფინეთში?",
@@ -1787,7 +1783,7 @@ export const countries: Country[] = [
           },
           {
             title: "მიიღეთ ამანათი შვედეთში",
-            body: "ამანათი მიემართება თქვენ მიერ მითითებულ მიმღებთან შვედეთში.",
+            body: business.doorDelivery,
           },
         ],
       },
@@ -1823,8 +1819,7 @@ export const countries: Country[] = [
       faqs: [
         {
           question: "რამდენ ხანში ჩადის ამანათი შვედეთში?",
-          answer:
-            "მიწოდების ვადა დამოკიდებულია მიმართულებასა და არჩეულ სერვისზე. შეკვეთის გაფორმებამდე დაგიკონკრეტებთ მოსალოდნელ ვადას.",
+          answer: DELIVERY_TIME_ANSWER,
         },
         {
           question: "რა ვალუტა მოქმედებს შვედეთში?",
@@ -1967,7 +1962,7 @@ export const countries: Country[] = [
           },
           {
             title: "მიიღეთ ამანათი პორტუგალიაში",
-            body: "ამანათი მიემართება თქვენ მიერ მითითებულ მიმღებთან პორტუგალიაში.",
+            body: business.doorDelivery,
           },
         ],
       },
@@ -2003,8 +1998,7 @@ export const countries: Country[] = [
       faqs: [
         {
           question: "რამდენ ხანში ჩადის ამანათი პორტუგალიაში?",
-          answer:
-            "მიწოდების ვადა დამოკიდებულია მიმართულებასა და არჩეულ სერვისზე. შეკვეთის გაფორმებამდე დაგიკონკრეტებთ მოსალოდნელ ვადას.",
+          answer: DELIVERY_TIME_ANSWER,
         },
         {
           question: "რა სჭირდება მიმღებს პორტუგალიაში ამანათის განბაჟებისთვის?",
@@ -2143,7 +2137,7 @@ export const countries: Country[] = [
           },
           {
             title: "მიიღეთ ამანათი ლიტვაში",
-            body: "ამანათი მიემართება თქვენ მიერ მითითებულ მიმღებთან ლიტვაში.",
+            body: business.doorDelivery,
           },
         ],
       },
@@ -2179,8 +2173,7 @@ export const countries: Country[] = [
       faqs: [
         {
           question: "რამდენ ხანში ჩადის ამანათი ლიტვაში?",
-          answer:
-            "მიწოდების ვადა დამოკიდებულია მიმართულებასა და არჩეულ სერვისზე. შეკვეთის გაფორმებამდე დაგიკონკრეტებთ მოსალოდნელ ვადას.",
+          answer: DELIVERY_TIME_ANSWER,
         },
         {
           question: "უნდა დეკლარირდეს თუ არა საჩუქარი ლიტვაში?",
@@ -2318,7 +2311,7 @@ export const countries: Country[] = [
           },
           {
             title: "მიიღეთ ამანათი ლატვიაში",
-            body: "ამანათი მიემართება თქვენ მიერ მითითებულ მიმღებთან ლატვიაში.",
+            body: business.doorDelivery,
           },
         ],
       },
@@ -2354,8 +2347,7 @@ export const countries: Country[] = [
       faqs: [
         {
           question: "რამდენ ხანში ჩადის ამანათი ლატვიაში?",
-          answer:
-            "მიწოდების ვადა დამოკიდებულია მიმართულებასა და არჩეულ სერვისზე. შეკვეთის გაფორმებამდე დაგიკონკრეტებთ მოსალოდნელ ვადას.",
+          answer: DELIVERY_TIME_ANSWER,
         },
         {
           question: "ვინ აფორმებს ამანათის დეკლარაციას ლატვიაში?",
@@ -2493,7 +2485,7 @@ export const countries: Country[] = [
           },
           {
             title: "მიიღეთ ამანათი ესტონეთში",
-            body: "ამანათი მიემართება თქვენ მიერ მითითებულ მიმღებთან ესტონეთში.",
+            body: business.doorDelivery,
           },
         ],
       },
@@ -2529,8 +2521,7 @@ export const countries: Country[] = [
       faqs: [
         {
           question: "რამდენ ხანში ჩადის ამანათი ესტონეთში?",
-          answer:
-            "მიწოდების ვადა დამოკიდებულია მიმართულებასა და არჩეულ სერვისზე. შეკვეთის გაფორმებამდე დაგიკონკრეტებთ მოსალოდნელ ვადას.",
+          answer: DELIVERY_TIME_ANSWER,
         },
         {
           question: "რა დღგ მოქმედებს ესტონეთში?",

@@ -16,6 +16,6 @@ export const howItWorksSteps = [
   },
   {
     title: "ამანათი მიემგზავრება ევროპაში",
-    body: `ამანათი ევროპის მიმართულებით იგზავნება და ადრესატთან ჩადის გაგზავნიდან ${business.deliveryTimeGenitive} ვადაში.`,
+    body: `ამანათი ევროპის მიმართულებით იგზავნება და ადრესატთან ჩადის გაგზავნიდან ${business.deliveryTimeGenitive} ვადაში. ${business.doorDelivery}`,
   },
 ];

@@ -73,6 +73,9 @@ export const businessEn: BusinessContent = {
   inboundDeliveryTime: "2 weeks",
   inboundDeliveryTimeGenitive: "2 weeks",
 
+  doorDelivery:
+    "A courier delivers the parcel to the recipient's door, at the address you gave.",
+
   coverage: {
     scope: "We send parcels anywhere in Europe.",
     priorityNote: "Our main destinations are listed below.",

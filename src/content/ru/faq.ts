@@ -35,6 +35,11 @@ export const faqsRu: FaqItem[] = [
     featured: true,
   },
   {
+    question: "Как посылка попадает к получателю?",
+    answer: businessRu.doorDelivery,
+    featured: true,
+  },
+  {
     question: "Как упаковать посылку?",
     answer: businessRu.packaging.join(" "),
     featured: true,

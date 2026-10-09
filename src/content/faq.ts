@@ -35,6 +35,11 @@ export const faqs: FaqItem[] = [
     featured: true,
   },
   {
+    question: "როგორ იღებს მიმღები ამანათს?",
+    answer: business.doorDelivery,
+    featured: true,
+  },
+  {
     question: "როგორ შევფუთოთ ამანათი?",
     answer: business.packaging.join(" "),
     featured: true,
