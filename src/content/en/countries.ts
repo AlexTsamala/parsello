@@ -168,7 +168,10 @@ const factCopy: Record<string, { title: string; body: string }> = {
 };
 
 /** The same everywhere, Poland included (confirmed 2026-10-09). */
-const DELIVERY_TIME_ANSWER = `A parcel reaches the recipient within ${businessEn.deliveryTimeGenitive} of being sent.`;
+const DELIVERY_TIME_ANSWER = `${businessEn.departure} A parcel reaches the recipient within ${businessEn.deliveryTimeGenitive} of being sent.`;
+
+/** Parcels leave every Sunday (confirmed 2026-10-10). */
+const STEP_TRANSPORT_BODY = `${businessEn.departure} We take care of the whole transport process.`;
 
 const SENDABLE_ITEMS = [
   "Clothing and footwear",
@@ -222,7 +225,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
           },
           {
             title: "Your parcel sets off for Poland",
-            body: "We take care of the whole transport process.",
+            body: STEP_TRANSPORT_BODY,
           },
           {
             title: "The parcel arrives in Poland",
@@ -340,7 +343,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
           },
           {
             title: "Your parcel sets off for Germany",
-            body: "We take care of organising the transport process.",
+            body: STEP_TRANSPORT_BODY,
           },
           {
             title: "The parcel arrives in Germany",
@@ -464,7 +467,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
           },
           {
             title: "Your parcel sets off for France",
-            body: "We take care of organising the transport process.",
+            body: STEP_TRANSPORT_BODY,
           },
           {
             title: "The parcel arrives in France",
@@ -588,7 +591,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
           },
           {
             title: "Your parcel sets off for Hungary",
-            body: "We take care of organising the transport process.",
+            body: STEP_TRANSPORT_BODY,
           },
           {
             title: "The parcel arrives in Hungary",
@@ -712,7 +715,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
           },
           {
             title: "Your parcel sets off for Bulgaria",
-            body: "We take care of organising the transport process.",
+            body: STEP_TRANSPORT_BODY,
           },
           {
             title: "The parcel arrives in Bulgaria",
@@ -837,7 +840,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
           },
           {
             title: "Your parcel sets off for Czechia",
-            body: "We take care of organising the transport process.",
+            body: STEP_TRANSPORT_BODY,
           },
           {
             title: "The parcel arrives in Czechia",
@@ -967,7 +970,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
           },
           {
             title: "Your parcel sets off for Slovakia",
-            body: "We take care of organising the transport process.",
+            body: STEP_TRANSPORT_BODY,
           },
           {
             title: "The parcel arrives in Slovakia",
@@ -1100,7 +1103,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
           },
           {
             title: "Your parcel sets off for the Netherlands",
-            body: "We take care of organising the transport process.",
+            body: STEP_TRANSPORT_BODY,
           },
           {
             title: "The parcel arrives in the Netherlands",
@@ -1230,7 +1233,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
           },
           {
             title: "Your parcel sets off for Finland",
-            body: "We take care of organising the transport process.",
+            body: STEP_TRANSPORT_BODY,
           },
           {
             title: "The parcel arrives in Finland",
@@ -1360,7 +1363,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
           },
           {
             title: "Your parcel sets off for Sweden",
-            body: "We take care of organising the transport process.",
+            body: STEP_TRANSPORT_BODY,
           },
           {
             title: "The parcel arrives in Sweden",
@@ -1494,7 +1497,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
           },
           {
             title: "Your parcel sets off for Portugal",
-            body: "We take care of organising the transport process.",
+            body: STEP_TRANSPORT_BODY,
           },
           {
             title: "The parcel arrives in Portugal",
@@ -1629,7 +1632,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
           },
           {
             title: "Your parcel sets off for Lithuania",
-            body: "We take care of organising the transport process.",
+            body: STEP_TRANSPORT_BODY,
           },
           {
             title: "The parcel arrives in Lithuania",
@@ -1763,7 +1766,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
           },
           {
             title: "Your parcel sets off for Latvia",
-            body: "We take care of organising the transport process.",
+            body: STEP_TRANSPORT_BODY,
           },
           {
             title: "The parcel arrives in Latvia",
@@ -1897,7 +1900,7 @@ const copy: Record<CountrySlug, CountryCopy> = {
           },
           {
             title: "Your parcel sets off for Estonia",
-            body: "We take care of organising the transport process.",
+            body: STEP_TRANSPORT_BODY,
           },
           {
             title: "The parcel arrives in Estonia",

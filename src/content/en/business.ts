@@ -76,6 +76,8 @@ export const businessEn: BusinessContent = {
   doorDelivery:
     "A courier delivers the parcel to the recipient's door, at the address you gave.",
 
+  departure: "Parcels leave Georgia every Sunday.",
+
   coverage: {
     scope: "We send parcels anywhere in Europe.",
     priorityNote: "Our main destinations are listed below.",

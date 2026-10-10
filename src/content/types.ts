@@ -69,6 +69,8 @@ export type BusinessContent = {
   inboundDeliveryTimeGenitive: string;
   /** How the recipient in Europe gets the parcel — courier to the door (2026-10-09). */
   doorDelivery: string;
+  /** When parcels leave Georgia — every Sunday (2026-10-10). No cut-off is published. */
+  departure: string;
   weightLimit: string | null;
   coverage: { scope: string; priorityNote: string };
   restrictions: {

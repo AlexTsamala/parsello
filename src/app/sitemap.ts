@@ -21,7 +21,7 @@ type StaticPage = {
 const staticPages: StaticPage[] = [
   {
     path: "/",
-    updatedAt: "2026-09-03",
+    updatedAt: "2026-10-10",
     changeFrequency: "monthly",
     priority: 1,
   },
@@ -51,7 +51,7 @@ const staticPages: StaticPage[] = [
   },
   {
     path: "/faq",
-    updatedAt: "2026-09-03",
+    updatedAt: "2026-10-10",
     changeFrequency: "monthly",
     priority: 0.7,
   },

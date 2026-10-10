@@ -184,7 +184,8 @@ const STEP_HANDOVER = {
   body: "Наша команда принимает посылку тем способом, который вы с нами согласовали.",
 };
 
-const STEP_TRANSPORT_BODY = "Мы организуем весь процесс перевозки.";
+/** Parcels leave every Sunday (confirmed 2026-10-10). */
+const STEP_TRANSPORT_BODY = `${businessRu.departure} Мы организуем весь процесс перевозки.`;
 
 const SENDABLE_NOTE =
   "На некоторые вещи при международной отправке действуют ограничения. Перед отправкой расскажите, что хотите положить в посылку, и мы поможем это проверить.";
@@ -193,7 +194,7 @@ const CITIES_NOTE =
   "При заказе укажите полный адрес и контактные данные получателя, чтобы посылку можно было правильно оформить.";
 
 /** The same everywhere, Poland included (confirmed 2026-10-09). */
-const DELIVERY_TIME_ANSWER = `Посылка доходит до получателя в течение ${businessRu.deliveryTimeGenitive} после отправки.`;
+const DELIVERY_TIME_ANSWER = `${businessRu.departure} Посылка доходит до получателя в течение ${businessRu.deliveryTimeGenitive} после отправки.`;
 
 const PRODUCTS_ANSWER =
   "Некоторые продукты отправить можно, но на отдельные позиции могут действовать ограничения. Расскажите, что хотите отправить, и мы поможем проверить.";

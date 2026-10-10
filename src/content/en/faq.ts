@@ -36,6 +36,11 @@ export const faqsEn: FaqItem[] = [
     featured: true,
   },
   {
+    question: "When do parcels leave?",
+    answer: businessEn.departure,
+    featured: true,
+  },
+  {
     question: "How does the recipient get the parcel?",
     answer: businessEn.doorDelivery,
     featured: true,

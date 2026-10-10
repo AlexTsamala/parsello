@@ -27,6 +27,7 @@ export const servicesEn: Service[] = [
     body: [
       "Parcello sends parcels from Georgia to any country in Europe. Send Georgian produce, clothing, gifts or personal belongings to family, friends and relatives.",
       "You can hand the parcel to a courier or bring it to our address yourself — whichever suits you better.",
+      `${businessEn.departure} ${businessEn.doorDelivery}`,
       // Single-source pricing copy, as in the Georgian file.
       businessEn.pricing.dependsOn,
       businessEn.pricing.copy,

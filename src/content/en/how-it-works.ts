@@ -17,6 +17,6 @@ export const howItWorksStepsEn: HowItWorksStep[] = [
   },
   {
     title: "Your parcel travels to Europe",
-    body: `The parcel is sent on to Europe and reaches the recipient within ${businessEn.deliveryTimeGenitive} of being sent. ${businessEn.doorDelivery}`,
+    body: `${businessEn.departure} The parcel reaches the recipient within ${businessEn.deliveryTimeGenitive} of being sent. ${businessEn.doorDelivery}`,
   },
 ];

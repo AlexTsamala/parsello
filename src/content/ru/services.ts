@@ -23,6 +23,7 @@ export const servicesRu: Service[] = [
     body: [
       "Parcello отправляет посылки из Грузии в любую страну Европы. Отправляйте грузинские продукты, одежду, подарки и личные вещи родным, друзьям и близким.",
       "Посылку можно передать курьеру или привезти по нашему адресу самостоятельно — как вам удобнее.",
+      `${businessRu.departure} ${businessRu.doorDelivery}`,
       // Single-source pricing copy, as in the other locales.
       businessRu.pricing.dependsOn,
       businessRu.pricing.copy,

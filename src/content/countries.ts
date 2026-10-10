@@ -187,12 +187,15 @@ const VAT_SOURCE = {
 };
 
 /** The same everywhere, Poland included (confirmed 2026-10-09). */
-const DELIVERY_TIME_ANSWER = `ამანათი ადრესატთან ჩადის გაგზავნიდან ${business.deliveryTimeGenitive} ვადაში.`;
+const DELIVERY_TIME_ANSWER = `${business.departure} ამანათი ადრესატთან ჩადის გაგზავნიდან ${business.deliveryTimeGenitive} ვადაში.`;
+
+/** Parcels leave every Sunday (confirmed 2026-10-10). */
+const STEP_TRANSPORT_BODY = `${business.departure} ტრანსპორტირების მთელ პროცესზე ჩვენ ვიზრუნებთ.`;
 
 export const countries: Country[] = [
   {
     slug: "poland",
-    updatedAt: "2026-10-08",
+    updatedAt: "2026-10-10",
     name: "პოლონეთი",
     nameIn: "პოლონეთში",
     linkLabel: "პოლონეთში ამანათის გაგზავნა",
@@ -245,7 +248,7 @@ export const countries: Country[] = [
           },
           {
             title: "ამანათი გაემგზავრება პოლონეთში",
-            body: "ჩვენ ვიზრუნებთ ტრანსპორტირების მთელ პროცესზე.",
+            body: STEP_TRANSPORT_BODY,
           },
           {
             title: "მიიღეთ ამანათი პოლონეთში",
@@ -309,7 +312,7 @@ export const countries: Country[] = [
   },
   {
     slug: "germany",
-    updatedAt: "2026-10-08",
+    updatedAt: "2026-10-10",
     name: "გერმანია",
     nameIn: "გერმანიაში",
     linkLabel: "გერმანიაში ამანათის გაგზავნა",
@@ -411,7 +414,7 @@ export const countries: Country[] = [
           },
           {
             title: "ამანათი გაემგზავრება გერმანიაში",
-            body: "ჩვენ ვიზრუნებთ ტრანსპორტირების პროცესის ორგანიზებაზე.",
+            body: STEP_TRANSPORT_BODY,
           },
           {
             title: "მიიღეთ ამანათი გერმანიაში",
@@ -481,7 +484,7 @@ export const countries: Country[] = [
   },
   {
     slug: "france",
-    updatedAt: "2026-10-08",
+    updatedAt: "2026-10-10",
     name: "საფრანგეთი",
     nameIn: "საფრანგეთში",
     linkLabel: "საფრანგეთში ამანათის გაგზავნა",
@@ -567,7 +570,7 @@ export const countries: Country[] = [
           },
           {
             title: "ამანათი გაემგზავრება საფრანგეთში",
-            body: "ჩვენ ვიზრუნებთ ტრანსპორტირების პროცესის ორგანიზებაზე.",
+            body: STEP_TRANSPORT_BODY,
           },
           {
             title: "მიიღეთ ამანათი საფრანგეთში",
@@ -637,7 +640,7 @@ export const countries: Country[] = [
   },
   {
     slug: "hungary",
-    updatedAt: "2026-10-08",
+    updatedAt: "2026-10-10",
     name: "უნგრეთი",
     nameIn: "უნგრეთში",
     linkLabel: "უნგრეთში ამანათის გაგზავნა",
@@ -729,7 +732,7 @@ export const countries: Country[] = [
           },
           {
             title: "ამანათი გაემგზავრება უნგრეთში",
-            body: "ჩვენ ვიზრუნებთ ტრანსპორტირების პროცესის ორგანიზებაზე.",
+            body: STEP_TRANSPORT_BODY,
           },
           {
             title: "მიიღეთ ამანათი უნგრეთში",
@@ -797,7 +800,7 @@ export const countries: Country[] = [
   },
   {
     slug: "bulgaria",
-    updatedAt: "2026-10-08",
+    updatedAt: "2026-10-10",
     name: "ბულგარეთი",
     nameIn: "ბულგარეთში",
     linkLabel: "ბულგარეთში ამანათის გაგზავნა",
@@ -899,7 +902,7 @@ export const countries: Country[] = [
           },
           {
             title: "ამანათი გაემგზავრება ბულგარეთში",
-            body: "ჩვენ ვიზრუნებთ ტრანსპორტირების პროცესის ორგანიზებაზე.",
+            body: STEP_TRANSPORT_BODY,
           },
           {
             title: "მიიღეთ ამანათი ბულგარეთში",
@@ -968,7 +971,7 @@ export const countries: Country[] = [
   },
   {
     slug: "czechia",
-    updatedAt: "2026-10-08",
+    updatedAt: "2026-10-10",
     name: "ჩეხეთი",
     nameIn: "ჩეხეთში",
     linkLabel: "ჩეხეთში ამანათის გაგზავნა",
@@ -1074,7 +1077,7 @@ export const countries: Country[] = [
           },
           {
             title: "ამანათი გაემგზავრება ჩეხეთში",
-            body: "ჩვენ ვიზრუნებთ ტრანსპორტირების პროცესის ორგანიზებაზე.",
+            body: STEP_TRANSPORT_BODY,
           },
           {
             title: "მიიღეთ ამანათი ჩეხეთში",
@@ -1147,7 +1150,7 @@ export const countries: Country[] = [
   },
   {
     slug: "slovakia",
-    updatedAt: "2026-10-08",
+    updatedAt: "2026-10-10",
     name: "სლოვაკეთი",
     nameIn: "სლოვაკეთში",
     linkLabel: "სლოვაკეთში ამანათის გაგზავნა",
@@ -1255,7 +1258,7 @@ export const countries: Country[] = [
           },
           {
             title: "ამანათი გაემგზავრება სლოვაკეთში",
-            body: "ჩვენ ვიზრუნებთ ტრანსპორტირების პროცესის ორგანიზებაზე.",
+            body: STEP_TRANSPORT_BODY,
           },
           {
             title: "მიიღეთ ამანათი სლოვაკეთში",
@@ -1329,7 +1332,7 @@ export const countries: Country[] = [
   },
   {
     slug: "netherlands",
-    updatedAt: "2026-10-08",
+    updatedAt: "2026-10-10",
     name: "ნიდერლანდები",
     nameIn: "ნიდერლანდებში",
     linkLabel: "ნიდერლანდებში ამანათის გაგზავნა",
@@ -1432,7 +1435,7 @@ export const countries: Country[] = [
           },
           {
             title: "ამანათი გაემგზავრება ნიდერლანდებში",
-            body: "ჩვენ ვიზრუნებთ ტრანსპორტირების პროცესის ორგანიზებაზე.",
+            body: STEP_TRANSPORT_BODY,
           },
           {
             title: "მიიღეთ ამანათი ნიდერლანდებში",
@@ -1512,7 +1515,7 @@ export const countries: Country[] = [
   },
   {
     slug: "finland",
-    updatedAt: "2026-10-08",
+    updatedAt: "2026-10-10",
     name: "ფინეთი",
     nameIn: "ფინეთში",
     linkLabel: "ფინეთში ამანათის გაგზავნა",
@@ -1609,7 +1612,7 @@ export const countries: Country[] = [
           },
           {
             title: "ამანათი გაემგზავრება ფინეთში",
-            body: "ჩვენ ვიზრუნებთ ტრანსპორტირების პროცესის ორგანიზებაზე.",
+            body: STEP_TRANSPORT_BODY,
           },
           {
             title: "მიიღეთ ამანათი ფინეთში",
@@ -1682,7 +1685,7 @@ export const countries: Country[] = [
   },
   {
     slug: "sweden",
-    updatedAt: "2026-10-08",
+    updatedAt: "2026-10-10",
     name: "შვედეთი",
     nameIn: "შვედეთში",
     linkLabel: "შვედეთში ამანათის გაგზავნა",
@@ -1779,7 +1782,7 @@ export const countries: Country[] = [
           },
           {
             title: "ამანათი გაემგზავრება შვედეთში",
-            body: "ჩვენ ვიზრუნებთ ტრანსპორტირების პროცესის ორგანიზებაზე.",
+            body: STEP_TRANSPORT_BODY,
           },
           {
             title: "მიიღეთ ამანათი შვედეთში",
@@ -1857,7 +1860,7 @@ export const countries: Country[] = [
   },
   {
     slug: "portugal",
-    updatedAt: "2026-10-08",
+    updatedAt: "2026-10-10",
     name: "პორტუგალია",
     nameIn: "პორტუგალიაში",
     linkLabel: "პორტუგალიაში ამანათის გაგზავნა",
@@ -1958,7 +1961,7 @@ export const countries: Country[] = [
           },
           {
             title: "ამანათი გაემგზავრება პორტუგალიაში",
-            body: "ჩვენ ვიზრუნებთ ტრანსპორტირების პროცესის ორგანიზებაზე.",
+            body: STEP_TRANSPORT_BODY,
           },
           {
             title: "მიიღეთ ამანათი პორტუგალიაში",
@@ -2037,7 +2040,7 @@ export const countries: Country[] = [
   },
   {
     slug: "lithuania",
-    updatedAt: "2026-10-09",
+    updatedAt: "2026-10-10",
     name: "ლიტვა",
     nameIn: "ლიტვაში",
     linkLabel: "ლიტვაში ამანათის გაგზავნა",
@@ -2133,7 +2136,7 @@ export const countries: Country[] = [
           },
           {
             title: "ამანათი გაემგზავრება ლიტვაში",
-            body: "ჩვენ ვიზრუნებთ ტრანსპორტირების პროცესის ორგანიზებაზე.",
+            body: STEP_TRANSPORT_BODY,
           },
           {
             title: "მიიღეთ ამანათი ლიტვაში",
@@ -2211,7 +2214,7 @@ export const countries: Country[] = [
   },
   {
     slug: "latvia",
-    updatedAt: "2026-10-09",
+    updatedAt: "2026-10-10",
     name: "ლატვია",
     nameIn: "ლატვიაში",
     linkLabel: "ლატვიაში ამანათის გაგზავნა",
@@ -2307,7 +2310,7 @@ export const countries: Country[] = [
           },
           {
             title: "ამანათი გაემგზავრება ლატვიაში",
-            body: "ჩვენ ვიზრუნებთ ტრანსპორტირების პროცესის ორგანიზებაზე.",
+            body: STEP_TRANSPORT_BODY,
           },
           {
             title: "მიიღეთ ამანათი ლატვიაში",
@@ -2385,7 +2388,7 @@ export const countries: Country[] = [
   },
   {
     slug: "estonia",
-    updatedAt: "2026-10-09",
+    updatedAt: "2026-10-10",
     name: "ესტონეთი",
     nameIn: "ესტონეთში",
     linkLabel: "ესტონეთში ამანათის გაგზავნა",
@@ -2481,7 +2484,7 @@ export const countries: Country[] = [
           },
           {
             title: "ამანათი გაემგზავრება ესტონეთში",
-            body: "ჩვენ ვიზრუნებთ ტრანსპორტირების პროცესის ორგანიზებაზე.",
+            body: STEP_TRANSPORT_BODY,
           },
           {
             title: "მიიღეთ ამანათი ესტონეთში",
