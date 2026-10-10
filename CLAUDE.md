@@ -172,7 +172,7 @@ The only verified facts so far. Everything else is an open question (`docs/OPEN-
 | Delivery within a destination | **Anywhere in the country** — big cities, small towns and villages (confirmed 2026-10-09). The cities on country pages are examples, never the limit; never write "various cities" or ask the customer to check whether a town is covered. Delivery is to the door — see below. |
 | Delivery time | **2–3 weeks to every destination**, Poland included (confirmed 2026-10-09; earlier given as 16–21 days). Stored once as `business.deliveryTime` / `deliveryTimeGenitive`; a country page never states its own figure. |
 | Delivery to the recipient | **A courier brings the parcel to the recipient's door** (confirmed 2026-10-09). One sentence, `business.doorDelivery`, reused in the FAQ, how-it-works and every country page. |
-| Departure days | The business has **fixed departure days** (2026-10-09) but has not said which. Publish nothing about a schedule until it does (`docs/OPEN-QUESTIONS.md` #23). |
+| Departure day | **Every Sunday** (confirmed 2026-10-10). One sentence, `business.departure`, reused in the FAQ, how-it-works, the send-to-Europe service and every country page. Write the day as "კვირა დღეს" — bare "კვირა" also means "week". No hand-in cut-off was given; don't state one. |
 | Inbound handover | Sender messages Parcello first; Parcello replies with the **warehouse address**; the sender drops the parcel there. The warehouse address is given on request — it is not published on the site. |
 | Inbound delivery time | **2 weeks**, Europe → Georgia. A separate figure from the 2–3 week outbound time; do not merge them. |
 | Customer-service languages | Georgian, English and Russian (English and Russian confirmed 2026-09-24) |

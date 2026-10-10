@@ -16,7 +16,6 @@ Answered items move to `CLAUDE.md` §10 and into `src/content/business.ts`.
 | # | Question | Blocks |
 |---|---|---|
 | 22 | **Native-speaker review of the Russian copy.** The Russian site (2026-09-24) was translated from the approved Georgian/English copy and has not yet been proofread by a native Russian speaker. Priority: titles, H1s and meta descriptions, then country pages. | `/ru` |
-| 23 | **Departure days.** Parcels leave on fixed days (confirmed 2026-10-09) — which days, and is there a cut-off for handing a parcel in? Nothing about a schedule is published until answered. | Homepage, how-it-works, FAQ |
 | 8 | Maximum parcel weight / size limits | FAQ, how-it-works |
 | 9 | Prohibited items (real list, not a generic one) | FAQ, blog article on what can be sent |
 | 11 | When and how does the customer pay? | FAQ, order flow |
@@ -36,6 +35,7 @@ Answered items move to `CLAUDE.md` §10 and into `src/content/business.ts`.
 - **Domain** (#5) — `https://parcello.ge`, apex form, with `www` redirecting to it. Set `NEXT_PUBLIC_SITE_URL` to match; see `DEPLOYMENT.md`.
 - **Delivery time** (#7) — 2–3 weeks to every destination, Poland included (confirmed 2026-10-09). Every country page uses the shared `business.deliveryTimeGenitive`. Whether it means calendar or working days was not specified.
 - **Delivery to the recipient** (#10) — a courier brings the parcel to the recipient's door (confirmed 2026-10-09). Stored once as `business.doorDelivery`.
+- **Departure day** (#23) — parcels leave Georgia every Sunday (confirmed 2026-10-10). Stored once as `business.departure`. No hand-in cut-off was given, so none is published.
 - **Currency** — prices stay in GEL only; no euro prices or conversions (business decision, 2026-10-09).
 - **Drop-off address** — გრიგოლ რობაქიძის გამზირი 4, თბილისი, საქართველო.
 - **Working hours** — every day, 08:00–22:00. Published on the contact page and in `openingHoursSpecification`.
