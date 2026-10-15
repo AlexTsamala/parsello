@@ -1,6 +1,6 @@
 /**
  * Per-kg rates in GEL, supplied by the business on 2026-10-08 (Czechia and
- * the Netherlands added later the same day). Cheapest first;
+ * the Netherlands added later the same day, Romania on 2026-10-15). Cheapest first;
  * ties keep the order the business gave them in. A destination missing from
  * this list is quoted on request — never estimate one (CLAUDE.md §1 rule 2).
  *
@@ -21,6 +21,7 @@ const rates = [
   { id: "france", flag: "🇫🇷", name: "საფრანგეთი", perKg: 18 },
   { id: "belgium", flag: "🇧🇪", name: "ბელგია", perKg: 18 },
   { id: "netherlands", flag: "🇳🇱", name: "ნიდერლანდები", perKg: 18 },
+  { id: "romania", flag: "🇷🇴", name: "რუმინეთი", perKg: 18 },
   { id: "sweden", flag: "🇸🇪", name: "შვედეთი", perKg: 20 },
   { id: "norway", flag: "🇳🇴", name: "ნორვეგია", perKg: 20 },
   { id: "denmark", flag: "🇩🇰", name: "დანია", perKg: 20 },

@@ -16,6 +16,7 @@ const rateNames: Record<RateId, string> = {
   france: "France",
   belgium: "Belgium",
   netherlands: "Netherlands",
+  romania: "Romania",
   sweden: "Sweden",
   norway: "Norway",
   denmark: "Denmark",
