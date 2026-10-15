@@ -193,6 +193,22 @@ const factCopy: Record<string, { title: string; body: string }> = {
     title: "Proof may be requested for a gift",
     body: "According to bpost, Belgium's national postal operator, if a parcel received from outside the EU is subject to VAT, customs duty or a customs formalities fee, the recipient pays it before the parcel is delivered. If bpost needs more information, for a gift it asks for an email from the sender stating the contents of the parcel, its value (up to €45) and the fact that it is a gift. If the recipient does not respond to the request within 14 days, bpost returns the parcel to the sender.",
   },
+  "ro-currency": {
+    title: "Romania is not in the eurozone",
+    body: "Romania joined the European Union on 1 January 2007 but is not a member of the eurozone — its national currency is the Romanian leu (RON). The leu has not yet joined the European exchange rate mechanism (ERM II). Because customs relief thresholds are set in euro, in Romania they are converted into lei.",
+  },
+  "ro-vat": {
+    title: "VAT has been 21% since August 2025",
+    body: "The standard VAT rate in Romania rose from 19% to 21% in August 2025.",
+  },
+  "ro-electronic-declaration": {
+    title: "Gifts are declared electronically too",
+    body: "According to Poșta Română, Romania's national postal operator, every postal item arriving from outside the EU — gifts included — needs an electronic customs declaration; the paper CN22/CN23 form can no longer be used as a declaration. For an item worth up to €150, Poșta Română files a reduced declaration on the recipient's behalf, though the recipient may declare the item at customs in person or choose a different customs representative. To clear an item worth more than €150, a private individual needs an EORI number.",
+  },
+  "ro-gift-marking": {
+    title: "Marking a parcel as a gift matters",
+    body: "According to Poșta Română, automated processing cannot always tell commercial items from non-commercial ones, so it treats low-value items as e-commerce items and charges VAT on them — except those marked as a gift in the item's electronic data. Non-commercial goods sent from one private individual to another are exempt from VAT up to a value of €45, provided such consignments are not regular and the recipient pays nothing for them.",
+  },
 };
 
 /** The same everywhere, Poland included (confirmed 2026-10-09). */
@@ -2263,6 +2279,140 @@ const copy: Record<CountrySlug, CountryCopy> = {
         body: "Send a gift, personal belongings or other permitted goods to family, friends and relatives in Belgium.",
         emphasis:
           "Message us today and find out the cost of sending your parcel to Belgium.",
+      },
+    },
+  },
+  romania: {
+    name: "Romania",
+    nameIn: "Romania",
+    linkLabel: "Send a parcel to Romania",
+    footerLinkLabel: "Send to Romania",
+    priceLinkLabel: "Cost of sending to Romania",
+    factsHeading: "What to know before sending to Romania",
+    h1: "Send a parcel from Georgia to Romania",
+    seoTitle: "Send a parcel to Romania",
+    seoDescription:
+      "Send a parcel from Georgia to Romania — Bucharest, Cluj-Napoca, Timișoara, Iași, Constanța. Find out the price and start your order with Parcello.",
+    intro:
+      "Romania has been a member of the European Union since 2007, but it is not in the eurozone and uses the leu. And according to Poșta Română, its national postal operator, every postal item arriving from outside the EU, gifts included, is declared electronically.",
+    content: {
+      intro: [
+        "Want to send a parcel from Georgia to Romania? Parcello will help you send it simply and conveniently — whether it is a gift, clothing, personal belongings or other permitted goods.",
+      ],
+      narrative: [
+        {
+          placement: "afterIntro",
+          heading: "Sending a parcel from Georgia to Romania",
+          body: [
+            "Diplomatic relations between Georgia and Romania were established on 25 June 1992. Georgia's embassy in Romania is in Bucharest. In November 2023 the Romanian Parliament adopted a resolution on the European perspective of the Republic of Moldova, Ukraine, Georgia and the Western Balkans.",
+            "For Georgians living in Romania, receiving a parcel from home is often a simple way of keeping a connection to family, friends and the place they came from.",
+            "You give us the parcel and the details we need, and we help organise the process of getting it to Romania.",
+          ],
+        },
+        {
+          placement: "beforePricing",
+          heading: "In Romania, gifts are declared electronically too",
+          body: [
+            "Romania is a member of the European Union but not of the eurozone — its currency is the leu. EU customs rules apply to a parcel sent from Georgia, and the customs relief thresholds, set in euro, are converted into lei. The standard VAT rate in Romania has been 21% since August 2025.",
+            "According to Poșta Română, every postal item arriving from outside the EU, gifts included, needs an electronic customs declaration. For an item worth up to €150, Poșta Română files a reduced declaration on the recipient's behalf, though the recipient may declare the item at customs in person or choose a different customs representative.",
+            "Poșta Română treats low-value items as e-commerce items and charges VAT on them unless they are marked as a gift in their electronic data. Non-commercial goods sent between private individuals are exempt from VAT up to a value of €45, provided such consignments are not regular and the recipient pays nothing for them.",
+            "That is why it helps to know exactly, at the time of sending, what is in the parcel, what it is worth and whether it is a gift — the electronic declaration relies on exactly that information.",
+          ],
+        },
+      ],
+      why: {
+        heading: "Why Parcello?",
+        body: [
+          "Sending an international parcel should not be complicated.",
+          "Easy communication matters to us, and so does your knowing what is needed to send your parcel.",
+        ],
+        highlight:
+          "Parcello lets you send a parcel from Georgia to Romania and get the information you need, all in one place.",
+      },
+      steps: {
+        heading: "How we send parcels to Romania",
+        items: [
+          {
+            title: "Get in touch",
+            body: "Tell us you want to send a parcel to Romania and give us its approximate weight, its contents and the destination city.",
+          },
+          {
+            title: "Prepare your parcel",
+            body: "Pack the items securely and make sure they are permitted to be sent.",
+          },
+          {
+            title: "Hand over the parcel",
+            body: "Our team collects your parcel by whichever method you have agreed with us.",
+          },
+          {
+            title: "Your parcel sets off for Romania",
+            body: STEP_TRANSPORT_BODY,
+          },
+          {
+            title: "The parcel arrives in Romania",
+            body: businessEn.doorDelivery,
+          },
+        ],
+      },
+      sendable: {
+        heading: "What can you send to Romania?",
+        intro:
+          "With Parcello you can send a range of permitted personal items, including:",
+        items: SENDABLE_ITEMS,
+        note: "Restrictions apply to some items in international shipping. Before you send, tell us what you would like to put in the parcel and we will help you check.",
+        moreHref: "/what-can-i-send",
+        moreLabel: "See the full list of permitted items",
+      },
+      cities: {
+        heading:
+          "Sending a parcel to any city or village in Romania",
+        intro:
+          "We deliver anywhere in Romania — to big cities as well as small towns and villages. For example:",
+        list: ["Bucharest", "Cluj-Napoca", "Timișoara", "Iași", "Constanța"],
+        note: "When you order, give the recipient's full address and contact details so the parcel can be processed correctly.",
+      },
+      pricing: {
+        heading: "How much does it cost to send a parcel to Romania?",
+        body: "The cost depends on the weight of the parcel and the rate in force.",
+        emphasis:
+          "Send us the weight of your parcel and the destination city in Romania to get the current price.",
+      },
+      faqs: [
+        {
+          question: "How long does a parcel take to reach Romania?",
+          answer: DELIVERY_TIME_ANSWER,
+        },
+        {
+          question: "Does a gift have to be declared in Romania?",
+          answer:
+            "Yes. According to Poșta Română, every postal item arriving from outside the EU, gifts included, needs an electronic customs declaration. For an item worth up to €150, Poșta Română files the declaration on the recipient's behalf.",
+        },
+        {
+          question: "What currency is used in Romania?",
+          answer:
+            "Romania is a member of the European Union but is not in the eurozone — its currency is the Romanian leu (RON).",
+        },
+        {
+          question: "Can I send Georgian products to Romania?",
+          answer:
+            "Some products can be sent, though restrictions may apply to particular items. Tell us what you would like to send and we will help you check.",
+        },
+        {
+          question: "Can I send a parcel to Bucharest or Constanța?",
+          answer:
+            "Yes. We deliver to any city, town or village in Romania — just give us the recipient's full address when you order.",
+        },
+        {
+          question: "How do I start sending a parcel?",
+          answer:
+            "Get in touch and tell us the approximate weight of the parcel, what is inside it, and the destination city in Romania.",
+        },
+      ],
+      cta: {
+        heading: "Send your parcel from Georgia to Romania with Parcello",
+        body: "Send a gift, personal belongings or other permitted goods to family, friends and relatives in Romania.",
+        emphasis:
+          "Message us today and find out the cost of sending your parcel to Romania.",
       },
     },
   },
