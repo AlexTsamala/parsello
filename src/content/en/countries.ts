@@ -165,6 +165,34 @@ const factCopy: Record<string, { title: string; body: string }> = {
     title: "Gifts worth more than €45 are taxed",
     body: "According to Omniva, Estonia's national postal operator, a parcel sent from one private person to another counts as a gift. A gift worth up to €45 is exempt from VAT unless it contains excise goods. A gift worth more than €45 is charged VAT and customs duty, plus a service fee, because a customs agent is involved in clearing it.",
   },
+  "at-euro": {
+    title: "Austria is a founding member of the eurozone",
+    body: "Austria joined the European Union in 1995 and was among the first countries to adopt the euro, on 1 January 1999. Euro banknotes and coins entered circulation on 1 January 2002. The euro replaced the Austrian schilling at a fixed rate of €1 = 13.7603 schillings, and the period in which both currencies circulated ended on 28 February 2002. Austria's central bank exchanges schilling banknotes and coins for euro with no time limit.",
+  },
+  "at-vat": {
+    title: "VAT rate",
+    body: "The standard VAT rate in Austria is 20%.",
+  },
+  "at-post-declaration": {
+    title: "The post files the customs declaration",
+    body: "According to Austria's Federal Ministry of Finance (BMF), since 1 July 2021 Austrian Post (Österreichische Post) has filed the customs declaration for every postal consignment arriving from outside the EU. The post charges the recipient any taxes when it hands over the parcel, and also charges a customs handling fee. A gift from a private individual worth up to €45 is free of import taxes, provided such consignments are not regular, the parcel contains only items for personal use, and the recipient pays nothing for it.",
+  },
+  "be-euro": {
+    title: "Belgium is a founding member of the eurozone",
+    body: "Belgium is a founding member of the European Union and was among the first countries to adopt the euro, on 1 January 1999. Euro banknotes and coins entered circulation on 1 January 2002. The euro replaced the Belgian franc at a fixed rate of €1 = 40.3399 francs, and the period in which both currencies circulated ended on 28 February 2002. The National Bank of Belgium exchanged franc coins until the end of 2004, and still exchanges franc banknotes for euro with no time limit.",
+  },
+  "be-vat": {
+    title: "VAT rate",
+    body: "The standard VAT rate in Belgium is 21%.",
+  },
+  "be-languages": {
+    title: "Three official languages",
+    body: "Belgium has three official languages — Dutch, French and German. Its capital is Brussels.",
+  },
+  "be-gift-proof": {
+    title: "Proof may be requested for a gift",
+    body: "According to bpost, Belgium's national postal operator, if a parcel received from outside the EU is subject to VAT, customs duty or a customs formalities fee, the recipient pays it before the parcel is delivered. If bpost needs more information, for a gift it asks for an email from the sender stating the contents of the parcel, its value (up to €45) and the fact that it is a gift. If the recipient does not respond to the request within 14 days, bpost returns the parcel to the sender.",
+  },
 };
 
 /** The same everywhere, Poland included (confirmed 2026-10-09). */
@@ -1967,6 +1995,274 @@ const copy: Record<CountrySlug, CountryCopy> = {
         body: "Send a gift, personal belongings or other permitted goods to family, friends and relatives in Estonia.",
         emphasis:
           "Message us today and find out the cost of sending your parcel to Estonia.",
+      },
+    },
+  },
+  austria: {
+    name: "Austria",
+    nameIn: "Austria",
+    linkLabel: "Send a parcel to Austria",
+    footerLinkLabel: "Send to Austria",
+    priceLinkLabel: "Cost of sending to Austria",
+    factsHeading: "What to know before sending to Austria",
+    h1: "Send a parcel from Georgia to Austria",
+    seoTitle: "Send a parcel to Austria",
+    seoDescription:
+      "Send a parcel from Georgia to Austria — Vienna, Graz, Linz, Salzburg, Innsbruck. Find out the price and start your order with Parcello.",
+    intro:
+      "Austria is a founding member of the eurozone — the euro has been its currency since 1999. And according to Austria's Ministry of Finance, Austrian Post files the customs declaration for postal consignments arriving from outside the EU, while the recipient pays any taxes when the parcel is handed over.",
+    content: {
+      intro: [
+        "Want to send a parcel from Georgia to Austria? Parcello will help you send it simply and conveniently — whether it is a gift, clothing, personal belongings or other permitted goods.",
+      ],
+      narrative: [
+        {
+          placement: "afterIntro",
+          heading: "Sending a parcel from Georgia to Austria",
+          body: [
+            "Diplomatic relations between Georgia and the Republic of Austria were established on 25 March 1992. A Georgian embassy opened in Austria in 1993, and the Austrian embassy in Tbilisi began work in September 2016. An Austrian honorary consulate has also operated in Tbilisi since 15 March 2019.",
+            "For Georgians living in Austria, receiving a parcel from home is often a simple way of keeping a connection to family, friends and the place they came from.",
+            "You give us the parcel and the details we need, and we help organise the process of getting it to Austria.",
+          ],
+        },
+        {
+          placement: "beforePricing",
+          heading: "In Austria the post files the declaration",
+          body: [
+            "Austria is a member of the European Union and the eurozone, so EU customs rules apply to a parcel sent from Georgia, and a consignment's value and the customs relief thresholds are in euro.",
+            "According to Austria's Federal Ministry of Finance (BMF), since 1 July 2021 Austrian Post (Österreichische Post) has filed the customs declaration for every postal consignment arriving from outside the EU. The post charges the recipient any taxes when it hands over the parcel, and also charges a customs handling fee.",
+            "A gift from a private individual worth up to €45 is free of import taxes — provided such consignments are not regular, the parcel contains only items for personal use, and the recipient pays nothing for it. The standard VAT rate in Austria is 20%.",
+            "That is why it helps if the recipient knows in advance what is in the parcel and what it is worth — if the consignment is taxed, it is the recipient who pays.",
+          ],
+        },
+      ],
+      why: {
+        heading: "Why Parcello?",
+        body: [
+          "Sending an international parcel should not be complicated.",
+          "Easy communication matters to us, and so does your knowing what is needed to send your parcel.",
+        ],
+        highlight:
+          "Parcello lets you send a parcel from Georgia to Austria and get the information you need, all in one place.",
+      },
+      steps: {
+        heading: "How we send parcels to Austria",
+        items: [
+          {
+            title: "Get in touch",
+            body: "Tell us you want to send a parcel to Austria and give us its approximate weight, its contents and the destination city.",
+          },
+          {
+            title: "Prepare your parcel",
+            body: "Pack the items securely and make sure they are permitted to be sent.",
+          },
+          {
+            title: "Hand over the parcel",
+            body: "Our team collects your parcel by whichever method you have agreed with us.",
+          },
+          {
+            title: "Your parcel sets off for Austria",
+            body: STEP_TRANSPORT_BODY,
+          },
+          {
+            title: "The parcel arrives in Austria",
+            body: businessEn.doorDelivery,
+          },
+        ],
+      },
+      sendable: {
+        heading: "What can you send to Austria?",
+        intro:
+          "With Parcello you can send a range of permitted personal items, including:",
+        items: SENDABLE_ITEMS,
+        note: "Restrictions apply to some items in international shipping. Before you send, tell us what you would like to put in the parcel and we will help you check.",
+        moreHref: "/what-can-i-send",
+        moreLabel: "See the full list of permitted items",
+      },
+      cities: {
+        heading:
+          "Sending a parcel to any city or village in Austria",
+        intro:
+          "We deliver anywhere in Austria — to big cities as well as small towns and villages. For example:",
+        list: ["Vienna", "Graz", "Linz", "Salzburg", "Innsbruck"],
+        note: "When you order, give the recipient's full address and contact details so the parcel can be processed correctly.",
+      },
+      pricing: {
+        heading: "How much does it cost to send a parcel to Austria?",
+        body: "The cost depends on the weight of the parcel and the rate in force.",
+        emphasis:
+          "Send us the weight of your parcel and the destination city in Austria to get the current price.",
+      },
+      faqs: [
+        {
+          question: "How long does a parcel take to reach Austria?",
+          answer: DELIVERY_TIME_ANSWER,
+        },
+        {
+          question: "Who files the customs declaration in Austria?",
+          answer:
+            "According to Austria's Federal Ministry of Finance (BMF), Austrian Post (Österreichische Post) files the declaration for postal consignments arriving from outside the EU, and the recipient pays any taxes when the parcel is handed over.",
+        },
+        {
+          question: "What is the VAT rate in Austria?",
+          answer:
+            "The standard VAT rate in Austria is 20%. A gift from a private individual worth up to €45 is free of import taxes.",
+        },
+        {
+          question: "Can I send Georgian products to Austria?",
+          answer:
+            "Some products can be sent, though restrictions may apply to particular items. Tell us what you would like to send and we will help you check.",
+        },
+        {
+          question: "Can I send a parcel to Vienna or Salzburg?",
+          answer:
+            "Yes. We deliver to any city, town or village in Austria — just give us the recipient's full address when you order.",
+        },
+        {
+          question: "How do I start sending a parcel?",
+          answer:
+            "Get in touch and tell us the approximate weight of the parcel, what is inside it, and the destination city in Austria.",
+        },
+      ],
+      cta: {
+        heading: "Send your parcel from Georgia to Austria with Parcello",
+        body: "Send a gift, personal belongings or other permitted goods to family, friends and relatives in Austria.",
+        emphasis:
+          "Message us today and find out the cost of sending your parcel to Austria.",
+      },
+    },
+  },
+  belgium: {
+    name: "Belgium",
+    nameIn: "Belgium",
+    linkLabel: "Send a parcel to Belgium",
+    footerLinkLabel: "Send to Belgium",
+    priceLinkLabel: "Cost of sending to Belgium",
+    factsHeading: "What to know before sending to Belgium",
+    h1: "Send a parcel from Georgia to Belgium",
+    seoTitle: "Send a parcel to Belgium",
+    seoDescription:
+      "Send a parcel from Georgia to Belgium — Brussels, Antwerp, Ghent, Charleroi, Liège. Find out the price and start your order with Parcello.",
+    intro:
+      "Belgium is a founding member of the European Union and has used the euro since 1999. According to bpost, its national postal operator, the recipient of a parcel from outside the EU pays any customs charges before delivery — and for a gift, bpost may ask for confirmation from the sender.",
+    content: {
+      intro: [
+        "Want to send a parcel from Georgia to Belgium? Parcello will help you send it simply and conveniently — whether it is a gift, clothing, personal belongings or other permitted goods.",
+      ],
+      narrative: [
+        {
+          placement: "afterIntro",
+          heading: "Sending a parcel from Georgia to Belgium",
+          body: [
+            "Diplomatic relations between Georgia and the Kingdom of Belgium were established on 5 June 1992, and Georgia's diplomatic mission to Belgium opened in 1993. In June 2023 the two countries' foreign ministries signed a memorandum of understanding on cooperation.",
+            "For Georgians living in Belgium, receiving a parcel from home is often a simple way of keeping a connection to family, friends and the place they came from.",
+            "You give us the parcel and the details we need, and we help organise the process of getting it to Belgium.",
+          ],
+        },
+        {
+          placement: "beforePricing",
+          heading: "In Belgium, charges are paid before delivery",
+          body: [
+            "Belgium is a founding member of the European Union and a member of the eurozone, so EU customs rules apply to a parcel sent from Georgia, and a consignment's value and the customs relief thresholds are in euro. The standard VAT rate in Belgium is 21%.",
+            "According to bpost, if a parcel received from outside the EU is subject to VAT, customs duty or a customs formalities fee, the recipient pays it before the parcel is delivered — preferably through the My bpost app or Track & Trace, and in exceptional cases at a post office.",
+            "If bpost needs more information, for a gift it asks for an email from the sender stating the contents of the parcel, its value (up to €45) and the fact that it is a gift. If the recipient does not respond to the request within 14 days, the parcel is returned to the sender.",
+            "That is why it helps if both sender and recipient know in advance what is in the parcel and what it is worth — answering such a request then takes very little time.",
+          ],
+        },
+      ],
+      why: {
+        heading: "Why Parcello?",
+        body: [
+          "Sending an international parcel should not be complicated.",
+          "Easy communication matters to us, and so does your knowing what is needed to send your parcel.",
+        ],
+        highlight:
+          "Parcello lets you send a parcel from Georgia to Belgium and get the information you need, all in one place.",
+      },
+      steps: {
+        heading: "How we send parcels to Belgium",
+        items: [
+          {
+            title: "Get in touch",
+            body: "Tell us you want to send a parcel to Belgium and give us its approximate weight, its contents and the destination city.",
+          },
+          {
+            title: "Prepare your parcel",
+            body: "Pack the items securely and make sure they are permitted to be sent.",
+          },
+          {
+            title: "Hand over the parcel",
+            body: "Our team collects your parcel by whichever method you have agreed with us.",
+          },
+          {
+            title: "Your parcel sets off for Belgium",
+            body: STEP_TRANSPORT_BODY,
+          },
+          {
+            title: "The parcel arrives in Belgium",
+            body: businessEn.doorDelivery,
+          },
+        ],
+      },
+      sendable: {
+        heading: "What can you send to Belgium?",
+        intro:
+          "With Parcello you can send a range of permitted personal items, including:",
+        items: SENDABLE_ITEMS,
+        note: "Restrictions apply to some items in international shipping. Before you send, tell us what you would like to put in the parcel and we will help you check.",
+        moreHref: "/what-can-i-send",
+        moreLabel: "See the full list of permitted items",
+      },
+      cities: {
+        heading:
+          "Sending a parcel to any city or village in Belgium",
+        intro:
+          "We deliver anywhere in Belgium — to big cities as well as small towns and villages. For example:",
+        list: ["Brussels", "Antwerp", "Ghent", "Charleroi", "Liège"],
+        note: "When you order, give the recipient's full address and contact details so the parcel can be processed correctly.",
+      },
+      pricing: {
+        heading: "How much does it cost to send a parcel to Belgium?",
+        body: "The cost depends on the weight of the parcel and the rate in force.",
+        emphasis:
+          "Send us the weight of your parcel and the destination city in Belgium to get the current price.",
+      },
+      faqs: [
+        {
+          question: "How long does a parcel take to reach Belgium?",
+          answer: DELIVERY_TIME_ANSWER,
+        },
+        {
+          question: "When does the recipient pay customs charges in Belgium?",
+          answer:
+            "According to bpost, if a parcel is subject to VAT, customs duty or a customs formalities fee, the recipient pays it before delivery — preferably through the My bpost app or Track & Trace.",
+        },
+        {
+          question: "What happens if bpost asks for information about a gift?",
+          answer:
+            "bpost may need an email from the sender stating the contents of the parcel, its value (up to €45) and the fact that it is a gift. If the recipient does not respond to the request within 14 days, the parcel is returned to the sender.",
+        },
+        {
+          question: "Can I send Georgian products to Belgium?",
+          answer:
+            "Some products can be sent, though restrictions may apply to particular items. Tell us what you would like to send and we will help you check.",
+        },
+        {
+          question: "Can I send a parcel to Brussels or Antwerp?",
+          answer:
+            "Yes. We deliver to any city, town or village in Belgium — just give us the recipient's full address when you order.",
+        },
+        {
+          question: "How do I start sending a parcel?",
+          answer:
+            "Get in touch and tell us the approximate weight of the parcel, what is inside it, and the destination city in Belgium.",
+        },
+      ],
+      cta: {
+        heading: "Send your parcel from Georgia to Belgium with Parcello",
+        body: "Send a gift, personal belongings or other permitted goods to family, friends and relatives in Belgium.",
+        emphasis:
+          "Message us today and find out the cost of sending your parcel to Belgium.",
       },
     },
   },
