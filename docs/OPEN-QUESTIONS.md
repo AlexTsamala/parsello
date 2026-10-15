@@ -23,6 +23,7 @@ Answered items move to `CLAUDE.md` §10 and into `src/content/business.ts`.
 | 14 | Parcello-specific detail per destination (routes, typical timing, what customers usually send there) | Country pages — the researched layer alone can't carry them |
 | 20 | **Commercial freight — which European countries?** The service copy says only "from Europe". (The original draft named Italy for groupage consignments; the business removed that on 2026-09-13, so no specific origin is claimed anywhere.) | `/services` |
 | 21 | **Commercial freight — transit time and any weight/volume floor.** No figure is published; the service carries `deliveryTimeGenitive: null` and the steps promise a quote rather than a timescale. | `/services` |
+| 23 | **Per-kg rate for Romania.** Romania became a priority destination on 2026-10-15 but is not in the rate table, so its page shows no price and routes to contact. If the business gives a rate, add it to `business.pricing.rates` with `id: "romania"` and it appears on the page and on `/prices`. | `/countries/romania`, `/prices` |
 
 ## Resolved
 
