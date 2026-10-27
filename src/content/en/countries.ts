@@ -225,6 +225,22 @@ const factCopy: Record<string, { title: string; body: string }> = {
     title: "Eircode — a separate code for every address",
     body: "Eircode is Ireland's postcode system, launched in July 2015. It is a seven-character code: the first three characters identify the principal post town, and the last four the individual address. Every residential and business address has its own Eircode. According to Eircode, more than 35% of addresses in Ireland share their address with at least one other property.",
   },
+  "dk-currency": {
+    title: "Denmark has the right to stay outside the eurozone",
+    body: "Denmark joined the European Union in 1973 but has not introduced the euro — the EU Treaty gives Denmark the right to remain outside the euro area even if it meets all the criteria. Its national currency is the Danish krone (DKK). Since 1 January 1999 the krone has taken part in the European exchange rate mechanism (ERM II), at a central rate of €1 = 7.46038 kroner with a narrow fluctuation band of ±2.25%.",
+  },
+  "dk-vat": {
+    title: "VAT rate",
+    body: "The standard VAT rate in Denmark is 25%.",
+  },
+  "dk-gift-360": {
+    title: "The gift threshold is DKK 360",
+    body: "According to the Danish Customs Agency (Toldstyrelsen), customs duty and VAT are payable on a gift sent by a private individual from outside the EU if its value is more than DKK 360. Shipping costs are not counted when assessing the threshold. A consignment counts as a gift if it is sent occasionally, contains only goods for the personal use of the recipient or their family, and the recipient pays nothing for it.",
+  },
+  "dk-carrier-fee": {
+    title: "The carrier calculates the duty",
+    body: "According to the Danish Customs Agency, the carrier calculates and declares the customs duty and VAT on a gift and may charge a fee for doing so — the Agency has no influence on that fee. On alcohol, tobacco and perfume, VAT and possibly special duties are always payable, even when the item is a gift.",
+  },
 };
 
 /** The same everywhere, Poland included (confirmed 2026-10-09). */
@@ -2563,6 +2579,140 @@ const copy: Record<CountrySlug, CountryCopy> = {
         body: "Send a gift, personal belongings or other permitted goods to family, friends and relatives in Ireland.",
         emphasis:
           "Message us today and find out the cost of sending your parcel to Ireland.",
+      },
+    },
+  },
+  denmark: {
+    name: "Denmark",
+    nameIn: "Denmark",
+    linkLabel: "Send a parcel to Denmark",
+    footerLinkLabel: "Send to Denmark",
+    priceLinkLabel: "Cost of sending to Denmark",
+    factsHeading: "What to know before sending to Denmark",
+    h1: "Send a parcel from Georgia to Denmark",
+    seoTitle: "Send a parcel to Denmark",
+    seoDescription:
+      "Send a parcel from Georgia to Denmark — Copenhagen, Aarhus, Odense, Aalborg, Esbjerg. Find out the price and start your order with Parcello.",
+    intro:
+      "Denmark is a member of the European Union but has not introduced the euro — its currency is the Danish krone. The Danish Customs Agency publishes the gift threshold in kroner too: duty is payable on a gift worth more than DKK 360.",
+    content: {
+      intro: [
+        "Want to send a parcel from Georgia to Denmark? Parcello will help you send it simply and conveniently — whether it is a gift, clothing, personal belongings or other permitted goods.",
+      ],
+      narrative: [
+        {
+          placement: "afterIntro",
+          heading: "Sending a parcel from Georgia to Denmark",
+          body: [
+            "Diplomatic relations between Georgia and the Kingdom of Denmark were established on 1 July 1992, and Georgia's diplomatic mission to Denmark opened in Copenhagen in 2006.",
+            "For Georgians living in Denmark, receiving a parcel from home is often a simple way of keeping a connection to family, friends and the place they came from.",
+            "You give us the parcel and the details we need, and we help organise the process of getting it to Denmark.",
+          ],
+        },
+        {
+          placement: "beforePricing",
+          heading: "Denmark — the krone and the DKK 360 threshold",
+          body: [
+            "Denmark is a member of the European Union but not of the eurozone — its currency is the Danish krone. EU customs rules apply to a parcel sent from Georgia, and the Danish Customs Agency publishes the gift threshold in kroner. The standard VAT rate in Denmark is 25%.",
+            "According to the Danish Customs Agency (Toldstyrelsen), customs duty and VAT are payable on a gift from a private individual if its value is more than DKK 360. Shipping costs are not counted when assessing the threshold. On alcohol, tobacco and perfume, VAT is always payable, even on a gift.",
+            "The carrier calculates and declares the duty and may charge a fee for doing so — the Agency says it has no influence on that fee.",
+            "That is why it helps if the recipient knows in advance what is in the parcel and what it is worth — if the gift is worth more than DKK 360, it is the recipient who pays the duty.",
+          ],
+        },
+      ],
+      why: {
+        heading: "Why Parcello?",
+        body: [
+          "Sending an international parcel should not be complicated.",
+          "Easy communication matters to us, and so does your knowing what is needed to send your parcel.",
+        ],
+        highlight:
+          "Parcello lets you send a parcel from Georgia to Denmark and get the information you need, all in one place.",
+      },
+      steps: {
+        heading: "How we send parcels to Denmark",
+        items: [
+          {
+            title: "Get in touch",
+            body: "Tell us you want to send a parcel to Denmark and give us its approximate weight, its contents and the destination city.",
+          },
+          {
+            title: "Prepare your parcel",
+            body: "Pack the items securely and make sure they are permitted to be sent.",
+          },
+          {
+            title: "Hand over the parcel",
+            body: "Our team collects your parcel by whichever method you have agreed with us.",
+          },
+          {
+            title: "Your parcel sets off for Denmark",
+            body: STEP_TRANSPORT_BODY,
+          },
+          {
+            title: "The parcel arrives in Denmark",
+            body: businessEn.doorDelivery,
+          },
+        ],
+      },
+      sendable: {
+        heading: "What can you send to Denmark?",
+        intro:
+          "With Parcello you can send a range of permitted personal items, including:",
+        items: SENDABLE_ITEMS,
+        note: "Restrictions apply to some items in international shipping. Before you send, tell us what you would like to put in the parcel and we will help you check.",
+        moreHref: "/what-can-i-send",
+        moreLabel: "See the full list of permitted items",
+      },
+      cities: {
+        heading:
+          "Sending a parcel to any city or village in Denmark",
+        intro:
+          "We deliver anywhere in Denmark — to big cities as well as small towns and villages. For example:",
+        list: ["Copenhagen", "Aarhus", "Odense", "Aalborg", "Esbjerg"],
+        note: "When you order, give the recipient's full address and contact details so the parcel can be processed correctly.",
+      },
+      pricing: {
+        heading: "How much does it cost to send a parcel to Denmark?",
+        body: "The cost depends on the weight of the parcel and the rate in force.",
+        emphasis:
+          "Send us the weight of your parcel and the destination city in Denmark to get the current price.",
+      },
+      faqs: [
+        {
+          question: "How long does a parcel take to reach Denmark?",
+          answer: DELIVERY_TIME_ANSWER,
+        },
+        {
+          question: "Up to what value is a gift tax-free in Denmark?",
+          answer:
+            "According to the Danish Customs Agency, customs duty and VAT are payable if a gift is worth more than DKK 360. Shipping costs are not counted when assessing the threshold, and VAT is always payable on alcohol, tobacco and perfume.",
+        },
+        {
+          question: "What currency is used in Denmark?",
+          answer:
+            "Denmark is a member of the European Union but has not introduced the euro — its currency is the Danish krone (DKK). Since 1999 the krone has taken part in the European exchange rate mechanism (ERM II).",
+        },
+        {
+          question: "Can I send Georgian products to Denmark?",
+          answer:
+            "Some products can be sent, though restrictions may apply to particular items. Tell us what you would like to send and we will help you check.",
+        },
+        {
+          question: "Can I send a parcel to Copenhagen or Aarhus?",
+          answer:
+            "Yes. We deliver to any city, town or village in Denmark — just give us the recipient's full address when you order.",
+        },
+        {
+          question: "How do I start sending a parcel?",
+          answer:
+            "Get in touch and tell us the approximate weight of the parcel, what is inside it, and the destination city in Denmark.",
+        },
+      ],
+      cta: {
+        heading: "Send your parcel from Georgia to Denmark with Parcello",
+        body: "Send a gift, personal belongings or other permitted goods to family, friends and relatives in Denmark.",
+        emphasis:
+          "Message us today and find out the cost of sending your parcel to Denmark.",
       },
     },
   },
