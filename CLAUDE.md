@@ -166,7 +166,7 @@ The only verified facts so far. Everything else is an open question (`docs/OPEN-
 |---|---|
 | Business name | Parcello Georgia |
 | Phone | `551 23 15 19` → `tel:+995551231519` |
-| Pricing model | **Per kg, in GEL**, for the 22 destinations in `business.pricing.rates` (supplied 2026-10-08; Romania added 2026-10-15), shown on `/prices` and the matching country pages. Every other destination is quoted on request. |
+| Pricing model | **Per kg, in GEL**, for the 24 destinations in `business.pricing.rates` (supplied 2026-10-08; Romania added 2026-10-15, Italy and Spain 2026-10-27 — priced, but not priority destinations and without country pages), shown on `/prices` and the matching country pages. Every other destination is quoted on request. |
 | Coverage | **All of Europe.** Poland, Germany, France, Hungary, Bulgaria, Czechia, Slovakia, the Netherlands, Finland, Sweden, Portugal, Lithuania, Latvia, Estonia, Austria, Belgium and Romania are *priority* destinations and SEO targets — not the limit of the service. Never write copy implying only those seventeen are served. (Italy was dropped as a priority destination on 2026-09-08; the Netherlands was added on 2026-09-12, Finland and Sweden on 2026-09-29, Portugal on 2026-10-08, Lithuania, Latvia and Estonia on 2026-10-09, and Austria, Belgium and Romania on 2026-10-15.) |
 | Parcel handover | **Both** courier pickup and drop-off are offered (specific cities/addresses still TBC) |
 | Delivery within a destination | **Anywhere in the country** — big cities, small towns and villages (confirmed 2026-10-09). The cities on country pages are examples, never the limit; never write "various cities" or ask the customer to check whether a town is covered. Delivery is to the door — see below. |
