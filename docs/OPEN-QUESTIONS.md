@@ -25,7 +25,7 @@ Answered items move to `CLAUDE.md` §10 and into `src/content/business.ts`.
 | 21 | **Commercial freight — transit time and any weight/volume floor.** No figure is published; the service carries `deliveryTimeGenitive: null` and the steps promise a quote rather than a timescale. | `/services` |
 ## Resolved
 
-- **Pricing** — per-kg rates in GEL for 24 destinations, supplied 2026-10-08 (Romania, 18 ₾, on 2026-10-15, which closed #23; Italy, 18 ₾, and Spain, 17 ₾, on 2026-10-27) and published on `/prices`, the homepage, the price FAQ answer and the matching country pages. Every other destination is quoted on request via Facebook or phone. See `CLAUDE.md` §1 rule 2 and §10.
+- **Pricing** — per-kg rates in GEL for 23 destinations, supplied 2026-10-08 (Romania, 18 ₾, on 2026-10-15, which closed #23; Italy, 18 ₾, and Spain, 17 ₾, on 2026-10-27; Norway removed on 2026-10-27 because it is not in the EU) and published on `/prices`, the homepage, the price FAQ answer and the matching country pages. Every other destination is quoted on request via Facebook or phone. See `CLAUDE.md` §1 rule 2 and §10.
 - **Primary phone** — `+995 551 23 15 19`. Always rendered via `<PhoneButton />` / `<PhoneLink />`.
 - **Parcel handover** — both courier pickup and drop-off are offered. Coverage details still open (#3, #4).
 - **Facebook** — `https://www.facebook.com/parcellogeorgia`.
