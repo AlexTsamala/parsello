@@ -209,6 +209,22 @@ const factCopy: Record<string, { title: string; body: string }> = {
     title: "Marking a parcel as a gift matters",
     body: "According to Poșta Română, automated processing cannot always tell commercial items from non-commercial ones, so it treats low-value items as e-commerce items and charges VAT on them — except those marked as a gift in the item's electronic data. Non-commercial goods sent from one private individual to another are exempt from VAT up to a value of €45, provided such consignments are not regular and the recipient pays nothing for them.",
   },
+  "ie-euro": {
+    title: "Ireland is a founding member of the eurozone",
+    body: "Ireland joined the European Union in 1973 and was among the first countries to adopt the euro, on 1 January 1999. Euro banknotes and coins entered circulation on 1 January 2002. The euro replaced the Irish pound at a fixed rate of €1 = 0.787564 pounds, and the period in which both currencies circulated ended on 9 February 2002. The Central Bank of Ireland exchanges Irish pound banknotes and coins for euro with no time limit.",
+  },
+  "ie-vat": {
+    title: "VAT rate",
+    body: "The standard VAT rate in Ireland is 23%.",
+  },
+  "ie-an-post-charges": {
+    title: "The recipient pays the customs charges",
+    body: "According to An Post, Ireland's national postal operator, every parcel arriving from outside the EU must come with electronic customs data before An Post can deliver it. The recipient pays the customs charges and, where one applies, an administration fee — online, in the An Post app or at any post office; payment by phone is not possible. If the charges are not paid by the stated date, the parcel is returned to the sender.",
+  },
+  "ie-eircode": {
+    title: "Eircode — a separate code for every address",
+    body: "Eircode is Ireland's postcode system, launched in July 2015. It is a seven-character code: the first three characters identify the principal post town, and the last four the individual address. Every residential and business address has its own Eircode. According to Eircode, more than 35% of addresses in Ireland share their address with at least one other property.",
+  },
 };
 
 /** The same everywhere, Poland included (confirmed 2026-10-09). */
@@ -2413,6 +2429,140 @@ const copy: Record<CountrySlug, CountryCopy> = {
         body: "Send a gift, personal belongings or other permitted goods to family, friends and relatives in Romania.",
         emphasis:
           "Message us today and find out the cost of sending your parcel to Romania.",
+      },
+    },
+  },
+  ireland: {
+    name: "Ireland",
+    nameIn: "Ireland",
+    linkLabel: "Send a parcel to Ireland",
+    footerLinkLabel: "Send to Ireland",
+    priceLinkLabel: "Cost of sending to Ireland",
+    factsHeading: "What to know before sending to Ireland",
+    h1: "Send a parcel from Georgia to Ireland",
+    seoTitle: "Send a parcel to Ireland",
+    seoDescription:
+      "Send a parcel from Georgia to Ireland — Dublin, Cork, Limerick, Galway, Waterford. Find out the price and start your order with Parcello.",
+    intro:
+      "Ireland is a founding member of the eurozone, and every Irish address has its own seven-character code — the Eircode. According to An Post, Ireland's national postal operator, the recipient pays the customs charges on a parcel from outside the EU.",
+    content: {
+      intro: [
+        "Want to send a parcel from Georgia to Ireland? Parcello will help you send it simply and conveniently — whether it is a gift, clothing, personal belongings or other permitted goods.",
+      ],
+      narrative: [
+        {
+          placement: "afterIntro",
+          heading: "Sending a parcel from Georgia to Ireland",
+          body: [
+            "Diplomatic relations between Georgia and Ireland were established on 12 September 1996. Georgia's embassy in Ireland opened in Dublin in 2011. In September 2023 Georgia's foreign minister made an official visit to Ireland and also met representatives of the Georgian diaspora at the embassy.",
+            "For Georgians living in Ireland, receiving a parcel from home is often a simple way of keeping a connection to family, friends and the place they came from.",
+            "You give us the parcel and the details we need, and we help organise the process of getting it to Ireland.",
+          ],
+        },
+        {
+          placement: "beforePricing",
+          heading: "Ireland — An Post's notice and the Eircode",
+          body: [
+            "Ireland is a member of the European Union and the eurozone, so EU customs rules apply to a parcel sent from Georgia, and a consignment's value and the customs relief thresholds are in euro. The standard VAT rate in Ireland is 23%.",
+            "According to An Post, the recipient pays the customs charges on a parcel from outside the EU and, where one applies, an administration fee. The recipient is told what is due by postcard — and by email and SMS too, if the sender provided those details.",
+            "The charges can be paid online, using the customs reference number on the card, in the An Post app or at any post office — but not by phone. If they are not paid by the \"Pay by Date\", the parcel is returned to the sender.",
+            "According to Eircode, more than 35% of addresses in Ireland share their address with at least one other property, and Eircode gives every address its own seven-character code. That is why it helps if the recipient's address includes their Eircode.",
+          ],
+        },
+      ],
+      why: {
+        heading: "Why Parcello?",
+        body: [
+          "Sending an international parcel should not be complicated.",
+          "Easy communication matters to us, and so does your knowing what is needed to send your parcel.",
+        ],
+        highlight:
+          "Parcello lets you send a parcel from Georgia to Ireland and get the information you need, all in one place.",
+      },
+      steps: {
+        heading: "How we send parcels to Ireland",
+        items: [
+          {
+            title: "Get in touch",
+            body: "Tell us you want to send a parcel to Ireland and give us its approximate weight, its contents and the destination city.",
+          },
+          {
+            title: "Prepare your parcel",
+            body: "Pack the items securely and make sure they are permitted to be sent.",
+          },
+          {
+            title: "Hand over the parcel",
+            body: "Our team collects your parcel by whichever method you have agreed with us.",
+          },
+          {
+            title: "Your parcel sets off for Ireland",
+            body: STEP_TRANSPORT_BODY,
+          },
+          {
+            title: "The parcel arrives in Ireland",
+            body: businessEn.doorDelivery,
+          },
+        ],
+      },
+      sendable: {
+        heading: "What can you send to Ireland?",
+        intro:
+          "With Parcello you can send a range of permitted personal items, including:",
+        items: SENDABLE_ITEMS,
+        note: "Restrictions apply to some items in international shipping. Before you send, tell us what you would like to put in the parcel and we will help you check.",
+        moreHref: "/what-can-i-send",
+        moreLabel: "See the full list of permitted items",
+      },
+      cities: {
+        heading:
+          "Sending a parcel to any city or village in Ireland",
+        intro:
+          "We deliver anywhere in Ireland — to big cities as well as small towns and villages. For example:",
+        list: ["Dublin", "Cork", "Limerick", "Galway", "Waterford"],
+        note: "When you order, give the recipient's full address and contact details so the parcel can be processed correctly.",
+      },
+      pricing: {
+        heading: "How much does it cost to send a parcel to Ireland?",
+        body: "The cost depends on the weight of the parcel and the rate in force.",
+        emphasis:
+          "Send us the weight of your parcel and the destination city in Ireland to get the current price.",
+      },
+      faqs: [
+        {
+          question: "How long does a parcel take to reach Ireland?",
+          answer: DELIVERY_TIME_ANSWER,
+        },
+        {
+          question: "How does the recipient pay customs charges in Ireland?",
+          answer:
+            "According to An Post, the recipient receives a postcard showing what is due and can pay online, in the An Post app or at any post office. Payment by phone is not possible, and if the charges are not paid on time, the parcel is returned to the sender.",
+        },
+        {
+          question: "What is an Eircode?",
+          answer:
+            "An Eircode is Ireland's seven-character postcode, and every address has its own. More than 35% of addresses in Ireland share their address with at least one other property, so the Eircode makes a specific address easier to find.",
+        },
+        {
+          question: "Can I send Georgian products to Ireland?",
+          answer:
+            "Some products can be sent, though restrictions may apply to particular items. Tell us what you would like to send and we will help you check.",
+        },
+        {
+          question: "Can I send a parcel to Dublin or Cork?",
+          answer:
+            "Yes. We deliver to any city, town or village in Ireland — just give us the recipient's full address when you order.",
+        },
+        {
+          question: "How do I start sending a parcel?",
+          answer:
+            "Get in touch and tell us the approximate weight of the parcel, what is inside it, and the destination city in Ireland.",
+        },
+      ],
+      cta: {
+        heading: "Send your parcel from Georgia to Ireland with Parcello",
+        body: "Send a gift, personal belongings or other permitted goods to family, friends and relatives in Ireland.",
+        emphasis:
+          "Message us today and find out the cost of sending your parcel to Ireland.",
       },
     },
   },
