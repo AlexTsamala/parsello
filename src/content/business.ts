@@ -5,6 +5,9 @@
  * ties keep the order the business gave them in. A destination missing from
  * this list is quoted on request — never estimate one (CLAUDE.md §1 rule 2).
  *
+ * Norway was removed on 2026-10-27 by the business's decision, because it is
+ * not in the EU. Don't add it back unless the business asks.
+ *
  * `id` is the country-page slug where one exists, so the price table links to
  * the page and the page shows its own rate.
  */
@@ -26,7 +29,6 @@ const rates = [
   { id: "romania", flag: "🇷🇴", name: "რუმინეთი", perKg: 18 },
   { id: "italy", flag: "🇮🇹", name: "იტალია", perKg: 18 },
   { id: "sweden", flag: "🇸🇪", name: "შვედეთი", perKg: 20 },
-  { id: "norway", flag: "🇳🇴", name: "ნორვეგია", perKg: 20 },
   { id: "denmark", flag: "🇩🇰", name: "დანია", perKg: 20 },
   { id: "finland", flag: "🇫🇮", name: "ფინეთი", perKg: 20 },
   { id: "portugal", flag: "🇵🇹", name: "პორტუგალია", perKg: 21 },
