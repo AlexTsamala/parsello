@@ -4,7 +4,7 @@ Guidance for Claude Code working in this repository.
 
 ## Project
 
-**Parcello Georgia** — marketing + SEO website for a Georgian parcel-delivery company that sends parcels from Georgia to Europe (Poland, Germany, France, Hungary, Bulgaria, Czechia, Slovakia, the Netherlands, Finland, Sweden, Portugal, Lithuania, Latvia, Estonia, Austria, Belgium, Romania, Ireland, Denmark).
+**Parcello Georgia** — marketing + SEO website for a Georgian parcel-delivery company that sends parcels from Georgia to Europe (Poland, Germany, France, Hungary, Bulgaria, Czechia, Slovakia, the Netherlands, Finland, Sweden, Portugal, Lithuania, Latvia, Estonia, Austria, Belgium, Romania, Ireland, Denmark, Greece).
 
 This is a **marketing and SEO site**, not an application. Its job: explain the service in 5 seconds, build trust, and generate order inquiries.
 
@@ -167,7 +167,7 @@ The only verified facts so far. Everything else is an open question (`docs/OPEN-
 | Business name | Parcello Georgia |
 | Phone | `551 23 15 19` → `tel:+995551231519` |
 | Pricing model | **Per kg, in GEL**, for the 23 destinations in `business.pricing.rates` (supplied 2026-10-08; Romania added 2026-10-15, Italy and Spain 2026-10-27 — priced, but not priority destinations and without country pages), shown on `/prices` and the matching country pages. Every other destination is quoted on request. |
-| Coverage | **All of Europe.** Poland, Germany, France, Hungary, Bulgaria, Czechia, Slovakia, the Netherlands, Finland, Sweden, Portugal, Lithuania, Latvia, Estonia, Austria, Belgium, Romania, Ireland and Denmark are *priority* destinations and SEO targets — not the limit of the service. Never write copy implying only those nineteen are served. (Italy was dropped as a priority destination on 2026-09-08; the Netherlands was added on 2026-09-12, Finland and Sweden on 2026-09-29, Portugal on 2026-10-08, Lithuania, Latvia and Estonia on 2026-10-09, Austria, Belgium and Romania on 2026-10-15, and Ireland and Denmark on 2026-10-27.) |
+| Coverage | **All of Europe.** Poland, Germany, France, Hungary, Bulgaria, Czechia, Slovakia, the Netherlands, Finland, Sweden, Portugal, Lithuania, Latvia, Estonia, Austria, Belgium, Romania, Ireland, Denmark and Greece are *priority* destinations and SEO targets — not the limit of the service. Never write copy implying only those twenty are served. (Italy was dropped as a priority destination on 2026-09-08; the Netherlands was added on 2026-09-12, Finland and Sweden on 2026-09-29, Portugal on 2026-10-08, Lithuania, Latvia and Estonia on 2026-10-09, Austria, Belgium and Romania on 2026-10-15, Ireland and Denmark on 2026-10-27, and Greece on 2026-10-28.) |
 | Minimum charge | **Parcels up to 6 kg are charged as 6 kg**, for every destination (confirmed 2026-10-28). One sentence, `business.pricing.minimumCharge`, shown wherever a per-kg rate is: the country-page price box, under the rate table (`/prices` and the homepage) and in the price FAQ answer. Don't turn it into an example total. |
 | Non-EU destinations | **Norway was removed from the site entirely on 2026-10-27** — rate and all — by the business's decision, because it is not in the EU. Great Britain (also outside the EU) keeps its rate but gets **no country page**. Every country page appends the EU-wide import rules (`euImportRules`), which would be wrong for a non-EU country — so don't add a non-EU page without asking first. |
 | Parcel handover | **Both** courier pickup and drop-off are offered (specific cities/addresses still TBC) |
