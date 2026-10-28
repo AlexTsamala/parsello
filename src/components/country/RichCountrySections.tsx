@@ -196,6 +196,9 @@ export function RichCountrySections({
                 <p className="mt-1 text-4xl font-bold">
                   {rate.perKg} {business.pricing.currency}
                 </p>
+                <p className="mt-2 text-sm text-muted">
+                  {business.pricing.minimumCharge}
+                </p>
                 <Link
                   href={localePath(locale, "/prices")}
                   className="mt-3 inline-block text-sm font-medium text-brand underline-offset-4 hover:underline"

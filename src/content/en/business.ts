@@ -63,6 +63,7 @@ export const businessEn: BusinessContent = {
       name: rateNames[rate.id],
     })),
     currency: "GEL",
+    minimumCharge: "For parcels up to 6 kg, you pay the price of 6 kg.",
     dependsOn:
       "The cost depends on which country you are sending the parcel to and how much it weighs.",
     copy: "Send us the destination country and the approximate weight of your parcel and we will calculate the exact price for you. Call us on +995 551 23 15 19 or message us on Facebook.",

@@ -27,7 +27,7 @@ export const faqsEn: FaqItem[] = [
   },
   {
     question: "How much does it cost to send a parcel?",
-    answer: `Prices per kilogram: ${formatRateTiers(businessEn.pricing.rates, businessEn.pricing.currency)}. Sending somewhere else? ${businessEn.pricing.copy}`,
+    answer: `Prices per kilogram: ${formatRateTiers(businessEn.pricing.rates, businessEn.pricing.currency)}. ${businessEn.pricing.minimumCharge} Sending somewhere else? ${businessEn.pricing.copy}`,
     featured: true,
   },
   {

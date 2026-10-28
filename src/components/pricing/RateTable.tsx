@@ -67,6 +67,9 @@ export function RateTable({ locale }: { locale: Locale }) {
           ))}
         </tbody>
       </table>
+      <p className="border-t border-line bg-surface px-5 py-3 text-sm text-muted">
+        {business.pricing.minimumCharge}
+      </p>
     </div>
   );
 }

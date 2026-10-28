@@ -54,6 +54,11 @@ export type BusinessContent = {
     rates: readonly Rate[];
     /** Written after the amount: "15 ₾", "15 GEL". */
     currency: string;
+    /**
+     * Parcels up to 6 kg are charged as 6 kg, everywhere (2026-10-28). Render
+     * it wherever a per-kg rate is shown.
+     */
+    minimumCharge: string;
     dependsOn: string;
     copy: string;
   };

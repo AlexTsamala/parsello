@@ -26,7 +26,7 @@ export const faqs: FaqItem[] = [
   },
   {
     question: "რა ღირს ამანათის გაგზავნა?",
-    answer: `ფასი 1 კილოგრამზე: ${formatRateTiers(business.pricing.rates, business.pricing.currency)}. სხვა ქვეყანაში აგზავნით? ${business.pricing.copy}`,
+    answer: `ფასი 1 კილოგრამზე: ${formatRateTiers(business.pricing.rates, business.pricing.currency)}. ${business.pricing.minimumCharge} სხვა ქვეყანაში აგზავნით? ${business.pricing.copy}`,
     featured: true,
   },
   {

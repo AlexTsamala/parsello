@@ -26,7 +26,7 @@ export const faqsRu: FaqItem[] = [
   },
   {
     question: "Сколько стоит отправить посылку?",
-    answer: `Цены за 1 кг: ${formatRateTiers(businessRu.pricing.rates, businessRu.pricing.currency)}. Другая страна? ${businessRu.pricing.copy}`,
+    answer: `Цены за 1 кг: ${formatRateTiers(businessRu.pricing.rates, businessRu.pricing.currency)}. ${businessRu.pricing.minimumCharge} Другая страна? ${businessRu.pricing.copy}`,
     featured: true,
   },
   {

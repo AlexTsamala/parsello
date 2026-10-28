@@ -88,6 +88,11 @@ export const business = {
     rates,
     currency: "₾",
 
+    // Confirmed 2026-10-28 for every destination. Shown next to every per-kg
+    // price, so nobody multiplies a light parcel's weight by the rate.
+    minimumCharge:
+      "6 კილოგრამამდე ამანათის შემთხვევაში იხდით 6 კილოს საფასურს.",
+
     dependsOn:
       "ღირებულება დამოკიდებულია იმაზე, თუ რომელ ქვეყანაში აგზავნით ამანათს და რა არის მისი წონა.",
     copy: "მოგვწერეთ ქვეყანა და ამანათის დაახლოებითი წონა — ზუსტ ფასს დაგიანგარიშებთ. დაგვიკავშირდით ნომერზე +995 551 23 15 19 ან მოგვწერეთ Facebook გვერდზე.",
