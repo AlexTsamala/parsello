@@ -241,6 +241,14 @@ const factCopy: Record<string, { title: string; body: string }> = {
     title: "The carrier calculates the duty",
     body: "According to the Danish Customs Agency, the carrier calculates and declares the customs duty and VAT on a gift and may charge a fee for doing so — the Agency has no influence on that fee. On alcohol, tobacco and perfume, VAT and possibly special duties are always payable, even when the item is a gift.",
   },
+  "gr-euro": {
+    title: "Greece joined the eurozone in 2001",
+    body: "Greece joined the European Union in 1981 and the eurozone on 1 January 2001. Euro banknotes and coins entered circulation on 1 January 2002. The euro replaced the Greek drachma at a fixed rate of €1 = 340.750 drachmas, and the period in which both currencies circulated ended on 28 February 2002. Drachma coins could be exchanged for euro until 1 March 2004, and banknotes until 1 March 2012.",
+  },
+  "gr-vat": {
+    title: "VAT is 24%, lower on some islands",
+    body: "The standard VAT rate in Greece is 24%. On some islands every VAT rate is reduced by 30%, and that relief has recently been extended to more islands.",
+  },
 };
 
 /** The same everywhere, Poland included (confirmed 2026-10-09). */
@@ -2713,6 +2721,140 @@ const copy: Record<CountrySlug, CountryCopy> = {
         body: "Send a gift, personal belongings or other permitted goods to family, friends and relatives in Denmark.",
         emphasis:
           "Message us today and find out the cost of sending your parcel to Denmark.",
+      },
+    },
+  },
+  greece: {
+    name: "Greece",
+    nameIn: "Greece",
+    linkLabel: "Send a parcel to Greece",
+    footerLinkLabel: "Send to Greece",
+    priceLinkLabel: "Cost of sending to Greece",
+    factsHeading: "What to know before sending to Greece",
+    h1: "Send a parcel from Georgia to Greece",
+    seoTitle: "Send a parcel to Greece",
+    seoDescription:
+      "Send a parcel from Georgia to Greece — Athens, Thessaloniki, Patras, Heraklion, Larissa. Find out the price and start your order with Parcello.",
+    intro:
+      "Greece joined the eurozone in 2001 — two years after the first members. Its standard VAT rate is 24%, though on some islands every VAT rate is 30% lower.",
+    content: {
+      intro: [
+        "Want to send a parcel from Georgia to Greece? Parcello will help you send it simply and conveniently — whether it is a gift, clothing, personal belongings or other permitted goods.",
+      ],
+      narrative: [
+        {
+          placement: "afterIntro",
+          heading: "Sending a parcel from Georgia to Greece",
+          body: [
+            "Diplomatic relations between Georgia and the Hellenic Republic were established on 20 April 1992. Georgia has two missions in Greece — an embassy in Athens and a consulate general in Thessaloniki.",
+            "For Georgians living in Greece, receiving a parcel from home is often a simple way of keeping a connection to family, friends and the place they came from.",
+            "You give us the parcel and the details we need, and we help organise the process of getting it to Greece.",
+          ],
+        },
+        {
+          placement: "beforePricing",
+          heading: "Greece — the euro since 2001 and island VAT",
+          body: [
+            "Greece is a member of the European Union and the eurozone, so EU customs rules apply to a parcel sent from Georgia, and a consignment's value and the customs relief thresholds are in euro.",
+            "Greece joined the eurozone on 1 January 2001 — two years after the first members. The euro replaced the drachma at a fixed rate (€1 = 340.750 drachmas), and old banknotes could only be exchanged for euro until 1 March 2012.",
+            "The standard VAT rate in Greece is 24%, though on some islands every VAT rate is reduced by 30%.",
+            "EU customs rules, including the gift threshold, apply to Greece in full — you will find them below, in the section on official rules.",
+          ],
+        },
+      ],
+      why: {
+        heading: "Why Parcello?",
+        body: [
+          "Sending an international parcel should not be complicated.",
+          "Easy communication matters to us, and so does your knowing what is needed to send your parcel.",
+        ],
+        highlight:
+          "Parcello lets you send a parcel from Georgia to Greece and get the information you need, all in one place.",
+      },
+      steps: {
+        heading: "How we send parcels to Greece",
+        items: [
+          {
+            title: "Get in touch",
+            body: "Tell us you want to send a parcel to Greece and give us its approximate weight, its contents and the destination city.",
+          },
+          {
+            title: "Prepare your parcel",
+            body: "Pack the items securely and make sure they are permitted to be sent.",
+          },
+          {
+            title: "Hand over the parcel",
+            body: "Our team collects your parcel by whichever method you have agreed with us.",
+          },
+          {
+            title: "Your parcel sets off for Greece",
+            body: STEP_TRANSPORT_BODY,
+          },
+          {
+            title: "The parcel arrives in Greece",
+            body: businessEn.doorDelivery,
+          },
+        ],
+      },
+      sendable: {
+        heading: "What can you send to Greece?",
+        intro:
+          "With Parcello you can send a range of permitted personal items, including:",
+        items: SENDABLE_ITEMS,
+        note: "Restrictions apply to some items in international shipping. Before you send, tell us what you would like to put in the parcel and we will help you check.",
+        moreHref: "/what-can-i-send",
+        moreLabel: "See the full list of permitted items",
+      },
+      cities: {
+        heading:
+          "Sending a parcel to any city or village in Greece",
+        intro:
+          "We deliver anywhere in Greece — to big cities as well as small towns and villages. For example:",
+        list: ["Athens", "Thessaloniki", "Patras", "Heraklion", "Larissa"],
+        note: "When you order, give the recipient's full address and contact details so the parcel can be processed correctly.",
+      },
+      pricing: {
+        heading: "How much does it cost to send a parcel to Greece?",
+        body: "The cost depends on the weight of the parcel and the rate in force.",
+        emphasis:
+          "Send us the weight of your parcel and the destination city in Greece to get the current price.",
+      },
+      faqs: [
+        {
+          question: "How long does a parcel take to reach Greece?",
+          answer: DELIVERY_TIME_ANSWER,
+        },
+        {
+          question: "What currency is used in Greece?",
+          answer:
+            "The euro — Greece joined the eurozone on 1 January 2001. Old drachma banknotes could only be exchanged for euro until 1 March 2012.",
+        },
+        {
+          question: "What is the VAT rate in Greece?",
+          answer:
+            "The standard VAT rate in Greece is 24%. On some islands every VAT rate is 30% lower.",
+        },
+        {
+          question: "Can I send Georgian products to Greece?",
+          answer:
+            "Some products can be sent, though restrictions may apply to particular items. Tell us what you would like to send and we will help you check.",
+        },
+        {
+          question: "Can I send a parcel to Athens or Thessaloniki?",
+          answer:
+            "Yes. We deliver to any city, town or village in Greece — just give us the recipient's full address when you order.",
+        },
+        {
+          question: "How do I start sending a parcel?",
+          answer:
+            "Get in touch and tell us the approximate weight of the parcel, what is inside it, and the destination city in Greece.",
+        },
+      ],
+      cta: {
+        heading: "Send your parcel from Georgia to Greece with Parcello",
+        body: "Send a gift, personal belongings or other permitted goods to family, friends and relatives in Greece.",
+        emphasis:
+          "Message us today and find out the cost of sending your parcel to Greece.",
       },
     },
   },
