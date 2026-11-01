@@ -1,7 +1,8 @@
 /**
  * Per-kg rates in GEL, supplied by the business on 2026-10-08 (Czechia and
  * the Netherlands added later the same day, Romania on 2026-10-15, Italy and
- * Spain on 2026-10-27). Cheapest first;
+ * Spain on 2026-10-27; Germany, Hungary, Czechia and Spain raised by 1 ₾ on
+ * 2026-11-01). Cheapest first;
  * ties keep the order the business gave them in. A destination missing from
  * this list is quoted on request — never estimate one (CLAUDE.md §1 rule 2).
  *
@@ -14,11 +15,10 @@
 const rates = [
   { id: "greece", flag: "🇬🇷", name: "საბერძნეთი", perKg: 9 },
   { id: "poland", flag: "🇵🇱", name: "პოლონეთი", perKg: 15 },
-  { id: "germany", flag: "🇩🇪", name: "გერმანია", perKg: 15 },
-  { id: "hungary", flag: "🇭🇺", name: "უნგრეთი", perKg: 15 },
-  { id: "czechia", flag: "🇨🇿", name: "ჩეხეთი", perKg: 15 },
+  { id: "germany", flag: "🇩🇪", name: "გერმანია", perKg: 16 },
+  { id: "hungary", flag: "🇭🇺", name: "უნგრეთი", perKg: 16 },
+  { id: "czechia", flag: "🇨🇿", name: "ჩეხეთი", perKg: 16 },
   { id: "slovakia", flag: "🇸🇰", name: "სლოვაკეთი", perKg: 16 },
-  { id: "spain", flag: "🇪🇸", name: "ესპანეთი", perKg: 17 },
   { id: "austria", flag: "🇦🇹", name: "ავსტრია", perKg: 18 },
   { id: "lithuania", flag: "🇱🇹", name: "ლიტვა", perKg: 18 },
   { id: "latvia", flag: "🇱🇻", name: "ლატვია", perKg: 18 },
@@ -28,6 +28,7 @@ const rates = [
   { id: "netherlands", flag: "🇳🇱", name: "ნიდერლანდები", perKg: 18 },
   { id: "romania", flag: "🇷🇴", name: "რუმინეთი", perKg: 18 },
   { id: "italy", flag: "🇮🇹", name: "იტალია", perKg: 18 },
+  { id: "spain", flag: "🇪🇸", name: "ესპანეთი", perKg: 18 },
   { id: "sweden", flag: "🇸🇪", name: "შვედეთი", perKg: 20 },
   { id: "denmark", flag: "🇩🇰", name: "დანია", perKg: 20 },
   { id: "finland", flag: "🇫🇮", name: "ფინეთი", perKg: 20 },
