@@ -249,6 +249,18 @@ const factCopy: Record<string, { title: string; body: string }> = {
     title: "VAT is 24%, lower on some islands",
     body: "The standard VAT rate in Greece is 24%. On some islands every VAT rate is reduced by 30%, and that relief has recently been extended to more islands.",
   },
+  "es-euro": {
+    title: "Pesetas could be exchanged for euro until 2021",
+    body: "Spain joined the European Union in 1986 and was one of the first countries to adopt the euro, on 1 January 1999. Euro banknotes and coins entered circulation on 1 January 2002. The euro replaced the peseta at a fixed rate of €1 = 166.386 pesetas, and the period in which both currencies circulated ended on 28 February 2002. Until 30 June 2002 pesetas could be exchanged at the Banco de España and at high-street banks, and after that only at the Banco de España. The final deadline passed on 30 June 2021.",
+  },
+  "es-vat": {
+    title: "Standard VAT is 21%",
+    body: "The standard VAT (IVA) rate in Spain is 21%. Reduced rates of 10% and 4% apply to certain goods.",
+  },
+  "es-territories": {
+    title: "The Canary Islands, Ceuta and Melilla have a special status",
+    body: "Spain's VAT law (Ley 37/1992) excludes three territories from the scope of Spanish VAT: Ceuta and Melilla, as territories that are not part of the EU customs union, and the Canary Islands, as a territory excluded from the EU's harmonisation of turnover taxes (VAT).",
+  },
 };
 
 /** The same everywhere, Poland included (confirmed 2026-10-09). */
@@ -2855,6 +2867,140 @@ const copy: Record<CountrySlug, CountryCopy> = {
         body: "Send a gift, personal belongings or other permitted goods to family, friends and relatives in Greece.",
         emphasis:
           "Message us today and find out the cost of sending your parcel to Greece.",
+      },
+    },
+  },
+  spain: {
+    name: "Spain",
+    nameIn: "Spain",
+    linkLabel: "Send a parcel to Spain",
+    footerLinkLabel: "Send to Spain",
+    priceLinkLabel: "Cost of sending to Spain",
+    factsHeading: "What to know before sending to Spain",
+    h1: "Send a parcel from Georgia to Spain",
+    seoTitle: "Send a parcel to Spain",
+    seoDescription:
+      "Send a parcel from Georgia to Spain — Madrid, Barcelona, Valencia, Seville, Málaga. Find out the price and start your order with Parcello.",
+    intro:
+      "Spanish VAT does not apply across the whole country — Spain's VAT law excludes the Canary Islands, Ceuta and Melilla from its scope. In the rest of Spain the standard rate is 21%, and the currency has been the euro since 1999.",
+    content: {
+      intro: [
+        "Want to send a parcel from Georgia to Spain? Parcello will help you send it simply and conveniently — whether it is a gift, clothing, personal belongings or other permitted goods.",
+      ],
+      narrative: [
+        {
+          placement: "afterIntro",
+          heading: "Sending a parcel from Georgia to Spain",
+          body: [
+            "Diplomatic relations between Georgia and the Kingdom of Spain were established on 9 July 1992. Georgia's embassy in Madrid opened in 2004, and in 2021 Georgia's consulate in Barcelona was given the status of a consulate general.",
+            "For Georgians living in Spain, receiving a parcel from home is often a simple way of keeping a connection to family, friends and the place they came from.",
+            "You give us the parcel and the details we need, and we help organise the process of getting it to Spain.",
+          ],
+        },
+        {
+          placement: "beforePricing",
+          heading:
+            "The Canary Islands, Ceuta and Melilla — what the recipient should know",
+          body: [
+            "Spain is a member of the European Union and the eurozone, so in most of the country EU customs rules apply to a parcel sent from Georgia, and a consignment's value and the customs relief thresholds are in euro.",
+            "Spanish VAT does not apply in the Canary Islands, Ceuta or Melilla. Spain's VAT law treats Ceuta and Melilla as territories that are not part of the EU customs union — the European Commission likewise states that they are not included in the EU customs territory. The Canary Islands, for their part, are excluded from the EU's harmonisation of VAT.",
+            "In the rest of Spain the standard VAT rate is 21%, with reduced rates of 10% and 4% for certain goods. The currency has been the euro since 1 January 1999: it replaced the peseta at a fixed rate (€1 = 166.386 pesetas).",
+            "EU customs rules, including the gift threshold, are set out below, in the section on official rules.",
+          ],
+        },
+      ],
+      why: {
+        heading: "Why Parcello?",
+        body: [
+          "Sending an international parcel should not be complicated.",
+          "Easy communication matters to us, and so does your knowing what is needed to send your parcel.",
+        ],
+        highlight:
+          "Parcello lets you send a parcel from Georgia to Spain and get the information you need, all in one place.",
+      },
+      steps: {
+        heading: "How we send parcels to Spain",
+        items: [
+          {
+            title: "Get in touch",
+            body: "Tell us you want to send a parcel to Spain and give us its approximate weight, its contents and the destination city.",
+          },
+          {
+            title: "Prepare your parcel",
+            body: "Pack the items securely and make sure they are permitted to be sent.",
+          },
+          {
+            title: "Hand over the parcel",
+            body: "Our team collects your parcel by whichever method you have agreed with us.",
+          },
+          {
+            title: "Your parcel sets off for Spain",
+            body: STEP_TRANSPORT_BODY,
+          },
+          {
+            title: "The parcel arrives in Spain",
+            body: businessEn.doorDelivery,
+          },
+        ],
+      },
+      sendable: {
+        heading: "What can you send to Spain?",
+        intro:
+          "With Parcello you can send a range of permitted personal items, including:",
+        items: SENDABLE_ITEMS,
+        note: "Restrictions apply to some items in international shipping. Before you send, tell us what you would like to put in the parcel and we will help you check.",
+        moreHref: "/what-can-i-send",
+        moreLabel: "See the full list of permitted items",
+      },
+      cities: {
+        heading: "Sending a parcel to any city or village in Spain",
+        intro:
+          "We deliver anywhere in Spain — to big cities as well as small towns and villages. For example:",
+        list: ["Madrid", "Barcelona", "Valencia", "Seville", "Málaga"],
+        note: "When you order, give the recipient's full address and contact details so the parcel can be processed correctly.",
+      },
+      pricing: {
+        heading: "How much does it cost to send a parcel to Spain?",
+        body: "The cost depends on the weight of the parcel and the rate in force.",
+        emphasis:
+          "Send us the weight of your parcel and the destination city in Spain to get the current price.",
+      },
+      faqs: [
+        {
+          question: "How long does a parcel take to reach Spain?",
+          answer: DELIVERY_TIME_ANSWER,
+        },
+        {
+          question: "What currency is used in Spain?",
+          answer:
+            "The euro — Spain was one of the first countries to adopt it, on 1 January 1999, with banknotes and coins following on 1 January 2002. The final deadline for exchanging pesetas for euro passed on 30 June 2021.",
+        },
+        {
+          question: "Does Spanish VAT apply in the Canary Islands?",
+          answer:
+            "No. Spain's VAT law excludes the Canary Islands, Ceuta and Melilla from the scope of Spanish VAT. In the rest of Spain the standard rate is 21%.",
+        },
+        {
+          question: "Can I send Georgian products to Spain?",
+          answer:
+            "Some products can be sent, though restrictions may apply to particular items. Tell us what you would like to send and we will help you check.",
+        },
+        {
+          question: "Can I send a parcel to Madrid or Barcelona?",
+          answer:
+            "Yes. We deliver to any city, town or village in Spain — just give us the recipient's full address when you order.",
+        },
+        {
+          question: "How do I start sending a parcel?",
+          answer:
+            "Get in touch and tell us the approximate weight of the parcel, what is inside it, and the destination city in Spain.",
+        },
+      ],
+      cta: {
+        heading: "Send your parcel from Georgia to Spain with Parcello",
+        body: "Send a gift, personal belongings or other permitted goods to family, friends and relatives in Spain.",
+        emphasis:
+          "Message us today and find out the cost of sending your parcel to Spain.",
       },
     },
   },
