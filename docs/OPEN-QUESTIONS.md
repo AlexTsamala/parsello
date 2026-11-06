@@ -21,7 +21,7 @@ Answered items move to `CLAUDE.md` §10 and into `src/content/business.ts`.
 | 11 | When and how does the customer pay? | FAQ, order flow |
 | 18 | **Online-shopping service** — how does a customer get their forwarding address? Is there registration? Which countries have an address? Where is the parcel collected in Georgia, and is there a weight/price basis? | /services |
 | 14 | Parcello-specific detail per destination (routes, typical timing, what customers usually send there) | Country pages — the researched layer alone can't carry them |
-| 21 | **Commercial freight — inbound transit time and origin countries.** The freight article (2026-11-06) gives the outbound time (about 2–3 weeks) and says freight also runs Europe → Georgia, but names no inbound time or origin countries. The service page still carries `deliveryTimeGenitive: null`. | `/services` |
+| 21 | **Commercial freight — inbound transit time and origin countries.** The freight article (2026-11-06) gives the outbound time (about 2–3 weeks) and says freight also runs Europe → Georgia, but names no inbound time or origin countries. The service page states the outbound time in its text and keeps `deliveryTimeGenitive: null`. | `/services` |
 ## Resolved
 
 - **Pricing** — per-kg rates in GEL for 23 destinations, supplied 2026-10-08 (Romania, 18 ₾, on 2026-10-15, which closed #23; Italy, 18 ₾, and Spain, 17 ₾, on 2026-10-27; Norway removed on 2026-10-27 because it is not in the EU; Germany, Hungary and Czechia raised to 16 ₾, Spain to 18 ₾, and Sweden, Denmark and Finland to 21 ₾ on 2026-11-01) and published on `/prices`, the homepage, the price FAQ answer and the matching country pages. Every other destination is quoted on request via Facebook or phone. See `CLAUDE.md` §1 rule 2 and §10.
