@@ -104,16 +104,19 @@ export const servicesEn: Service[] = [
   },
   {
     slug: "commercial-freight",
-    seoTitle: "Commercial freight transport from Europe",
+    seoTitle: "Freight transport to Europe and to Georgia",
     seoDescription:
-      "Commercial freight transport from Europe to Georgia. Import and export for your business — send us the details of your consignment.",
-    updatedAt: "2026-09-13",
+      "Freight transport from Georgia to Europe and from Europe to Georgia — 1–2 tonnes, collected from anywhere in Georgia and delivered to the door.",
+    updatedAt: "2026-11-06",
     title: "Commercial freight",
-    direction: "Europe → Georgia",
+    direction: "Georgia ⇄ Europe",
     summary:
-      "Parcello transports commercial freight from Europe to Georgia.",
+      "Parcello transports commercial freight from Georgia to Europe and from Europe to Georgia.",
     body: [
       "Our team has many years of experience in the industry and works to get your cargo to its destination safely, efficiently and on schedule.",
+      "From Georgia to Europe we mostly ship consignments of 1–2 tonnes: pallets, commercial goods, furniture and personal belongings when you move house, and Georgian products in bulk.",
+      "We collect the cargo from anywhere in Georgia — your home, office or warehouse. Parcello prepares the export and customs documents.",
+      "Freight leaves Georgia every Sunday, together with the parcels, and is delivered to the door anywhere in Europe, about 2–3 weeks after it is sent.",
       "If your business needs to import or export goods, we will tailor the service to your requirements.",
       "If you are interested, send us the details of your consignment or call us — and we will get back to you.",
     ],
@@ -122,19 +125,19 @@ export const servicesEn: Service[] = [
     steps: [
       {
         title: "Send us the details",
-        body: "Tell us where the cargo is being sent from, what kind it is, and roughly what volume and weight it has.",
+        body: "Message or call us: tell us what you are sending, roughly how much it weighs and how big it is, where we should collect it and where it is going.",
       },
       {
-        title: "We get back to you",
-        body: "We go through your requirements and come back with terms suited to your business.",
+        title: "Get an individual price",
+        body: "We price each consignment individually.",
       },
       {
         title: "We collect the cargo",
-        body: "The cargo is handed to our team in Europe by the method agreed with us.",
+        body: "Freight leaving Georgia is collected from anywhere in the country; freight from Europe is handed to our team by the method agreed with us.",
       },
       {
-        title: "The cargo arrives in Georgia",
-        body: "We take care of organising transport through to the destination.",
+        title: "The cargo reaches its destination",
+        body: "We prepare the export and customs documents and organise transport to the destination. In Europe, we deliver the cargo to the recipient's door.",
       },
     ],
     deliveryTimeGenitive: null,
