@@ -102,12 +102,15 @@ export function articleSchema(post: {
   description: string;
   slug: string;
   publishedAt: string;
+  /** A file in public/images, only when the page shows it. */
+  image?: string;
 }) {
   return {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: post.title,
     description: post.description,
+    ...(post.image ? { image: url(`/images/${post.image}`) } : {}),
     inLanguage: "ka",
     datePublished: post.publishedAt,
     dateModified: post.publishedAt,

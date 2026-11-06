@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -6,8 +7,14 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Button } from "@/components/ui/Button";
 import { PhoneButton } from "@/components/ui/Phone";
 import { Section } from "@/components/ui/Section";
-import { getPost, posts } from "@/content/blog";
-import { articleSchema, breadcrumbSchema } from "@/lib/schema";
+import {
+  getPost,
+  posts,
+  type InlineLink,
+  type Paragraph,
+} from "@/content/blog";
+import { publicImageExists } from "@/lib/assets";
+import { articleSchema, breadcrumbSchema, faqSchema } from "@/lib/schema";
 import { buildMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
@@ -35,6 +42,37 @@ export async function generateMetadata({
   });
 }
 
+const linkClass =
+  "font-medium text-charcoal underline underline-offset-4 transition-colors hover:text-brand";
+
+function TextLink({ href, label }: InlineLink) {
+  if (href.startsWith("/")) {
+    return (
+      <Link href={href} className={linkClass}>
+        {label}
+      </Link>
+    );
+  }
+
+  const external = href.startsWith("http");
+  return (
+    <a
+      href={href}
+      className={linkClass}
+      {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+    >
+      {label}
+    </a>
+  );
+}
+
+function RichText({ value }: { value: Paragraph }) {
+  if (typeof value === "string") return value;
+  return value.map((part, index) =>
+    typeof part === "string" ? part : <TextLink key={index} {...part} />,
+  );
+}
+
 export default async function BlogPostPage({
   params,
 }: {
@@ -44,16 +82,21 @@ export default async function BlogPostPage({
   const post = getPost(slug);
   if (!post) notFound();
 
+  const image =
+    post.image && publicImageExists(post.image.file) ? post.image : null;
+  const faqs = post.sections.flatMap((section) => section.faqs ?? []);
+
   return (
     <main id="main">
       <JsonLd
         data={[
-          articleSchema(post),
+          articleSchema({ ...post, image: image?.file }),
           breadcrumbSchema([
             { name: "მთავარი", path: "/" },
             { name: "ბლოგი", path: "/blog" },
             { name: post.title, path: `/blog/${post.slug}` },
           ]),
+          ...(faqs.length ? [faqSchema(faqs)] : []),
         ]}
       />
       <article>
@@ -67,27 +110,48 @@ export default async function BlogPostPage({
                 { label: post.title },
               ]}
             />
-            <h1 className="mt-6 max-w-3xl text-3xl font-bold md:text-5xl">
-              {post.title}
-            </h1>
-            <time
-              dateTime={post.publishedAt}
-              className="mt-5 block text-sm text-muted"
+            <div
+              className={
+                image ? "mt-6 grid items-center gap-10 md:grid-cols-2" : "mt-6"
+              }
             >
-              {new Date(post.publishedAt).toLocaleDateString("ka-GE", {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              })}
-            </time>
+              <div>
+                <h1 className="max-w-3xl text-3xl font-bold md:text-5xl">
+                  {post.title}
+                </h1>
+                <time
+                  dateTime={post.publishedAt}
+                  className="mt-5 block text-sm text-muted"
+                >
+                  {new Date(post.publishedAt).toLocaleDateString("ka-GE", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </time>
+              </div>
+
+              {image ? (
+                <div className="relative aspect-square overflow-hidden rounded-2xl bg-brand-soft">
+                  <Image
+                    src={`/images/${image.file}`}
+                    alt={image.alt}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover"
+                    priority
+                  />
+                </div>
+              ) : null}
+            </div>
           </div>
         </section>
 
         <Section>
           <div className="max-w-3xl">
-            {post.intro?.map((paragraph) => (
-              <p key={paragraph} className="mt-4 text-muted first:mt-0">
-                {paragraph}
+            {post.intro?.map((paragraph, index) => (
+              <p key={index} className="mt-4 text-muted first:mt-0">
+                <RichText value={paragraph} />
               </p>
             ))}
 
@@ -97,16 +161,16 @@ export default async function BlogPostPage({
                   {section.heading}
                 </h2>
 
-                {section.body.map((paragraph) => (
-                  <p key={paragraph} className="mt-4 text-muted">
-                    {paragraph}
+                {section.body.map((paragraph, index) => (
+                  <p key={index} className="mt-4 text-muted">
+                    <RichText value={paragraph} />
                   </p>
                 ))}
 
                 {section.list?.length ? (
                   <ul className="mt-5 space-y-2.5">
-                    {section.list.map((item) => (
-                      <li key={item} className="flex items-start gap-3">
+                    {section.list.map((item, index) => (
+                      <li key={index} className="flex items-start gap-3">
                         <svg
                           width="20"
                           height="20"
@@ -123,7 +187,9 @@ export default async function BlogPostPage({
                             strokeLinejoin="round"
                           />
                         </svg>
-                        {item}
+                        <span>
+                          <RichText value={item} />
+                        </span>
                       </li>
                     ))}
                   </ul>
@@ -134,18 +200,27 @@ export default async function BlogPostPage({
                     <h3 className="text-lg font-bold md:text-xl">
                       {step.heading}
                     </h3>
-                    {step.body.map((paragraph) => (
-                      <p key={paragraph} className="mt-3 text-muted">
-                        {paragraph}
+                    {step.body.map((paragraph, index) => (
+                      <p key={index} className="mt-3 text-muted">
+                        <RichText value={paragraph} />
                       </p>
                     ))}
                   </div>
                 ))}
 
-                {section.outro?.map((paragraph) => (
-                  <p key={paragraph} className="mt-6 text-muted">
-                    {paragraph}
+                {section.outro?.map((paragraph, index) => (
+                  <p key={index} className="mt-6 text-muted">
+                    <RichText value={paragraph} />
                   </p>
+                ))}
+
+                {section.faqs?.map((faq) => (
+                  <div key={faq.question} className="mt-8">
+                    <h3 className="text-lg font-bold md:text-xl">
+                      {faq.question}
+                    </h3>
+                    <p className="mt-3 text-muted">{faq.answer}</p>
+                  </div>
                 ))}
               </div>
             ))}

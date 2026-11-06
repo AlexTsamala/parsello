@@ -12,15 +12,23 @@ import { countries } from "./countries";
  * does not get written until the business supplies them.
  */
 
+/** A link inside running text. Internal hrefs start with "/". */
+export type InlineLink = { href: string; label: string };
+
+/** Plain text, or text with links woven into it. */
+export type Paragraph = string | (string | InlineLink)[];
+
 export type BlogSection = {
   heading: string;
-  body: string[];
+  body: Paragraph[];
   /** Rendered as a checklist under the paragraphs. */
-  list?: string[];
+  list?: Paragraph[];
   /** Sub-steps, each an h3 with its own paragraphs, after the list. */
-  steps?: { heading: string; body: string[] }[];
+  steps?: { heading: string; body: Paragraph[] }[];
   /** Closing paragraphs, after the list and steps. */
-  outro?: string[];
+  outro?: Paragraph[];
+  /** Visible questions; the page also emits them as FAQPage JSON-LD. */
+  faqs?: { question: string; answer: string }[];
 };
 
 export type BlogPost = {
@@ -31,8 +39,10 @@ export type BlogPost = {
   /** ISO date — drives <time> and OG publishedTime. */
   publishedAt: string;
   excerpt: string;
+  /** A file in public/images, shown beside the title. */
+  image?: { file: string; alt: string };
   /** Opening paragraphs, before the first heading. */
-  intro?: string[];
+  intro?: Paragraph[];
   sections: BlogSection[];
   /** Internal links rendered at the end (CLAUDE.md §6). */
   related: { href: string; label: string }[];
