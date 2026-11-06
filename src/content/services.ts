@@ -39,6 +39,8 @@ export type Service = {
    * their summary and steps.
    */
   body?: string[];
+  /** A blog article that goes deeper. Georgian only: the blog has no twins. */
+  readMore?: { href: string; label: string };
   image: string;
   alt: string;
   steps: { title: string; body: string }[];

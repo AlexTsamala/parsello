@@ -130,6 +130,17 @@ export function ServicePage({
                 {paragraph}
               </p>
             ))}
+
+            {service.readMore ? (
+              <p className="mt-6">
+                <Link
+                  href={service.readMore.href}
+                  className="font-semibold text-brand hover:underline"
+                >
+                  {service.readMore.label}
+                </Link>
+              </p>
+            ) : null}
           </div>
         </Section>
       ) : null}
