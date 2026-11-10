@@ -2,7 +2,7 @@
  * Per-kg rates in GEL, supplied by the business on 2026-10-08 (Czechia and
  * the Netherlands added later the same day, Romania on 2026-10-15, Italy and
  * Spain on 2026-10-27; Germany, Hungary, Czechia, Spain, Sweden, Denmark and
- * Finland raised by 1 ₾ on 2026-11-01). Cheapest first;
+ * Finland raised by 1 ₾ on 2026-11-01; Croatia added on 2026-11-10). Cheapest first;
  * ties keep the order the business gave them in. A destination missing from
  * this list is quoted on request — never estimate one (CLAUDE.md §1 rule 2).
  *
@@ -29,6 +29,7 @@ const rates = [
   { id: "romania", flag: "🇷🇴", name: "რუმინეთი", perKg: 18 },
   { id: "italy", flag: "🇮🇹", name: "იტალია", perKg: 18 },
   { id: "spain", flag: "🇪🇸", name: "ესპანეთი", perKg: 18 },
+  { id: "croatia", flag: "🇭🇷", name: "ხორვატია", perKg: 18 },
   { id: "sweden", flag: "🇸🇪", name: "შვედეთი", perKg: 21 },
   { id: "denmark", flag: "🇩🇰", name: "დანია", perKg: 21 },
   { id: "finland", flag: "🇫🇮", name: "ფინეთი", perKg: 21 },

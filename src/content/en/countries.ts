@@ -261,6 +261,22 @@ const factCopy: Record<string, { title: string; body: string }> = {
     title: "The Canary Islands, Ceuta and Melilla have a special status",
     body: "Spain's VAT law (Ley 37/1992) excludes three territories from the scope of Spanish VAT: Ceuta and Melilla, as territories that are not part of the EU customs union, and the Canary Islands, as a territory excluded from the EU's harmonisation of turnover taxes (VAT).",
   },
+  "hr-euro": {
+    title: "Croatia is the eurozone's 20th member",
+    body: "Croatia adopted the euro on 1 January 2023 and became the 20th member of the euro area. It was the first enlargement of the eurozone since Lithuania joined in 2015.",
+  },
+  "hr-kuna": {
+    title: "The national bank still exchanges kuna banknotes",
+    body: "The euro replaced the Croatian kuna at a fixed rate of €1 = 7.53450 kuna. The two currencies circulated side by side for two weeks, and since 15 January 2023 the euro has been the only legal tender. Until the end of 2023 kuna could be exchanged at banks, post offices and the Financial Agency (FINA); since 2024 only the Croatian National Bank exchanges them. It exchanges banknotes with no time limit, while the deadline for coins passed on 31 December 2025.",
+  },
+  "hr-vat": {
+    title: "Standard VAT is 25%",
+    body: "The standard VAT (PDV) rate in Croatia is 25% — one of the highest in the European Union. Reduced rates of 13% and 5% apply to certain goods.",
+  },
+  "hr-gift-declaration": {
+    title: "Even a gift under €45 is declared",
+    body: "According to the Croatian government portal (gov.hr), a consignment sent free of charge by a private individual outside the EU to a private individual, worth no more than €45, must be declared to customs on an H7 declaration — but it is exempt from customs duty and import VAT. It must not be commercial, must be occasional, and must contain only goods for the personal use of the recipient or their family. Postal items are presented for customs clearance with valid proof of the goods' value — for example an invoice, proof of payment, or a statement of the value of the goods in the parcel.",
+  },
 };
 
 /** The same everywhere, Poland included (confirmed 2026-10-09). */
@@ -3001,6 +3017,139 @@ const copy: Record<CountrySlug, CountryCopy> = {
         body: "Send a gift, personal belongings or other permitted goods to family, friends and relatives in Spain.",
         emphasis:
           "Message us today and find out the cost of sending your parcel to Spain.",
+      },
+    },
+  },
+  croatia: {
+    name: "Croatia",
+    nameIn: "Croatia",
+    linkLabel: "Send a parcel to Croatia",
+    footerLinkLabel: "Send to Croatia",
+    priceLinkLabel: "Cost of sending to Croatia",
+    factsHeading: "What to know before sending to Croatia",
+    h1: "Send a parcel from Georgia to Croatia",
+    seoTitle: "Send a parcel to Croatia",
+    seoDescription:
+      "Send a parcel from Georgia to Croatia — Zagreb, Split, Rijeka, Osijek, Zadar. Find out the price and start your order with Parcello.",
+    intro:
+      "Croatia adopted the euro on 1 January 2023, becoming the 20th member of the eurozone. The standard VAT rate is 25%, and a gift worth no more than €45 is tax-free but must still be declared to customs.",
+    content: {
+      intro: [
+        "Want to send a parcel from Georgia to Croatia? Parcello will help you send it simply and conveniently — whether it is a gift, clothing, personal belongings or other permitted goods.",
+      ],
+      narrative: [
+        {
+          placement: "afterIntro",
+          heading: "Sending a parcel from Georgia to Croatia",
+          body: [
+            "Diplomatic relations between Georgia and the Republic of Croatia were established on 1 February 1993. Georgia's embassy is in Zagreb, and in February 2023, as part of the 30th anniversary of diplomatic relations, Croatia's foreign minister made the first visit to Georgia by a Croatian foreign minister.",
+            "For Georgians living in Croatia, receiving a parcel from home is often a simple way of keeping a connection to family, friends and the place they came from.",
+            "You give us the parcel and the details we need, and we help organise the process of getting it to Croatia.",
+          ],
+        },
+        {
+          placement: "beforePricing",
+          heading: "Croatia — the euro since 2023, and declaring gifts",
+          body: [
+            "Croatia joined the European Union in 2013 and adopted the euro on 1 January 2023, so EU customs rules apply to a parcel sent from Georgia, and a consignment's value and the customs relief thresholds are in euro.",
+            "The euro replaced the kuna at a fixed rate (€1 = 7.53450 kuna). The standard VAT rate is 25%, with reduced rates of 13% and 5% for certain goods.",
+            "The Croatian government portal explains that a gift worth up to €45, sent by a private individual outside the EU to a private individual, is tax-free but must still be declared to customs. A postal item is presented for customs clearance with proof of its value — and a statement of the value of the goods in the parcel counts as such proof.",
+            "EU customs rules, including the gift threshold, are set out below, in the section on official rules.",
+          ],
+        },
+      ],
+      why: {
+        heading: "Why Parcello?",
+        body: [
+          "Sending an international parcel should not be complicated.",
+          "Easy communication matters to us, and so does your knowing what is needed to send your parcel.",
+        ],
+        highlight:
+          "Parcello lets you send a parcel from Georgia to Croatia and get the information you need, all in one place.",
+      },
+      steps: {
+        heading: "How we send parcels to Croatia",
+        items: [
+          {
+            title: "Get in touch",
+            body: "Tell us you want to send a parcel to Croatia and give us its approximate weight, its contents and the destination city.",
+          },
+          {
+            title: "Prepare your parcel",
+            body: "Pack the items securely and make sure they are permitted to be sent.",
+          },
+          {
+            title: "Hand over the parcel",
+            body: "Our team collects your parcel by whichever method you have agreed with us.",
+          },
+          {
+            title: "Your parcel sets off for Croatia",
+            body: STEP_TRANSPORT_BODY,
+          },
+          {
+            title: "The parcel arrives in Croatia",
+            body: businessEn.doorDelivery,
+          },
+        ],
+      },
+      sendable: {
+        heading: "What can you send to Croatia?",
+        intro:
+          "With Parcello you can send a range of permitted personal items, including:",
+        items: SENDABLE_ITEMS,
+        note: "Restrictions apply to some items in international shipping. Before you send, tell us what you would like to put in the parcel and we will help you check.",
+        moreHref: "/what-can-i-send",
+        moreLabel: "See the full list of permitted items",
+      },
+      cities: {
+        heading: "Sending a parcel to any city or village in Croatia",
+        intro:
+          "We deliver anywhere in Croatia — to big cities as well as small towns and villages. For example:",
+        list: ["Zagreb", "Split", "Rijeka", "Osijek", "Zadar"],
+        note: "When you order, give the recipient's full address and contact details so the parcel can be processed correctly.",
+      },
+      pricing: {
+        heading: "How much does it cost to send a parcel to Croatia?",
+        body: "The cost depends on the weight of the parcel and the rate in force.",
+        emphasis:
+          "Send us the weight of your parcel and the destination city in Croatia to get the current price.",
+      },
+      faqs: [
+        {
+          question: "How long does a parcel take to reach Croatia?",
+          answer: DELIVERY_TIME_ANSWER,
+        },
+        {
+          question: "What currency is used in Croatia?",
+          answer:
+            "The euro — Croatia adopted it on 1 January 2023 and became the 20th member of the eurozone. The euro replaced the kuna at a fixed rate of €1 = 7.53450 kuna.",
+        },
+        {
+          question: "Does a gift worth under €45 have to be declared in Croatia?",
+          answer:
+            "Yes. According to the Croatian government portal, a gift worth up to €45, sent free of charge by a private individual outside the EU to a private individual, is exempt from customs duty and VAT, but must still be declared to customs on an H7 declaration.",
+        },
+        {
+          question: "Can I send Georgian products to Croatia?",
+          answer:
+            "Some products can be sent, though restrictions may apply to particular items. Tell us what you would like to send and we will help you check.",
+        },
+        {
+          question: "Can I send a parcel to Zagreb or Split?",
+          answer:
+            "Yes. We deliver to any city, town or village in Croatia — just give us the recipient's full address when you order.",
+        },
+        {
+          question: "How do I start sending a parcel?",
+          answer:
+            "Get in touch and tell us the approximate weight of the parcel, what is inside it, and the destination city in Croatia.",
+        },
+      ],
+      cta: {
+        heading: "Send your parcel from Georgia to Croatia with Parcello",
+        body: "Send a gift, personal belongings or other permitted goods to family, friends and relatives in Croatia.",
+        emphasis:
+          "Message us today and find out the cost of sending your parcel to Croatia.",
       },
     },
   },
