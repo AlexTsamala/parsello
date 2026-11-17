@@ -313,6 +313,22 @@ const factCopy: Record<string, { title: string; body: string }> = {
     title: "The delivery company tells the recipient what to pay",
     body: "According to GOV.UK, if VAT or duty is due on a parcel, Royal Mail, Parcelforce or the courier company contacts the recipient and sends a bill stating exactly what has to be paid. The parcel is normally held for about 3 weeks; if the bill has not been paid by then, it is returned to the sender.",
   },
+  "lu-euro": {
+    title: "The central bank still exchanges franc banknotes",
+    body: "Luxembourg is a founding member of the European Union. It was one of the first countries to adopt the euro, on 1 January 1999, and euro banknotes and coins entered circulation on 1 January 2002. The euro replaced the Luxembourg franc at a fixed rate of €1 = 40.3399 francs, and the period in which both currencies circulated ended on 28 February 2002. The Central Bank of Luxembourg exchanged coins until 31 December 2004, and exchanges banknotes with no time limit.",
+  },
+  "lu-vat": {
+    title: "The lowest VAT in the EU",
+    body: "The standard VAT (TVA) rate in Luxembourg is 17% — the lowest in the European Union. Lower rates of 14%, 8% and 3% apply to certain goods.",
+  },
+  "lu-eu-seat": {
+    title: "One of the seats of the EU institutions",
+    body: "Luxembourg has been a member of the European Union since 1 January 1958. Luxembourg City, together with Brussels and Strasbourg, is one of the three official seats of the EU institutions.",
+  },
+  "lu-post": {
+    title: "What may be due when the parcel arrives",
+    body: "According to the Luxembourg post (POST Luxembourg), when a parcel from outside the EU arrives, the amounts due may include Luxembourg VAT, customs duty, the European handling fee, POST's own handling fee and, on some products, excise duty. A gift worth €45 or less, sent from one private individual to another, is not subject to customs duty or the European handling fee, under certain conditions. The amount can be paid on delivery or when collecting the parcel at a POST point of sale.",
+  },
 };
 
 /** The same everywhere, Poland included (confirmed 2026-10-09). */
@@ -3453,6 +3469,145 @@ const copy: Record<CountrySlug, CountryCopy> = {
         body: "Send a gift, personal belongings or other permitted goods to family, friends and relatives in Great Britain.",
         emphasis:
           "Message us today and find out the cost of sending your parcel to Great Britain.",
+      },
+    },
+  },
+  luxembourg: {
+    name: "Luxembourg",
+    nameIn: "Luxembourg",
+    linkLabel: "Send a parcel to Luxembourg",
+    footerLinkLabel: "Send to Luxembourg",
+    priceLinkLabel: "Cost of sending to Luxembourg",
+    factsHeading: "What to know before sending to Luxembourg",
+    h1: "Send a parcel from Georgia to Luxembourg",
+    seoTitle: "Send a parcel to Luxembourg",
+    seoDescription:
+      "Send a parcel from Georgia to Luxembourg — Luxembourg City, Esch-sur-Alzette, Differdange, Dudelange, Ettelbruck. Find out the price and start your order with Parcello.",
+    intro:
+      "Luxembourg is a founding member of the European Union and has used the euro since 1999. Its standard VAT rate is 17% — the lowest in the EU.",
+    content: {
+      intro: [
+        "Want to send a parcel from Georgia to Luxembourg? Parcello will help you send it simply and conveniently — whether it is a gift, clothing, personal belongings or other permitted goods.",
+      ],
+      narrative: [
+        {
+          placement: "afterIntro",
+          heading: "Sending a parcel from Georgia to Luxembourg",
+          body: [
+            "Diplomatic relations between Georgia and the Grand Duchy of Luxembourg were established on 17 October 1994. Georgia is represented in Luxembourg by its embassy in Brussels.",
+            "For Georgians living in Luxembourg, receiving a parcel from home is often a simple way of keeping a connection to family, friends and the place they came from.",
+            "You give us the parcel and the details we need, and we help organise the process of getting it to Luxembourg.",
+          ],
+        },
+        {
+          placement: "beforePricing",
+          heading: "Luxembourg — the lowest VAT in the EU",
+          body: [
+            "Luxembourg is a founding member of the European Union and a member of the eurozone, so EU customs rules apply to a parcel sent from Georgia, and a consignment's value and the customs relief thresholds are in euro. Luxembourg City, together with Brussels and Strasbourg, is one of the three official seats of the EU institutions.",
+            "Luxembourg's standard VAT rate — 17% — is the lowest in the European Union.",
+            "According to the Luxembourg post, when a parcel arrives, the European handling fee and the post's own fee may be due on top of VAT and customs duty. A gift worth €45 or less, sent from one private individual to another, is not subject to customs duty or the European handling fee, under certain conditions. The amount can be paid on delivery or at a post office point of sale.",
+            "EU customs rules, including the gift threshold, are set out below, in the section on official rules.",
+          ],
+        },
+      ],
+      why: {
+        heading: "Why Parcello?",
+        body: [
+          "Sending an international parcel should not be complicated.",
+          "Easy communication matters to us, and so does your knowing what is needed to send your parcel.",
+        ],
+        highlight:
+          "Parcello lets you send a parcel from Georgia to Luxembourg and get the information you need, all in one place.",
+      },
+      steps: {
+        heading: "How we send parcels to Luxembourg",
+        items: [
+          {
+            title: "Get in touch",
+            body: "Tell us you want to send a parcel to Luxembourg and give us its approximate weight, its contents and the destination city.",
+          },
+          {
+            title: "Prepare your parcel",
+            body: "Pack the items securely and make sure they are permitted to be sent.",
+          },
+          {
+            title: "Hand over the parcel",
+            body: "Our team collects your parcel by whichever method you have agreed with us.",
+          },
+          {
+            title: "Your parcel sets off for Luxembourg",
+            body: STEP_TRANSPORT_BODY,
+          },
+          {
+            title: "The parcel arrives in Luxembourg",
+            body: businessEn.doorDelivery,
+          },
+        ],
+      },
+      sendable: {
+        heading: "What can you send to Luxembourg?",
+        intro:
+          "With Parcello you can send a range of permitted personal items, including:",
+        items: SENDABLE_ITEMS,
+        note: "Restrictions apply to some items in international shipping. Before you send, tell us what you would like to put in the parcel and we will help you check.",
+        moreHref: "/what-can-i-send",
+        moreLabel: "See the full list of permitted items",
+      },
+      cities: {
+        heading: "Sending a parcel to any city or village in Luxembourg",
+        intro:
+          "We deliver anywhere in Luxembourg — to big cities as well as small towns and villages. For example:",
+        list: [
+          "Luxembourg City",
+          "Esch-sur-Alzette",
+          "Differdange",
+          "Dudelange",
+          "Ettelbruck",
+        ],
+        note: "When you order, give the recipient's full address and contact details so the parcel can be processed correctly.",
+      },
+      pricing: {
+        heading: "How much does it cost to send a parcel to Luxembourg?",
+        body: "The cost depends on the weight of the parcel and the rate in force.",
+        emphasis:
+          "Send us the weight of your parcel and the destination city in Luxembourg to get the current price.",
+      },
+      faqs: [
+        {
+          question: "How long does a parcel take to reach Luxembourg?",
+          answer: DELIVERY_TIME_ANSWER,
+        },
+        {
+          question: "What currency is used in Luxembourg?",
+          answer:
+            "The euro — Luxembourg was one of the first countries to adopt it, on 1 January 1999, with banknotes and coins following on 1 January 2002. The euro replaced the Luxembourg franc at a fixed rate of €1 = 40.3399 francs.",
+        },
+        {
+          question: "What is the VAT rate in Luxembourg?",
+          answer:
+            "The standard VAT rate in Luxembourg is 17% — the lowest in the European Union. Lower rates of 14%, 8% and 3% apply to certain goods.",
+        },
+        {
+          question: "Can I send Georgian products to Luxembourg?",
+          answer:
+            "Some products can be sent, though restrictions may apply to particular items. Tell us what you would like to send and we will help you check.",
+        },
+        {
+          question: "Can I send a parcel to Luxembourg City or Esch-sur-Alzette?",
+          answer:
+            "Yes. We deliver to any city, town or village in Luxembourg — just give us the recipient's full address when you order.",
+        },
+        {
+          question: "How do I start sending a parcel?",
+          answer:
+            "Get in touch and tell us the approximate weight of the parcel, what is inside it, and the destination city in Luxembourg.",
+        },
+      ],
+      cta: {
+        heading: "Send your parcel from Georgia to Luxembourg with Parcello",
+        body: "Send a gift, personal belongings or other permitted goods to family, friends and relatives in Luxembourg.",
+        emphasis:
+          "Message us today and find out the cost of sending your parcel to Luxembourg.",
       },
     },
   },
