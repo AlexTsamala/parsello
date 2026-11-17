@@ -277,6 +277,22 @@ const factCopy: Record<string, { title: string; body: string }> = {
     title: "Even a gift under €45 is declared",
     body: "According to the Croatian government portal (gov.hr), a consignment sent free of charge by a private individual outside the EU to a private individual, worth no more than €45, must be declared to customs on an H7 declaration — but it is exempt from customs duty and import VAT. It must not be commercial, must be occasional, and must contain only goods for the personal use of the recipient or their family. Postal items are presented for customs clearance with valid proof of the goods' value — for example an invoice, proof of payment, or a statement of the value of the goods in the parcel.",
   },
+  "it-euro": {
+    title: "The euro replaced the lira in 2002",
+    body: "Italy is a founding member of the European Union. It was one of the first countries to adopt the euro, on 1 January 1999, and euro banknotes and coins entered circulation on 1 January 2002. The euro replaced the Italian lira at a fixed rate of €1 = 1,936.27 lire, and the period in which both currencies circulated ended on 28 February 2002.",
+  },
+  "it-vat": {
+    title: "Standard VAT is 22%",
+    body: "The standard VAT (IVA) rate in Italy is 22%. Reduced rates of 10% and 5% apply to certain goods, and a super-reduced rate of 4% to some.",
+  },
+  "it-post-charges": {
+    title: "On top of the taxes — a postal fee",
+    body: "Poste Italiane explains that every consignment containing goods from outside the EU must be declared to customs. The recipient may have to pay VAT, customs duty and Poste Italiane's own fee (Diritti Postali), which covers the customs clearance carried out on the recipient's behalf. If the parcel is worth more than €45, these amounts may be due even when it is a gift between private individuals.",
+  },
+  "it-post-payment": {
+    title: "You can pay in advance, online",
+    body: "According to Poste Italiane, the amount can be paid on delivery — to the courier, in cash or by card — or in advance, online, in the Poste Italiane app or on poste.it. Paying online makes the postal fee lower than paying on delivery. If the sender gave the recipient's contact details, the recipient is notified in the app, by email or by SMS.",
+  },
 };
 
 /** The same everywhere, Poland included (confirmed 2026-10-09). */
@@ -3150,6 +3166,140 @@ const copy: Record<CountrySlug, CountryCopy> = {
         body: "Send a gift, personal belongings or other permitted goods to family, friends and relatives in Croatia.",
         emphasis:
           "Message us today and find out the cost of sending your parcel to Croatia.",
+      },
+    },
+  },
+  italy: {
+    name: "Italy",
+    nameIn: "Italy",
+    linkLabel: "Send a parcel to Italy",
+    footerLinkLabel: "Send to Italy",
+    priceLinkLabel: "Cost of sending to Italy",
+    factsHeading: "What to know before sending to Italy",
+    h1: "Send a parcel from Georgia to Italy",
+    seoTitle: "Send a parcel to Italy",
+    seoDescription:
+      "Send a parcel from Georgia to Italy — Rome, Milan, Naples, Turin, Bari. Find out the price and start your order with Parcello.",
+    intro:
+      "Italy is a founding member of the European Union and has used the euro since 1999. The standard VAT rate is 22%, and according to Poste Italiane a parcel may carry a postal fee on top of VAT and customs duty.",
+    content: {
+      intro: [
+        "Want to send a parcel from Georgia to Italy? Parcello will help you send it simply and conveniently — whether it is a gift, clothing, personal belongings or other permitted goods.",
+      ],
+      narrative: [
+        {
+          placement: "afterIntro",
+          heading: "Sending a parcel from Georgia to Italy",
+          body: [
+            "Diplomatic relations between Georgia and the Italian Republic were established on 11 May 1992. Georgia's embassy in Italy opened in 1994, and Italy's embassy in Georgia in 2000. Georgia also has two consulates general in Italy — in Milan and in Bari.",
+            "For Georgians living in Italy, receiving a parcel from home is often a simple way of keeping a connection to family, friends and the place they came from.",
+            "You give us the parcel and the details we need, and we help organise the process of getting it to Italy.",
+          ],
+        },
+        {
+          placement: "beforePricing",
+          heading: "Italy — customs charges and Poste Italiane's fee",
+          body: [
+            "Italy is a founding member of the European Union and a member of the eurozone, so EU customs rules apply to a parcel sent from Georgia, and a consignment's value and the customs relief thresholds are in euro. The standard VAT rate is 22%.",
+            "Poste Italiane explains that on a parcel from outside the EU the recipient may have to pay its own fee (Diritti Postali) on top of VAT and customs duty — for the customs clearance carried out on the recipient's behalf. For a parcel worth more than €45, this can happen even when it is a gift.",
+            "The amount can be paid on delivery or in advance, online — in the Poste Italiane app or on poste.it. According to the post, its fee is lower when paid online.",
+            "EU customs rules, including the gift threshold, are set out below, in the section on official rules.",
+          ],
+        },
+      ],
+      why: {
+        heading: "Why Parcello?",
+        body: [
+          "Sending an international parcel should not be complicated.",
+          "Easy communication matters to us, and so does your knowing what is needed to send your parcel.",
+        ],
+        highlight:
+          "Parcello lets you send a parcel from Georgia to Italy and get the information you need, all in one place.",
+      },
+      steps: {
+        heading: "How we send parcels to Italy",
+        items: [
+          {
+            title: "Get in touch",
+            body: "Tell us you want to send a parcel to Italy and give us its approximate weight, its contents and the destination city.",
+          },
+          {
+            title: "Prepare your parcel",
+            body: "Pack the items securely and make sure they are permitted to be sent.",
+          },
+          {
+            title: "Hand over the parcel",
+            body: "Our team collects your parcel by whichever method you have agreed with us.",
+          },
+          {
+            title: "Your parcel sets off for Italy",
+            body: STEP_TRANSPORT_BODY,
+          },
+          {
+            title: "The parcel arrives in Italy",
+            body: businessEn.doorDelivery,
+          },
+        ],
+      },
+      sendable: {
+        heading: "What can you send to Italy?",
+        intro:
+          "With Parcello you can send a range of permitted personal items, including:",
+        items: SENDABLE_ITEMS,
+        note: "Restrictions apply to some items in international shipping. Before you send, tell us what you would like to put in the parcel and we will help you check.",
+        moreHref: "/what-can-i-send",
+        moreLabel: "See the full list of permitted items",
+      },
+      cities: {
+        heading: "Sending a parcel to any city or village in Italy",
+        intro:
+          "We deliver anywhere in Italy — to big cities as well as small towns and villages. For example:",
+        list: ["Rome", "Milan", "Naples", "Turin", "Bari"],
+        note: "When you order, give the recipient's full address and contact details so the parcel can be processed correctly.",
+      },
+      pricing: {
+        heading: "How much does it cost to send a parcel to Italy?",
+        body: "The cost depends on the weight of the parcel and the rate in force.",
+        emphasis:
+          "Send us the weight of your parcel and the destination city in Italy to get the current price.",
+      },
+      faqs: [
+        {
+          question: "How long does a parcel take to reach Italy?",
+          answer: DELIVERY_TIME_ANSWER,
+        },
+        {
+          question: "What currency is used in Italy?",
+          answer:
+            "The euro — Italy was one of the first countries to adopt it, on 1 January 1999, with banknotes and coins following on 1 January 2002. The euro replaced the lira at a fixed rate of €1 = 1,936.27 lire.",
+        },
+        {
+          question:
+            "How are customs charges paid in Italy on a parcel delivered by Poste Italiane?",
+          answer:
+            "Poste Italiane explains that VAT, customs duty and its own fee (Diritti Postali) can be paid on delivery, to the courier, or in advance, online — in the Poste Italiane app or on poste.it. The postal fee is lower when paid online.",
+        },
+        {
+          question: "Can I send Georgian products to Italy?",
+          answer:
+            "Some products can be sent, though restrictions may apply to particular items. Tell us what you would like to send and we will help you check.",
+        },
+        {
+          question: "Can I send a parcel to Rome or Milan?",
+          answer:
+            "Yes. We deliver to any city, town or village in Italy — just give us the recipient's full address when you order.",
+        },
+        {
+          question: "How do I start sending a parcel?",
+          answer:
+            "Get in touch and tell us the approximate weight of the parcel, what is inside it, and the destination city in Italy.",
+        },
+      ],
+      cta: {
+        heading: "Send your parcel from Georgia to Italy with Parcello",
+        body: "Send a gift, personal belongings or other permitted goods to family, friends and relatives in Italy.",
+        emphasis:
+          "Message us today and find out the cost of sending your parcel to Italy.",
       },
     },
   },
