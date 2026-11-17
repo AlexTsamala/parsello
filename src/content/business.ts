@@ -2,7 +2,8 @@
  * Per-kg rates in GEL, supplied by the business on 2026-10-08 (Czechia and
  * the Netherlands added later the same day, Romania on 2026-10-15, Italy and
  * Spain on 2026-10-27; Germany, Hungary, Czechia, Spain, Sweden, Denmark and
- * Finland raised by 1 ₾ on 2026-11-01; Croatia added on 2026-11-10). Cheapest first;
+ * Finland raised by 1 ₾ on 2026-11-01; Croatia added on 2026-11-10; every
+ * 18 ₾ destination raised to 19 ₾ on 2026-11-17). Cheapest first;
  * ties keep the order the business gave them in. A destination missing from
  * this list is quoted on request — never estimate one (CLAUDE.md §1 rule 2).
  *
@@ -19,17 +20,17 @@ const rates = [
   { id: "hungary", flag: "🇭🇺", name: "უნგრეთი", perKg: 16 },
   { id: "czechia", flag: "🇨🇿", name: "ჩეხეთი", perKg: 16 },
   { id: "slovakia", flag: "🇸🇰", name: "სლოვაკეთი", perKg: 16 },
-  { id: "austria", flag: "🇦🇹", name: "ავსტრია", perKg: 18 },
-  { id: "lithuania", flag: "🇱🇹", name: "ლიტვა", perKg: 18 },
-  { id: "latvia", flag: "🇱🇻", name: "ლატვია", perKg: 18 },
-  { id: "estonia", flag: "🇪🇪", name: "ესტონეთი", perKg: 18 },
-  { id: "france", flag: "🇫🇷", name: "საფრანგეთი", perKg: 18 },
-  { id: "belgium", flag: "🇧🇪", name: "ბელგია", perKg: 18 },
-  { id: "netherlands", flag: "🇳🇱", name: "ნიდერლანდები", perKg: 18 },
-  { id: "romania", flag: "🇷🇴", name: "რუმინეთი", perKg: 18 },
-  { id: "italy", flag: "🇮🇹", name: "იტალია", perKg: 18 },
-  { id: "spain", flag: "🇪🇸", name: "ესპანეთი", perKg: 18 },
-  { id: "croatia", flag: "🇭🇷", name: "ხორვატია", perKg: 18 },
+  { id: "austria", flag: "🇦🇹", name: "ავსტრია", perKg: 19 },
+  { id: "lithuania", flag: "🇱🇹", name: "ლიტვა", perKg: 19 },
+  { id: "latvia", flag: "🇱🇻", name: "ლატვია", perKg: 19 },
+  { id: "estonia", flag: "🇪🇪", name: "ესტონეთი", perKg: 19 },
+  { id: "france", flag: "🇫🇷", name: "საფრანგეთი", perKg: 19 },
+  { id: "belgium", flag: "🇧🇪", name: "ბელგია", perKg: 19 },
+  { id: "netherlands", flag: "🇳🇱", name: "ნიდერლანდები", perKg: 19 },
+  { id: "romania", flag: "🇷🇴", name: "რუმინეთი", perKg: 19 },
+  { id: "italy", flag: "🇮🇹", name: "იტალია", perKg: 19 },
+  { id: "spain", flag: "🇪🇸", name: "ესპანეთი", perKg: 19 },
+  { id: "croatia", flag: "🇭🇷", name: "ხორვატია", perKg: 19 },
   { id: "sweden", flag: "🇸🇪", name: "შვედეთი", perKg: 21 },
   { id: "denmark", flag: "🇩🇰", name: "დანია", perKg: 21 },
   { id: "finland", flag: "🇫🇮", name: "ფინეთი", perKg: 21 },
