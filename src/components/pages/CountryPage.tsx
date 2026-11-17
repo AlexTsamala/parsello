@@ -34,7 +34,9 @@ export function CountryPage({
   const { ui, business, euImportRules, relatedCountries } = getContent(locale);
 
   const related = relatedCountries(country.slug);
-  const facts = [...country.facts, ...euImportRules].filter(
+  // EU rules would be wrong on a non-EU page; Great Britain carries its own.
+  const inEu = country.customs !== "gb";
+  const facts = [...country.facts, ...(inEu ? euImportRules : [])].filter(
     (fact) => !WITHHELD_FACT_IDS.has(fact.id),
   );
   const faqItems = country.content.faqs;
@@ -103,7 +105,9 @@ export function CountryPage({
         <CountryFacts
           facts={facts}
           heading={country.factsHeading}
-          intro={ui.countryFacts.intro}
+          intro={
+            inEu ? ui.countryFacts.intro : ui.countryFacts.introGreatBritain
+          }
         />
       </Section>
 

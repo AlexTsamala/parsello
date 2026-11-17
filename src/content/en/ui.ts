@@ -95,6 +95,8 @@ export const uiEn: UiStrings = {
   countryFacts: {
     intro:
       "Below are the official European Union rules that apply when a parcel is received. These are not Parcello's own terms.",
+    introGreatBritain:
+      "Below are the official UK rules that apply when a parcel is received in Great Britain. These are not Parcello's own terms.",
   },
 
   countryPage: {

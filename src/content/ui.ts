@@ -80,6 +80,8 @@ export type UiStrings = {
   countryFacts: {
     /** Frames the researched layer as external rules, not Parcello's terms. */
     intro: string;
+    /** The same framing for Great Britain, which is outside the EU. */
+    introGreatBritain: string;
   };
 
   countryPage: {
@@ -278,6 +280,8 @@ export const ui: UiStrings = {
   countryFacts: {
     intro:
       "ქვემოთ მოცემულია ევროკავშირის ოფიციალური წესები, რომლებიც ამანათის მიღებაზე მოქმედებს. ეს Parcello-ს პირობები არ არის.",
+    introGreatBritain:
+      "ქვემოთ მოცემულია დიდი ბრიტანეთის ოფიციალური წესები, რომლებიც ამანათის მიღებაზე მოქმედებს. ეს Parcello-ს პირობები არ არის.",
   },
 
   countryPage: {

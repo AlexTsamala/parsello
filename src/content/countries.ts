@@ -56,6 +56,12 @@ export type Country = {
   intro: string;
   facts: ResearchedFact[];
   /**
+   * The customs territory a parcel enters. Omitted means the EU, and the page
+   * appends the EU-wide import rules (`euImportRules`). Great Britain left the
+   * EU, so it is "gb": its page carries UK rules in `facts` and no EU rules.
+   */
+  customs?: "eu" | "gb";
+  /**
    * Required. Every destination has had full copy since the pages were
    * written, so the generic fallback the page used to carry was unreachable —
    * and it was the last place a sentence got assembled from a country name
