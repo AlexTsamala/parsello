@@ -293,6 +293,26 @@ const factCopy: Record<string, { title: string; body: string }> = {
     title: "You can pay in advance, online",
     body: "According to Poste Italiane, the amount can be paid on delivery — to the courier, in cash or by card — or in advance, online, in the Poste Italiane app or on poste.it. Paying online makes the postal fee lower than paying on delivery. If the sender gave the recipient's contact details, the recipient is notified in the app, by email or by SMS.",
   },
+  "gb-eu-exit": {
+    title: "Great Britain is no longer in the EU",
+    body: "The United Kingdom left the European Union on 31 January 2020. A parcel sent to Great Britain is therefore subject to UK customs rules, not EU ones.",
+  },
+  "gb-vat": {
+    title: "Standard VAT is 20%",
+    body: "The standard VAT rate in Great Britain is 20%. A reduced rate of 5% applies to some goods and services, and a zero rate to others — for example most food and children's clothes.",
+  },
+  "gb-gift-39": {
+    title: "Gifts up to £39 — no VAT",
+    body: "According to GOV.UK, no VAT is charged on a gift worth £39 or less; on a more valuable gift the recipient pays VAT. Customs Duty is not charged on goods worth £135 or less — except alcohol and tobacco. Excise Duty is always charged on alcohol, tobacco, vapes and vaping liquid, whether the goods were bought or sent as a gift.",
+  },
+  "gb-gift-declaration": {
+    title: "A gift must be declared as a gift",
+    body: "According to GOV.UK, to count as a gift an item must be described as a gift on the customs declaration, be for a birthday, anniversary or other occasion, be sent between private individuals, and be intended for personal use. If one parcel holds gifts for several people, each gift gets its own allowance — provided each is wrapped individually and listed separately on the declaration with its own value.",
+  },
+  "gb-payment": {
+    title: "The delivery company tells the recipient what to pay",
+    body: "According to GOV.UK, if VAT or duty is due on a parcel, Royal Mail, Parcelforce or the courier company contacts the recipient and sends a bill stating exactly what has to be paid. The parcel is normally held for about 3 weeks; if the bill has not been paid by then, it is returned to the sender.",
+  },
 };
 
 /** The same everywhere, Poland included (confirmed 2026-10-09). */
@@ -3300,6 +3320,139 @@ const copy: Record<CountrySlug, CountryCopy> = {
         body: "Send a gift, personal belongings or other permitted goods to family, friends and relatives in Italy.",
         emphasis:
           "Message us today and find out the cost of sending your parcel to Italy.",
+      },
+    },
+  },
+  "great-britain": {
+    name: "Great Britain",
+    nameIn: "Great Britain",
+    linkLabel: "Send a parcel to Great Britain",
+    footerLinkLabel: "Send to Great Britain",
+    priceLinkLabel: "Cost of sending to Great Britain",
+    factsHeading: "What to know before sending to Great Britain",
+    h1: "Send a parcel from Georgia to Great Britain",
+    seoTitle: "Send a parcel to Great Britain",
+    seoDescription:
+      "Send a parcel from Georgia to Great Britain — London, Birmingham, Manchester, Glasgow, Edinburgh. Find out the price and start your order with Parcello.",
+    intro:
+      "Great Britain is no longer in the European Union, so UK customs rules apply to a parcel: a gift worth up to £39 is free of VAT, and the standard VAT rate is 20%.",
+    content: {
+      intro: [
+        "Want to send a parcel from Georgia to Great Britain? Parcello will help you send it simply and conveniently — whether it is a gift, clothing, personal belongings or other permitted goods.",
+      ],
+      narrative: [
+        {
+          placement: "afterIntro",
+          heading: "Sending a parcel from Georgia to Great Britain",
+          body: [
+            "Diplomatic relations between Georgia and the United Kingdom were established in 1919 and restored on 27 April 1992. Georgia's embassy is in London.",
+            "For Georgians living in Great Britain, receiving a parcel from home is often a simple way of keeping a connection to family, friends and the place they came from.",
+            "You give us the parcel and the details we need, and we help organise the process of getting it to Great Britain.",
+          ],
+        },
+        {
+          placement: "beforePricing",
+          heading: "Great Britain — outside the EU, with its own customs rules",
+          body: [
+            "The United Kingdom left the European Union on 31 January 2020, so a parcel sent from Georgia to Great Britain is subject to UK customs rules, not EU ones, and the thresholds are in pounds sterling.",
+            "According to GOV.UK, no VAT is charged on a gift worth up to £39, and no Customs Duty on goods worth up to £135 — except alcohol and tobacco. The standard VAT rate is 20%.",
+            "To qualify for the allowance, the parcel must be described as a gift on the customs declaration. If one box holds gifts for several people, GOV.UK says each gets its own allowance when it is wrapped individually and listed separately on the declaration with its own value.",
+            "These rules are for Great Britain — GOV.UK publishes separate rules for Northern Ireland.",
+          ],
+        },
+      ],
+      why: {
+        heading: "Why Parcello?",
+        body: [
+          "Sending an international parcel should not be complicated.",
+          "Easy communication matters to us, and so does your knowing what is needed to send your parcel.",
+        ],
+        highlight:
+          "Parcello lets you send a parcel from Georgia to Great Britain and get the information you need, all in one place.",
+      },
+      steps: {
+        heading: "How we send parcels to Great Britain",
+        items: [
+          {
+            title: "Get in touch",
+            body: "Tell us you want to send a parcel to Great Britain and give us its approximate weight, its contents and the destination city.",
+          },
+          {
+            title: "Prepare your parcel",
+            body: "Pack the items securely and make sure they are permitted to be sent.",
+          },
+          {
+            title: "Hand over the parcel",
+            body: "Our team collects your parcel by whichever method you have agreed with us.",
+          },
+          {
+            title: "Your parcel sets off for Great Britain",
+            body: STEP_TRANSPORT_BODY,
+          },
+          {
+            title: "The parcel arrives in Great Britain",
+            body: businessEn.doorDelivery,
+          },
+        ],
+      },
+      sendable: {
+        heading: "What can you send to Great Britain?",
+        intro:
+          "With Parcello you can send a range of permitted personal items, including:",
+        items: SENDABLE_ITEMS,
+        note: "Restrictions apply to some items in international shipping. Before you send, tell us what you would like to put in the parcel and we will help you check.",
+        moreHref: "/what-can-i-send",
+        moreLabel: "See the full list of permitted items",
+      },
+      cities: {
+        heading: "Sending a parcel to any city or village in Great Britain",
+        intro:
+          "We deliver anywhere in Great Britain — to big cities as well as small towns and villages. For example:",
+        list: ["London", "Birmingham", "Manchester", "Glasgow", "Edinburgh"],
+        note: "When you order, give the recipient's full address and contact details so the parcel can be processed correctly.",
+      },
+      pricing: {
+        heading: "How much does it cost to send a parcel to Great Britain?",
+        body: "The cost depends on the weight of the parcel and the rate in force.",
+        emphasis:
+          "Send us the weight of your parcel and the destination city in Great Britain to get the current price.",
+      },
+      faqs: [
+        {
+          question: "How long does a parcel take to reach Great Britain?",
+          answer: DELIVERY_TIME_ANSWER,
+        },
+        {
+          question: "Do EU customs rules apply to Great Britain?",
+          answer:
+            "No. The United Kingdom left the European Union on 31 January 2020, so UK customs rules apply to a parcel — for example, the VAT allowance for a gift is £39 rather than €45.",
+        },
+        {
+          question: "Does the recipient pay VAT on a gift sent to Great Britain?",
+          answer:
+            "According to GOV.UK, no VAT is charged on a gift worth up to £39; on a more valuable gift the recipient pays VAT. No Customs Duty is charged on goods worth up to £135 — except alcohol and tobacco.",
+        },
+        {
+          question: "Can I send Georgian products to Great Britain?",
+          answer:
+            "Some products can be sent, though restrictions may apply to particular items. Tell us what you would like to send and we will help you check.",
+        },
+        {
+          question: "Can I send a parcel to London or Manchester?",
+          answer:
+            "Yes. We deliver to any city, town or village in Great Britain — just give us the recipient's full address when you order.",
+        },
+        {
+          question: "How do I start sending a parcel?",
+          answer:
+            "Get in touch and tell us the approximate weight of the parcel, what is inside it, and the destination city in Great Britain.",
+        },
+      ],
+      cta: {
+        heading: "Send your parcel from Georgia to Great Britain with Parcello",
+        body: "Send a gift, personal belongings or other permitted goods to family, friends and relatives in Great Britain.",
+        emphasis:
+          "Message us today and find out the cost of sending your parcel to Great Britain.",
       },
     },
   },
