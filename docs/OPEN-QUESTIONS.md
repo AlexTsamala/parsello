@@ -21,6 +21,7 @@ Answered items move to `CLAUDE.md` §10 and into `src/content/business.ts`.
 | 11 | When and how does the customer pay? | FAQ, order flow |
 | 18 | **Online-shopping service** — how does a customer get their forwarding address? Is there registration? Which countries have an address? Where is the parcel collected in Georgia, and is there a weight/price basis? | /services |
 | 14 | Parcello-specific detail per destination (routes, typical timing, what customers usually send there) | Country pages — the researched layer alone can't carry them |
+| 24 | **Northern Ireland.** The Great Britain page (2026-11-17) covers Great Britain only, and the business's rate is named "Great Britain". Does the same rate and door delivery cover Northern Ireland, whose customs rules differ? Until answered, the page names no Northern Irish place and says only that GOV.UK publishes separate rules for it. | `/countries/great-britain` |
 | 21 | **Commercial freight — inbound transit time and origin countries.** The freight article (2026-11-06) gives the outbound time (about 2–3 weeks) and says freight also runs Europe → Georgia, but names no inbound time or origin countries. The service page states the outbound time in its text and keeps `deliveryTimeGenitive: null`. | `/services` |
 ## Resolved
 
