@@ -4,7 +4,8 @@
  * Spain on 2026-10-27; Germany, Hungary, Czechia, Spain, Sweden, Denmark and
  * Finland raised by 1 ₾ on 2026-11-01; Croatia added on 2026-11-10; every
  * 18 ₾ destination raised to 19 ₾ on 2026-11-17, and Luxembourg added at 19 ₾
- * the same day; France raised to 21 ₾ on 2026-11-20). Cheapest first;
+ * the same day; France raised to 21 ₾ and Malta added at 24 ₾ on 2026-11-20).
+ * Cheapest first;
  * ties keep the order the business gave them in. A destination missing from
  * this list is quoted on request — never estimate one (CLAUDE.md §1 rule 2).
  *
@@ -40,6 +41,7 @@ const rates = [
   { id: "france", flag: "🇫🇷", name: "საფრანგეთი", perKg: 21 },
   { id: "great-britain", flag: "🇬🇧", name: "დიდი ბრიტანეთი", perKg: 24 },
   { id: "ireland", flag: "🇮🇪", name: "ირლანდია", perKg: 24 },
+  { id: "malta", flag: "🇲🇹", name: "მალტა", perKg: 24 },
 ] as const;
 
 /** Lets the translations key their country names, so a missing one fails the build. */

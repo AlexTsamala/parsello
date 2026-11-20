@@ -329,6 +329,22 @@ const factCopy: Record<string, { title: string; body: string }> = {
     title: "What may be due when the parcel arrives",
     body: "According to the Luxembourg post (POST Luxembourg), when a parcel from outside the EU arrives, the amounts due may include Luxembourg VAT, customs duty, the European handling fee, POST's own handling fee and, on some products, excise duty. A gift worth €45 or less, sent from one private individual to another, is not subject to customs duty or the European handling fee, under certain conditions. The amount can be paid on delivery or when collecting the parcel at a POST point of sale.",
   },
+  "mt-euro": {
+    title: "From the lira to the euro in a single day",
+    body: "Malta adopted the euro on 1 January 2008, and euro banknotes and coins entered circulation the same day. The euro replaced the Maltese lira at a fixed rate of €1 = 0.429300 lira, and the period in which both currencies circulated ended on 31 January 2008. The Central Bank of Malta exchanged lira coins until 1 February 2010 and banknotes until 31 January 2018.",
+  },
+  "mt-vat": {
+    title: "The lowest VAT in the EU after Luxembourg",
+    body: "The standard VAT rate in Malta is 18% — the lowest in the European Union after Luxembourg's. Lower rates of 12%, 7% and 5% apply to certain goods.",
+  },
+  "mt-eu": {
+    title: "An EU member since 2004",
+    body: "Malta has been a member of the European Union since 1 May 2004 and of the euro area since 1 January 2008. Its capital is Valletta. According to the EU, Malta covers 316 square kilometres and has a population of 588,254 (2026 figures). Malta's official EU languages are Maltese and English.",
+  },
+  "mt-post": {
+    title: "What may be due when the parcel arrives",
+    body: "According to the Maltese post (MaltaPost), if import VAT is due on an item from outside the EU, the recipient must pay it to MaltaPost before the parcel is delivered. Customs duty is assessed and collected by the Malta Customs Department. Excise duty applies to certain goods — for example alcohol, tobacco and energy products — and customs may hold such a parcel until it is paid. MaltaPost charges a Customs Processing Fee on postal items subject to customs control. Charges can be paid online on MaltaPost's website, using the parcel's tracking number. The recipient may also clear the parcel through customs themselves or appoint their own customs agent, and must let MaltaPost know.",
+  },
 };
 
 /** The same everywhere, Poland included (confirmed 2026-10-09). */
@@ -3608,6 +3624,139 @@ const copy: Record<CountrySlug, CountryCopy> = {
         body: "Send a gift, personal belongings or other permitted goods to family, friends and relatives in Luxembourg.",
         emphasis:
           "Message us today and find out the cost of sending your parcel to Luxembourg.",
+      },
+    },
+  },
+  malta: {
+    name: "Malta",
+    nameIn: "Malta",
+    linkLabel: "Send a parcel to Malta",
+    footerLinkLabel: "Send to Malta",
+    priceLinkLabel: "Cost of sending to Malta",
+    factsHeading: "What to know before sending to Malta",
+    h1: "Send a parcel from Georgia to Malta",
+    seoTitle: "Send a parcel to Malta",
+    seoDescription:
+      "Send a parcel from Georgia to Malta — Valletta, Birkirkara, Mosta, Sliema, Victoria (Gozo). Find out the price and start your order with Parcello.",
+    intro:
+      "Malta has been a member of the European Union since 2004 and has used the euro since 2008. Its standard VAT rate is 18% — the lowest in the EU after Luxembourg's.",
+    content: {
+      intro: [
+        "Want to send a parcel from Georgia to Malta? Parcello will help you send it simply and conveniently — whether it is a gift, clothing, personal belongings or other permitted goods.",
+      ],
+      narrative: [
+        {
+          placement: "afterIntro",
+          heading: "Sending a parcel from Georgia to Malta",
+          body: [
+            "Diplomatic relations between Georgia and the Republic of Malta were established on 1 February 1993. Since 2004, Georgia has been represented in Malta by its embassy in Italy.",
+            "For Georgians living in Malta, receiving a parcel from home is often a simple way of keeping a connection to family, friends and the place they came from.",
+            "You give us the parcel and the details we need, and we help organise the process of getting it to Malta.",
+          ],
+        },
+        {
+          placement: "beforePricing",
+          heading: "Malta — a member of the EU and the euro area",
+          body: [
+            "Malta has been a member of the European Union since 2004 and of the euro area since 2008, so EU customs rules apply to a parcel sent from Georgia, and a consignment's value and the customs relief thresholds are in euro. Malta's official EU languages are Maltese and English.",
+            "Malta's standard VAT rate — 18% — is the lowest in the European Union after Luxembourg's.",
+            "According to the Maltese post, the recipient pays any VAT due on an item from outside the EU before the parcel is delivered, and the post also charges a customs processing fee on items subject to customs control. Charges can be paid online, using the parcel's tracking number.",
+            "EU customs rules, including the gift threshold, are set out below, in the section on official rules.",
+          ],
+        },
+      ],
+      why: {
+        heading: "Why Parcello?",
+        body: [
+          "Sending an international parcel should not be complicated.",
+          "Easy communication matters to us, and so does your knowing what is needed to send your parcel.",
+        ],
+        highlight:
+          "Parcello lets you send a parcel from Georgia to Malta and get the information you need, all in one place.",
+      },
+      steps: {
+        heading: "How we send parcels to Malta",
+        items: [
+          {
+            title: "Get in touch",
+            body: "Tell us you want to send a parcel to Malta and give us its approximate weight, its contents and the destination city.",
+          },
+          {
+            title: "Prepare your parcel",
+            body: "Pack the items securely and make sure they are permitted to be sent.",
+          },
+          {
+            title: "Hand over the parcel",
+            body: "Our team collects your parcel by whichever method you have agreed with us.",
+          },
+          {
+            title: "Your parcel sets off for Malta",
+            body: STEP_TRANSPORT_BODY,
+          },
+          {
+            title: "The parcel arrives in Malta",
+            body: businessEn.doorDelivery,
+          },
+        ],
+      },
+      sendable: {
+        heading: "What can you send to Malta?",
+        intro:
+          "With Parcello you can send a range of permitted personal items, including:",
+        items: SENDABLE_ITEMS,
+        note: "Restrictions apply to some items in international shipping. Before you send, tell us what you would like to put in the parcel and we will help you check.",
+        moreHref: "/what-can-i-send",
+        moreLabel: "See the full list of permitted items",
+      },
+      cities: {
+        heading: "Sending a parcel to any city or village in Malta",
+        intro:
+          "We deliver anywhere in Malta — to big cities as well as small towns and villages. For example:",
+        list: ["Valletta", "Birkirkara", "Mosta", "Sliema", "Victoria (Gozo)"],
+        note: "When you order, give the recipient's full address and contact details so the parcel can be processed correctly.",
+      },
+      pricing: {
+        heading: "How much does it cost to send a parcel to Malta?",
+        body: "The cost depends on the weight of the parcel and the rate in force.",
+        emphasis:
+          "Send us the weight of your parcel and the destination city in Malta to get the current price.",
+      },
+      faqs: [
+        {
+          question: "How long does a parcel take to reach Malta?",
+          answer: DELIVERY_TIME_ANSWER,
+        },
+        {
+          question: "What currency is used in Malta?",
+          answer:
+            "The euro — Malta adopted it on 1 January 2008, and banknotes and coins entered circulation the same day. The euro replaced the Maltese lira at a fixed rate of €1 = 0.429300 lira.",
+        },
+        {
+          question: "What is the VAT rate in Malta?",
+          answer:
+            "The standard VAT rate in Malta is 18% — the lowest in the European Union after Luxembourg's. Lower rates of 12%, 7% and 5% apply to certain goods.",
+        },
+        {
+          question: "Can I send Georgian products to Malta?",
+          answer:
+            "Some products can be sent, though restrictions may apply to particular items. Tell us what you would like to send and we will help you check.",
+        },
+        {
+          question: "Can I send a parcel to Valletta or Sliema?",
+          answer:
+            "Yes. We deliver to any city, town or village in Malta — just give us the recipient's full address when you order.",
+        },
+        {
+          question: "How do I start sending a parcel?",
+          answer:
+            "Get in touch and tell us the approximate weight of the parcel, what is inside it, and the destination city in Malta.",
+        },
+      ],
+      cta: {
+        heading: "Send your parcel from Georgia to Malta with Parcello",
+        body: "Send a gift, personal belongings or other permitted goods to family, friends and relatives in Malta.",
+        emphasis:
+          "Message us today and find out the cost of sending your parcel to Malta.",
       },
     },
   },
