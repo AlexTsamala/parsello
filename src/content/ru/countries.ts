@@ -348,7 +348,7 @@ const STEP_HANDOVER = {
   body: "Наша команда принимает посылку тем способом, который вы с нами согласовали.",
 };
 
-/** Parcels leave every Sunday (confirmed 2026-10-10). */
+/** Parcels leave once every two weeks, on a Sunday (confirmed 2026-11-20). */
 const STEP_TRANSPORT_BODY = `${businessRu.departure} Мы организуем весь процесс перевозки.`;
 
 const SENDABLE_NOTE =

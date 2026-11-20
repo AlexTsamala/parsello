@@ -398,7 +398,7 @@ const VAT_SOURCE = {
 /** The same everywhere, Poland included (confirmed 2026-10-09). */
 const DELIVERY_TIME_ANSWER = `${business.departure} ამანათი ადრესატთან ჩადის გაგზავნიდან ${business.deliveryTimeGenitive} ვადაში.`;
 
-/** Parcels leave every Sunday (confirmed 2026-10-10). */
+/** Parcels leave once every two weeks, on a Sunday (confirmed 2026-11-20). */
 const STEP_TRANSPORT_BODY = `${business.departure} ტრანსპორტირების მთელ პროცესზე ჩვენ ვიზრუნებთ.`;
 
 export const countries: Country[] = [

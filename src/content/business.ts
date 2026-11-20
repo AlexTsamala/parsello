@@ -119,10 +119,11 @@ export const business = {
   doorDelivery:
     "ამანათს მიმღებს კურიერი კარამდე მიუტანს — თქვენ მიერ მითითებულ მისამართზე.",
 
-  // Confirmed 2026-10-10: parcels leave Georgia every Sunday. "კვირა" alone
-  // also means "week", and the same pages say "2-3 კვირა", so the day is
-  // always written "კვირა დღეს". No hand-in cut-off was given — don't add one.
-  departure: "ამანათები საქართველოდან ყოველ კვირა დღეს იგზავნება.",
+  // Confirmed 2026-11-20: parcels leave Georgia once every two weeks, on a
+  // Sunday (was every Sunday, 2026-10-10). "კვირა" alone also means "week",
+  // so the day is always written "კვირა დღეს". No hand-in cut-off was given —
+  // don't add one.
+  departure: "ამანათები საქართველოდან ყოველ 2 კვირაში ერთხელ იგზავნება კვირა დღეს.",
 
   weightLimit: null as string | null,
 
