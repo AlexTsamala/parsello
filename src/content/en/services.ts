@@ -108,7 +108,7 @@ export const servicesEn: Service[] = [
     seoTitle: "Freight transport to Europe and to Georgia",
     seoDescription:
       "Freight transport from Georgia to Europe and from Europe to Georgia — 1–2 tonnes, collected from anywhere in Georgia and delivered to the door.",
-    updatedAt: "2026-11-06",
+    updatedAt: "2026-11-20",
     title: "Commercial freight",
     direction: "Georgia ⇄ Europe",
     summary:
@@ -117,7 +117,7 @@ export const servicesEn: Service[] = [
       "Our team has many years of experience in the industry and works to get your cargo to its destination safely, efficiently and on schedule.",
       "From Georgia to Europe we mostly ship consignments of 1–2 tonnes: pallets, commercial goods, furniture and personal belongings when you move house, and Georgian products in bulk.",
       "We collect the cargo from anywhere in Georgia — your home, office or warehouse. Parcello prepares the export and customs documents.",
-      "Freight leaves Georgia every Sunday, together with the parcels, and is delivered to the door anywhere in Europe, about 2–3 weeks after it is sent.",
+      "Freight leaves Georgia once every two weeks, on a Sunday, together with the parcels, and is delivered to the door anywhere in Europe, about 2–3 weeks after it is sent.",
       "If your business needs to import or export goods, we will tailor the service to your requirements.",
       "If you are interested, send us the details of your consignment or call us — and we will get back to you.",
     ],
