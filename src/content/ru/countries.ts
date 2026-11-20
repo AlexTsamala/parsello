@@ -358,7 +358,7 @@ const CITIES_NOTE =
   "При заказе укажите полный адрес и контактные данные получателя, чтобы посылку можно было правильно оформить.";
 
 /** The same everywhere, Poland included (confirmed 2026-10-09). */
-const DELIVERY_TIME_ANSWER = `${businessRu.departure} Посылка доходит до получателя в течение ${businessRu.deliveryTimeGenitive} после отправки.`;
+const DELIVERY_TIME_ANSWER = `${businessRu.departure} ${businessRu.transportMode} Посылка доходит до получателя в течение ${businessRu.deliveryTimeGenitive} после отправки.`;
 
 const PRODUCTS_ANSWER =
   "Некоторые продукты отправить можно, но на отдельные позиции могут действовать ограничения. Расскажите, что хотите отправить, и мы поможем проверить.";

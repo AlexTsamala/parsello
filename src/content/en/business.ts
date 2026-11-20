@@ -83,6 +83,8 @@ export const businessEn: BusinessContent = {
 
   departure: "Parcels leave Georgia once every two weeks, on a Sunday.",
 
+  transportMode: "Parcels travel by land only.",
+
   coverage: {
     scope: "We send parcels anywhere in Europe.",
     priorityNote: "Our main destinations are listed below.",

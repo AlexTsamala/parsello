@@ -332,7 +332,7 @@ const factCopy: Record<string, { title: string; body: string }> = {
 };
 
 /** The same everywhere, Poland included (confirmed 2026-10-09). */
-const DELIVERY_TIME_ANSWER = `${businessEn.departure} A parcel reaches the recipient within ${businessEn.deliveryTimeGenitive} of being sent.`;
+const DELIVERY_TIME_ANSWER = `${businessEn.departure} ${businessEn.transportMode} A parcel reaches the recipient within ${businessEn.deliveryTimeGenitive} of being sent.`;
 
 /** Parcels leave once every two weeks, on a Sunday (confirmed 2026-11-20). */
 const STEP_TRANSPORT_BODY = `${businessEn.departure} We take care of the whole transport process.`;

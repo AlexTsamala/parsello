@@ -76,6 +76,10 @@ export function ServicePage({
                 {service.summary}
               </p>
 
+              {service.transportMode ? (
+                <p className="mt-4 text-muted">{service.transportMode}</p>
+              ) : null}
+
               {service.deliveryTimeGenitive ? (
                 <p className="mt-4 text-muted">
                   {copy.deliveryBefore}{" "}

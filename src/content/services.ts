@@ -51,6 +51,11 @@ export type Service = {
    * Null until the business confirms a figure for this route.
    */
   deliveryTimeGenitive: string | null;
+  /**
+   * How the parcel travels, shown just above the delivery-time line. Only the
+   * outbound route has one — see business.transportMode.
+   */
+  transportMode?: string;
 };
 
 export const services: Service[] = [
@@ -59,7 +64,7 @@ export const services: Service[] = [
     seoTitle: "ამანათის გაგზავნა ევროპაში",
     seoDescription:
       "გაუგზავნეთ ამანათი ოჯახს, მეგობრებს ან ახლობლებს ევროპაში. გაიგეთ, როგორ მუშაობს სერვისი და როგორ დაიწყოთ შეკვეთა Parcello-სთან.",
-    updatedAt: "2026-10-10",
+    updatedAt: "2026-11-20",
     title: "ამანათის გაგზავნა ევროპაში",
     direction: "საქართველო → ევროპა",
     summary:
@@ -76,6 +81,7 @@ export const services: Service[] = [
     alt: "Parcello-ს კურიერი ამანათს იბარებს მომხმარებლისგან",
     steps: howItWorksSteps,
     deliveryTimeGenitive: business.deliveryTimeGenitive,
+    transportMode: business.transportMode,
   },
   {
     slug: "receive-from-europe",

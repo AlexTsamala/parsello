@@ -125,6 +125,10 @@ export const business = {
   // don't add one.
   departure: "ამანათები საქართველოდან ყოველ 2 კვირაში ერთხელ იგზავნება კვირა დღეს.",
 
+  // Confirmed 2026-11-20: parcels travel by land only. Shown just before the
+  // outbound delivery-time sentence wherever that sentence appears.
+  transportMode: "ამანათების გაგზავნა ხდება მხოლოდ სახმელეთო გზით.",
+
   weightLimit: null as string | null,
 
   coverage: {

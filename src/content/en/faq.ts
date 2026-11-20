@@ -32,7 +32,7 @@ export const faqsEn: FaqItem[] = [
   },
   {
     question: "How long does a parcel take to arrive?",
-    answer: `A parcel reaches the recipient within ${businessEn.deliveryTimeGenitive} of being sent.`,
+    answer: `${businessEn.transportMode} A parcel reaches the recipient within ${businessEn.deliveryTimeGenitive} of being sent.`,
     featured: true,
   },
   {

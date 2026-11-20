@@ -31,7 +31,7 @@ export const faqsRu: FaqItem[] = [
   },
   {
     question: "Сколько идет посылка?",
-    answer: `Посылка доходит до получателя в течение ${businessRu.deliveryTimeGenitive} после отправки.`,
+    answer: `${businessRu.transportMode} Посылка доходит до получателя в течение ${businessRu.deliveryTimeGenitive} после отправки.`,
     featured: true,
   },
   {

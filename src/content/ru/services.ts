@@ -15,7 +15,7 @@ export const servicesRu: Service[] = [
     seoTitle: "Отправка посылок из Грузии в Европу",
     seoDescription:
       "Отправьте посылку родным, друзьям и близким в Европу. Узнайте, как работает доставка посылок из Грузии и как оформить заказ в Parcello.",
-    updatedAt: "2026-09-03",
+    updatedAt: "2026-11-20",
     title: "Отправка посылок в Европу",
     direction: "Грузия → Европа",
     summary:
@@ -32,6 +32,7 @@ export const servicesRu: Service[] = [
     alt: "Курьер Parcello принимает посылку у клиента",
     steps: howItWorksStepsRu,
     deliveryTimeGenitive: businessRu.deliveryTimeGenitive,
+    transportMode: businessRu.transportMode,
   },
   {
     slug: "receive-from-europe",

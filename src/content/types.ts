@@ -76,6 +76,8 @@ export type BusinessContent = {
   doorDelivery: string;
   /** When parcels leave Georgia — once every two weeks, on a Sunday (2026-11-20). No cut-off is published. */
   departure: string;
+  /** How parcels travel from Georgia — by land only (2026-11-20). */
+  transportMode: string;
   weightLimit: string | null;
   coverage: { scope: string; priorityNote: string };
   restrictions: {

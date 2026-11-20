@@ -19,7 +19,7 @@ export const servicesEn: Service[] = [
     seoTitle: "Sending a parcel to Europe",
     seoDescription:
       "Send a parcel to family, friends or relatives in Europe. Find out how the service works and how to start your order with Parcello.",
-    updatedAt: "2026-09-03",
+    updatedAt: "2026-11-20",
     title: "Sending a parcel to Europe",
     direction: "Georgia → Europe",
     summary:
@@ -36,6 +36,7 @@ export const servicesEn: Service[] = [
     alt: "A Parcello courier collecting a parcel from a customer",
     steps: howItWorksStepsEn,
     deliveryTimeGenitive: businessEn.deliveryTimeGenitive,
+    transportMode: businessEn.transportMode,
   },
   {
     slug: "receive-from-europe",

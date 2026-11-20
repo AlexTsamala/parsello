@@ -396,7 +396,7 @@ const VAT_SOURCE = {
 };
 
 /** The same everywhere, Poland included (confirmed 2026-10-09). */
-const DELIVERY_TIME_ANSWER = `${business.departure} ამანათი ადრესატთან ჩადის გაგზავნიდან ${business.deliveryTimeGenitive} ვადაში.`;
+const DELIVERY_TIME_ANSWER = `${business.departure} ${business.transportMode} ამანათი ადრესატთან ჩადის გაგზავნიდან ${business.deliveryTimeGenitive} ვადაში.`;
 
 /** Parcels leave once every two weeks, on a Sunday (confirmed 2026-11-20). */
 const STEP_TRANSPORT_BODY = `${business.departure} ტრანსპორტირების მთელ პროცესზე ჩვენ ვიზრუნებთ.`;
@@ -404,7 +404,7 @@ const STEP_TRANSPORT_BODY = `${business.departure} ტრანსპორტ�
 export const countries: Country[] = [
   {
     slug: "poland",
-    updatedAt: "2026-10-10",
+    updatedAt: "2026-11-20",
     name: "პოლონეთი",
     nameIn: "პოლონეთში",
     linkLabel: "პოლონეთში ამანათის გაგზავნა",
@@ -521,7 +521,7 @@ export const countries: Country[] = [
   },
   {
     slug: "germany",
-    updatedAt: "2026-10-10",
+    updatedAt: "2026-11-20",
     name: "გერმანია",
     nameIn: "გერმანიაში",
     linkLabel: "გერმანიაში ამანათის გაგზავნა",
@@ -693,7 +693,7 @@ export const countries: Country[] = [
   },
   {
     slug: "france",
-    updatedAt: "2026-10-10",
+    updatedAt: "2026-11-20",
     name: "საფრანგეთი",
     nameIn: "საფრანგეთში",
     linkLabel: "საფრანგეთში ამანათის გაგზავნა",
@@ -849,7 +849,7 @@ export const countries: Country[] = [
   },
   {
     slug: "hungary",
-    updatedAt: "2026-10-10",
+    updatedAt: "2026-11-20",
     name: "უნგრეთი",
     nameIn: "უნგრეთში",
     linkLabel: "უნგრეთში ამანათის გაგზავნა",
@@ -1009,7 +1009,7 @@ export const countries: Country[] = [
   },
   {
     slug: "bulgaria",
-    updatedAt: "2026-10-10",
+    updatedAt: "2026-11-20",
     name: "ბულგარეთი",
     nameIn: "ბულგარეთში",
     linkLabel: "ბულგარეთში ამანათის გაგზავნა",
@@ -1180,7 +1180,7 @@ export const countries: Country[] = [
   },
   {
     slug: "czechia",
-    updatedAt: "2026-10-10",
+    updatedAt: "2026-11-20",
     name: "ჩეხეთი",
     nameIn: "ჩეხეთში",
     linkLabel: "ჩეხეთში ამანათის გაგზავნა",
@@ -1359,7 +1359,7 @@ export const countries: Country[] = [
   },
   {
     slug: "slovakia",
-    updatedAt: "2026-10-10",
+    updatedAt: "2026-11-20",
     name: "სლოვაკეთი",
     nameIn: "სლოვაკეთში",
     linkLabel: "სლოვაკეთში ამანათის გაგზავნა",
@@ -1541,7 +1541,7 @@ export const countries: Country[] = [
   },
   {
     slug: "netherlands",
-    updatedAt: "2026-10-10",
+    updatedAt: "2026-11-20",
     name: "ნიდერლანდები",
     nameIn: "ნიდერლანდებში",
     linkLabel: "ნიდერლანდებში ამანათის გაგზავნა",
@@ -1724,7 +1724,7 @@ export const countries: Country[] = [
   },
   {
     slug: "finland",
-    updatedAt: "2026-10-10",
+    updatedAt: "2026-11-20",
     name: "ფინეთი",
     nameIn: "ფინეთში",
     linkLabel: "ფინეთში ამანათის გაგზავნა",
@@ -1894,7 +1894,7 @@ export const countries: Country[] = [
   },
   {
     slug: "sweden",
-    updatedAt: "2026-10-10",
+    updatedAt: "2026-11-20",
     name: "შვედეთი",
     nameIn: "შვედეთში",
     linkLabel: "შვედეთში ამანათის გაგზავნა",
@@ -2069,7 +2069,7 @@ export const countries: Country[] = [
   },
   {
     slug: "portugal",
-    updatedAt: "2026-10-10",
+    updatedAt: "2026-11-20",
     name: "პორტუგალია",
     nameIn: "პორტუგალიაში",
     linkLabel: "პორტუგალიაში ამანათის გაგზავნა",
@@ -2249,7 +2249,7 @@ export const countries: Country[] = [
   },
   {
     slug: "lithuania",
-    updatedAt: "2026-10-10",
+    updatedAt: "2026-11-20",
     name: "ლიტვა",
     nameIn: "ლიტვაში",
     linkLabel: "ლიტვაში ამანათის გაგზავნა",
@@ -2423,7 +2423,7 @@ export const countries: Country[] = [
   },
   {
     slug: "latvia",
-    updatedAt: "2026-10-10",
+    updatedAt: "2026-11-20",
     name: "ლატვია",
     nameIn: "ლატვიაში",
     linkLabel: "ლატვიაში ამანათის გაგზავნა",
@@ -2597,7 +2597,7 @@ export const countries: Country[] = [
   },
   {
     slug: "estonia",
-    updatedAt: "2026-10-10",
+    updatedAt: "2026-11-20",
     name: "ესტონეთი",
     nameIn: "ესტონეთში",
     linkLabel: "ესტონეთში ამანათის გაგზავნა",
@@ -2771,7 +2771,7 @@ export const countries: Country[] = [
   },
   {
     slug: "austria",
-    updatedAt: "2026-10-15",
+    updatedAt: "2026-11-20",
     name: "ავსტრია",
     nameIn: "ავსტრიაში",
     linkLabel: "ავსტრიაში ამანათის გაგზავნა",
@@ -2945,7 +2945,7 @@ export const countries: Country[] = [
   },
   {
     slug: "belgium",
-    updatedAt: "2026-10-15",
+    updatedAt: "2026-11-20",
     name: "ბელგია",
     nameIn: "ბელგიაში",
     linkLabel: "ბელგიაში ამანათის გაგზავნა",
@@ -3126,7 +3126,7 @@ export const countries: Country[] = [
   },
   {
     slug: "romania",
-    updatedAt: "2026-10-15",
+    updatedAt: "2026-11-20",
     name: "რუმინეთი",
     nameIn: "რუმინეთში",
     linkLabel: "რუმინეთში ამანათის გაგზავნა",
@@ -3307,7 +3307,7 @@ export const countries: Country[] = [
   },
   {
     slug: "ireland",
-    updatedAt: "2026-10-27",
+    updatedAt: "2026-11-20",
     name: "ირლანდია",
     nameIn: "ირლანდიაში",
     linkLabel: "ირლანდიაში ამანათის გაგზავნა",
@@ -3488,7 +3488,7 @@ export const countries: Country[] = [
   },
   {
     slug: "denmark",
-    updatedAt: "2026-10-27",
+    updatedAt: "2026-11-20",
     name: "დანია",
     nameIn: "დანიაში",
     linkLabel: "დანიაში ამანათის გაგზავნა",
@@ -3669,7 +3669,7 @@ export const countries: Country[] = [
   },
   {
     slug: "greece",
-    updatedAt: "2026-10-28",
+    updatedAt: "2026-11-20",
     name: "საბერძნეთი",
     nameIn: "საბერძნეთში",
     linkLabel: "საბერძნეთში ამანათის გაგზავნა",
@@ -3836,7 +3836,7 @@ export const countries: Country[] = [
   },
   {
     slug: "spain",
-    updatedAt: "2026-11-01",
+    updatedAt: "2026-11-20",
     name: "ესპანეთი",
     nameIn: "ესპანეთში",
     linkLabel: "ესპანეთში ამანათის გაგზავნა",
@@ -4015,7 +4015,7 @@ export const countries: Country[] = [
   },
   {
     slug: "croatia",
-    updatedAt: "2026-11-10",
+    updatedAt: "2026-11-20",
     name: "ხორვატია",
     nameIn: "ხორვატიაში",
     linkLabel: "ხორვატიაში ამანათის გაგზავნა",
@@ -4201,7 +4201,7 @@ export const countries: Country[] = [
   },
   {
     slug: "italy",
-    updatedAt: "2026-11-17",
+    updatedAt: "2026-11-20",
     name: "იტალია",
     nameIn: "იტალიაში",
     linkLabel: "იტალიაში ამანათის გაგზავნა",
@@ -4382,7 +4382,7 @@ export const countries: Country[] = [
   },
   {
     slug: "great-britain",
-    updatedAt: "2026-11-17",
+    updatedAt: "2026-11-20",
     customs: "gb",
     name: "დიდი ბრიტანეთი",
     nameIn: "დიდ ბრიტანეთში",
@@ -4578,7 +4578,7 @@ export const countries: Country[] = [
   },
   {
     slug: "luxembourg",
-    updatedAt: "2026-11-17",
+    updatedAt: "2026-11-20",
     name: "ლუქსემბურგი",
     nameIn: "ლუქსემბურგში",
     linkLabel: "ლუქსემბურგში ამანათის გაგზავნა",
