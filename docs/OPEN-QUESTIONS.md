@@ -35,7 +35,7 @@ Answered items move to `CLAUDE.md` §10 and into `src/content/business.ts`.
 - **Domain** (#5) — `https://parcello.ge`, apex form, with `www` redirecting to it. Set `NEXT_PUBLIC_SITE_URL` to match; see `DEPLOYMENT.md`.
 - **Delivery time** (#7) — 2–3 weeks to every destination, Poland included (confirmed 2026-10-09). Every country page uses the shared `business.deliveryTimeGenitive`. Whether it means calendar or working days was not specified.
 - **Delivery to the recipient** (#10) — a courier brings the parcel to the recipient's door (confirmed 2026-10-09). Stored once as `business.doorDelivery`.
-- **Departure day** (#23) — parcels leave Georgia every Sunday (confirmed 2026-10-10). Stored once as `business.departure`. No hand-in cut-off was given, so none is published.
+- **Departure day** (#23) — parcels leave Georgia once every two weeks, on a Sunday (confirmed 2026-11-20; every Sunday from 2026-10-10). Stored once as `business.departure`. No hand-in cut-off was given, so none is published.
 - **Currency** — prices stay in GEL only; no euro prices or conversions (business decision, 2026-10-09).
 - **Drop-off address** — გრიგოლ რობაქიძის გამზირი 4, თბილისი, საქართველო.
 - **Working hours** — every day, 08:00–22:00. Published on the contact page and in `openingHoursSpecification`.
