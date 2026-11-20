@@ -4,7 +4,7 @@
  * Spain on 2026-10-27; Germany, Hungary, Czechia, Spain, Sweden, Denmark and
  * Finland raised by 1 ₾ on 2026-11-01; Croatia added on 2026-11-10; every
  * 18 ₾ destination raised to 19 ₾ on 2026-11-17, and Luxembourg added at 19 ₾
- * the same day). Cheapest first;
+ * the same day; France raised to 21 ₾ on 2026-11-20). Cheapest first;
  * ties keep the order the business gave them in. A destination missing from
  * this list is quoted on request — never estimate one (CLAUDE.md §1 rule 2).
  *
@@ -25,7 +25,6 @@ const rates = [
   { id: "lithuania", flag: "🇱🇹", name: "ლიტვა", perKg: 19 },
   { id: "latvia", flag: "🇱🇻", name: "ლატვია", perKg: 19 },
   { id: "estonia", flag: "🇪🇪", name: "ესტონეთი", perKg: 19 },
-  { id: "france", flag: "🇫🇷", name: "საფრანგეთი", perKg: 19 },
   { id: "belgium", flag: "🇧🇪", name: "ბელგია", perKg: 19 },
   { id: "netherlands", flag: "🇳🇱", name: "ნიდერლანდები", perKg: 19 },
   { id: "romania", flag: "🇷🇴", name: "რუმინეთი", perKg: 19 },
@@ -38,6 +37,7 @@ const rates = [
   { id: "finland", flag: "🇫🇮", name: "ფინეთი", perKg: 21 },
   { id: "portugal", flag: "🇵🇹", name: "პორტუგალია", perKg: 21 },
   { id: "bulgaria", flag: "🇧🇬", name: "ბულგარეთი", perKg: 21 },
+  { id: "france", flag: "🇫🇷", name: "საფრანგეთი", perKg: 21 },
   { id: "great-britain", flag: "🇬🇧", name: "დიდი ბრიტანეთი", perKg: 24 },
   { id: "ireland", flag: "🇮🇪", name: "ირლანდია", perKg: 24 },
 ] as const;

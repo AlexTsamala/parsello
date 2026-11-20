@@ -33,7 +33,7 @@ const staticPages: StaticPage[] = [
   },
   {
     path: "/prices",
-    updatedAt: "2026-10-08",
+    updatedAt: "2026-11-20",
     changeFrequency: "monthly",
     priority: 0.9,
   },
